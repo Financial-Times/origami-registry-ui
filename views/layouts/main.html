@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="core" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>{{title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<script>
+		var cutsTheMustard = (
+			'querySelector' in document &&
+			'localStorage' in window &&
+			'addEventListener' in window
+		);
+		if (cutsTheMustard) {
+			document.documentElement.className = document.documentElement.className.replace(/\bcore\b/g, 'enhanced');
+		}
+	</script>
+
+	<style>
+		.core .o--if-js,
+		.enhanced .o--if-no-js {
+			display: none !important;
+		}
+		html {
+			overflow-x: hidden;
+		}
+		body {
+			margin: 0;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-grid@^4.0.0,o-header-services@^2.0.5" />
+	<link rel="stylesheet" href="/main.css" />
+	<script src="https://polyfill.io/v2/polyfill.min.js?features=fetch,default"></script>
+	<script>
+		(function(src) {
+			if (cutsTheMustard) {
+				var o = document.createElement('script');
+				o.async = o.defer = true;
+				o.src = src;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(o, s);
+			}
+		}('https://www.ft.com/__origami/service/build/v2/bundles/js?modules=o-grid@^4.0.0,o-header-services@^2.0.5'));
+	</script>
+
+</head>
+<body class="o-techdocs">
+
+	{{>header}}
+
+	{{{body}}}
+
+</body>
+</html>

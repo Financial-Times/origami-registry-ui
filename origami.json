@@ -1,0 +1,13 @@
+{
+	"description": "Get information about Origami components, services, and repositories",
+	"origamiType": "service",
+	"origamiVersion": 1,
+	"keywords": [],
+	"support": "https://github.com/Financial-Times/origami-registry-ui/issues",
+	"supportStatus": "active",
+	"supportContact": {
+		"email": "origami.support@ft.com",
+		"slack": "financialtimes/ft-origami"
+	},
+	"serviceUrl": "https://origami-registry.ft.com/"
+}
