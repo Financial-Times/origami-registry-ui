@@ -1,0 +1,88 @@
+{
+	"schemaVersion": 1,
+	"name": "origami-registry-ui",
+	"systemCode": "origami-registry-ui",
+	"purpose": "Get information about Origami components, services, and repositories",
+	"audience": "internal",
+	"primaryUrl": "https://origami-registry.ft.com/",
+	"serviceTier": "bronze",
+	"dateCreated": "2018-01-24",
+	"contacts": [
+		{
+			"name": "Origami team",
+			"email": "origami.support@ft.com",
+			"rel": "owner",
+			"domain": "All support enquiries"
+		}
+	],
+	"links": [
+		{
+			"url": "https://github.com/Financial-Times/origami-registry-ui/issues",
+			"category": "issues"
+		},
+		{
+			"url": "https://github.com/Financial-Times/origami-registry-ui",
+			"category": "repo"
+		},
+		{
+			"url": "https://dashboard.heroku.com/apps/TODO",
+			"category": "deployment",
+			"description": "Heroku dashboard (Production EU)"
+		},
+		{
+			"url": "https://dashboard.heroku.com/apps/TODO",
+			"category": "deployment",
+			"description": "Heroku dashboard (Production US)"
+		},
+		{
+			"url": "https://dashboard.heroku.com/apps/TODO",
+			"category": "deployment",
+			"description": "Heroku dashboard (Production US)"
+		},
+		{
+			"url": "https://dashboard.heroku.com/apps/TODO",
+			"category": "deployment",
+			"description": "Heroku dashboard (QA)"
+		},
+		{
+			"url": "https://dashboard.heroku.com/pipelines/TODO",
+			"category": "deployment",
+			"description": "Heroku dashboard (QA > Production pipeline)"
+		},
+		{
+			"url": "http://grafana.ft.com/dashboard/db/TODO",
+			"category": "monitoring",
+			"description": "Grafana dashboard"
+		},
+		{
+			"url": "https://my.pingdom.com/newchecks/checks#check=TODO",
+			"category": "monitoring",
+			"description": "Pingdom check (Production EU)"
+		},
+		{
+			"url": "https://my.pingdom.com/newchecks/checks#check=TODO",
+			"category": "monitoring",
+			"description": "Pingdom check (Production US)"
+		},
+		{
+			"url": "https://github.com/Financial-Times/origami-registry-ui#readme",
+			"category": "documentation",
+			"description": "README"
+		},
+		{
+			"url": "https://sentry.io/nextftcom/TODO",
+			"category": "monitoring",
+			"description": "Sentry dashboard (Production)"
+		},
+		{
+			"url": "https://sentry.io/nextftcom/TODO",
+			"category": "monitoring",
+			"description": "Sentry dashboard (QA)"
+		},
+		{
+			"url": "https://financialtimes.splunkcloud.com/en-US/app/search/search?q=app%3Dorigami-registry-ui-*",
+			"category": "monitoring",
+			"description": "Splunk dashboard (Production)"
+		}
+	]
+}
