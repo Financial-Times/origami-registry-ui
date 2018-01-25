@@ -181,7 +181,7 @@ The Financial Times has published this software under the [MIT license][license]
 [production-url]: https://origami-registry.ft.com/
 [repo-data]: https://origami-repo-data.ft.com/
 [runbook]: https://dewey.in.ft.com/view/system/origami-registry-ui
-[sentry-production]: https://sentry.io/nextftcom/TODO
-[sentry-qa]: https://sentry.io/nextftcom/TODO
+[sentry-production]: https://sentry.io/nextftcom/registry-ui-production
+[sentry-qa]: https://sentry.io/nextftcom/registry-ui-qa
 [service-options]: https://github.com/Financial-Times/origami-service#options
 [splunk]: https://financialtimes.splunkcloud.com/en-US/app/search/search?q=app%3Dorigami-registry-ui-*

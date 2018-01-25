@@ -65,12 +65,12 @@
 			"description": "README"
 		},
 		{
-			"url": "https://sentry.io/nextftcom/TODO",
+			"url": "https://sentry.io/nextftcom/registry-ui-production",
 			"category": "monitoring",
 			"description": "Sentry dashboard (Production)"
 		},
 		{
-			"url": "https://sentry.io/nextftcom/TODO",
+			"url": "https://sentry.io/nextftcom/registry-ui-qa",
 			"category": "monitoring",
 			"description": "Sentry dashboard (QA)"
 		},
