@@ -1,0 +1,32 @@
+{
+	"dataItemID": "origami-registry-ui",
+	"name": "Origami Registry UI",
+	"description": "Get information about Origami components, services, and repositories",
+	"serviceTier": "Bronze",
+	"lifecycleStage": "Requirements",
+	"primaryURL": "https://origami-registry.ft.com",
+	"gitRepository": "https://github.com/Financial-Times/origami-registry-ui",
+	"hostPlatform": "Heroku",
+	"primaryContact": {
+		"contact": [{
+			"dataItemID": "origamisupport"
+		}]
+	},
+	"programme": {
+		"contact": [{
+			"dataItemID": "internalproducts"
+		}]
+	},
+	"productOwner": {
+		"contact": [{
+			"dataItemID": "origamisupport"
+		}]
+	},
+	"technicalLead": {
+		"contact": [{
+			"dataItemID": "origamisupport"
+		}]
+	},
+	"monitoring": "TODO",
+	"architectureDiagram": "<p><a href=\"https://docs.google.com/a/ft.com/drawings/d/1qKROLQvR-D5LzxxTTkJgzcr5IlLLkaRh3bEtF0AAYeA/edit?usp=sharing\">Google Drawing</a></p>"
+}

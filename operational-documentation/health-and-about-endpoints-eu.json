@@ -1,0 +1,12 @@
+{
+	"base": "origami-registry-ui-eu.herokuapp.com",
+	"protocol": "https",
+	"healthSuffix": "__health",
+	"aboutSuffix": "__about",
+	"isLive": "False",
+	"isHealthcheckFor": {
+		"system": [{
+			"dataItemID": "origami-registry-ui"
+		}]
+	}
+}
