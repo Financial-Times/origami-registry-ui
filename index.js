@@ -9,6 +9,8 @@ dotenv.load();
 const options = {
 	log: console,
 	name: 'Origami Registry',
+	repoDataApiKey: process.env.REPO_DATA_API_KEY,
+	repoDataApiSecret: process.env.REPO_DATA_API_SECRET,
 	workers: process.env.WEB_CONCURRENCY || 1
 };
 

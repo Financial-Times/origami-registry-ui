@@ -1,4 +1,28 @@
 
+<!-- Beautiful temporary example markup -->
+
 <h1>Origami Registry UI</h1>
 
 <p><strong>⚠️ This is a work in progress ⚠️</strong></p>
+
+<table class="o-table o-table--row-stripes">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Version</th>
+			<th>Status</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each components}}
+			<tr>
+				<td>
+					<a href="/components/{{name}}"><strong>{{name}}</strong></a><br/>
+					{{description}}
+				</td>
+				<td>{{version}}</td>
+				<td>{{support.status}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>

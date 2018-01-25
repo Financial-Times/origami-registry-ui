@@ -1,0 +1,34 @@
+
+<!-- Beautiful temporary example markup -->
+
+<h1>{{component.name}}</h1>
+
+<p>{{component.description}}</p>
+
+<p><a href="{{component.url}}">Repository on GitHub</a></p>
+
+<h2>Component information</h2>
+
+<dl>
+
+	<dt>Version</dt>
+	<dd>{{component.version}}</dd>
+
+	<dt>Status</dt>
+	<dd>{{component.support.status}}</dd>
+
+</dl>
+
+<h2>Support</h2>
+
+<dl>
+
+	<dt>Email</dt>
+	<dd><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></dd>
+
+	{{#if component.support.channel}}
+		<dt>Slack</dt>
+		<dd><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></dd>
+	{{/if}}
+
+</dl>

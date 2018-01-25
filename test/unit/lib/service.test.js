@@ -11,6 +11,7 @@ describe('lib/service', () => {
 	let healthChecks;
 	let service;
 	let origamiService;
+	let RepoDataClient;
 	let requireAll;
 
 	beforeEach(() => {
@@ -24,6 +25,9 @@ describe('lib/service', () => {
 
 		origamiService = require('../mock/origami-service.mock');
 		mockery.registerMock('@financial-times/origami-service', origamiService);
+
+		RepoDataClient = require('../mock/origami-repo-data-client.mock');
+		mockery.registerMock('@financial-times/origami-repo-data-client', RepoDataClient);
 
 		requireAll = require('../mock/require-all.mock');
 		mockery.registerMock('require-all', requireAll);
@@ -43,7 +47,9 @@ describe('lib/service', () => {
 		beforeEach(() => {
 			options = {
 				environment: 'test',
-				port: 1234
+				port: 1234,
+				repoDataApiKey: 'mock-repo-data-api-key',
+				repoDataApiSecret: 'mock-repo-data-api-secret'
 			};
 			routes = {
 				foo: sinon.spy(),
@@ -106,6 +112,16 @@ describe('lib/service', () => {
 			assert.calledOnce(origamiService.middleware.errorHandler);
 			assert.calledWithExactly(origamiService.middleware.errorHandler);
 			assert.calledWith(origamiService.mockApp.use, origamiService.middleware.errorHandler.firstCall.returnValue);
+		});
+
+		it('creates a Repo Data client and stores it on the application `repoData` property', () => {
+			assert.calledOnce(RepoDataClient);
+			assert.calledWithNew(RepoDataClient);
+			assert.calledWithExactly(RepoDataClient, {
+				apiKey: 'mock-repo-data-api-key',
+				apiSecret: 'mock-repo-data-api-secret'
+			});
+			assert.strictEqual(origamiService.mockApp.repoData, RepoDataClient.mockRepoDataClient);
 		});
 
 		it('returns the created application', () => {

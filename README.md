@@ -52,6 +52,8 @@ We configure Origami Registry UI using environment variables. In development, co
 
   * `NODE_ENV`: The environment to run the application in. One of `production`, `development` (default), or `test` (for use in automated tests).
   * `PORT`: The port to run the application on.
+  * `REPO_DATA_API_KEY`: The [Repo Data] API key to use when authenticating with that service.
+  * `REPO_DATA_API_SECRET`: The [Repo Data] API secret to use when authenticating with that service.
 
 ### Required in Heroku
 
@@ -177,6 +179,7 @@ The Financial Times has published this software under the [MIT license][license]
 [pingdom-eu]: https://my.pingdom.com/newchecks/checks#check=TODO
 [pingdom-us]: https://my.pingdom.com/newchecks/checks#check=TODO
 [production-url]: https://origami-registry.ft.com/
+[repo-data]: https://origami-repo-data.ft.com/
 [runbook]: https://dewey.in.ft.com/view/system/origami-registry-ui
 [sentry-production]: https://sentry.io/nextftcom/TODO
 [sentry-qa]: https://sentry.io/nextftcom/TODO
