@@ -25,27 +25,22 @@
 			"category": "repo"
 		},
 		{
-			"url": "https://dashboard.heroku.com/apps/TODO",
+			"url": "https://dashboard.heroku.com/apps/origami-registry-ui-eu",
 			"category": "deployment",
 			"description": "Heroku dashboard (Production EU)"
 		},
 		{
-			"url": "https://dashboard.heroku.com/apps/TODO",
+			"url": "https://dashboard.heroku.com/apps/origami-registry-ui-us",
 			"category": "deployment",
 			"description": "Heroku dashboard (Production US)"
 		},
 		{
-			"url": "https://dashboard.heroku.com/apps/TODO",
-			"category": "deployment",
-			"description": "Heroku dashboard (Production US)"
-		},
-		{
-			"url": "https://dashboard.heroku.com/apps/TODO",
+			"url": "https://dashboard.heroku.com/apps/origami-registry-ui-qa",
 			"category": "deployment",
 			"description": "Heroku dashboard (QA)"
 		},
 		{
-			"url": "https://dashboard.heroku.com/pipelines/TODO",
+			"url": "https://dashboard.heroku.com/pipelines/c206786a-73a4-4cbc-90dc-58db19255704",
 			"category": "deployment",
 			"description": "Heroku dashboard (QA > Production pipeline)"
 		},
