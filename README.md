@@ -88,8 +88,6 @@ make cmdb-update
 
 ## Testing
 
-TODO everything in this section is a lie until we write the tests (very soon)
-
 The tests are split into unit tests and integration tests. To run tests on your machine you'll need to install [Node.js] and run `make install`. Then you can run the following commands:
 
 ```sh
@@ -114,8 +112,6 @@ We run the tests and linter on CI, you can view [results on CircleCI][ci]. `make
 
 
 ## Deployment
-
-TODO everything in this section is a lie until we create the Heroku apps
 
 The production ([EU][heroku-production-eu]/[US][heroku-production-us]) and [QA][heroku-qa] applications run on [Heroku]. We deploy continuously to QA via [CircleCI][ci], you should never need to deploy to QA manually. We use a [Heroku pipeline][heroku-pipeline] to promote QA deployments to production.
 
@@ -170,10 +166,10 @@ The Financial Times has published this software under the [MIT license][license]
 [grafana]: http://grafana.ft.com/dashboard/db/TODO
 [healthcheck-eu]: https://endpointmanager.in.ft.com/manage/TODO
 [healthcheck-us]: https://endpointmanager.in.ft.com/manage/TODO
-[heroku-pipeline]: https://dashboard.heroku.com/pipelines/TODO
-[heroku-production-eu]: https://dashboard.heroku.com/apps/TODO
-[heroku-production-us]: https://dashboard.heroku.com/apps/TODO
-[heroku-qa]: https://dashboard.heroku.com/apps/TODO
+[heroku-pipeline]: https://dashboard.heroku.com/pipelines/c206786a-73a4-4cbc-90dc-58db19255704
+[heroku-production-eu]: https://dashboard.heroku.com/apps/origami-registry-ui-eu
+[heroku-production-us]: https://dashboard.heroku.com/apps/origami-registry-ui-us
+[heroku-qa]: https://dashboard.heroku.com/apps/origami-registry-ui-qa
 [heroku]: https://heroku.com/
 [license]: http://opensource.org/licenses/MIT
 [node.js]: https://nodejs.org/
@@ -181,7 +177,7 @@ The Financial Times has published this software under the [MIT license][license]
 [pingdom-eu]: https://my.pingdom.com/newchecks/checks#check=TODO
 [pingdom-us]: https://my.pingdom.com/newchecks/checks#check=TODO
 [production-url]: https://origami-registry.ft.com/
-[runbook]: https://dewey.ft.com/TODO
+[runbook]: https://dewey.in.ft.com/view/system/origami-registry-ui
 [sentry-production]: https://sentry.io/nextftcom/TODO
 [sentry-qa]: https://sentry.io/nextftcom/TODO
 [service-options]: https://github.com/Financial-Times/origami-service#options
