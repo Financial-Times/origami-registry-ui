@@ -176,8 +176,8 @@ The Financial Times has published this software under the [MIT license][license]
 [license]: http://opensource.org/licenses/MIT
 [node.js]: https://nodejs.org/
 [npm]: https://www.npmjs.com/
-[pingdom-eu]: https://my.pingdom.com/newchecks/checks#check=TODO
-[pingdom-us]: https://my.pingdom.com/newchecks/checks#check=TODO
+[pingdom-eu]: https://my.pingdom.com/newchecks/checks#check=4254051
+[pingdom-us]: https://my.pingdom.com/newchecks/checks#check=4254126
 [production-url]: https://origami-registry.ft.com/
 [repo-data]: https://origami-repo-data.ft.com/
 [runbook]: https://dewey.in.ft.com/view/system/origami-registry-ui
