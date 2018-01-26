@@ -50,12 +50,12 @@
 			"description": "Grafana dashboard"
 		},
 		{
-			"url": "https://my.pingdom.com/newchecks/checks#check=TODO",
+			"url": "https://my.pingdom.com/newchecks/checks#check=4254051",
 			"category": "monitoring",
 			"description": "Pingdom check (Production EU)"
 		},
 		{
-			"url": "https://my.pingdom.com/newchecks/checks#check=TODO",
+			"url": "https://my.pingdom.com/newchecks/checks#check=4254126",
 			"category": "monitoring",
 			"description": "Pingdom check (Production US)"
 		},
