@@ -165,7 +165,7 @@ The Financial Times has published this software under the [MIT license][license]
 
 
 [ci]: https://circleci.com/gh/Financial-Times/origami-registry-ui
-[grafana]: http://grafana.ft.com/dashboard/db/TODO
+[grafana]: http://grafana.ft.com/dashboard/db/origami-registry-ui
 [healthcheck-eu]: https://endpointmanager.in.ft.com/manage/TODO
 [healthcheck-us]: https://endpointmanager.in.ft.com/manage/TODO
 [heroku-pipeline]: https://dashboard.heroku.com/pipelines/c206786a-73a4-4cbc-90dc-58db19255704

@@ -45,7 +45,7 @@
 			"description": "Heroku dashboard (QA > Production pipeline)"
 		},
 		{
-			"url": "http://grafana.ft.com/dashboard/db/TODO",
+			"url": "http://grafana.ft.com/dashboard/db/origami-registry-ui",
 			"category": "monitoring",
 			"description": "Grafana dashboard"
 		},
