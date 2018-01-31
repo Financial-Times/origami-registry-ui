@@ -38,6 +38,7 @@
   "devDependencies": {
     "@financial-times/grafana-tools": "^1.0.0",
     "eslint": "^4.9.0",
+    "jsdom": "^11.6.2",
     "mocha": "^4.0.1",
     "mockery": "^2.1.0",
     "nodemon": "^1.12.1",

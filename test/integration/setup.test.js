@@ -1,5 +1,6 @@
 'use strict';
 
+const mockRepoDataApi = require('./mock/repo-data-api/mock-service');
 const service = require('../..');
 const supertest = require('supertest');
 
@@ -11,6 +12,8 @@ const mockLog = {
 };
 
 before(async () => {
+	const repoDataApi = global.repoDataApi = await mockRepoDataApi();
+	process.env.REPO_DATA_API_URL = repoDataApi.address;
 	const app = global.app = service({
 		environment: 'test',
 		log: mockLog,
@@ -25,5 +28,8 @@ after(() => {
 	if (global.app) {
 		global.app.origami.server.close();
 		global.app.health.stop();
+	}
+	if (global.repoDataApi) {
+		global.repoDataApi.server.close();
 	}
 });
