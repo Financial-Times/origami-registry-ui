@@ -17,6 +17,15 @@
 	<dt>Status</dt>
 	<dd>{{component.support.status}}</dd>
 
+	<dt>Versions</dt>
+	<dd>
+		<ul>
+			{{#versions}}
+				<li><a href="/components/{{name}}@{{version}}">{{version}}</a></li>
+			{{/versions}}
+		</ul>
+	</dd>
+
 </dl>
 
 <h2>Support</h2>
