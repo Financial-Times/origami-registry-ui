@@ -12,7 +12,7 @@ describe('GET /', () => {
 		return request.expect(301);
 	});
 
-	it('responds with a Location header', () => {
+	it('responds with a Location header pointing to the components page', () => {
 		return request.expect('Location', '/components');
 	});
 

@@ -19,14 +19,14 @@ describe('GET /404', () => {
 	});
 
 	describe('HTML response', () => {
-		let response;
+		let html;
 
 		beforeEach(async () => {
-			response = (await request.then()).text;
+			html = (await request.then()).text;
 		});
 
 		it('contains the error details', () => {
-			assert.match(response, /Not Found/);
+			assert.match(html, /not found/i);
 		});
 
 	});

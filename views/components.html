@@ -5,7 +5,7 @@
 
 <p><strong>⚠️ This is a work in progress ⚠️</strong></p>
 
-<table class="o-table o-table--row-stripes">
+<table class="o-table o-table--row-stripes" data-test="component-table">
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -17,7 +17,7 @@
 		{{#each components}}
 			<tr>
 				<td>
-					<a href="/components/{{name}}"><strong>{{name}}</strong></a><br/>
+					<a href="/components/{{name}}@{{version}}" data-test="component-link"><strong>{{name}}</strong></a><br/>
 					{{description}}
 				</td>
 				<td>{{version}}</td>
