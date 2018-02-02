@@ -1,0 +1,13 @@
+{
+  "name": "origami-registry-ui",
+  "description": "Get information about Origami components, services, and repositories",
+  "main": "./src/main.js",
+  "license": "MIT",
+  "keywords": [
+    "origami"
+  ],
+  "homepage": "https://github.com/Financial-Times/origami-registry-ui",
+  "dependencies": {
+    "o-colors": "^4.1.5"
+  }
+}
