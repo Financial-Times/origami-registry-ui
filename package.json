@@ -43,6 +43,7 @@
     "mockery": "^2.1.0",
     "nodemon": "^1.12.1",
     "nyc": "^11.2.1",
+    "origami-build-tools": "^7.3.0",
     "proclaim": "^3.5.0",
     "sinon": "^4.0.1",
     "supertest": "^3.0.0"
