@@ -8,6 +8,8 @@
   ],
   "homepage": "https://github.com/Financial-Times/origami-registry-ui",
   "dependencies": {
-    "o-colors": "^4.1.5"
+    "o-header-services": "^2.0.5",
+    "o-table": "^6.3.3",
+    "o-grid": "^4.3.7"
   }
 }

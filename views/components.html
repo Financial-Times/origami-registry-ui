@@ -9,7 +9,7 @@
 	<thead>
 		<tr>
 			<th>Name</th>
-			<th>Version</th>
+			<th data-o-table-data-type="numeric" class='.o-table__cell--numeric'>Version</th>
 			<th>Status</th>
 		</tr>
 	</thead>
@@ -20,7 +20,7 @@
 					<a href="/components/{{name}}@{{version}}" data-test="component-link"><strong>{{name}}</strong></a><br/>
 					{{description}}
 				</td>
-				<td>{{version}}</td>
+				<td data-o-table-data-type="numeric" class='.o-table__cell--numeric'>{{version}}</td>
 				<td>{{support.status}}</td>
 			</tr>
 		{{/each}}
