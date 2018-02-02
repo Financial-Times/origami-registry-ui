@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = () => console.log('lol');
+module.exports = () => console.log('Test JS');
