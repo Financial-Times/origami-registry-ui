@@ -26,7 +26,7 @@ GRAFANA_DASHBOARD = $(SERVICE_SYSTEM_CODE)
 export GITHUB_RELEASE_REPO := Financial-Times/$(SERVICE_SYSTEM_CODE)
 
 local-build:
-	obt build --build-folder-'public/' --sass='src/main.scss' --js='./src/main.js'
+	obt build --build-folder-'public/' --sass='src/main.scss' --js='./src/main.js' --watch
 
 production-build:
 	bower install
