@@ -22,8 +22,8 @@
   "main": "./lib/service.js",
   "scripts": {
     "start": "heroku-node-settings index.js",
-		"bower": "bower",
-		"obt": "obt",
+    "bower": "bower",
+    "obt": "obt",
     "heroku-postbuild": "make auto-version production-build"
   },
   "dependencies": {
