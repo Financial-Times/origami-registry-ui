@@ -7,7 +7,6 @@ include node_modules/@financial-times/origami-service-makefile/index.mk
 # [edit below this line]
 # ------------------------
 
-
 # Configuration
 # -------------
 
@@ -25,9 +24,9 @@ GRAFANA_DASHBOARD = $(SERVICE_SYSTEM_CODE)
 
 export GITHUB_RELEASE_REPO := Financial-Times/$(SERVICE_SYSTEM_CODE)
 
-local-build:
-	obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js"
-
-production-build:
-	bower install
-	obt build --build-folder='./public/' --sass='./src/main.scss' --js='./src/main.js' --production
+build:
+ifeq ($(NODE_ENV), production)
+	@obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js" --production
+else
+	@obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js"
+endif
