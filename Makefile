@@ -33,5 +33,5 @@ endif
 
 check-for-bower-components:
 ifeq (,$(wildcard ./bower_components))
-	@npx bower install
+	@npx obt install
 endif
