@@ -1,0 +1,17 @@
+<script>
+	window.cutsTheMustard = (
+		'querySelector' in document &&
+		'localStorage' in window &&
+		'addEventListener' in window
+	);
+
+	if (window.cutsTheMustard) {
+		document.documentElement.className = document.documentElement.className.replace(/\bcore\b/g, 'enhanced');
+
+		var o = document.createElement('script');
+		o.async = o.defer = true;
+		o.src = '/main.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(o, s);
+	};
+</script>

@@ -35,6 +35,12 @@ Before we can run the application, we'll need to install dependencies:
 npm install
 ```
 
+In order to bundle the JS and CSS that the application will be using locally, we will then need to run:
+
+```sh
+make build
+```
+
 Run the application in development mode with:
 
 ```sh

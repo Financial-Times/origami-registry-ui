@@ -3,10 +3,9 @@
 # This section of the Makefile should not be modified, it includes
 # commands from the Origami service Makefile.
 # https://github.com/Financial-Times/origami-service-makefile
-include node_modules/@financial-times/origami-service-makefile/index.mk
+-include node_modules/@financial-times/origami-service-makefile/index.mk
 # [edit below this line]
 # ------------------------
-
 
 # Configuration
 # -------------
@@ -24,3 +23,15 @@ HEROKU_APP_US = $(SERVICE_SYSTEM_CODE)-us
 GRAFANA_DASHBOARD = $(SERVICE_SYSTEM_CODE)
 
 export GITHUB_RELEASE_REPO := Financial-Times/$(SERVICE_SYSTEM_CODE)
+
+build: check-for-bower-components
+ifeq ($(NODE_ENV), production)
+	@npx obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js" --production
+else
+	@npx obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js"
+endif
+
+check-for-bower-components:
+ifeq (,$(wildcard ./bower_components))
+	@npx bower install
+endif
