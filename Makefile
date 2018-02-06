@@ -26,7 +26,7 @@ export GITHUB_RELEASE_REPO := Financial-Times/$(SERVICE_SYSTEM_CODE)
 
 build:
 ifeq ($(NODE_ENV), production)
-	@obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js" --production
+	@npx obt@^7 --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js" --production
 else
-	@obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js"
+	@npx obt@^7 build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js"
 endif
