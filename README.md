@@ -32,7 +32,7 @@ Running Origami Registry UI requires [Node.js] 8.x and [npm].
 Before we can run the application, we'll need to install dependencies:
 
 ```sh
-obt install
+npm install
 ```
 
 In order to bundle the JS and CSS that the application will be using locally, we will then need to run:

@@ -24,9 +24,14 @@ GRAFANA_DASHBOARD = $(SERVICE_SYSTEM_CODE)
 
 export GITHUB_RELEASE_REPO := Financial-Times/$(SERVICE_SYSTEM_CODE)
 
-build:
+build: check-for-bower-components
 ifeq ($(NODE_ENV), production)
 	@npx obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js" --production
 else
 	@npx obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js"
+endif
+
+check-for-bower-components:
+ifeq (,$(wildcard ./bower_components))
+	@npx bower install
 endif
