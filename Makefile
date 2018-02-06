@@ -3,7 +3,7 @@
 # This section of the Makefile should not be modified, it includes
 # commands from the Origami service Makefile.
 # https://github.com/Financial-Times/origami-service-makefile
-include node_modules/@financial-times/origami-service-makefile/index.mk
+-include node_modules/@financial-times/origami-service-makefile/index.mk
 # [edit below this line]
 # ------------------------
 
@@ -26,7 +26,7 @@ export GITHUB_RELEASE_REPO := Financial-Times/$(SERVICE_SYSTEM_CODE)
 
 build:
 ifeq ($(NODE_ENV), production)
-	@npx obt@^7 --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js" --production
+	@npx obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js" --production
 else
-	@npx obt@^7 build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js"
+	@npx obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js"
 endif
