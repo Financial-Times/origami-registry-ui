@@ -26,12 +26,12 @@ export GITHUB_RELEASE_REPO := Financial-Times/$(SERVICE_SYSTEM_CODE)
 
 build: check-for-bower-components
 ifeq ($(NODE_ENV), production)
-	@npx obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js" --production
+	@npx origami-build-tools build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js" --production
 else
-	@npx obt build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js"
+	@npx origami-build-tools build --build-folder="./public/" --sass="./src/main.scss" --js="./src/main.js"
 endif
 
 check-for-bower-components:
 ifeq (,$(wildcard ./bower_components))
-	@npx obt install
+	@npx origami-build-tools install
 endif
