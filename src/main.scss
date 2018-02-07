@@ -8,4 +8,14 @@ $o-header-services-is-silent: false;
 $o-table-is-silent: false;
 @import 'o-table/main';
 
+@import 'src/scss/variables';
 @import 'src/scss/header';
+
+a {
+	text-decoration: none;
+	color: $_o-registry-ui-text;
+
+	&:hover {
+		color: $_o-registry-ui-hover;
+	}
+}

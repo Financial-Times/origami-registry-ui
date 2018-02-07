@@ -1,12 +1,12 @@
 .o-header-services__primary-nav {
-	background: oColorsMix(black, white, 10);
-	border-bottom-color: oColorsMix(black, white, 30);
+	background: $_o-registry-ui-base;
+	border-bottom-color: $_o-registry-ui-highlight;
 }
 
 .o-header-services__nav-link:hover,
 .o-header-services__nav-link--selected,
 .o-header-services__nav-link[aria-selected=true] {
-	background-color: oColorsMix(black, white, 30);
+	background-color: $_o-registry-ui-highlight;
 }
 
 .o-registry-ui__heading--level-7 {
