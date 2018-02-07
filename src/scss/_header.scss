@@ -8,3 +8,9 @@
 .o-header-services__nav-link[aria-selected=true] {
 	background-color: oColorsMix(black, white, 30);
 }
+
+.o-registry-ui__heading--level-7 {
+	@include oTypographyProductHeadingLevel7;
+	@include oTypographyMargin($top: 5);
+	text-align: center;
+}
