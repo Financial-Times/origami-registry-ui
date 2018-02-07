@@ -10,12 +10,4 @@ $o-table-is-silent: false;
 
 @import 'src/scss/variables';
 @import 'src/scss/header';
-
-a {
-	text-decoration: none;
-	color: $_o-registry-ui-text;
-
-	&:hover {
-		color: $_o-registry-ui-hover;
-	}
-}
+@import 'src/scss/table';

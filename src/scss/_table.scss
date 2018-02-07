@@ -1,0 +1,14 @@
+tr:hover {
+	background: $_o-registry-ui-hover;
+}
+
+.o-registry-ui__cell--link {
+	text-decoration: none;
+	color: $_o-registry-ui-text;
+}
+
+.o-registry-ui__cell--description {
+	@include oTypographySans($scale: 0);
+	@include oTypographyMargin($top: 2);
+	font-weight: 400;
+}

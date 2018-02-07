@@ -15,8 +15,8 @@
 		{{#each components}}
 			<tr>
 				<td>
-					<a href="/components/{{name}}@{{version}}" data-test="component-link"><strong>{{name}}</strong></a><br/>
-					{{description}}
+					<a class='o-registry-ui__cell--link' href="/components/{{name}}@{{version}}" data-test="component-link"><strong>{{name}}</strong></a>
+					<p class='o-registry-ui__cell--description'>{{description}}</p>
 				</td>
 				<td data-o-table-data-type="numeric" class='.o-table__cell--numeric'>{{version}}</td>
 				<td>{{support.status}}</td>
