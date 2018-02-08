@@ -1,14 +1,22 @@
-tr:hover {
-	background: $_o-registry-ui-hover;
+.o-registry-ui__table-head {
+	background: $_o-registry-ui-base;
 }
 
-.o-registry-ui__cell--link {
+.o-registry-ui__table-body {
+	tr:hover {
+		background: $_o-registry-ui-hover;
+	}
+}
+
+.o-registry-ui__table-cell--link {
+	@include oTypographySans($scale: 1);
 	text-decoration: none;
 	color: $_o-registry-ui-text;
 }
 
-.o-registry-ui__cell--description {
+.o-registry-ui__table-cell--description {
 	@include oTypographySans($scale: 0);
 	@include oTypographyMargin($top: 2);
+	color: $_o-registry-ui-sub-text;
 	font-weight: 400;
 }

@@ -1,4 +1,6 @@
+//TODO: add new colors to palette so we can set usecases (oColorsSetUseCase only accepts o-colors palette colors), pending design input
 $_o-registry-ui-base: oColorsMix(black, white, 10);
 $_o-registry-ui-highlight: oColorsMix(black, white, 30);
 $_o-registry-ui-hover: oColorsMix(black, white, 20);
 $_o-registry-ui-text: oColorsMix(black, white, 80);
+$_o-registry-ui-sub-text: oColorsMix(black, white, 60);
