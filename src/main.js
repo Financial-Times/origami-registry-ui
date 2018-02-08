@@ -2,5 +2,6 @@
 
 require('o-header-services');
 require('o-table');
-
 require('o-autoinit');
+
+require('./js/demo');

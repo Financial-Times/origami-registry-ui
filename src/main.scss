@@ -1,19 +1,38 @@
+$o-header-services-is-silent: false;
+$o-table-is-silent: false;
+$o-normalise-is-silent: false;
+
+// Dependancies.
+@import 'o-normalise/main';
 @import 'o-colors/main';
 @import 'o-grid/main';
-
 @import 'o-fonts/main';
+@import 'o-typography/main';
+@import 'o-header-services/main';
+@import 'o-table/main';
+
+// Includes.
+@import 'src/scss/variables';
+@import 'src/scss/header';
+@import 'src/scss/table';
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
 
-@import 'o-typography/main';
+.typography-wrapper {
+    @include oTypographyWrapper($style: product);
+}
 
-$o-header-services-is-silent: false;
-@import 'o-header-services/main';
+.container {
+    @include oGridContainer($grid-mode: "fluid", $bleed: true);
+}
 
-$o-table-is-silent: false;
-@import 'o-table/main';
+.demo {
+    @include oTypographyMargin($top: 8);
+}
 
-@import 'src/scss/variables';
-@import 'src/scss/header';
-@import 'src/scss/table';
+.demo__live {
+    width: 100%;
+    border: 0;
+    appearance: none;
+}

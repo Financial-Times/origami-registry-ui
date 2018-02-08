@@ -1,6 +1,7 @@
 .o-header-services__primary-nav {
 	background: $_o-registry-ui-base;
 	border-bottom-color: $_o-registry-ui-highlight;
+	@include oTypographyMargin($bottom: 5);
 }
 
 .o-header-services__nav-link:hover,
@@ -9,7 +10,7 @@
 	background-color: $_o-registry-ui-highlight;
 }
 
-.o-registry-ui__heading--level-7 {
+.wip-notice {
 	@include oTypographyProductHeadingLevel7;
 	@include oTypographyMargin($top: 5);
 	text-align: center;

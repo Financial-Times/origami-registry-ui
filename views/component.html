@@ -1,51 +1,53 @@
+<div class="container">
+	<h1>{{component.name}}</h1>
 
-<!-- Beautiful temporary example markup -->
+	<p>{{component.description}}</p>
 
-<h1>{{component.name}}</h1>
+	<p><a href="{{component.url}}">Repository on GitHub</a></p>
 
-<p>{{component.description}}</p>
+	{{#demos}}
+		<div class="demo">
+			<h2>{{title}}</h2>
+			<p>{{description}}</p>
+			<p>
+				<a href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a>
+			</p>
+			<iframe scrolling="no" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live"></iframe>
+		</div>
+	{{/demos}}
 
-<p><a href="{{component.url}}">Repository on GitHub</a></p>
+	<h2>Component information</h2>
 
-{{#demos}}
-	<h2>{{title}}</h2>
-	<p>{{description}}</p>
-	<p><a href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a></p>
-	<iframe src="{{supportingUrls.live}}"></iframe>
-{{/demos}}
+	<dl>
 
+		<dt>Version</dt>
+		<dd data-test="current-version">{{component.version}}</dd>
 
-<h2>Component information</h2>
+		<dt>Status</dt>
+		<dd data-test="support-status">{{component.support.status}}</dd>
 
-<dl>
+		<dt>Versions</dt>
+		<dd>
+			<ul>
+				{{#versions}}
+					<li><a href="/components/{{name}}@{{version}}">{{version}}</a></li>
+				{{/versions}}
+			</ul>
+		</dd>
 
-	<dt>Version</dt>
-	<dd data-test="current-version">{{component.version}}</dd>
+	</dl>
 
-	<dt>Status</dt>
-	<dd data-test="support-status">{{component.support.status}}</dd>
+	<h2>Support</h2>
 
-	<dt>Versions</dt>
-	<dd>
-		<ul>
-			{{#versions}}
-				<li><a href="/components/{{name}}@{{version}}">{{version}}</a></li>
-			{{/versions}}
-		</ul>
-	</dd>
+	<dl>
 
-</dl>
+		<dt>Email</dt>
+		<dd><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></dd>
 
-<h2>Support</h2>
+		{{#if component.support.channel}}
+			<dt>Slack</dt>
+			<dd><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></dd>
+		{{/if}}
 
-<dl>
-
-	<dt>Email</dt>
-	<dd><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></dd>
-
-	{{#if component.support.channel}}
-		<dt>Slack</dt>
-		<dd><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></dd>
-	{{/if}}
-
-</dl>
+	</dl>
+</div>
