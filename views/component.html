@@ -7,6 +7,14 @@
 
 <p><a href="{{component.url}}">Repository on GitHub</a></p>
 
+{{#demos}}
+	<h2>{{title}}</h2>
+	<p>{{description}}</p>
+	<p><a href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a></p>
+	<iframe src="{{supportingUrls.live}}"></iframe>
+{{/demos}}
+
+
 <h2>Component information</h2>
 
 <dl>

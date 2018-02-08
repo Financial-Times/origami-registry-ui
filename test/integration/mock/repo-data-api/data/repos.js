@@ -16,6 +16,9 @@ module.exports = [
 			},
 			isOrigami: true
 		},
+		resources: {
+			demos: null
+		},
 
 		// mock use only
 		_versions: ['2.0.0', '1.1.1', '1.1.0', '1.0.1', '1.0.0']
@@ -33,6 +36,9 @@ module.exports = [
 				url: 'mock-channel-url'
 			},
 			isOrigami: true
+		},
+		resources: {
+			demos: null
 		},
 
 		// mock use only
@@ -52,6 +58,9 @@ module.exports = [
 			},
 			isOrigami: true
 		},
+		resources: {
+			demos: null
+		},
 
 		// mock use only
 		_versions: ['1.0.0']
@@ -69,6 +78,9 @@ module.exports = [
 				url: 'mock-channel-url'
 			},
 			isOrigami: false
+		},
+		resources: {
+			demos: null
 		},
 
 		// mock use only
