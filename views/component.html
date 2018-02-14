@@ -9,9 +9,16 @@
 
 {{#demos}}
 	<h2>{{title}}</h2>
-	<p>{{description}}</p>
-	<p><a href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a></p>
-	<iframe src="{{supportingUrls.live}}"></iframe>
+	{{#if description}}
+		<p>{{description}}</p>
+	{{/if}}
+	{{#if display.live}}
+		<p><a href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a></p>
+		<iframe src="{{supportingUrls.live}}"></iframe>
+	{{/if}}
+	{{#if display.html}}
+		<iframe src="{{supportingUrls.html}}"></iframe>
+	{{/if}}
 {{/demos}}
 
 
