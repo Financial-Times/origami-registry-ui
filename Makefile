@@ -32,12 +32,12 @@ else
 endif
 
 check-for-bower-components:
-ifeq (,$(wildcard ./bower_components))
-	@echo "now bower_components found, installing..."
-	@npx origami-build-tools install
-else
-	@echo "bower_components found, no need to install"
-endif
+	@if [ -d bower_components ]; then \
+		echo "bower_components found, no need to install"; \
+	else \
+		echo "no bower_components found, installing..."; \
+		npx origami-build-tools install; \
+	fi
 
 clean-bower-components:
 	@rm -rf bower_components/
