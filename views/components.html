@@ -7,15 +7,15 @@
 
 	<table class="o-table o-registry-ui__table" data-o-component='o-table' data-test="component-table">
 		<thead class="o-registry-ui__table-head">
-			<tr>
+			<tr class="o-registry-ui__table-cell--show">
 				<th>Component</th>
-				<th data-o-table-data-type="numeric" class='o-table__cell--numeric o-registry-ui__table-cell--show'>Version</th>
-				<th class="o-registry-ui__table-cell--show">Status</th>
+				<th data-o-table-data-type="numeric" class='o-table__cell--numeric'>Version</th>
+				<th>Status</th>
 			</tr>
 		</thead>
 		<tbody class="o-registry-ui__table-body">
 			{{#each components}}
-				<tr>
+				<tr style="cursor:pointer;">
 					<td>
 						<a class='o-registry-ui__table-cell--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
 						<p class='o-registry-ui__table-cell--description'>{{description}}
