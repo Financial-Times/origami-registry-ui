@@ -35,3 +35,6 @@ check-for-bower-components:
 ifeq (,$(wildcard ./bower_components))
 	@npx origami-build-tools install
 endif
+
+clean-bower-components:
+	@rm -rf bower_components/
