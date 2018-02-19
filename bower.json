@@ -11,6 +11,10 @@
     "o-header-services": "^2.0.5",
     "o-table": "^6.3.3",
     "o-grid": "^4.3.7",
-    "o-autoinit": "^1.3.3"
+    "o-autoinit": "^1.3.3",
+    "o-colors": "^4.1.5",
+    "o-typography": "^5.5.0",
+    "o-fonts": "^3.0.4",
+    "o-normalise": "^1.5.3"
   }
 }

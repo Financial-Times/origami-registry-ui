@@ -1,48 +1,45 @@
+<div class="container">
+	<h1>{{component.name}}</h1>
 
-<!-- Beautiful temporary example markup -->
+	<p>{{component.description}}</p>
 
-<h1>{{component.name}}</h1>
+	<p><a href="{{component.url}}">Repository on GitHub</a></p>
 
-<p>{{component.description}}</p>
+	{{>component-demos}}
+	{{>component-images}}
+	{{>component-service-details}}
 
-<p><a href="{{component.url}}">Repository on GitHub</a></p>
+	<h2>Component information</h2>
 
-{{>component-demos}}
-{{>component-images}}
-{{>component-service-details}}
+	<dl>
+		<dt>Version</dt>
+		<dd data-test="current-version">{{component.version}}</dd>
 
+		<dt>Status</dt>
+		<dd data-test="support-status">{{component.support.status}}</dd>
 
-<h2>Component information</h2>
+		<dt>Versions</dt>
+		<dd>
+			<ul>
+				{{#versions}}
+					<li><a href="/components/{{name}}@{{version}}">{{version}}</a></li>
+				{{/versions}}
+			</ul>
+		</dd>
 
-<dl>
+	</dl>
 
-	<dt>Version</dt>
-	<dd data-test="current-version">{{component.version}}</dd>
+	<h2>Support</h2>
 
-	<dt>Status</dt>
-	<dd data-test="support-status">{{component.support.status}}</dd>
+	<dl>
 
-	<dt>Versions</dt>
-	<dd>
-		<ul>
-			{{#versions}}
-				<li><a href="/components/{{name}}@{{version}}">{{version}}</a></li>
-			{{/versions}}
-		</ul>
-	</dd>
+		<dt>Email</dt>
+		<dd><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></dd>
 
-</dl>
+		{{#if component.support.channel}}
+			<dt>Slack</dt>
+			<dd><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></dd>
+		{{/if}}
 
-<h2>Support</h2>
-
-<dl>
-
-	<dt>Email</dt>
-	<dd><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></dd>
-
-	{{#if component.support.channel}}
-		<dt>Slack</dt>
-		<dd><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></dd>
-	{{/if}}
-
-</dl>
+	</dl>
+</div>

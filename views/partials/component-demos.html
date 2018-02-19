@@ -7,10 +7,10 @@
 		{{/if}}
 		{{#if display.live}}
 			<p><a href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a></p>
-			<iframe src="{{supportingUrls.live}}"></iframe>
+			<iframe scrolling="no" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live"></iframe>
 		{{/if}}
 		{{#if display.html}}
-			<iframe src="{{supportingUrls.html}}"></iframe>
+			<iframe scrolling="no" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>
 		{{/if}}
 	{{/demos}}
 {{/if}}

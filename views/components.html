@@ -1,26 +1,24 @@
 
 <!-- Beautiful temporary example markup -->
 
-<h1>Origami Registry UI</h1>
+<p class="wip-notice">⚠️ This is a work in progress ⚠️</p>
 
-<p><strong>⚠️ This is a work in progress ⚠️</strong></p>
-
-<table class="o-table o-table--row-stripes" data-o-component='o-table' data-test="component-table">
-	<thead>
+<table class="o-table o-registry-ui__table" data-o-component='o-table' data-test="component-table">
+	<thead class="o-registry-ui__table-head">
 		<tr>
 			<th>Name</th>
-			<th data-o-table-data-type="numeric" class='.o-table__cell--numeric'>Version</th>
+			<th data-o-table-data-type="numeric" class='o-table__cell--numeric'>Version</th>
 			<th>Status</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody class="o-registry-ui__table-body">
 		{{#each components}}
 			<tr>
 				<td>
-					<a href="/components/{{name}}@{{version}}" data-test="component-link"><strong>{{name}}</strong></a><br/>
-					{{description}}
+					<a class='o-registry-ui__table-cell--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
+					<p class='o-registry-ui__table-cell--description'>{{description}}</p>
 				</td>
-				<td data-o-table-data-type="numeric" class='.o-table__cell--numeric'>{{version}}</td>
+				<td data-o-table-data-type="numeric" class='o-table__cell--numeric'>{{version}}</td>
 				<td>{{support.status}}</td>
 			</tr>
 		{{/each}}
