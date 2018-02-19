@@ -6,6 +6,10 @@
 	tr:hover {
 		background: $_o-registry-ui-hover;
 	}
+
+	td {
+		vertical-align: middle;
+	}
 }
 
 .o-registry-ui__table-cell--link {
@@ -16,7 +20,7 @@
 
 .o-registry-ui__table-cell--description {
 	@include oTypographySans($scale: 0);
-	@include oTypographyMargin($top: 2);
+	@include oTypographyMargin($top: 2, $bottom: 1);
 	color: $_o-registry-ui-sub-text;
 	font-weight: 400;
 }
@@ -30,9 +34,32 @@
 }
 
 .o-registry-ui__table-cell--info {
+	@include oTypographyPadding($top: 2);
 	display: table-cell;
 	color: $_o-registry-ui-text;
 	@include oGridRespondTo(M) {
 		display: none;
 	};
+}
+
+.o-registry-ui__table-cell-label {
+	@include oTypographySansBold(-1);
+	padding: 2px 6px 4px 6px;
+	text-align: center;
+	border-radius: 5px;
+
+ 	&--active {
+		background-color: oColorsMix('jade', 'black', 80);
+		color: oColorsGetTextColor(oColorsMix('jade', 'black', 80), 100);
+	}
+
+ 	&--experimental {
+		background-color: oColorsGetPaletteColor('lemon');
+		color: oColorsGetTextColor(oColorsGetPaletteColor('lemon'), 100);
+	}
+
+ 	&--deprecated {
+		background-color: oColorsGetPaletteColor('crimson');
+		color: oColorsGetTextColor(oColorsGetPaletteColor('crimson'), 100);
+	}
 }
