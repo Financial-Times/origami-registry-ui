@@ -31,7 +31,8 @@ $o-normalise-is-silent: false;
     @include oTypographyMargin($top: 8);
 }
 
-.demo__live {
+.demo__live,
+.demo__code {
     width: 100%;
     border: 0;
     appearance: none;

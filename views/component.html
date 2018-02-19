@@ -5,21 +5,13 @@
 
 	<p><a href="{{component.url}}">Repository on GitHub</a></p>
 
-	{{#demos}}
-		<div class="demo">
-			<h2>{{title}}</h2>
-			<p>{{description}}</p>
-			<p>
-				<a href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a>
-			</p>
-			<iframe scrolling="no" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live"></iframe>
-		</div>
-	{{/demos}}
+	{{>component-demos}}
+	{{>component-images}}
+	{{>component-service-details}}
 
 	<h2>Component information</h2>
 
 	<dl>
-
 		<dt>Version</dt>
 		<dd data-test="current-version">{{component.version}}</dd>
 

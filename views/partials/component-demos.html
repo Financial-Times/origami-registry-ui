@@ -1,0 +1,16 @@
+
+{{#if demos}}
+	{{#demos}}
+		<h2>{{title}}</h2>
+		{{#if description}}
+			<p>{{description}}</p>
+		{{/if}}
+		{{#if display.live}}
+			<p><a href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a></p>
+			<iframe scrolling="no" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live"></iframe>
+		{{/if}}
+		{{#if display.html}}
+			<iframe scrolling="no" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>
+		{{/if}}
+	{{/demos}}
+{{/if}}
