@@ -33,7 +33,10 @@ endif
 
 check-for-bower-components:
 ifeq (,$(wildcard ./bower_components))
+	@echo "now bower_components found, installing..."
 	@npx origami-build-tools install
+else
+	@echo "bower_components found, no need to install"
 endif
 
 clean-bower-components:
