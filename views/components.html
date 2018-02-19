@@ -3,24 +3,30 @@
 
 <p class="wip-notice">⚠️ This is a work in progress ⚠️</p>
 
-<table class="o-table o-registry-ui__table" data-o-component='o-table' data-test="component-table">
-	<thead class="o-registry-ui__table-head">
-		<tr>
-			<th>Name</th>
-			<th data-o-table-data-type="numeric" class='o-table__cell--numeric'>Version</th>
-			<th>Status</th>
-		</tr>
-	</thead>
-	<tbody class="o-registry-ui__table-body">
-		{{#each components}}
+<div class="o-registry-ui__overview">
+
+	<table class="o-table o-registry-ui__table" data-o-component='o-table' data-test="component-table">
+		<thead class="o-registry-ui__table-head">
 			<tr>
-				<td>
-					<a class='o-registry-ui__table-cell--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
-					<p class='o-registry-ui__table-cell--description'>{{description}}</p>
-				</td>
-				<td data-o-table-data-type="numeric" class='o-table__cell--numeric'>{{version}}</td>
-				<td>{{support.status}}</td>
+				<th>Component</th>
+				<th data-o-table-data-type="numeric" class='o-table__cell--numeric o-registry-ui__table-cell--show'>Version</th>
+				<th class="o-registry-ui__table-cell--show">Status</th>
 			</tr>
-		{{/each}}
-	</tbody>
-</table>
+		</thead>
+		<tbody class="o-registry-ui__table-body">
+			{{#each components}}
+				<tr>
+					<td>
+						<a class='o-registry-ui__table-cell--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
+						<p class='o-registry-ui__table-cell--description'>{{description}}
+							<span class='o-registry-ui__table-cell--info' aria-hidden='true'>v{{version}} — {{support.status}}</span>
+						</p>
+					</td>
+					<td data-o-table-data-type="numeric" class='o-table__cell--numeric o-registry-ui__table-cell--show'>{{version}}</td>
+					<td class='o-registry-ui__table-cell--show'>{{support.status}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
+</div>

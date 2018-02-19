@@ -14,14 +14,10 @@ $o-normalise-is-silent: false;
 // Includes.
 @import 'src/scss/variables';
 @import 'src/scss/header';
-@import 'src/scss/table';
+@import 'src/scss/overview';
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
-
-.typography-wrapper {
-    @include oTypographyWrapper($style: product);
-}
 
 .container {
     @include oGridContainer($grid-mode: "fluid", $bleed: true);

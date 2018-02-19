@@ -9,7 +9,7 @@
 }
 
 .o-registry-ui__table-cell--link {
-	@include oTypographySans($scale: 1);
+	@include oTypographySansBold($scale: 1);
 	text-decoration: none;
 	color: $_o-registry-ui-text;
 }
@@ -19,4 +19,20 @@
 	@include oTypographyMargin($top: 2);
 	color: $_o-registry-ui-sub-text;
 	font-weight: 400;
+}
+
+.o-registry-ui__table-cell--show {
+	display: none;
+
+	@include oGridRespondTo(M) {
+		display: table-cell;
+	};
+}
+
+.o-registry-ui__table-cell--info {
+	display: table-cell;
+	color: $_o-registry-ui-text;
+	@include oGridRespondTo(M) {
+		display: none;
+	};
 }
