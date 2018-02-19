@@ -38,4 +38,3 @@ endif
 
 clean-bower-components:
 	@rm -rf bower_components/
-	@npx origami-build-tools install
