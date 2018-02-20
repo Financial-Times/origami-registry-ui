@@ -68,7 +68,8 @@
 		margin: 0;
 	};
 
- 	&--active {
+ 	&--active,
+	&--maintained {
 		background-color: oColorsMix('jade', 'black', 80);
 		color: oColorsGetTextColor(oColorsMix('jade', 'black', 80), 100);
 	}
