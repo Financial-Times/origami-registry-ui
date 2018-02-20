@@ -8,7 +8,7 @@
 }
 
 .o-registry-ui__table-body {
-	tr:hover {
+	tr:not(.o-registry-ui__group-title):hover {
 		background-color: oColorsGetPaletteColor('grey-20');;
 	}
 
@@ -22,10 +22,6 @@
 		td {
 			@include oTypographySansBold(0);
 			@include oTypographyPadding($top: 4, $bottom: 4);
-		}
-
-		&:hover {
-			background-color: none;
 		}
 	}
 }
