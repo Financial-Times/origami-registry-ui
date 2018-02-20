@@ -4,16 +4,20 @@
 }
 
 .o-registry-ui__table-head {
-	background: $_o-registry-ui-base;
+	background-color: oColorsGetPaletteColor('grey-10');
 }
 
 .o-registry-ui__table-body {
 	tr:hover {
-		background: $_o-registry-ui-hover;
+		background-color: oColorsGetPaletteColor('grey-20');;
+	}
+
+	td {
+		vertical-align: middle;
 	}
 
 	.o-registry-ui__group-title {
-		border-bottom: 1px solid $_o-registry-ui-hover;
+		border-bottom: 1px solid oColorsGetPaletteColor('grey-20');;
 
 		td {
 			@include oTypographySansBold(0);
@@ -21,42 +25,39 @@
 		}
 
 		&:hover {
-			background: none;
+			background-color: none;
+		}
+	}
+}
+
+.o-registry-ui__table-cell {
+	&--link {
+		@include oTypographySansBold($scale: 1);
+		text-decoration: none;
+		color: oColorsGetPaletteColor('grey-80');;
+	}
+
+	&--description {
+		@include oTypographySans($scale: 0);
+		@include oTypographyMargin($top: 2, $bottom: 1);
+		color: oColorsGetPaletteColor('grey-60');;
+		font-weight: 400;
+	}
+
+	&--show {
+		display: none;
+		@include oGridRespondTo(M) {
+			display: table-cell;
 		}
 	}
 
-	td {
-		vertical-align: middle;
-	}
-}
-
-.o-registry-ui__table-cell--link {
-	@include oTypographySansBold($scale: 1);
-	text-decoration: none;
-	color: $_o-registry-ui-text;
-}
-
-.o-registry-ui__table-cell--description {
-	@include oTypographySans($scale: 0);
-	@include oTypographyMargin($top: 2, $bottom: 1);
-	color: $_o-registry-ui-sub-text;
-	font-weight: 400;
-}
-
-.o-registry-ui__table-cell--show {
-	display: none;
-
-	@include oGridRespondTo(M) {
+	&--info {
+		@include oTypographyPadding($top: 2);
 		display: table-cell;
-	};
-}
-
-.o-registry-ui__table-cell--info {
-	@include oTypographyPadding($top: 2);
-	display: table-cell;
-	color: $_o-registry-ui-text;
-	@include oGridRespondTo(M) {
-		display: none;
+		color: oColorsGetPaletteColor('grey-80');;
+		@include oGridRespondTo(M) {
+			display: none;
+		}
 	};
 }
 

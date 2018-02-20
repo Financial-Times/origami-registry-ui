@@ -1,23 +1,30 @@
 .o-registry-ui__sidebar {
 	@include oTypographySans(0);
 	flex-shrink: 2;
-	border-left: 1px solid $_o-registry-ui-base;
+	border-left: 1px solid oColorsGetPaletteColor('grey-10');
 	max-width: 35%;
 
 	@include oGridRespondTo($until: M) {
 		display: none;
 	};
-}
 
-.o-registry-ui__sidebar--content {
-	position: sticky;
-	top: 0;
-	align-self: flex-start;
-	background-color: $_o-registry-ui-base;
-	padding: 4px 20px;
-	margin: 0 24px;
-}
+	&--content {
+		position: sticky;
+		top: 0;
+		align-self: flex-start;
+		background-color: oColorsGetPaletteColor('grey-10');
+		padding: oTypographySpacingSize(1) oTypographySpacingSize(5);
+		margin: 0 oTypographySpacingSize(6);
 
-pre {
-	overflow: scroll;
+		a {
+			@include oTypographyLink();
+		}
+
+		pre {
+			overflow: scroll;
+			tab-size: 0;
+			padding: oTypographySpacingSize(2);
+			background-color: oColorsGetPaletteColor('grey-20');;
+		}
+	}
 }
