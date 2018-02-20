@@ -11,7 +11,7 @@ describe('GET /components', () => {
 		request = agent.get('/components');
 	});
 
-	it('responds with a 200 status', () => {
+	it('responds with a 200 status', async () => {
 		return request.expect(200);
 	});
 
@@ -32,7 +32,7 @@ describe('GET /components', () => {
 		it('contains a table of all components', () => {
 			assert.isNotNull(table);
 
-			const tableRows = table.querySelectorAll('tbody > tr');
+			const tableRows = table.querySelectorAll('[data-test=component-row]');
 			assert.lengthEquals(tableRows, 4);
 
 			let link;

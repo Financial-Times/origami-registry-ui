@@ -13,7 +13,7 @@
 					<td colspan="3">{{capitalise @key}}</td>
 				</tr>
 				{{#each this}}
-					<tr>
+					<tr data-test="component-row">
 						<td>
 							<a class='o-registry-ui__table-cell--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
 							<p class='o-registry-ui__table-cell--description'>{{description}}
