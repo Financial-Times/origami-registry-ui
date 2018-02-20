@@ -7,6 +7,19 @@
 		background: $_o-registry-ui-hover;
 	}
 
+	.o-registry-ui__group-title {
+		border-bottom: 1px solid $_o-registry-ui-hover;
+
+		td {
+			@include oTypographySansBold(0);
+			@include oTypographyPadding($top: 4, $bottom: 4);
+		}
+
+		&:hover {
+			background: none;
+		}
+	}
+
 	td {
 		vertical-align: middle;
 	}
