@@ -1,0 +1,36 @@
+<div class="o-registry-ui__components">
+	<table class="o-table o-registry-ui__table" data-o-component='o-table' data-test="component-table">
+		<thead class="o-registry-ui__table-head">
+			<tr>
+				<th data-o-table-heading-disable-sort class="o-registry-ui__table-cell--show">Component</th>
+				<th data-o-table-heading-disable-sort data-o-table-data-type="numeric" class="o-table__cell--numeric o-registry-ui__table-cell--show">Version</th>
+				<th data-o-table-heading-disable-sort class="o-registry-ui__table-cell--show">Status</th>
+			</tr>
+		</thead>
+		<tbody class="o-registry-ui__table-body">
+			{{#each categories}}
+				<tr class="o-registry-ui__group-title">
+					<td colspan="3">{{capitalise @key}}</td>
+				</tr>
+				{{#each this}}
+					<tr data-test="component-row">
+						<td>
+							<a class='o-registry-ui__table-cell--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
+							<p class='o-registry-ui__table-cell--description'>{{description}}
+								<span class='o-registry-ui__table-cell--info' aria-hidden='true'>v{{version}}
+									<span class="o-registry-ui__table-cell-label o-registry-ui__table-cell-label--{{support.status}}">{{support.status}}</span>
+								</span>
+							</p>
+						</td>
+						<td data-o-table-data-type="numeric" class='o-table__cell--numeric o-registry-ui__table-cell--show'>{{version}}</td>
+						<td class='o-registry-ui__table-cell--show'>
+							<span class="o-registry-ui__table-cell-label o-registry-ui__table-cell-label--{{support.status}}">
+								{{support.status}}
+							</span>
+						</td>
+					</tr>
+				{{/each}}
+			{{/each}}
+		</tbody>
+	</table>
+</div>

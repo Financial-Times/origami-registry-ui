@@ -1,13 +1,13 @@
 .o-header-services__primary-nav {
-	background: $_o-registry-ui-base;
-	border-bottom-color: $_o-registry-ui-highlight;
+	background-color: oColorsGetPaletteColor('grey-10');
+	border-bottom-color: oColorsGetPaletteColor('grey-30');;
 	@include oTypographyMargin($bottom: 5);
 }
 
 .o-header-services__nav-link:hover,
 .o-header-services__nav-link--selected,
 .o-header-services__nav-link[aria-selected=true] {
-	background-color: $_o-registry-ui-highlight;
+	background-color: oColorsGetPaletteColor('grey-30');;
 }
 
 .wip-notice {

@@ -6,6 +6,8 @@ module.exports = [
 	// Active Origami component
 	{
 		name: 'o-example-active',
+		type: 'module',
+		subType: 'primitives',
 		version: '2.0.0',
 		support: {
 			status: 'active',
@@ -27,6 +29,8 @@ module.exports = [
 	// Maintained Origami component
 	{
 		name: 'o-example-maintained',
+		type: null,
+		subType: null,
 		version: '1.5.0',
 		support: {
 			status: 'maintained',
@@ -48,6 +52,8 @@ module.exports = [
 	// Deprecated Origami component
 	{
 		name: 'o-example-deprecated',
+		type: null,
+		subType: null,
 		version: '1.0.0',
 		support: {
 			status: 'deprecated',
@@ -69,6 +75,8 @@ module.exports = [
 	// Active non-Origami component
 	{
 		name: 'n-example-active',
+		type: null,
+		subType: null,
 		version: '1.2.3',
 		support: {
 			status: 'active',
