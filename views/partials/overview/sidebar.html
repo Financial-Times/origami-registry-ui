@@ -1,0 +1,34 @@
+<div class="o-registry-ui__sidebar">
+	<div class="o-registry-ui__sidebar--content">
+		<p>The registry is updated whenever a new tag is pushed to a repository that has an <code>origami.json</code> file in it. If your repository meets the following criteria then it should be ingested within 5 minutes:</p>
+
+		<ul>
+			<li>
+				It lives in the
+				<a href="https://github.com/Financial-Times">Financial-Times GitHub organisation</a>
+			</li>
+			<li>
+				It contains a valid <code>origami.json</code> file
+				(see <a href="http://origami.ft.com/docs/syntax/origamijson/">the spec</a> for more information)
+			</li>
+			<li>
+				It has at least one git tag which complies with
+				<a href="https://semver.org/">semantic versioning</a>
+			</li>
+		</ul>
+
+		<h2>Registry API</h2>
+
+			<p>The Origami components library provides a read-only API conforming to the Bower Registry API spec (excluding registration and publishing).  To specify the Origami components library as your source for Bower components, create a <code>.bowerrc</code> file in your home directory or the root of your project's working tree, with the following content:</p>
+
+<pre>
+{
+  "registry": {
+    "search": [
+      "https://origami-bower-registry.ft.com",
+      "https://registry.bower.io"
+    ]
+  }
+}</pre>
+	</div>
+</div>

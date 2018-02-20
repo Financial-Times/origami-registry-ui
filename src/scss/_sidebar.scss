@@ -1,0 +1,23 @@
+.o-registry-ui__sidebar {
+	@include oTypographySans(0);
+	flex-shrink: 2;
+	border-left: 1px solid $_o-registry-ui-base;
+	max-width: 35%;
+
+	@include oGridRespondTo($until: M) {
+		display: none;
+	};
+}
+
+.o-registry-ui__sidebar--content {
+	position: sticky;
+	top: 0;
+	align-self: flex-start;
+	background-color: $_o-registry-ui-base;
+	padding: 4px 20px;
+	margin: 0 24px;
+}
+
+pre {
+	overflow: scroll;
+}
