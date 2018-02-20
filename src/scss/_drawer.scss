@@ -1,0 +1,14 @@
+.o-registry-ui__drawer.o-header__drawer {
+	background-color: oColorsGetPaletteColor('white');
+
+	.o-header__drawer-tools {
+		@include oTypographySansBold(1);
+		background-color: oColorsGetPaletteColor('black');
+		color: oColorsGetPaletteColor('white');
+		padding: 12px 0 4px 16px; //makes the drawer tool strip the same height as the header bar
+
+		.o-header__drawer-tools-close {
+			@include oIconsGetIcon('cross', oColorsGetPaletteColor('white'), 36, $iconset-version: 1);
+		}
+	}
+}
