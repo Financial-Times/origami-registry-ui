@@ -13,10 +13,8 @@ $o-normalise-is-silent: false;
 
 // Includes.
 @import 'src/scss/colors';
-@import 'src/scss/header';
-@import 'src/scss/drawer';
-@import 'src/scss/overview';
-@import 'src/scss/sidebar';
+@import 'src/scss/navigation/main';
+@import 'src/scss/overview/main';
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
