@@ -1,5 +1,7 @@
 .o-registry-ui__component--container {
+	@include oGridContainer($grid-mode: "fluid", $bleed: true);
 	margin: 20px 32px 0;
+	width: 100%;
 }
 
 .o-registry-ui__component--details {
@@ -22,3 +24,25 @@
 		@include oTypographyMargin($top: 3);
 	}
 }
+
+.o-registry-ui__component--demo-nav {
+	@include oTypographyMargin($bottom: 5);
+	display: flex;
+
+	span {
+		@include oGridRespondTo($until: S) {
+			display: none;
+		};
+
+		margin-left: auto;
+
+		a {
+			@include oButtons();
+			@include oButtonsTheme('mono');
+		}
+	}
+}
+
+@include oTabs();
+@include oTabsButtonTabs();
+@include oTabsButtonTabsTheme('mono');

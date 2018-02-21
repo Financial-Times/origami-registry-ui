@@ -2,7 +2,7 @@ $o-header-services-is-silent: false;
 $o-table-is-silent: false;
 $o-normalise-is-silent: false;
 
-// Dependancies.
+// Dependencies.
 @import 'o-normalise/main';
 @import 'o-colors/main';
 @import 'o-grid/main';
@@ -10,6 +10,7 @@ $o-normalise-is-silent: false;
 @import 'o-typography/main';
 @import 'o-header-services/main';
 @import 'o-table/main';
+@import 'o-tabs/main';
 
 // Includes.
 @import 'src/scss/colors';
@@ -20,17 +21,17 @@ $o-normalise-is-silent: false;
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
 
-.container {
-    @include oGridContainer($grid-mode: "fluid", $bleed: true);
-}
+// .container {
+// 	@include oGridContainer($grid-mode: "fluid", $bleed: true);
+// }
 
 .demo {
-    @include oTypographyMargin($top: 8);
+	@include oTypographyMargin($top: 8);
 }
 
 .demo__live,
 .demo__code {
-    width: 100%;
-    border: 0;
-    appearance: none;
+	width: 100%;
+	border: 0;
+	appearance: none;
 }
