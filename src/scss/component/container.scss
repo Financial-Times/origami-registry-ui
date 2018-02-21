@@ -6,27 +6,28 @@
 
 .o-registry-ui__component--details {
 	border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
+}
 
-	h1 {
-		@include oTypographyProductHeadingLevel1();
-		@include oTypographyMargin($bottom: 3);
-	}
+.o-registry-ui__component-name {
+	@include oTypographyProductHeadingLevel1();
+	@include oTypographyMargin($bottom: 3);
+}
 
-	p {
-		@include oTypographySans(1);
-		@include oTypographyMargin($top: 0);
-	}
+.o-registry-ui__component-description,
+.o-registry-ui__component--demo-description {
+	@include oTypographySans(1);
+	@include oTypographyMargin($top: 0);
 }
 
 .o-registry-ui__component--demo {
 	&-title {
-		@include oTypographyProductHeadingLevel3();
-		@include oTypographyMargin($top: 3);
+		@include oTypographyProductHeadingLevel4();
+		@include oTypographyMargin($top: 8);
 	}
 }
 
 .o-registry-ui__component--demo-nav {
-	@include oTypographyMargin($bottom: 5);
+	@include oTypographyMargin($bottom: 2);
 	display: flex;
 
 	span {
@@ -38,11 +39,23 @@
 
 		a {
 			@include oButtons();
-			@include oButtonsTheme('mono');
+			@include oButtonsCustomTheme($theme: $custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
 		}
 	}
 }
 
-@include oTabs();
+
+@include oTabs(); //because oTabs doesn't accept class names.
 @include oTabsButtonTabs();
-@include oTabsButtonTabsTheme('mono');
+// @include oTabsButtonTabsTheme('mono');
+.o-registry-ui__component--demo-nav {
+	& .o-tabs--buttontabs [role=tab] {
+		@include oButtonsCustomTheme($theme: $custom-buttons); //same as above
+	}
+}
+
+.o-registry-ui__component--demo-display {
+	@include oTypographyMargin($top: 2, $bottom: 2);
+	@include oTypographyPadding($bottom: 2);
+	border-bottom: 1px solid oColorsGetPaletteColor('grey-20');
+}
