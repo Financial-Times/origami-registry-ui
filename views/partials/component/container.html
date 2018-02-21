@@ -1,8 +1,11 @@
 <div class="o-registry-ui__component--container">
-	<div class="o-registry-ui__component--details">
+	<div class="o-registry-ui__component-information">
 		<h1 class="o-registry-ui__component-name">{{component.name}}</h1>
-		<p class="o-registry-ui__component-description">{{component.description}}</p>
+		<span class="o-registry-ui__component-version">v{{component.version}}</span>
+		<span class="o-registry-ui__status-label o-registry-ui__status-label--{{component.support.status}}">{{component.support.status}}</span>
 	</div>
+	<p class="o-registry-ui__component-description">{{component.description}}</p>
+
 
 	{{> component/demos}}
 	{{> component/images}}
@@ -11,12 +14,6 @@
 	<h2>Component information</h2>
 
 	<dl>
-		<dt>Version</dt>
-		<dd data-test="current-version">{{component.version}}</dd>
-
-		<dt>Status</dt>
-		<dd data-test="support-status">{{component.support.status}}</dd>
-
 		<dt>Versions</dt>
 		<dd>
 			<ul>

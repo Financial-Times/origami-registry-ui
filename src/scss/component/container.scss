@@ -4,13 +4,19 @@
 	width: 100%;
 }
 
-.o-registry-ui__component--details {
+.o-registry-ui__component-information {
+	display: flex;
+	align-items: flex-start;
+}
+
+.o-registry-ui__component-description {
 	border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
 }
 
 .o-registry-ui__component-name {
 	@include oTypographyProductHeadingLevel1();
 	@include oTypographyMargin($bottom: 3);
+	margin-right: auto;
 }
 
 .o-registry-ui__component-description,
@@ -19,10 +25,14 @@
 	@include oTypographyMargin($top: 0);
 }
 
+.o-registry-ui__component-version {
+	@include oTypographySansBold(0);
+}
+
 .o-registry-ui__component--demo {
 	&-title {
 		@include oTypographyProductHeadingLevel4();
-		@include oTypographyMargin($top: 8);
+		@include oTypographyMargin($top: 8, $bottom: 0);
 	}
 }
 
@@ -58,4 +68,15 @@
 	@include oTypographyMargin($top: 2, $bottom: 2);
 	@include oTypographyPadding($bottom: 2);
 	border-bottom: 1px solid oColorsGetPaletteColor('grey-20');
+
+	.demo__live,
+	.demo__code {
+		width: 100%;
+		border: 0;
+		appearance: none;
+	}
+
+	.demo__code {
+		background: oColorsGetPaletteColor('grey-5');
+	}
 }
