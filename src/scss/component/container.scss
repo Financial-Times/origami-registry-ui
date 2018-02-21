@@ -1,3 +1,24 @@
 .o-registry-ui__component--container {
-	margin: 0 32px;
+	margin: 20px 32px 0;
+}
+
+.o-registry-ui__component--details {
+	border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
+
+	h1 {
+		@include oTypographyProductHeadingLevel1();
+		@include oTypographyMargin($bottom: 3);
+	}
+
+	p {
+		@include oTypographySans(1);
+		@include oTypographyMargin($top: 0);
+	}
+}
+
+.o-registry-ui__component--demo {
+	&-title {
+		@include oTypographyProductHeadingLevel3();
+		@include oTypographyMargin($top: 3);
+	}
 }
