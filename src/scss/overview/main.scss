@@ -2,5 +2,6 @@
 @import 'src/scss/overview/sidebar';
 
 .o-registry-ui__overview {
+	@include oTypographyMargin($top: 5);
 	display: flex;
 }

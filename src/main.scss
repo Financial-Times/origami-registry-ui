@@ -15,6 +15,7 @@ $o-normalise-is-silent: false;
 @import 'src/scss/colors';
 @import 'src/scss/navigation/main';
 @import 'src/scss/overview/main';
+@import 'src/scss/component/main';
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
