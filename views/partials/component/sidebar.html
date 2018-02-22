@@ -7,6 +7,7 @@
 			<a class="external-link" href="http://codedocs.webservices.ft.com/v1/jsdoc/{{component.name}}@v{{component.version}}">JSDoc</a>
 			<a class="external-link" href="http://codedocs.webservices.ft.com/v1/sassdoc/{{component.name}}@v{{component.version}}">SassDoc</a>
 		</div>
+
 		{{#ifEquals component.type 'imageset'}}
 			{{> component/quickstart/imageset}}
 		{{/ifEquals}}
@@ -15,10 +16,8 @@
 			{{> component/quickstart/build-service}}
 		{{/ifEquals}}
 
-		{{#ifEquals component.type 'service'}}
-			{{> component/quickstart/service}}
+		{{#ifEquals component.type null}}
+			{{> component/quickstart/build-service}}
 		{{/ifEquals}}
-
-		<!-- null? -->
 	</div>
 </div>
