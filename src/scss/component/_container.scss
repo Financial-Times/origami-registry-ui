@@ -41,7 +41,7 @@
 	}
 
 	.o-registry-ui__selection {
-		@include oFormsSmallFeature('o-registry-ui');
+		@include oFormsSmallFeature( 'o-registry-ui');
 		@include oTypographySans(0);
 		@include oTypographyMargin($top: 2);
 		align-self: center;
@@ -53,10 +53,9 @@
 		@include oFormsCommonFieldBase();
 		@include oFormsSelect();
 		@include oTypographyMargin($top: 1);
-		width: 100px
+		width: 100px;
 	}
 }
-
 
 .o-registry-ui__component--demo {
 	@include oTypographyMargin($bottom: 8);
@@ -77,8 +76,8 @@
 		@include oTypographyPadding($bottom: 2);
 		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
 
-		.demo__live,
-		.demo__code {
+		.demo__code,
+		.demo__live {
 			width: 100%;
 			border: 0;
 			appearance: none;
@@ -97,7 +96,6 @@
 			@include oGridRespondTo($until: S) {
 				display: none;
 			};
-
 			margin-left: auto;
 
 			a {
@@ -107,9 +105,9 @@
 		}
 	}
 }
-
 @include oTabs(); //because oTabs doesn't accept class names.
 @include oTabsButtonTabs();
+
 .o-registry-ui__component--demo-nav {
 	& .o-tabs--buttontabs [role=tab] {
 		@include oButtonsCustomTheme($theme: $custom-buttons); //same as above
