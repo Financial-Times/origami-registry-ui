@@ -2,22 +2,18 @@
 
 
 	{{> component/header}}
-
 	{{> component/demos}}
 	{{> component/images}}
 	{{> component/service-details}}
 
-	<h2>Support</h2>
-
-	<dl>
-
-		<dt>Email</dt>
-		<dd><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></dd>
-
-		{{#if component.support.channel}}
-			<dt>Slack</dt>
-			<dd><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></dd>
-		{{/if}}
-
-	</dl>
+	<div class="o-registry-ui__component--support">
+		<div class="o-registry-ui__component--contact">
+		<h4>Support</h4>
+			<p><span>EMAIL </span><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+			{{#if component.support.channel}}
+			<p><span>SLACK </span><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></p>
+			{{/if}}
+		</div>
+		<a href="{{component.url/issue}}" class="secondary-button">REPORT AN ISSUE ON GITHUB</a>
+	</div>
 </div>

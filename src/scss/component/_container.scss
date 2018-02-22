@@ -113,3 +113,42 @@
 		@include oButtonsCustomTheme($theme: $demo-custom-buttons); //same as above
 	}
 }
+
+a.secondary-button {
+	@include oButtons();
+	@include oButtonsSize(big);
+	@include oButtonsCustomTheme($theme: $imageset-custom-buttons);
+	color: oColorsGetPaletteColor('black');
+	width: 100%;
+	border-bottom: 1px solid oColorsGetPaletteColor('black');
+}
+
+
+.o-registry-ui__component--support {
+	@include oTypographySans(1);
+	background-color: oColorsGetPaletteColor('grey-10');
+	padding: 16px;
+	display: flex;
+
+	h4 {
+		@include oTypographyProductHeadingLevel4();
+	}
+
+	p {
+		@include oTypographyMargin($bottom: 0);
+	}
+
+	span {
+		@include oTypographySansBold(1);
+	}
+
+	.o-registry-ui__component--contact a {
+		@include oTypographyLink();
+	}
+
+	a.secondary-button {
+			align-self: flex-end;
+			margin-left: auto;
+			width: 50%;
+	}
+}

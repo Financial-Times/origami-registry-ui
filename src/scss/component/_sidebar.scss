@@ -69,12 +69,3 @@
 		}
 	}
 }
-
-a.imageset-download-button {
-	@include oButtons();
-	@include oButtonsSize(big);
-	@include oButtonsCustomTheme($theme: $imageset-custom-buttons);
-	color: oColorsGetPaletteColor('black');
-	width: 100%;
-	border-bottom: 1px solid oColorsGetPaletteColor('black');
-}
