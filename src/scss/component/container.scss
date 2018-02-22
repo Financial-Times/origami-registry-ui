@@ -1,82 +1,114 @@
-.o-registry-ui__component--container {
-	@include oGridContainer($grid-mode: "fluid", $bleed: true);
-	margin: 20px 32px 0;
-	width: 100%;
+.o-registry-ui__component {
+	&--container {
+		@include oGridContainer($grid-mode: "fluid", $bleed: true);
+		margin: 20px 32px 0;
+		width: 100%;
+	}
+
+	&-header {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-info {
+		@include oTypographyPadding($bottom: 4);
+		display: flex;
+		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
+	}
+
+	&-status {
+		@include oTypographyPadding($top: 1);
+		display: flex;
+		flex-direction: column;
+		padding-left: 16px;
+		margin-left: auto;
+	}
+
+	&-name {
+		@include oTypographyProductHeadingLevel1();
+		@include oTypographyMargin($bottom: 3);
+	}
+
+	&-description {
+		@include oTypographySans(1);
+		@include oTypographyMargin($top: 0, $bottom: 0);
+	}
+
+	.o-registry-ui__status-label {
+		align-self: left;
+		margin: 0;
+	}
+
+	.o-registry-ui__selection {
+		@include oFormsSmallFeature('o-registry-ui');
+		@include oTypographySans(0);
+		@include oTypographyMargin($top: 2);
+		align-self: center;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.o-registry-ui__select {
+		@include oFormsCommonFieldBase();
+		@include oFormsSelect();
+		@include oTypographyMargin($top: 1);
+		width: 100px
+	}
 }
 
-.o-registry-ui__component-information {
-	display: flex;
-	align-items: flex-start;
-}
-
-.o-registry-ui__component-description {
-	border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
-}
-
-.o-registry-ui__component-name {
-	@include oTypographyProductHeadingLevel1();
-	@include oTypographyMargin($bottom: 3);
-	margin-right: auto;
-}
-
-.o-registry-ui__component-description,
-.o-registry-ui__component--demo-description {
-	@include oTypographySans(1);
-	@include oTypographyMargin($top: 0);
-}
-
-.o-registry-ui__component-version {
-	@include oTypographySansBold(0);
-}
 
 .o-registry-ui__component--demo {
 	&-title {
 		@include oTypographyProductHeadingLevel4();
 		@include oTypographyMargin($top: 8, $bottom: 0);
 	}
-}
 
-.o-registry-ui__component--demo-nav {
-	@include oTypographyMargin($bottom: 2);
-	display: flex;
+	&-description {
+		@include oTypographySans(0);
+		@include oTypographyMargin($top: 0);
+		color: oColorsGetPaletteColor('grey-80');
+	}
 
-	span {
-		@include oGridRespondTo($until: S) {
-			display: none;
-		};
+	&-display {
+		@include oTypographyMargin($top: 2, $bottom: 2);
+		@include oTypographyPadding($bottom: 2);
+		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
 
-		margin-left: auto;
+		.demo__live,
+		.demo__code {
+			width: 100%;
+			border: 0;
+			appearance: none;
+		}
 
-		a {
-			@include oButtons();
-			@include oButtonsCustomTheme($theme: $custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
+		.demo__code {
+			background: oColorsGetPaletteColor('grey-5');
+		}
+	}
+
+	&-nav {
+		@include oTypographyMargin($bottom: 2);
+		display: flex;
+
+		span {
+			@include oGridRespondTo($until: S) {
+				display: none;
+			};
+
+			margin-left: auto;
+
+			a {
+				@include oButtons();
+				@include oButtonsCustomTheme($theme: $custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
+			}
 		}
 	}
 }
 
-
 @include oTabs(); //because oTabs doesn't accept class names.
 @include oTabsButtonTabs();
-// @include oTabsButtonTabsTheme('mono');
 .o-registry-ui__component--demo-nav {
 	& .o-tabs--buttontabs [role=tab] {
 		@include oButtonsCustomTheme($theme: $custom-buttons); //same as above
-	}
-}
-
-.o-registry-ui__component--demo-display {
-	@include oTypographyMargin($top: 2, $bottom: 2);
-	@include oTypographyPadding($bottom: 2);
-	border-bottom: 1px solid oColorsGetPaletteColor('grey-20');
-
-	.demo__live,
-	.demo__code {
-		width: 100%;
-		border: 0;
-		appearance: none;
-	}
-
-	.demo__code {
-		background: oColorsGetPaletteColor('grey-5');
 	}
 }

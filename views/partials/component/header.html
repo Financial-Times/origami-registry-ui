@@ -1,0 +1,18 @@
+<div class="o-registry-ui__component-info">
+	<div class="o-registry-ui__component-header">
+		<h1 class="o-registry-ui__component-name">{{component.name}}</h1>
+		<p class="o-registry-ui__component-description">{{component.description}}</p>
+	</div>
+
+	<div class="o-registry-ui__component-status">
+		<span class="o-registry-ui__status-label o-registry-ui__status-label--{{component.support.status}}">{{component.support.status}}</span>
+		<div class="o-registry-ui__selection">
+			<label for="version-select">VERSION:</label>
+			<select id="version-select" class="o-registry-ui__select o-registry-ui__select--small">
+				{{#versions}}
+					<option value="/components/{{name}}@{{version}}" {{#ifEquals version @root.component.version}}selected{{/ifEquals}}>{{version}}</option>
+				{{/versions}}
+			</select>
+		</div>
+	</div>
+</div>
