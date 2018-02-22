@@ -31,10 +31,10 @@
 			tab-size: 0;
 			padding: oTypographySpacingSize(2);
 			background-color: oColorsGetPaletteColor('grey-20');
-		}
 
-		.manual-build--instructions pre {
-			overflow: scroll;
+			&.overflow {
+				overflow: scroll;
+			}
 		}
 	}
 
@@ -68,4 +68,13 @@
 			width: 100%;
 		}
 	}
+}
+
+a.imageset-download-button {
+	@include oButtons();
+	@include oButtonsSize(big);
+	@include oButtonsCustomTheme($theme: $imageset-custom-buttons);
+	color: oColorsGetPaletteColor('black');
+	width: 100%;
+	border-bottom: 1px solid oColorsGetPaletteColor('black');
 }

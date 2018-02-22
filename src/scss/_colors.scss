@@ -5,8 +5,13 @@
 @include oColorsSetColor('grey-60', oColorsMix(black, white, 60));
 @include oColorsSetColor('grey-80', oColorsMix(black, white, 80));
 
-$custom-buttons: (
+$demo-custom-buttons: (
 	background: 'white',
+	accent: 'grey-60'
+);
+
+$imageset-custom-buttons: (
+	background: 'grey-10',
 	accent: 'grey-60'
 );
 

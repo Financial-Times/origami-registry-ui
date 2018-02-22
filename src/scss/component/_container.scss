@@ -100,7 +100,7 @@
 
 			a {
 				@include oButtons();
-				@include oButtonsCustomTheme($theme: $custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
+				@include oButtonsCustomTheme($theme: $demo-custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
 			}
 		}
 	}
@@ -110,6 +110,6 @@
 
 .o-registry-ui__component--demo-nav {
 	& .o-tabs--buttontabs [role=tab] {
-		@include oButtonsCustomTheme($theme: $custom-buttons); //same as above
+		@include oButtonsCustomTheme($theme: $demo-custom-buttons); //same as above
 	}
 }
