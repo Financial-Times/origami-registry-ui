@@ -11,7 +11,8 @@
 	}
 
 	&-info {
-		@include oTypographyPadding($bottom: 4);
+		@include oTypographyPadding($bottom: 3);
+		@include oTypographyMargin($bottom: 6);
 		display: flex;
 		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
 	}
@@ -58,19 +59,21 @@
 
 
 .o-registry-ui__component--demo {
+	@include oTypographyMargin($bottom: 8);
+
 	&-title {
 		@include oTypographyProductHeadingLevel4();
-		@include oTypographyMargin($top: 8, $bottom: 0);
+		@include oTypographyMargin($bottom: 0);
 	}
 
 	&-description {
 		@include oTypographySans(0);
-		@include oTypographyMargin($top: 0);
+		@include oTypographyMargin($top: 0, $bottom: 0);
 		color: oColorsGetPaletteColor('grey-80');
 	}
 
 	&-display {
-		@include oTypographyMargin($top: 2, $bottom: 2);
+		@include oTypographyMargin($top: 3);
 		@include oTypographyPadding($bottom: 2);
 		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
 
@@ -87,7 +90,7 @@
 	}
 
 	&-nav {
-		@include oTypographyMargin($bottom: 2);
+		@include oTypographyMargin($top: 4, $bottom: 2);
 		display: flex;
 
 		span {
