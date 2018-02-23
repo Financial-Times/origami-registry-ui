@@ -11,12 +11,12 @@
 
 .o-registry-ui__component--list-title {
 	@include oTypographySansBold(2);
-	@include oTypographyPadding($top: 3, $bottom: 2);
+	@include oTypographyPadding($top: 5, $bottom: 2);
 	color: oColorsGetPaletteColor('grey-80');
 }
 
 .o-registry-ui__component--list-item {
-	@include oTypographyPadding($top: 2, $bottom: 2);
+	@include oTypographyPadding($top: 1, $bottom: 2);
 
 	a {
 		@include oTypographyLinkCustom(

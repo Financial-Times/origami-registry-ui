@@ -4,14 +4,16 @@
 	{{> component/header}}
 
 	{{#if demos}}
-		{{> component/demos}}
+		{{> component/type/demos}}
 	{{/if}}
 
 	{{#if images}}
-		{{> component/images}}
+		{{> component/type/images}}
 	{{/if}}
-	
-	{{> component/service-details}}
+
+	{{#if service}}
+		{{> component/type/service}}
+	{{/if}}
 
 	<div class="o-registry-ui__component--support">
 		<div class="o-registry-ui__component--contact">

@@ -105,6 +105,7 @@
 		}
 	}
 }
+
 @include oTabs(); //because oTabs doesn't accept class names.
 @include oTabsButtonTabs();
 
@@ -147,6 +148,20 @@
 		text-align: center;
 		margin-top: auto;
 		border-bottom: 1px solid oColorsGetPaletteColor('grey-5');
+	}
+}
+
+.o-registry-ui__component--service {
+	&-info {
+		@include oTypographySans(1);
+		span {
+			@include oTypographySansBold(1);
+		}
+
+		a {
+			@include oTypographyLink();
+			border-bottom: none;
+		}
 	}
 }
 
