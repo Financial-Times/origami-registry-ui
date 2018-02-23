@@ -22,6 +22,16 @@ $o-normalise-is-silent: false;
 @import 'src/scss/footer';
 @import 'src/scss/overview/main';
 @import 'src/scss/component/main';
+@import 'src/scss/error';
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
+
+html, body {
+	height: 100%;
+}
+
+.o-registry-ui {
+	display: flex;
+	flex-direction: column;
+}

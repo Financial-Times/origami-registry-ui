@@ -2,6 +2,7 @@
 	@include oTypographySans(0);
 	background-color: oColorsGetPaletteColor('grey-5');
 	padding: 20px;
+	margin-top: auto;
 	display: flex;
 
 	a {
