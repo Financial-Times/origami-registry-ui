@@ -26,6 +26,12 @@
 	}
 }
 
+.o-registry-ui__table-row {
+	&--hidden {
+		display: none;
+	}
+}
+
 .o-registry-ui__table-cell {
 	&--link {
 		@include oTypographySansBold($scale: 1);

@@ -1,8 +1,8 @@
 <div class="o-registry-ui__component--nav">
 	<ul class="o-registry-ui__component--list">
 		{{#each categories}}
-			<li class="o-registry-ui__component--list-title">{{@key}}</li>
-			{{#each this}}
+			<li class="o-registry-ui__component--list-title">{{name}}</li>
+			{{#each repos}}
 				<li class="o-registry-ui__component--list-item">
 					<a href="/components/{{name}}@{{version}}">{{name}}</a>
 				</li>

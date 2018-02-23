@@ -1,3 +1,6 @@
+
+$o-buttons-is-silent: false;
+$o-forms-is-silent: false;
 $o-header-services-is-silent: false;
 $o-overlay-is-silent: false;
 $o-table-is-silent: false;
@@ -5,6 +8,7 @@ $o-normalise-is-silent: false;
 
 // Dependencies.
 @import 'o-colors/main';
+@import 'o-buttons/main';
 @import 'o-fonts/main';
 @import 'o-forms/main';
 @import 'o-grid/main';
@@ -22,6 +26,7 @@ $o-normalise-is-silent: false;
 @import 'src/scss/footer';
 @import 'src/scss/overview/main';
 @import 'src/scss/component/main';
+@import 'src/scss/form';
 @import 'src/scss/error';
 
 @include oFontsInclude(MetricWeb, regular);
