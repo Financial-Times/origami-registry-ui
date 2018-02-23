@@ -1,17 +1,20 @@
 $o-header-services-is-silent: false;
+$o-overlay-is-silent: false;
 $o-table-is-silent: false;
 $o-normalise-is-silent: false;
 
 // Dependencies.
-@import 'o-normalise/main';
 @import 'o-colors/main';
-@import 'o-grid/main';
 @import 'o-fonts/main';
 @import 'o-forms/main';
-@import 'o-typography/main';
+@import 'o-grid/main';
 @import 'o-header-services/main';
+@import 'o-normalise/main';
+
+@import 'o-overlay/main';
 @import 'o-table/main';
 @import 'o-tabs/main';
+@import 'o-typography/main';
 
 // Includes.
 @import 'src/scss/colors';

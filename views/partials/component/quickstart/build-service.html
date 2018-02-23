@@ -7,7 +7,12 @@
 			<code>script</code> and <code>link</code> tags.
 		</p>
 		<pre>{{@root.component.name}}@{{@root.component.version}}</pre>
-		<p><a href="#">How do I do that?</a></p>
+		<p><a class="o-overlay-trigger"
+					data-o-overlay-id="overlay"
+					data-o-overlay-src="#how-do-i-build-service"
+					data-o-overlay-heading-shaded="false"
+					data-o-overlay-heading-title="Using the Build Service"
+					data-o-overlay-zindex="20" aria-pressed="false" aria-haspopup="true" href="#how-do-i-build-service">How do I do that?</a></p>
 		<p>For more information see the <a href="http://origami.ft.com/docs/developer-guide/modules/build-service/">Origami build service</a>.</p>
 	</div>
 	<div class="manual-build--instructions">
@@ -16,4 +21,19 @@
 		<pre class="overflow">bower install --save "{{@root.component.name}}"@"^{{@root.component.version}}"</pre>
 		<p>For more information see the <a href="http://origami.ft.com/docs/developer-guide/building-modules/">Origami build process</a>.</p>
 	</div>
+
+	<script type="text/template" id="how-do-i-build-service">
+		<h4>Loading assets using the build service</h4>
+		<!-- TODO: implement css/js conditions. -->
+		<p>To load this module add the following <code>&lt;script></code> and <code>&lt;link></code> tags to your page:
+		</p>
+
+		<pre class="overflow">&lt;link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules={{@root.component.name}}@^{{@root.component.version}}" /><br>&lt;script src="https://build.origami.ft.com/v2/bundles/js?modules={{@root.component.name}}@^{{@root.component.version}}">&lt;/script></pre>
+
+		<p>You should have <strong>only one</strong> (Origami related) <code>&lt;script&gt;</code> and one <code>&lt;link&gt;</code> tag in your page, even if you want to load more than one component. <br>You can request all components you need in a single request, by adding more modules to the link and/or script URLs like so:</p>
+
+		<pre class="overflow">https://build.origami.ft.com/v2/bundles/css?modules={{@root.component.name}}@^{{@root.component.version}},module@version,module@version</pre>
+
+		<p>For full build service options see the <a href="http://origami.ft.com/docs/developer-guide/build-service/#api-reference">build service API docs</a></p>
+	</script>
 </div>

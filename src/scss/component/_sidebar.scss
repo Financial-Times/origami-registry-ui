@@ -69,3 +69,44 @@
 		}
 	}
 }
+
+.o-overlay {
+	@include oTypographySans;
+	box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.2);
+
+	&__heading {
+		background: oColorsGetPaletteColor('black');
+		color: oColorsGetPaletteColor('white');
+	}
+
+	a {
+		@include oTypographyLink();
+		border-bottom: none;
+
+		&__close {
+			background-color: transparent;
+		}
+	}
+
+	&__content {
+		max-width: 600px;
+	}
+
+
+	code {
+		font-size: 14px;
+		padding: 2px;
+		background-color: oColorsGetPaletteColor('grey-10');
+	}
+
+	pre {
+		font-size: 14px;
+		tab-size: 0;
+		padding: oTypographySpacingSize(2);
+		background-color: oColorsGetPaletteColor('grey-10');
+
+		&.overflow {
+			overflow: scroll;
+		}
+	}
+}
