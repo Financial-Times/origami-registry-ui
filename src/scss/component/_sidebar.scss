@@ -4,7 +4,7 @@
 	border-left: 1px solid oColorsGetPaletteColor('grey-10');
 	max-width: 25%;
 
-	@include oGridRespondTo($until: M) {
+	@include oGridRespondTo($until: L) {
 		display: none;
 	};
 

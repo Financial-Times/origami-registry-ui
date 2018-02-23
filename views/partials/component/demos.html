@@ -1,34 +1,32 @@
-{{#if demos}}
-	<div class="o-registry-ui__component--demo-container">
-		{{#demos}}
-			<div class="o-registry-ui__component--demo">
-				<h3 class="o-registry-ui__component--demo-title">{{capitalise title}}</h3>
-				{{#if description}}
-					<p class="o-registry-ui__component--demo-description">{{description}}</p>
-				{{/if}}
+<div class="o-registry-ui__component--demo-container">
+	{{#demos}}
+		<div class="o-registry-ui__component--demo">
+			<h3 class="o-registry-ui__component--demo-title">{{capitalise title}}</h3>
+			{{#if description}}
+				<p class="o-registry-ui__component--demo-description">{{description}}</p>
+			{{/if}}
 
-				<div class="o-registry-ui__component--demo-nav">
-					<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs" role=tablist>
-						{{#if display.live}}<li role=tab><a href="#{{title}}-demo">DEMO</a></li>{{/if}}
-						{{#if display.html}}<li role=tab><a href="#{{title}}-html">HTML</a></li>{{/if}}
-					</ul>
+			<div class="o-registry-ui__component--demo-nav">
+				<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs" role=tablist>
+					{{#if display.live}}<li role=tab><a href="#{{title}}-demo">DEMO</a></li>{{/if}}
+					{{#if display.html}}<li role=tab><a href="#{{title}}-html">HTML</a></li>{{/if}}
+				</ul>
 
-					<span><a href="{{supportingUrls.live}}" target="_blank">OPEN DEMO IN A NEW TAB</a></span>
-				</div>
-
-				<div class="o-registry-ui__component--demo-display">
-					{{#if display.live}}
-						<div class="o-tabs__tabpanel" id="{{title}}-demo">
-							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live"></iframe>
-						</div>
-					{{/if}}
-					{{#if display.html}}
-						<div class="o-tabs__tabpanel" id="{{title}}-html">
-							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>
-						</div>
-					{{/if}}
-				</div>
+				<span><a href="{{supportingUrls.live}}" target="_blank">OPEN DEMO IN A NEW TAB</a></span>
 			</div>
-		{{/demos}}
-	</div>
-{{/if}}
+
+			<div class="o-registry-ui__component--demo-display">
+				{{#if display.live}}
+					<div class="o-tabs__tabpanel" id="{{title}}-demo">
+						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live"></iframe>
+					</div>
+				{{/if}}
+				{{#if display.html}}
+					<div class="o-tabs__tabpanel" id="{{title}}-html">
+						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>
+					</div>
+				{{/if}}
+			</div>
+		</div>
+	{{/demos}}
+</div>

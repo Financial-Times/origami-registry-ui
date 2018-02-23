@@ -2,8 +2,15 @@
 
 
 	{{> component/header}}
-	{{> component/demos}}
-	{{> component/images}}
+
+	{{#if demos}}
+		{{> component/demos}}
+	{{/if}}
+
+	{{#if images}}
+		{{> component/images}}
+	{{/if}}
+	
 	{{> component/service-details}}
 
 	<div class="o-registry-ui__component--support">
@@ -16,4 +23,5 @@
 		</div>
 		<a href="{{component.url/issue}}" class="secondary-button">REPORT AN ISSUE ON GITHUB</a>
 	</div>
+
 </div>

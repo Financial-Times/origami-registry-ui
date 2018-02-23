@@ -114,6 +114,42 @@
 	}
 }
 
+.o-registry-ui__component--image {
+	&-grid {
+		display: flex;
+		justify-content: space-around;
+		flex-flow: row wrap;
+		padding: 0;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			margin: 0;
+		}
+	}
+
+	&-item {
+		flex: 0 1 35%;
+		margin: 0 4px 24px;
+		display: flex;
+		flex-direction: column;
+
+		@include oGridRespondTo(M) {
+			flex-basis: 20%;
+		};
+	}
+
+
+	&-title {
+		@include oTypographySans(0);
+		@include oTypographyPadding($top: 1, $bottom: 1);
+		text-align: center;
+		margin-top: auto;
+		border-bottom: 1px solid oColorsGetPaletteColor('grey-5');
+	}
+}
+
 a.secondary-button {
 	@include oButtons();
 	@include oButtonsSize(big);
@@ -122,7 +158,6 @@ a.secondary-button {
 	width: 100%;
 	border-bottom: 1px solid oColorsGetPaletteColor('black');
 }
-
 
 .o-registry-ui__component--support {
 	@include oTypographySans(1);
@@ -144,6 +179,7 @@ a.secondary-button {
 
 	.o-registry-ui__component--contact a {
 		@include oTypographyLink();
+		border-bottom: none;
 	}
 
 	a.secondary-button {

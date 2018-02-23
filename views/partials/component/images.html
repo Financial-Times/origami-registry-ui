@@ -1,20 +1,15 @@
-
-{{#if images}}
-
-	<h2>Image Set</h2>
-
+<div class="o-registry-ui__component--demo-container">
+	<h3 class="o-registry-ui__component--demo-title">Image Set</h3>
 	<!--
 	TODO remove inline styles from here: they're just in place to make the page smaller
 	while we test things out
 	-->
-
-	<ul style="display: flex; flex-wrap: wrap; align-content: space-around; list-style: none; padding-left: 0;">
+	<ul class="o-registry-ui__component--image-grid">
 		{{#images}}
-			<li style="width: 100px; margin-right: 10px; margin-bottom: 10px;">
-				<img src="{{supportingUrls.w200}}" alt="{{title}}" style="display: block; width: 100px"/>
-				{{title}}
+			<li class="o-registry-ui__component--image-item">
+				<img src="{{supportingUrls.w200}}" alt="{{title}}"/>
+				<p class="o-registry-ui__component--image-title">{{title}}</p>
 			</li>
 		{{/images}}
 	</ul>
-
-{{/if}}
+</div>
