@@ -58,7 +58,7 @@
 						<td colspan="3">{{name}}</td>
 					</tr>
 					{{#each repos}}
-						<tr data-test="component-row" {{#unless visible}}aria-hidden="true" class="o-registry-ui__table-row--hidden"{{/unless}}>
+						<tr data-test="component-row" class="o-registry-ui__group" {{#unless visible}}aria-hidden="true" class="o-registry-ui__table-row--hidden"{{/unless}}>
 							<td>
 								<a class='o-registry-ui__table-cell--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
 								<p class='o-registry-ui__table-cell--description'>{{description}}
