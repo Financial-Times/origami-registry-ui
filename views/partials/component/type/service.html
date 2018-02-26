@@ -1,0 +1,26 @@
+<h3 class="o-registry-ui__component--demo-title">Service Details</h3>
+
+<div class="o-registry-ui__component--service-info">
+	{{#if service.systemCode}}
+		<p><span>System Code</span> — {{service.systemCode}}</p>
+	{{/if}}
+
+	{{#if service.serviceTier}}
+		<p><span>Service Tier</span> — {{service.serviceTier}}</p>
+	{{/if}}
+
+	{{#if service.primaryUrl}}
+		<p><span>Url</span> — <a href="{{service.primaryUrl}}">{{service.primaryUrl}}</a></p>
+	{{/if}}
+
+	{{#if service.links}}
+		<h3 class="o-registry-ui__component--demo-title">Service Links</h3>
+		<ul class="o-registry-ui__component--service-links">
+			{{#service.links}}
+				<li class="service-link--{{category}}">
+					<a href="{{url}}">{{#if description}}{{description}}{{else}}{{url}}{{/if}}</a>
+				</li>
+			{{/service.links}}
+		</ul>
+	{{/if}}
+</div>

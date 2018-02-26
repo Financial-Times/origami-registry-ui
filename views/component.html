@@ -1,45 +1,7 @@
-<div class="container">
-	<h1>{{component.name}}</h1>
+<div class="o-registry-ui__component">
+	{{> component/nav-bar}}
 
-	<p>{{component.description}}</p>
+	{{> component/container}}
 
-	<p><a href="{{component.url}}">Repository on GitHub</a></p>
-
-	{{>component-demos}}
-	{{>component-images}}
-	{{>component-service-details}}
-
-	<h2>Component information</h2>
-
-	<dl>
-		<dt>Version</dt>
-		<dd data-test="current-version">{{component.version}}</dd>
-
-		<dt>Status</dt>
-		<dd data-test="support-status">{{component.support.status}}</dd>
-
-		<dt>Versions</dt>
-		<dd>
-			<ul>
-				{{#versions}}
-					<li><a href="/components/{{name}}@{{version}}">{{version}}</a></li>
-				{{/versions}}
-			</ul>
-		</dd>
-
-	</dl>
-
-	<h2>Support</h2>
-
-	<dl>
-
-		<dt>Email</dt>
-		<dd><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></dd>
-
-		{{#if component.support.channel}}
-			<dt>Slack</dt>
-			<dd><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></dd>
-		{{/if}}
-
-	</dl>
+	{{> component/sidebar}}
 </div>

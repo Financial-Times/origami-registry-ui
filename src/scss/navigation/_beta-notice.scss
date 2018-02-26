@@ -1,0 +1,11 @@
+.beta-notice {
+	@include oTypographySans(1);
+	@include oTypographyMargin($bottom: 0);
+	padding: 16px;
+	color: oColorsMix('lemon', 'black', 30);
+	background: oColorsMix('lemon', 'white', 70);
+	text-align: center;
+	a {
+		@include oTypographyLinkCustom($baseColor: 'black', $hoverColor: 'grey-80', $backgroundColor: 'lemon', $outlineColor: 'teal-100')
+	}
+}

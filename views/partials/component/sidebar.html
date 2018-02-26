@@ -1,0 +1,20 @@
+<div class="o-registry-ui__component--sidebar">
+	<div class="o-registry-ui__component--sidebar--content">
+		<div class="o-registry-ui__component--sidebar-links">
+			<a class="github-link" href="{{component.url}}">GitHub Repository</a>
+			<a class="external-link" href="{{component.url}}#readme">README</a>
+			<!-- TODO: implement css/js conditions. -->
+			<a class="external-link" href="http://codedocs.webservices.ft.com/v1/jsdoc/{{component.name}}@v{{component.version}}">JSDoc</a>
+			<a class="external-link" href="http://codedocs.webservices.ft.com/v1/sassdoc/{{component.name}}@v{{component.version}}">SassDoc</a>
+		</div>
+
+		{{#ifEquals component.type 'imageset'}}
+			{{> component/quickstart/imageset}}
+		{{/ifEquals}}
+
+		{{#ifEquals component.type 'module'}}
+			{{> component/quickstart/build-service}}
+		{{/ifEquals}}
+
+	</div>
+</div>

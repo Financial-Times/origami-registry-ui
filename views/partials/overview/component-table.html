@@ -18,13 +18,13 @@
 							<a class='o-registry-ui__table-cell--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
 							<p class='o-registry-ui__table-cell--description'>{{description}}
 								<span class='o-registry-ui__table-cell--info' aria-hidden='true'>v{{version}}
-									<span class="o-registry-ui__table-cell-label o-registry-ui__table-cell-label--{{support.status}}">{{support.status}}</span>
+									<span class="o-registry-ui__status-label o-registry-ui__status-label--{{support.status}}">{{support.status}}</span>
 								</span>
 							</p>
 						</td>
 						<td data-o-table-data-type="numeric" class='o-table__cell--numeric o-registry-ui__table-cell--show'>{{version}}</td>
 						<td class='o-registry-ui__table-cell--show'>
-							<span class="o-registry-ui__table-cell-label o-registry-ui__table-cell-label--{{support.status}}">
+							<span class="o-registry-ui__status-label o-registry-ui__status-label--{{support.status}}">
 								{{support.status}}
 							</span>
 						</td>

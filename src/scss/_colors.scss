@@ -1,5 +1,21 @@
+@include oColorsSetColor('grey-5', oColorsMix(black, white, 5));
 @include oColorsSetColor('grey-10', oColorsMix(black, white, 10));
 @include oColorsSetColor('grey-20', oColorsMix(black, white, 20));
 @include oColorsSetColor('grey-30', oColorsMix(black, white, 30));
 @include oColorsSetColor('grey-60', oColorsMix(black, white, 60));
 @include oColorsSetColor('grey-80', oColorsMix(black, white, 80));
+
+$demo-custom-buttons: (
+	background: 'white',
+	accent: 'grey-60'
+);
+
+$imageset-custom-buttons: (
+	background: 'grey-10',
+	accent: 'grey-60'
+);
+
+$inverse-custom-buttons: (
+	background: 'black',
+	accent: 'white'
+);

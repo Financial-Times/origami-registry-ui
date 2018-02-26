@@ -1,6 +1,14 @@
+<div class="o-registry-ui__error">
 
-<h1>
-	{{title}}
-</h1>
+	<h1>
+		{{title}}
+	</h1>
 
-<p>{{error.message}}</p>
+	{{#ifEquals error.status 404}}
+		<p>It seems like you're looking for the component: <br><span>{{replace '/components/' requestUrl}}</span></p>
+		If you can't find what you're looking for on the <a href="/components">Registry Homepage</a>, please get in touch with us via email or Slack.
+	{{else}}
+		<p>{{error.message}}</p>
+	{{/ifEquals}}
+		
+</div>

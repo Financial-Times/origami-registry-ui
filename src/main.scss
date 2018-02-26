@@ -1,37 +1,37 @@
 $o-header-services-is-silent: false;
+$o-overlay-is-silent: false;
 $o-table-is-silent: false;
 $o-normalise-is-silent: false;
 
-// Dependancies.
-@import 'o-normalise/main';
+// Dependencies.
 @import 'o-colors/main';
-@import 'o-grid/main';
 @import 'o-fonts/main';
-@import 'o-typography/main';
+@import 'o-forms/main';
+@import 'o-grid/main';
 @import 'o-header-services/main';
+@import 'o-normalise/main';
+
+@import 'o-overlay/main';
 @import 'o-table/main';
+@import 'o-tabs/main';
+@import 'o-typography/main';
 
 // Includes.
 @import 'src/scss/colors';
-@import 'src/scss/header';
-@import 'src/scss/drawer';
-@import 'src/scss/overview';
-@import 'src/scss/sidebar';
+@import 'src/scss/navigation/main';
+@import 'src/scss/footer';
+@import 'src/scss/overview/main';
+@import 'src/scss/component/main';
+@import 'src/scss/error';
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
 
-.container {
-    @include oGridContainer($grid-mode: "fluid", $bleed: true);
+html, body {
+	height: 100%;
 }
 
-.demo {
-    @include oTypographyMargin($top: 8);
-}
-
-.demo__live,
-.demo__code {
-    width: 100%;
-    border: 0;
-    appearance: none;
+.o-registry-ui {
+	display: flex;
+	flex-direction: column;
 }

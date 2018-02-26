@@ -1,0 +1,31 @@
+.o-registry-ui__component--nav {
+	@include oTypographySans(1);
+	background-color: oColorsGetPaletteColor('grey-20');
+	width: 220px; //copy pasta bc I think this looks reasonable on the original
+}
+
+.o-registry-ui__component--list {
+	list-style: none;
+	padding: 0 24px;
+}
+
+.o-registry-ui__component--list-title {
+	@include oTypographySansBold(2);
+	@include oTypographyPadding($top: 5, $bottom: 2);
+	color: oColorsGetPaletteColor('grey-80');
+}
+
+.o-registry-ui__component--list-item {
+	@include oTypographyPadding($top: 1, $bottom: 2);
+
+	a {
+		@include oTypographyLinkCustom(
+			$baseColor: 'grey-80',
+			$hoverColor: 'grey-60',
+			$backgroundColor: 'grey-20',
+			$outlineColor: 'teal-100'
+		)
+
+		border-bottom: none;
+	}
+}

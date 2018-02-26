@@ -1,0 +1,29 @@
+<div class="o-registry-ui__component--container">
+
+
+	{{> component/header}}
+
+	{{#if demos}}
+		{{> component/type/demos}}
+	{{/if}}
+
+	{{#if images}}
+		{{> component/type/images}}
+	{{/if}}
+
+	{{#if service}}
+		{{> component/type/service}}
+	{{/if}}
+
+	<div class="o-registry-ui__component--support">
+		<div class="o-registry-ui__component--contact">
+		<h4>Support</h4>
+			<p><span>Email</span><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+			{{#if component.support.channel}}
+			<p><span>Slack </span><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></p>
+			{{/if}}
+		</div>
+		<a href="{{component.supportingUrls.issues}}" class="secondary-button">Report an issue on GitHub</a>
+	</div>
+
+</div>

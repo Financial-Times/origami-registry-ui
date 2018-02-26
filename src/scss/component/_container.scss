@@ -1,0 +1,212 @@
+.o-registry-ui__component {
+	&--container {
+		@include oGridContainer($grid-mode: "fluid", $bleed: true);
+		margin: 20px 32px 0;
+		width: 100%;
+	}
+
+	&-header {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-info {
+		@include oTypographyPadding($bottom: 3);
+		@include oTypographyMargin($bottom: 6);
+		display: flex;
+		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
+	}
+
+	&-status {
+		@include oTypographyPadding($top: 1);
+		display: flex;
+		flex-direction: column;
+		padding-left: 16px;
+		margin-left: auto;
+	}
+
+	&-name {
+		@include oTypographyProductHeadingLevel1();
+		@include oTypographyMargin($bottom: 3);
+	}
+
+	&-description {
+		@include oTypographySans(1);
+		@include oTypographyMargin($top: 0, $bottom: 0);
+	}
+
+	.o-registry-ui__status-label {
+		align-self: left;
+		margin: 0;
+	}
+
+	.o-registry-ui__selection {
+		@include oFormsSmallFeature( 'o-registry-ui');
+		@include oTypographySans(0);
+		@include oTypographyMargin($top: 2);
+		align-self: center;
+		display: flex;
+		flex-direction: column;
+		
+		label {
+			text-transform: uppercase;
+		}
+	}
+
+	.o-registry-ui__select {
+		@include oFormsCommonFieldBase();
+		@include oFormsSelect();
+		@include oTypographyMargin($top: 1);
+		width: 100px;
+	}
+}
+
+.o-registry-ui__component--demo {
+	@include oTypographyMargin($bottom: 8);
+
+	&-title {
+		@include oTypographyProductHeadingLevel4();
+		@include oTypographyMargin($bottom: 0);
+	}
+
+	&-description {
+		@include oTypographySans(0);
+		@include oTypographyMargin($top: 0, $bottom: 0);
+		color: oColorsGetPaletteColor('grey-80');
+	}
+
+	&-display {
+		@include oTypographyMargin($top: 3);
+		@include oTypographyPadding($bottom: 2);
+		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
+
+		.demo__code,
+		.demo__live {
+			width: 100%;
+			border: 0;
+			appearance: none;
+		}
+
+		.demo__code {
+			background: oColorsGetPaletteColor('grey-5');
+		}
+	}
+
+	&-nav {
+		@include oTypographyMargin($top: 4, $bottom: 2);
+		display: flex;
+
+		span {
+			@include oGridRespondTo($until: S) {
+				display: none;
+			};
+			margin-left: auto;
+
+			a {
+				@include oButtons();
+				@include oButtonsCustomTheme($theme: $demo-custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
+			}
+		}
+	}
+}
+
+@include oTabs(); //because oTabs doesn't accept class names.
+@include oTabsButtonTabs();
+
+.o-registry-ui__component--demo-nav {
+	& .o-tabs--buttontabs [role=tab] {
+		@include oButtonsCustomTheme($theme: $demo-custom-buttons); //same as above
+	}
+}
+
+.o-registry-ui__component--image {
+	&-grid {
+		display: flex;
+		justify-content: space-around;
+		flex-flow: row wrap;
+		padding: 0;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			margin: 0;
+		}
+	}
+
+	&-item {
+		flex: 0 1 35%;
+		margin: 0 4px 24px;
+		display: flex;
+		flex-direction: column;
+
+		@include oGridRespondTo(M) {
+			flex-basis: 20%;
+		};
+	}
+
+
+	&-title {
+		@include oTypographySans(0);
+		@include oTypographyPadding($top: 1, $bottom: 1);
+		text-align: center;
+		margin-top: auto;
+		border-bottom: 1px solid oColorsGetPaletteColor('grey-5');
+	}
+}
+
+.o-registry-ui__component--service {
+	&-info {
+		@include oTypographySans(1);
+		span {
+			@include oTypographySansBold(1);
+			text-transform: uppercase;
+		}
+
+		a {
+			@include oTypographyLink();
+			border-bottom: none;
+		}
+	}
+}
+
+a.secondary-button {
+	@include oButtons();
+	@include oButtonsSize(big);
+	@include oButtonsCustomTheme($theme: $imageset-custom-buttons);
+	color: oColorsGetPaletteColor('black');
+	width: 100%;
+	border-bottom: 1px solid oColorsGetPaletteColor('black');
+	text-transform: uppercase;
+}
+
+.o-registry-ui__component--support {
+	@include oTypographySans(1);
+	background-color: oColorsGetPaletteColor('grey-10');
+	padding: 16px;
+	display: flex;
+
+	h4 {
+		@include oTypographyProductHeadingLevel4();
+	}
+
+	p {
+		@include oTypographyMargin($bottom: 0);
+	}
+
+	span {
+		@include oTypographySansBold(1);
+		text-transform: uppercase;
+	}
+
+	.o-registry-ui__component--contact a {
+		@include oTypographyLink();
+		border-bottom: none;
+	}
+
+	a.secondary-button {
+			align-self: flex-end;
+			margin-left: auto;
+			width: 50%;
+	}
+}

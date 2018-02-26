@@ -1,0 +1,10 @@
+.o-header-services__primary-nav {
+	background-color: oColorsGetPaletteColor('grey-10');
+	border-bottom-color: oColorsGetPaletteColor('grey-30');;
+}
+
+.o-header-services__nav-link:hover,
+.o-header-services__nav-link--selected,
+.o-header-services__nav-link[aria-selected=true] {
+	background-color: oColorsGetPaletteColor('grey-30');;
+}

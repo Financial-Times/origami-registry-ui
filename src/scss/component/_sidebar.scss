@@ -1,0 +1,119 @@
+.o-registry-ui__component--sidebar {
+	@include oTypographySans(0);
+	flex-shrink: 2;
+	border-left: 1px solid oColorsGetPaletteColor('grey-10');
+	max-width: 25%;
+
+	@include oGridRespondTo($until: L) {
+		display: none;
+	};
+
+	h2,
+	h3,
+	h4 {
+		text-transform: uppercase;
+	}
+	
+	&--content {
+		position: sticky;
+		top: 0;
+		align-self: flex-start;
+		background-color: oColorsGetPaletteColor('grey-10');
+		padding: oTypographySpacingSize(5);
+		margin: oTypographySpacingSize(6);
+
+		a {
+			@include oTypographyLink();
+		}
+
+		code {
+			font-size: 14px;
+			padding: 2px;
+			background-color: oColorsGetPaletteColor('grey-20');
+		}
+
+		pre {
+			font-size: 14px;
+			tab-size: 0;
+			padding: oTypographySpacingSize(2);
+			background-color: oColorsGetPaletteColor('grey-20');
+
+			&.overflow {
+				overflow: scroll;
+			}
+		}
+	}
+
+	&-links {
+		@include oTypographySansBold(0);
+		display: flex;
+		justify-content: center;
+		flex-flow: row wrap;
+
+		.external-link {
+			color: oColorsGetPaletteColor('black');
+			border-bottom: none;
+			padding: 0 2px;
+
+			&:hover {
+				color: oColorsGetPaletteColor('grey-60');
+			}
+
+			&:before {
+				content: '';
+				@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('black'), 20);
+				vertical-align: bottom;
+			}
+		}
+
+		.github-link {
+			@include oButtons();
+			@include oButtonsSize(big);
+			@include oButtonsCustomTheme($theme: $inverse-custom-buttons);
+			@include oTypographyMargin($bottom: 2);
+			width: 100%;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.o-overlay {
+	@include oTypographySans;
+	box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.2);
+
+	&__heading {
+		background: oColorsGetPaletteColor('black');
+		color: oColorsGetPaletteColor('white');
+	}
+
+	a {
+		@include oTypographyLink();
+		border-bottom: none;
+
+		&__close {
+			background-color: transparent;
+		}
+	}
+
+	&__content {
+		max-width: 600px;
+	}
+
+
+	code {
+		font-size: 14px;
+		padding: 2px;
+		background-color: oColorsGetPaletteColor('grey-10');
+	}
+
+	pre {
+		font-size: 14px;
+		tab-size: 0;
+		padding: oTypographySpacingSize(2);
+		background-color: oColorsGetPaletteColor('grey-10');
+
+		&.overflow {
+			overflow: scroll;
+		}
+	}
+}
