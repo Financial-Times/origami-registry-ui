@@ -15,7 +15,11 @@
 	td {
 		vertical-align: middle;
 	}
-
+	
+	.o-registry-ui__group {
+		cursor: pointer;
+	}
+	
 	.o-registry-ui__group-title {
 		border-bottom: 1px solid oColorsGetPaletteColor('grey-20');;
 
@@ -23,12 +27,6 @@
 			@include oTypographySansBold(0);
 			@include oTypographyPadding($top: 4, $bottom: 4);
 		}
-	}
-}
-
-.o-registry-ui__table-row {
-	&--hidden {
-		display: none;
 	}
 }
 
