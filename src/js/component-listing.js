@@ -70,7 +70,7 @@ class ComponentListing {
 	 */
 	getComponents() {
 		const elements = this.listingElement.querySelectorAll('[data-o-component]');
-		return Array.from(elements).map(element => {
+		return Array.from(elements, element => {
 			return {
 				name: element.getAttribute('data-o-component'),
 				keywords: JSON.parse(element.getAttribute('data-o-component-keywords')),
