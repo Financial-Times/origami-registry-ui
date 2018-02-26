@@ -1,5 +1,49 @@
 <div class="o-registry-ui__components">
-	<table class="o-table o-registry-ui__table" data-o-component='o-table' data-test="component-table">
+
+	<!-- TODO move to a partial or find a new place for this -->
+	<form action="/components" method="get" class="o-registry-ui__form">
+
+		<div class="o-forms o-forms--wide">
+			<label for="filter-search" class="o-forms__label">Filter components</label>
+			<div class="o-forms__additional-info">Filter the components below by name and tag</div>
+			<input id="filter-search" type="search" name="search" value="{{filter.search}}" class="o-forms__text"/>
+		</div>
+
+		<fieldset class="o-forms o-forms--wide">
+			<legend class="o-forms__label">Display component types</legend>
+			<div class="o-forms__group o-forms__group--inline">
+				<input id="type-module" type="checkbox" name="module" value="true" {{#if filter.module}}checked{{/if}} class="o-forms__checkbox"/>
+				<label for="type-module" class="o-forms__label">Modules</label>
+				<input id="type-imageset" type="checkbox" name="imageset" value="true" {{#if filter.imageset}}checked{{/if}} class="o-forms__checkbox"/>
+				<label for="type-imageset" class="o-forms__label">Imagesets</label>
+				<input id="type-service" type="checkbox" name="service" value="true" {{#if filter.service}}checked{{/if}} class="o-forms__checkbox"/>
+				<label for="type-service" class="o-forms__label">Services</label>
+			</div>
+		</fieldset>
+
+		<fieldset class="o-forms o-forms--wide">
+			<legend class="o-forms__label">Display components with status</legend>
+			<div class="o-forms__group o-forms__group--inline">
+				<input id="status-active" type="checkbox" name="active" value="true" {{#if filter.active}}checked{{/if}} class="o-forms__checkbox"/>
+				<label for="status-active" class="o-forms__label">Active</label>
+				<input id="status-maintained" type="checkbox" name="maintained" value="true" {{#if filter.maintained}}checked{{/if}} class="o-forms__checkbox"/>
+				<label for="status-maintained" class="o-forms__label">Maintained</label>
+				<input id="status-deprecated" type="checkbox" name="deprecated" value="true" {{#if filter.deprecated}}checked{{/if}} class="o-forms__checkbox"/>
+				<label for="status-deprecated" class="o-forms__label">Deprecated</label>
+				<input id="status-dead" type="checkbox" name="dead" value="true" {{#if filter.dead}}checked{{/if}} class="o-forms__checkbox"/>
+				<label for="status-dead" class="o-forms__label">Dead</label>
+				<input id="status-experimental" type="checkbox" name="experimental" value="true" {{#if filter.experimental}}checked{{/if}} class="o-forms__checkbox"/>
+				<label for="status-experimental" class="o-forms__label">Experimental</label>
+			</div>
+		</fieldset>
+
+		<div class="o-forms">
+			<input type="submit" value="Filter" class="o-buttons o-buttons--primary o-buttons--big"/>
+		</div>
+
+	</form>
+
+	<table class="o-table o-registry-ui__table" data-o-component="o-table" data-test="component-table">
 		<thead class="o-registry-ui__table-head">
 			<tr>
 				<th data-o-table-heading-disable-sort class="o-registry-ui__table-cell--show">Component</th>
@@ -9,27 +53,29 @@
 		</thead>
 		<tbody class="o-registry-ui__table-body">
 			{{#each categories}}
-				<tr class="o-registry-ui__group-title">
-					<td colspan="3">{{capitalise @key}}</td>
-				</tr>
-				{{#each this}}
-					<tr data-test="component-row">
-						<td>
-							<a class='o-registry-ui__table-cell--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
-							<p class='o-registry-ui__table-cell--description'>{{description}}
-								<span class='o-registry-ui__table-cell--info' aria-hidden='true'>v{{version}}
-									<span class="o-registry-ui__status-label o-registry-ui__status-label--{{support.status}}">{{support.status}}</span>
-								</span>
-							</p>
-						</td>
-						<td data-o-table-data-type="numeric" class='o-table__cell--numeric o-registry-ui__table-cell--show'>{{version}}</td>
-						<td class='o-registry-ui__table-cell--show'>
-							<span class="o-registry-ui__status-label o-registry-ui__status-label--{{support.status}}">
-								{{support.status}}
-							</span>
-						</td>
+				{{#if repos.length}}
+					<tr class="o-registry-ui__group-title {{#unless visible}}o-registry-ui__table-row--hidden{{/unless}}" {{#unless visible}}aria-hidden="true"{{/unless}}>
+						<td colspan="3">{{name}}</td>
 					</tr>
-				{{/each}}
+					{{#each repos}}
+						<tr data-test="component-row" {{#unless visible}}aria-hidden="true" class="o-registry-ui__table-row--hidden"{{/unless}}>
+							<td>
+								<a class='o-registry-ui__table-cell--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
+								<p class='o-registry-ui__table-cell--description'>{{description}}
+									<span class='o-registry-ui__table-cell--info' aria-hidden='true'>v{{version}}
+										<span class="o-registry-ui__status-label o-registry-ui__status-label--{{support.status}}">{{support.status}}</span>
+									</span>
+								</p>
+							</td>
+							<td data-o-table-data-type="numeric" class='o-table__cell--numeric o-registry-ui__table-cell--show'>{{version}}</td>
+							<td class='o-registry-ui__table-cell--show'>
+								<span class="o-registry-ui__status-label o-registry-ui__status-label--{{support.status}}">
+									{{support.status}}
+								</span>
+							</td>
+						</tr>
+					{{/each}}
+				{{/if}}
 			{{/each}}
 		</tbody>
 	</table>
