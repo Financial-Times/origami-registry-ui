@@ -184,6 +184,7 @@ a.secondary-button {
 	@include oTypographySans(1);
 	background-color: oColorsGetPaletteColor('grey-10');
 	padding: 16px;
+	margin-bottom: 20px;
 	display: flex;
 
 	h4 {
