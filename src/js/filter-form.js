@@ -43,7 +43,7 @@ class FilterForm {
 		this.inputs = Array.from(formElement.querySelectorAll('input'));
 		this.lastFilter = this.getUrlEncodedFilterValues();
 
-		this.alterBrowserHistory = Boolean(formElement.getAttribute('o-filter-form-browser-history'));
+		this.alterBrowserHistory = Boolean(formElement.getAttribute('data-o-filter-form-browser-history'));
 		if (this.alterBrowserHistory) {
 			window.addEventListener('popstate', this.handlePopStateEvents.bind(this));
 		}
@@ -57,7 +57,8 @@ class FilterForm {
 	/**
 	 * Handle the form changing events.
 	 */
-	handleFormChangeEvent() {
+	handleFormChangeEvent(event) {
+		event.preventDefault();
 		const queryString = this.getUrlEncodedFilterValues();
 		if (this.lastFilter !== queryString) {
 			this.lastFilter = queryString;

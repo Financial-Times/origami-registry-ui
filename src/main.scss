@@ -28,6 +28,7 @@ $o-normalise-is-silent: false;
 @import 'src/scss/component/main';
 @import 'src/scss/form';
 @import 'src/scss/error';
+@import 'src/scss/component-listing';
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
