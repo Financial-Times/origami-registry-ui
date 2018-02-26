@@ -8,6 +8,12 @@
 		display: none;
 	};
 
+	h2,
+	h3,
+	h4 {
+		text-transform: uppercase;
+	}
+	
 	&--content {
 		position: sticky;
 		top: 0;
@@ -66,6 +72,7 @@
 			@include oButtonsCustomTheme($theme: $inverse-custom-buttons);
 			@include oTypographyMargin($bottom: 2);
 			width: 100%;
+			text-transform: uppercase;
 		}
 	}
 }

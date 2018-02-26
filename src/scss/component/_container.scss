@@ -47,6 +47,10 @@
 		align-self: center;
 		display: flex;
 		flex-direction: column;
+		
+		label {
+			text-transform: uppercase;
+		}
 	}
 
 	.o-registry-ui__select {

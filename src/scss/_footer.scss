@@ -3,7 +3,10 @@
 	background-color: oColorsGetPaletteColor('grey-5');
 	padding: 20px;
 	margin-top: auto;
-	display: flex;
+
+	&--content {
+		display: flex;
+	}
 
 	a {
 		@include oTypographyLink();
