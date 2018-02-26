@@ -18,12 +18,12 @@
 	<div class="o-registry-ui__component--support">
 		<div class="o-registry-ui__component--contact">
 		<h4>Support</h4>
-			<p><span>EMAIL </span><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+			<p><span>Email</span><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
 			{{#if component.support.channel}}
-			<p><span>SLACK </span><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></p>
+			<p><span>Slack </span><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></p>
 			{{/if}}
 		</div>
-		<a href="{{component.url/issue}}" class="secondary-button">REPORT AN ISSUE ON GITHUB</a>
+		<a href="{{component.supportingUrls.issues}}" class="secondary-button">Report an issue on GitHub</a>
 	</div>
 
 </div>

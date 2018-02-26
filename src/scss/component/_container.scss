@@ -156,6 +156,7 @@
 		@include oTypographySans(1);
 		span {
 			@include oTypographySansBold(1);
+			text-transform: uppercase;
 		}
 
 		a {
@@ -172,6 +173,7 @@ a.secondary-button {
 	color: oColorsGetPaletteColor('black');
 	width: 100%;
 	border-bottom: 1px solid oColorsGetPaletteColor('black');
+	text-transform: uppercase;
 }
 
 .o-registry-ui__component--support {
@@ -190,6 +192,7 @@ a.secondary-button {
 
 	span {
 		@include oTypographySansBold(1);
+		text-transform: uppercase;
 	}
 
 	.o-registry-ui__component--contact a {
