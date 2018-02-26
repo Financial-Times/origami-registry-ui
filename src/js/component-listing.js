@@ -26,40 +26,46 @@ class ComponentListing {
 
 		// Perform the visibility marking
 		this.components = this.components.map(component => {
-			delete component.visible;
+			component.visible = true;
 			return component;
 		});
-		this.components = repoListing.markVisibilityBySearchTerm(this.components, filter.search);
-		this.components = repoListing.markVisibilityByType(this.components, {
-			imageset: filter.imageset,
-			module: filter.module,
-			service: filter.service
-		});
-		this.components = repoListing.markVisibilityByStatus(this.components, {
-			active: filter.active,
-			dead: filter.dead,
-			deprecated: filter.deprecated,
-			experimental: filter.experimental,
-			maintained: filter.maintained
-		});
+		if (filter.search !== undefined) {
+			this.components = repoListing.markVisibilityBySearchTerm(this.components, filter.search);
+		}
+		if (filter.module !== undefined) {
+			this.components = repoListing.markVisibilityByType(this.components, {
+				imageset: filter.imageset,
+				module: filter.module,
+				service: filter.service
+			});
+		}
+		if (filter.active !== undefined) {
+			this.components = repoListing.markVisibilityByStatus(this.components, {
+				active: filter.active,
+				dead: filter.dead,
+				deprecated: filter.deprecated,
+				experimental: filter.experimental,
+				maintained: filter.maintained
+			});
+		}
 
 		// Set classes and attributes
 		for (const component of this.components) {
 			if (component.visible) {
 				component.element.removeAttribute('aria-hidden');
-				component.element.classList.remove('o-registry-ui__group--hidden');
+				component.element.classList.remove('o-registry-ui__component-listing--hidden');
 			} else {
 				component.element.setAttribute('aria-hidden', 'true');
-				component.element.classList.add('o-registry-ui__group--hidden');
+				component.element.classList.add('o-registry-ui__component-listing--hidden');
 			}
-		};
+		}
 		for (const [categoryName, category] of Object.entries(repoListing.categorise(this.components))) {
 			if (category.visible) {
 				this.categoryElements[categoryName].removeAttribute('aria-hidden');
-				this.categoryElements[categoryName].classList.remove('o-registry-ui__group--hidden');
+				this.categoryElements[categoryName].classList.remove('o-registry-ui__component-listing--hidden');
 			} else {
 				this.categoryElements[categoryName].setAttribute('aria-hidden', 'true');
-				this.categoryElements[categoryName].classList.add('o-registry-ui__group--hidden');
+				this.categoryElements[categoryName].classList.add('o-registry-ui__component-listing--hidden');
 			}
 		}
 
@@ -75,7 +81,7 @@ class ComponentListing {
 				name: element.getAttribute('data-o-component'),
 				keywords: JSON.parse(element.getAttribute('data-o-component-keywords')),
 				type: element.getAttribute('data-o-component-type'),
-				subType: element.getAttribute('data-o-component-sub-type'),
+				subType: element.getAttribute('data-o-component-sub-type') || null,
 				support: {
 					status: element.getAttribute('data-o-component-support-status')
 				},
