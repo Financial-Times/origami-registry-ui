@@ -24,6 +24,11 @@
 
 		a {
 			@include oTypographyLink();
+			
+			&.secondary-button {
+				color: oColorsGetPaletteColor('black');
+				border-bottom: 1px solid oColorsGetPaletteColor('black');
+			}
 		}
 
 		code {
