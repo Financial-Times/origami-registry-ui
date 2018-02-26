@@ -15,11 +15,14 @@
 	td {
 		vertical-align: middle;
 	}
-	
+
 	.o-registry-ui__group {
 		cursor: pointer;
 	}
-	
+	.o-registry-ui__group--hidden {
+		display: none;
+	}
+
 	.o-registry-ui__group-title {
 		border-bottom: 1px solid oColorsGetPaletteColor('grey-20');;
 

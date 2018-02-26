@@ -28,16 +28,19 @@ describe('lib/repo-listing', () => {
 		it('returns the expected category map', () => {
 			assert.deepEqual(returnValue, {
 				category: {
+					id: 'category',
 					name: 'Category',
 					visible: true,
 					repos: []
 				},
 				example: {
+					id: 'example',
 					name: 'Example',
 					visible: true,
 					repos: []
 				},
 				mock: {
+					id: 'mock',
 					name: 'Mock',
 					visible: true,
 					repos: []
