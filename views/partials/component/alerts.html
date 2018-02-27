@@ -1,21 +1,19 @@
 
 {{#unless component.support.isOrigami}}
-	<div class="o-registry-ui__component-alert">
-		<div class="o-registry-ui__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
-			<div class="o-message__container">
-				<div class="o-message__content">
-					<p class="o-message__content--detail"><span class="o-message__content--highlight">This component is not maintained by the Origami team</span></p>
-					<p class="o-message__content--additional-info">
-						While this component may be used, it is not supported directly by the Origami team.
-						We make no guarantees about the support status, though we will help you if we can.
-					</p>
-				</div>
+	<div class="o-registry-ui__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
+		<div class="o-message__container">
+			<div class="o-message__content">
+				<p class="o-message__content--detail"><span class="o-message__content--highlight">This component is not maintained by the Origami team</span></p>
+				<p class="o-message__content--additional-info">
+					While this component may be used, it is not supported directly by the Origami team.
+					We make no guarantees about the support status, though we will help you if we can.
+				</p>
 			</div>
 		</div>
 	</div>
-{{/unless}}
+{{else}}
 
-{{#ifEquals component.support.status "experimental"}}
+	{{#ifEquals component.support.status "experimental"}}
 	<div class="o-registry-ui__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
@@ -27,9 +25,9 @@
 			</div>
 		</div>
 	</div>
-{{/ifEquals}}
+	{{/ifEquals}}
 
-{{#ifEquals component.support.status "deprecated"}}
+	{{#ifEquals component.support.status "deprecated"}}
 	<div class="o-registry-ui__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
@@ -42,9 +40,9 @@
 			</div>
 		</div>
 	</div>
-{{/ifEquals}}
+	{{/ifEquals}}
 
-{{#ifEquals component.support.status "dead"}}
+	{{#ifEquals component.support.status "dead"}}
 	<div class="o-registry-ui__component-alert o-message o-message--alert--inline o-message--alert-error" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
@@ -56,4 +54,6 @@
 			</div>
 		</div>
 	</div>
-{{/ifEquals}}
+	{{/ifEquals}}
+
+{{/unless}}
