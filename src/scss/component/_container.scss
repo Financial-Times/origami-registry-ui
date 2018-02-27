@@ -30,18 +30,6 @@
 		@include oTypographyMargin($bottom: 3);
 	}
 
-	&-alert {
-		color: oColorsMix('lemon', 'black', 30);
-		background: oColorsMix('lemon', 'white', 70);
-		padding: 16px;
-		@include oTypographyMargin($bottom: 3);
-		@include oTypographySans(1);
-
-		p {
-			margin: 0;
-		}
-	}
-
 	&-description {
 		@include oTypographySans(1);
 		@include oTypographyMargin($top: 0, $bottom: 0);
