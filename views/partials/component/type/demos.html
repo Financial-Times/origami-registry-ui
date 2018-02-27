@@ -27,7 +27,11 @@
 				{{/if}}
 				{{#if display.html}}
 					<div class="o-tabs__tabpanel" id="{{title}}-html">
-						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>
+						{{#if display.plainHTML}}
+							<pre>{{display.plainHTML}}</pre>
+						{{else}}
+							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>
+						{{/if}}
 					</div>
 				{{/if}}
 			</div>
