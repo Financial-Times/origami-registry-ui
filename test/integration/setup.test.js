@@ -26,7 +26,7 @@ before(async () => {
 
 after(() => {
 	if (global.app) {
-		global.app.origami.server.close();
+		global.app.ft.server.close();
 		global.app.health.stop();
 	}
 	if (global.repoDataApi) {
