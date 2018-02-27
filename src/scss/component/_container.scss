@@ -87,10 +87,20 @@
 			appearance: none;
 		}
 
-		.demo__code {
+		.demo__code,
+		pre.demo__code {
 			background: oColorsGetPaletteColor('grey-5');
+			word-break: break-all;
+			tab-size: 4;
+			
+			code {
+				font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+				color: hotpink;
+				white-space: pre-wrap;
+			}
 		}
 	}
+
 
 	&-nav {
 		@include oTypographyMargin($top: 4, $bottom: 2);

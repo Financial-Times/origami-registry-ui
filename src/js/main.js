@@ -3,6 +3,8 @@
 require('./click-helper');
 require('./demo');
 require('./versioning');
+require('./highlight-HTML');
+
 const ComponentListing = require('./component-listing');
 const FilterForm = require('./filter-form');
 
