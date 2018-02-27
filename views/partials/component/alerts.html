@@ -1,0 +1,41 @@
+
+{{#unless component.support.isOrigami}}
+	<div class="o-registry-ui__component-alert">
+		<p>
+			<strong>This component is not maintained by the Origami team:</strong><br/>
+			While this component may be used, it is not supported directly by the Origami team.
+			We make no guarantees about the support status, though we will help you if we can.
+		</p>
+	</div>
+{{/unless}}
+
+{{#ifEquals component.support.status "experimental"}}
+	<div class="o-registry-ui__component-alert">
+		<p>
+			<strong>This component is experimental:</strong><br/>
+			This component is not guaranteed to be ready for production use, and the API should be
+			considered unstable.
+		</p>
+	</div>
+{{/ifEquals}}
+
+{{#ifEquals component.support.status "deprecated"}}
+	<div class="o-registry-ui__component-alert">
+		<p>
+			<strong>This component is deprecated:</strong><br/>
+			This component should not be used for new projects. Only the most severe security-related
+			bugs will be fixed for this component, though existing implementations will continue to work.
+			This page is here for existing users to refer to documentation.
+		</p>
+	</div>
+{{/ifEquals}}
+
+{{#ifEquals component.support.status "dead"}}
+	<div class="o-registry-ui__component-alert o-registry-ui__component-alert--error">
+		<p>
+			<strong>This component is dead:</strong><br/>
+			This component is known to be broken, or is very likely to break.
+			There are no plans to fix any issues with this component.
+		</p>
+	</div>
+{{/ifEquals}}
