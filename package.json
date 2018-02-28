@@ -33,6 +33,7 @@
     "heroku-node-settings": "^1.1.0",
     "highlight.js": "^9.12.0",
     "http-errors": "^1.6.2",
+    "request-promise-native": "^1.0.5",
     "require-all": "^2.2.0",
     "throng": "^4.0.0"
   },
