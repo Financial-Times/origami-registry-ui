@@ -1,7 +1,6 @@
 //Possible TODO: add more styling to hljs classes as and when required
 
-.demo__code,
-pre.demo__code {
+.demo__code {
 	background: oColorsGetPaletteColor('grey-5');
 	word-break: break-all;
 	tab-size: 4;
@@ -9,23 +8,23 @@ pre.demo__code {
 	code {
 		font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 		font-size: 14px;
-		white-space: inherit;
+		// white-space: inherit;
 	}
 }
 
 .hljs {
-  display: block;
-  padding: 0.5em;
-  color: oColorsGetPaletteColor('grey-80');
-  overflow-x: auto;
+	display: block;
+	padding: 0.5em;
+	color: oColorsGetPaletteColor('grey-80');
+	overflow-x: auto;
 }
 
 .hljs-attribute {
-  color: oColorsGetPaletteColor('mandarin-black-90');
+	color: oColorsGetPaletteColor('mandarin-black-90');
 }
 
 .hljs-tag {
-  color: oColorsGetPaletteColor('grey-80');
+	color: oColorsGetPaletteColor('grey-80');
 }
 
 .hljs-value {
@@ -33,5 +32,5 @@ pre.demo__code {
 }
 
 .hljs-title {
-  color: oColorsGetPaletteColor('crimson-black-90');
+	color: oColorsGetPaletteColor('crimson-black-90');
 }

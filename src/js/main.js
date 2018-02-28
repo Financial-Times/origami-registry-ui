@@ -6,13 +6,13 @@ require('./versioning');
 
 const ComponentListing = require('./component-listing');
 const FilterForm = require('./filter-form');
-const Highlight = require('./highlight-html');
+const hljs = require('highlight.js');
 
 // Initialise components
 document.addEventListener('o.DOMContentLoaded', () => {
 	ComponentListing.init();
 	FilterForm.init();
-	Highlight.init();
+	hljs.initHighlighting();
 });
 
 // Dispatch the o.DOMContentLoaded event
