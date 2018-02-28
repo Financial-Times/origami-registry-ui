@@ -2,34 +2,44 @@
 
 const hljs = require('highlight.js');
 
+
+/**
+ * Represents a highlighted syntax element.
+ */
+
 class Highlight {
-
-}
-
-
-	/**
-	 * Initialise highlighted components.
-	 * @param {(HTMLElement|String)} rootElement - The root element to intialise highlighting in, or a CSS selector for the root element.
-	 * @param {Object} [options={}] - An options object for configuring the higlighter.
+	/** Class constructor.
+	 * @param {Object} [options={}] - Options for highlighting configuration.
 	 */
-	static init(rootElement, options) {
-		if (!rootElement) {
-			rootElement = document.body;
-		}
 
-		// If the rootElement isnt an HTMLElement, treat it as a selector
-		if (!(rootElement instanceof HTMLElement)) {
-			rootElement = document.querySelector(rootElement);
-		}
+	constructor(options) {
+		this.highlightElement = options && options.element ? options.element : 'pre code';
+		this.opts = Object.assign({}, {
+			languages: options && options.languages ? [].concat(options.languages) : ['javascript', 'js', 'xml', 'html', 'handlebars']
+		}, options);
 
-		// If the rootElement is an HTMLElement (ie it was found in the document anywhere)
-		// AND the rootElement has the data-o-component=o-filter-form then initialise just 1 filter form (this one)
-		if (rootElement instanceof HTMLElement && /\bo-filter-form\b/.test(rootElement.getAttribute('data-o-component'))) {
-			return new Highlight(rootElement, options);
-		}
+		hljs.configure({
+			languages: this.opts.languages
+		});
 
-		// If the rootElement wasn't itself a filter form, then find ALL of the child things that have the data-o-component=o-highlight set
-		 return Array.from(rootElement.querySelectorAll('[data-o-component="o-highlight"]'), rootElement => new Highlight(rootElement, options));
+		this.highlightElements();
+		hljs.initHighlighting();
 	}
 
+	highlightElements () {
+		const elements = Array.from(document.querySelectorAll(this.highlightElement));
+
+		if (elements) {
+			elements.forEach(element => {
+				hljs.highlightBlock(element);
+			});
+		}
+	}
+
+	static init (options) {
+		return new Highlight(options);
+	}
 }
+
+// Exports
+module.exports = Highlight;

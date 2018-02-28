@@ -3,15 +3,16 @@
 require('./click-helper');
 require('./demo');
 require('./versioning');
-require('./highlight-HTML');
 
 const ComponentListing = require('./component-listing');
 const FilterForm = require('./filter-form');
+const Highlight = require('./highlight-html');
 
 // Initialise components
 document.addEventListener('o.DOMContentLoaded', () => {
 	ComponentListing.init();
 	FilterForm.init();
+	Highlight.init();
 });
 
 // Dispatch the o.DOMContentLoaded event
