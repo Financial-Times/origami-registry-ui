@@ -86,11 +86,8 @@
 			border: 0;
 			appearance: none;
 		}
-
-		.demo__code {
-			background: oColorsGetPaletteColor('grey-5');
-		}
 	}
+
 
 	&-nav {
 		@include oTypographyMargin($top: 4, $bottom: 2);

@@ -10,9 +10,9 @@
 				<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs" role=tablist>
 					{{#if display.html}}
 						{{#if display.live}}
-							<li role=tab><a href="#{{title}}-demo">DEMO</a></li>
+							<li role=tab><a href="#{{title}}-demo-{{@index}}">DEMO</a></li>
 						{{/if}}
-						<li role=tab><a href="#{{title}}-html">HTML</a></li>
+						<li role=tab><a href="#{{title}}-html-{{@index}}">HTML</a></li>
 					{{/if}}
 				</ul>
 
@@ -21,13 +21,17 @@
 
 			<div class="o-registry-ui__component--demo-display">
 				{{#if display.live}}
-					<div class="o-tabs__tabpanel" id="{{title}}-demo">
+					<div class="o-tabs__tabpanel" id="{{title}}-demo-{{@index}}">
 						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live"></iframe>
 					</div>
 				{{/if}}
 				{{#if display.html}}
-					<div class="o-tabs__tabpanel" id="{{title}}-html">
-						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>
+					<div class="o-tabs__tabpanel" id="{{title}}-html-{{@index}}">
+						{{#if display.plainHTML}}
+							<pre class="demo__code"><code class='html'>{{display.plainHTML}}</code></pre>
+						{{else}}
+							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>
+						{{/if}}
 					</div>
 				{{/if}}
 			</div>
