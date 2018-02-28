@@ -1,3 +1,5 @@
+//Possible TODO: add more styling to hljs classes as and when required
+
 .demo__code,
 pre.demo__code {
 	background: oColorsGetPaletteColor('grey-5');
@@ -18,37 +20,9 @@ pre.demo__code {
   overflow-x: auto;
 }
 
-// .hljs-comment,
-// .hljs-meta {
-//   color: #6f716f; // Bump color for wcag AA
-// }
-//
-// .hljs-string,
-// .hljs-variable,
-// .hljs-template-variable,
-// .hljs-strong,
-// .hljs-emphasis,
-// .hljs-quote {
-//   color: #c54700; //Bump color for wcag AA
-// }
-//
-// .hljs-keyword,
-// .hljs-selector-tag,
-// .hljs-type {
-//   color: #a71d5d;
-// }
-
-// .hljs-literal,
-// .hljs-symbol,
-// .hljs-bullet,
 .hljs-attribute {
   color: oColorsGetPaletteColor('mandarin-black-90');
 }
-//
-// .hljs-section,
-// .hljs-name {
-//   color: #63a35c;
-// }
 
 .hljs-tag {
   color: oColorsGetPaletteColor('grey-80');
@@ -58,26 +32,6 @@ pre.demo__code {
 	color: oColorsGetPaletteColor('wasabi-white-70')
 }
 
-// .hljs-title,
-// .hljs-attr,
-// .hljs-selector-id,
-// .hljs-selector-class,
-// .hljs-selector-attr,
-// .hljs-selector-pseudo {
 .hljs-title {
   color: oColorsGetPaletteColor('crimson-black-90');
 }
-
-// .hljs-addition {
-//   color: #55a532;
-//   background-color: #eaffea;
-// }
-//
-// .hljs-deletion {
-//   color: #bd2c00;
-//   background-color: #ffecec;
-// }
-//
-// .hljs-link {
-//   text-decoration: underline;
-// }
