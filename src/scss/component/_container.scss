@@ -113,6 +113,7 @@
 		background: oColorsGetPaletteColor(map-get($demo-custom-buttons, background));
 		color: oColorsGetPaletteColor(map-get($demo-custom-buttons, accent));
 		border-color: oColorsGetPaletteColor(map-get($demo-custom-buttons, accent));
+		outline: 2px solid oColorsGetPaletteColor('teal-100');
 	}
 
 	&.select-html {
@@ -134,6 +135,7 @@
 			background: oColorsGetPaletteColor(map-get($demo-custom-buttons, background));
 			color: oColorsGetPaletteColor(map-get($demo-custom-buttons, accent));
 			border-color: oColorsGetPaletteColor(map-get($demo-custom-buttons, accent));
+			outline: 2px solid oColorsGetPaletteColor('teal-100');
 		}
 	}
 }
