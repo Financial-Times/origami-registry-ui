@@ -86,15 +86,6 @@
 			width: 100%;
 			border: 0;
 			appearance: none;
-
-		}
-
-		button.select-html {
-			@include oButtons();
-			@include oButtonsCustomTheme($theme: $demo-custom-buttons);
-			position: absolute;
-			top: 8px;
-			right: 8px;
 		}
 	}
 
@@ -104,16 +95,30 @@
 		display: flex;
 
 		span {
+			margin-left: auto;
+
 			@include oGridRespondTo($until: S) {
 				display: none;
 			};
-			margin-left: auto;
-
-			a {
-				@include oButtons();
-				@include oButtonsCustomTheme($theme: $demo-custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
-			}
 		}
+	}
+}
+
+.o-registry-ui__demo-button {
+	@include oButtons();
+	@include oButtonsCustomTheme($theme: $demo-custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
+	text-transform: uppercase;
+
+	&:not([disabled]):focus {  //because oButtonsCustomTheme doesn't style focus;
+		background: oColorsGetPaletteColor(map-get($demo-custom-buttons, background));
+		color: oColorsGetPaletteColor(map-get($demo-custom-buttons, accent));
+		border-color: oColorsGetPaletteColor(map-get($demo-custom-buttons, accent));
+	}
+
+	&.select-html {
+		position: absolute;
+		top: 8px;
+		right: 8px;
 	}
 }
 
@@ -121,8 +126,15 @@
 @include oTabsButtonTabs();
 
 .o-registry-ui__component--demo-nav {
-	& .o-tabs--buttontabs [role=tab] {
+	& .o-tabs--buttontabs [role=tab] { //this is repeated to overwrite otabs button tabs styling, which applies a load of styling for the toggle of tab buttons.
 		@include oButtonsCustomTheme($theme: $demo-custom-buttons); //same as above
+		text-transform: uppercase;
+
+		&:not([disabled]):focus {
+			background: oColorsGetPaletteColor(map-get($demo-custom-buttons, background));
+			color: oColorsGetPaletteColor(map-get($demo-custom-buttons, accent));
+			border-color: oColorsGetPaletteColor(map-get($demo-custom-buttons, accent));
+		}
 	}
 }
 
