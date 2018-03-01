@@ -19,7 +19,8 @@
 	overflow-x: auto;
 }
 
-.hljs-attribute {
+.hljs-attribute,
+.hljs-attr {
 	color: oColorsGetPaletteColor('mandarin-black-90');
 }
 
@@ -27,10 +28,12 @@
 	color: oColorsGetPaletteColor('grey-80');
 }
 
+.hljs-string,
 .hljs-value {
 	color: oColorsGetPaletteColor('wasabi-white-70')
 }
 
+.hljs-name,
 .hljs-title {
 	color: oColorsGetPaletteColor('crimson-black-90');
 }
