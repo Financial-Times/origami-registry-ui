@@ -79,12 +79,22 @@
 		@include oTypographyMargin($top: 3);
 		@include oTypographyPadding($bottom: 2);
 		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
+		position: relative;
 
 		.demo__code,
 		.demo__live {
 			width: 100%;
 			border: 0;
 			appearance: none;
+
+		}
+
+		button.select-html {
+			@include oButtons();
+			@include oButtonsCustomTheme($theme: $demo-custom-buttons);
+			position: absolute;
+			top: 8px;
+			right: 8px;
 		}
 	}
 

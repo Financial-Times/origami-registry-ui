@@ -28,6 +28,7 @@
 				{{#if display.html}}
 					<div class="o-tabs__tabpanel" id="{{title}}-html-{{@index}}">
 						{{#if display.plainHTML}}
+							<button class="select-html">SELECT FULL CODE SNIPPET</button>
 							<pre class="demo__code"><code class='html'>{{display.plainHTML}}</code></pre>
 						{{else}}
 							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>
