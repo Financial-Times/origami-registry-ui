@@ -49,6 +49,19 @@ class ComponentListing {
 			});
 		}
 
+		// Feeling lucky? Just click the first result
+		if (filter.feelingLucky) {
+			const firstVisibleComponent = this.components.find(component => component.visible);
+			if (firstVisibleComponent) {
+				const link = firstVisibleComponent.element.querySelector('a');
+				const address = (link ? link.getAttribute('href') : null);
+				if (address) {
+					document.location = address;
+					return;
+				}
+			}
+		}
+
 		// Set classes and attributes
 		for (const component of this.components) {
 			if (component.visible) {
@@ -68,7 +81,6 @@ class ComponentListing {
 				this.categoryElements[categoryName].classList.add('o-registry-ui__component-listing--hidden');
 			}
 		}
-
 	}
 
 	/**
