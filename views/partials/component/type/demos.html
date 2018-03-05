@@ -1,7 +1,9 @@
 <div class="o-registry-ui__component--demo-container">
 	{{#demos}}
 		<div class="o-registry-ui__component--demo">
-			<h3 class="o-registry-ui__component--demo-title">{{capitalise title}}</h3>
+			<h3 class="o-registry-ui__component--demo-title o-registry-ui__linked-heading" id="demo-{{slugify title}}" data-o-component="o-linked-heading">
+				{{capitalise title}}
+			</h3>
 			{{#if description}}
 				<p class="o-registry-ui__component--demo-description">{{description}}</p>
 			{{/if}}
