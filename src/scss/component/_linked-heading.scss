@@ -1,0 +1,32 @@
+
+.o-registry-ui__linked-heading {
+
+	&:target {
+		animation-delay: 0;
+		animation-duration: 5s;
+		animation-timing-function: $o-visual-effects-transition-fade;
+  		animation-name: o-linked-heading-fade;
+	}
+
+	&__permalink,
+	&__permalink:visited {
+		color: oColorsGetColorFor(link, text);
+		text-decoration: none;
+		display: none;
+		user-select: none;
+	}
+
+	&:hover &__permalink {
+		display: inline-block;
+	}
+
+}
+
+@keyframes o-linked-heading-fade {
+	0% {
+		background-color: oColorsMix('lemon', 'white', 30);
+	}
+	100% {
+		background-color: transparent;
+	}
+}
