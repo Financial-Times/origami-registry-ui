@@ -6,34 +6,30 @@
 	tab-size: 4;
 
 	code {
+		display: block;
+		padding: 8px;
+		color: oColorsGetPaletteColor('grey-80');
+		overflow-x: auto;
 		font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 		font-size: 14px;
 		white-space: inherit;
 	}
 }
 
-.hljs {
-	display: block;
-	padding: 0.5em;
-	color: oColorsGetPaletteColor('grey-80');
-	overflow-x: auto;
-}
+.token {
+	.tag {
+		color: oColorsGetPaletteColor('crimson-black-90');
+	}
 
-.hljs-attribute,
-.hljs-attr {
-	color: oColorsGetPaletteColor('mandarin-black-90');
-}
+	.punctuation {
+		color: oColorsGetPaletteColor('grey-80');
+	}
 
-.hljs-tag {
-	color: oColorsGetPaletteColor('grey-80');
-}
+	.attr-name {
+		color: oColorsGetPaletteColor('mandarin-black-90');
+	}
 
-.hljs-string,
-.hljs-value {
-	color: oColorsGetPaletteColor('wasabi-white-70')
-}
-
-.hljs-name,
-.hljs-title {
-	color: oColorsGetPaletteColor('crimson-black-90');
+	.attr-value {
+		color: oColorsGetPaletteColor('wasabi-white-70')
+	}
 }
