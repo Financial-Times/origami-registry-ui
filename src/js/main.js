@@ -17,11 +17,3 @@ document.addEventListener('o.DOMContentLoaded', () => {
 	hljs.initHighlighting();
 	LinkedHeading.init();
 });
-
-// Dispatch the o.DOMContentLoaded event
-if (document.readyState === 'interactive' || document.readyState === 'complete') {
-	document.dispatchEvent(new CustomEvent('o.DOMContentLoaded'));
-}
-document.addEventListener('DOMContentLoaded', function() {
-	document.dispatchEvent(new CustomEvent('o.DOMContentLoaded'));
-});
