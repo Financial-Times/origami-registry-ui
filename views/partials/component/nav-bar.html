@@ -9,7 +9,7 @@
 		{{#each categories}}
 			<li class="o-registry-ui__component--list-title" data-o-component-category="{{id}}">{{name}}</li>
 			{{#each repos}}
-				<li class="o-registry-ui__component--list-item" data-o-component="{{name}}" data-o-component-keywords="{{json keywords}}" data-o-component-type="{{type}}" data-o-component-sub-type="{{subType}}">
+				<li class="o-registry-ui__component--list-item" data-o-component-name="{{name}}" data-o-component-keywords="{{json keywords}}" data-o-component-type="{{type}}" data-o-component-sub-type="{{subType}}">
 					<a href="/components/{{name}}@{{version}}">{{name}}</a>
 				</li>
 			{{/each}}

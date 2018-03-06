@@ -60,9 +60,10 @@ class FilterForm {
 	handleFormChangeEvent(event) {
 		event.preventDefault();
 		const queryString = this.getUrlEncodedFilterValues();
+		const feelingLucky = (event.type === 'submit');
+		this.triggerFilterEvent(feelingLucky);
 		if (this.lastFilter !== queryString) {
 			this.lastFilter = queryString;
-			this.triggerFilterEvent();
 			if (this.alterBrowserHistory) {
 				debouncedPushState({
 					oFilterFormFilters: this.getFilterValues()
@@ -90,10 +91,10 @@ class FilterForm {
 	/**
 	 * Trigger the filter event
 	 */
-	triggerFilterEvent() {
-		document.dispatchEvent(new CustomEvent('o.filterFormUpdate', {
-			detail: this.getFilterValues()
-		}));
+	triggerFilterEvent(feelingLucky = false) {
+		const detail = this.getFilterValues();
+		detail.feelingLucky = feelingLucky;
+		document.dispatchEvent(new CustomEvent('o.filterFormUpdate', {detail}));
 	}
 
 	/**
