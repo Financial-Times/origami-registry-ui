@@ -87,10 +87,10 @@ class ComponentListing {
 	 * Get the list of components.
 	 */
 	getComponents() {
-		const elements = this.listingElement.querySelectorAll('[data-o-component]');
+		const elements = this.listingElement.querySelectorAll('[data-o-component-name]');
 		return Array.from(elements, element => {
 			return {
-				name: element.getAttribute('data-o-component'),
+				name: element.getAttribute('data-o-component-name'),
 				keywords: JSON.parse(element.getAttribute('data-o-component-keywords')),
 				type: element.getAttribute('data-o-component-type'),
 				subType: element.getAttribute('data-o-component-sub-type') || null,
