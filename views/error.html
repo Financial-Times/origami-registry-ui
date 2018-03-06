@@ -5,10 +5,29 @@
 	</h1>
 
 	{{#ifEquals error.status 404}}
-		<p>It seems like you're looking for the component: <br><span>{{replace '/components/' requestUrl}}</span></p>
-		If you can't find what you're looking for on the <a href="/components">Registry Homepage</a>, please get in touch with us via email or Slack.
+		{{#if missingComponentName}}
+			<p>
+				The component that you're looking for was not found:<br/>
+				<span>{{missingComponentName}} @ {{missingComponentVersion}}</span>
+			</p>
+			{{#unlessEquals missingComponentVersion "latest"}}
+				<p>
+					Try requesting the <a href="/components/{{missingComponentName}}@latest">component without a version number</a>,
+					to see whether it actually exists.
+				</p>
+			{{/unlessEquals}}
+			<p>
+				Try <a href="/components?search={{missingComponentName}}&module=true&imageset=true&service=true&active=true&maintained=true&deprecated=true&dead=true&experimental=true">searching for the component name on the registry home page</a>.
+			</p>
+		{{else}}
+			<p>
+				The page that you're looking for was not found.
+				Try the <a href="/components">Registry Homepage</a>,
+				if you're still having trouble, please get in touch with us via email or Slack.
+			</p>
+		{{/if}}
 	{{else}}
 		<p>{{error.message}}</p>
 	{{/ifEquals}}
-		
+
 </div>
