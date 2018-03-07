@@ -37,20 +37,19 @@
 
 	&-links {
 		@include oTypographySansBold(0);
-		display: flex;
-		justify-content: center;
-		flex-flow: row wrap;
+		@include oTypographyMargin($top: 2);
 
 		.external-link {
 			color: oColorsGetPaletteColor('black');
 			border-bottom: none;
-			padding: 0 2px;
+			text-decoration: none;
+			padding-right: 8px;
 
 			&:hover {
 				color: oColorsGetPaletteColor('grey-60');
 			}
 
-			&:before {
+			&:after {
 				content: '';
 				@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('black'), 20);
 				vertical-align: bottom;
