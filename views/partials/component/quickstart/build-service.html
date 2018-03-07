@@ -3,8 +3,9 @@
 	<div class="build-service--instructions">
 		<h3>Build Service</h3>
 		<p>Add the following to your
-			<!-- TODO: implement css/js conditions. -->
-			<code>script</code> and <code>link</code> tags.
+			{{#ifBoth @root.component.hasJS @root.component.hasCSS}}<code>script</code> and <code>link</code> tags.{{/ifBoth}}
+			{{#if @root.component.hasJS}}<code>&lt;script&gt;</code> tag{{/if}}
+			{{#if @root.component.hasCSS}}<code>&lt;link&gt;</code> tag{{/if}}
 		</p>
 		<pre>{{@root.component.name}}@{{@root.component.version}}</pre>
 		<p><a class="o-overlay-trigger"
@@ -24,8 +25,11 @@
 
 	<script type="text/template" id="how-do-i-build-service">
 		<h4>Loading assets using the build service</h4>
-		<!-- TODO: implement css/js conditions. -->
-		<p>To load this module add the following <code>&lt;script></code> and <code>&lt;link></code> tags to your page:
+		<p>To load this module add the following
+			{{#ifBoth @root.component.hasJS @root.component.hasCSS}}<code>&lt;script</code> and <code>&lt;link</code> tags{{/ifBoth}}
+			{{#if @root.component.hasJS}}<code>&lt;script</code> tag{{/if}}
+			{{#if @root.component.hasCSS}}<code>&lt;link></code> tag{{/if}}
+			to your page:
 		</p>
 
 		<pre class="overflow">&lt;link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules={{@root.component.name}}@^{{@root.component.version}}" /><br>&lt;script src="https://build.origami.ft.com/v2/bundles/js?modules={{@root.component.name}}@^{{@root.component.version}}">&lt;/script></pre>

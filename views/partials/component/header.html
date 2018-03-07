@@ -2,6 +2,12 @@
 	<div class="o-registry-ui__component-header">
 		<h1 class="o-registry-ui__component-name">{{component.name}}</h1>
 		<p class="o-registry-ui__component-description">{{component.description}}</p>
+		<div class="o-registry-ui__component-links">
+			<a class="external-link" href="{{component.url}}#readme">README</a>
+			{{#if component.hasJS}}<a class="external-link jsdoc" href="http://codedocs.webservices.ft.com/v1/jsdoc/{{component.name}}@v{{component.version}}">JSDoc</a>{{/if}}
+			{{#if component.hasCSS}}<a class="external-link sassdoc" href="http://codedocs.webservices.ft.com/v1/sassdoc/{{component.name}}@v{{component.version}}">SassDoc</a>{{/if}}
+
+		</div>
 	</div>
 
 	<div class="o-registry-ui__component-status">

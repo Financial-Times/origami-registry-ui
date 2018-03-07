@@ -13,7 +13,7 @@
 	h4 {
 		text-transform: uppercase;
 	}
-	
+
 	&--content {
 		position: sticky;
 		top: 0;
@@ -24,7 +24,7 @@
 
 		a {
 			@include oTypographyLink();
-			
+
 			&.secondary-button {
 				color: oColorsGetPaletteColor('black');
 				border-bottom: 1px solid oColorsGetPaletteColor('black');
@@ -49,27 +49,27 @@
 		}
 	}
 
-	&-links {
-		@include oTypographySansBold(0);
-		display: flex;
-		justify-content: center;
-		flex-flow: row wrap;
-
-		.external-link {
-			color: oColorsGetPaletteColor('black');
-			border-bottom: none;
-			padding: 0 2px;
-
-			&:hover {
-				color: oColorsGetPaletteColor('grey-60');
-			}
-
-			&:before {
-				content: '';
-				@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('black'), 20);
-				vertical-align: bottom;
-			}
-		}
+	// &-links {
+	// 	@include oTypographySansBold(0);
+	// 	display: flex;
+	// 	justify-content: center;
+	// 	flex-flow: row wrap;
+  //
+	// 	.external-link {
+	// 		color: oColorsGetPaletteColor('black');
+	// 		border-bottom: none;
+	// 		padding: 0 2px;
+  //
+	// 		&:hover {
+	// 			color: oColorsGetPaletteColor('grey-60');
+	// 		}
+  //
+	// 		&:before {
+	// 			content: '';
+	// 			@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('black'), 20);
+	// 			vertical-align: bottom;
+	// 		}
+	// 	}
 
 		.github-link {
 			@include oButtons();
@@ -78,7 +78,8 @@
 			@include oTypographyMargin($bottom: 2);
 			width: 100%;
 			text-transform: uppercase;
-		}
+			border: none;
+		// }
 	}
 }
 
