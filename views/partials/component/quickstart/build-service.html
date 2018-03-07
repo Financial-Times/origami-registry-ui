@@ -3,9 +3,12 @@
 	<div class="build-service--instructions">
 		<h3>Build Service</h3>
 		<p>Add the following to your
-			{{#ifBoth @root.component.hasJS @root.component.hasCSS}}<code>script</code> and <code>link</code> tags.{{/ifBoth}}
-			{{#if @root.component.hasJS}}<code>&lt;script&gt;</code> tag{{/if}}
-			{{#if @root.component.hasCSS}}<code>&lt;link&gt;</code> tag{{/if}}
+			{{#ifBoth @root.component.hasJS @root.component.hasCSS}}
+			<code>&lt;script&gt;</code> and <code>&lt;link&gt;</code> tags.
+			{{else}}
+				{{#if @root.component.hasJS}}<code>&lt;script&gt;</code> tag{{/if}}
+				{{#if @root.component.hasCSS}}<code>&lt;link&gt;</code> tag{{/if}}
+			{{/ifBoth}}
 		</p>
 		<pre>{{@root.component.name}}@{{@root.component.version}}</pre>
 		<p><a class="o-overlay-trigger"
@@ -26,9 +29,12 @@
 	<script type="text/template" id="how-do-i-build-service">
 		<h4>Loading assets using the build service</h4>
 		<p>To load this module add the following
-			{{#ifBoth @root.component.hasJS @root.component.hasCSS}}<code>&lt;script</code> and <code>&lt;link</code> tags{{/ifBoth}}
-			{{#if @root.component.hasJS}}<code>&lt;script</code> tag{{/if}}
-			{{#if @root.component.hasCSS}}<code>&lt;link></code> tag{{/if}}
+			{{#ifBoth @root.component.hasJS @root.component.hasCSS}}
+				<code>&lt;script&gt;</code> and <code>&lt;link&gt;</code> tags
+			{{else}}
+				{{#if @root.component.hasJS}}<code>&lt;script&gt;</code> tag{{/if}}
+				{{#if @root.component.hasCSS}}<code>&lt;link&gt;></code> tag{{/if}}
+			{{/ifBoth}}
 			to your page:
 		</p>
 
