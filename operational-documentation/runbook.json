@@ -3,7 +3,7 @@
 	"name": "Origami Registry UI",
 	"description": "Get information about Origami components, services, and repositories",
 	"serviceTier": "Bronze",
-	"lifecycleStage": "Requirements",
+	"lifecycleStage": "Production",
 	"primaryURL": "https://origami-registry.ft.com",
 	"gitRepository": "https://github.com/Financial-Times/origami-registry-ui",
 	"hostPlatform": "Heroku",
