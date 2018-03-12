@@ -184,7 +184,7 @@ The Financial Times has published this software under the [MIT license][license]
 [npm]: https://www.npmjs.com/
 [pingdom-eu]: https://my.pingdom.com/newchecks/checks#check=4254051
 [pingdom-us]: https://my.pingdom.com/newchecks/checks#check=4254126
-[production-url]: https://origami-registry.ft.com/
+[production-url]: https://registry.origami.ft.com/
 [repo-data]: https://origami-repo-data.ft.com/
 [runbook]: https://dewey.in.ft.com/view/system/origami-registry-ui
 [sentry-production]: https://sentry.io/nextftcom/registry-ui-production

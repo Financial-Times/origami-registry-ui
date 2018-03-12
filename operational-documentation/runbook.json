@@ -4,7 +4,7 @@
 	"description": "Get information about Origami components, services, and repositories",
 	"serviceTier": "Bronze",
 	"lifecycleStage": "Production",
-	"primaryURL": "https://origami-registry.ft.com",
+	"primaryURL": "https://registry.origami.ft.com",
 	"gitRepository": "https://github.com/Financial-Times/origami-registry-ui",
 	"hostPlatform": "Heroku",
 	"primaryContact": {
