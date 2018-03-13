@@ -36,16 +36,12 @@
 	}
 
 
-	&-nav {
+	&-tabs {
 		@include oTypographyMargin($top: 4, $bottom: 2);
 		display: flex;
 
 		span {
 			margin-left: auto;
-
-			@include oGridRespondTo($until: S) {
-				display: none;
-			};
 		}
 	}
 }
@@ -106,10 +102,6 @@
 		margin: 0 4px 24px;
 		display: flex;
 		flex-direction: column;
-
-		@include oGridRespondTo(M) {
-			flex-basis: 20%;
-		};
 	}
 
 
@@ -133,14 +125,4 @@
 			border-bottom: none;
 		}
 	}
-}
-
-a.secondary-button {
-	@include oButtons();
-	@include oButtonsSize(big);
-	@include oButtonsCustomTheme($theme: $imageset-custom-buttons);
-	color: oColorsGetPaletteColor('black');
-	width: 100%;
-	border-bottom: 1px solid oColorsGetPaletteColor('black');
-	text-transform: uppercase;
 }

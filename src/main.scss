@@ -22,13 +22,14 @@ $o-normalise-is-silent: false;
 
 // Includes.
 @import 'src/scss/colors';
-@import 'src/scss/navigation/main';
-@import 'src/scss/footer';
-@import 'src/scss/overview/main';
 @import 'src/scss/component/main';
-@import 'src/scss/form';
-@import 'src/scss/error';
 @import 'src/scss/component-listing';
+@import 'src/scss/error';
+@import 'src/scss/footer';
+@import 'src/scss/form';
+@import 'src/scss/navigation/main';
+@import 'src/scss/overview/main';
+@import 'src/scss/media-queries';
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
@@ -45,7 +46,7 @@ html, body {
 	.link {
 		@include oTypographyLink();
 	}
-	
+
 	.secondary-button {
 		@include oButtons();
 		@include oButtonsSize(big);

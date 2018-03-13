@@ -45,19 +45,12 @@
 
 	&--show {
 		display: none;
-		@include oGridRespondTo(M) {
-			display: table-cell;
-		}
 	}
 
 	&--info {
 		@include oTypographyPadding($top: 2);
 		display: table-cell;
 		color: oColorsGetPaletteColor('grey-80');
-
-		@include oGridRespondTo(M) {
-			display: none;
-		}
 	};
 }
 
@@ -67,10 +60,6 @@
 	text-align: center;
 	border-radius: 5px;
 	margin: 0 4px;
-
-	@include oGridRespondTo(M) {
-		margin: 0;
-	};
 
  	&--active,
 	&--maintained {

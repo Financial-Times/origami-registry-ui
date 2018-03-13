@@ -3,10 +3,6 @@
 	border-left: 1px solid oColorsGetPaletteColor('grey-10');
 	max-width: 35%;
 
-	@include oGridRespondTo($until: M) {
-		display: none;
-	};
-
 	&--content {
 		position: sticky;
 		top: 0;

@@ -1,0 +1,36 @@
+@include oGridRespondTo($until: S) {
+	.registry__component--demo-tabs span {
+		display: none;
+	}
+};
+
+@include oGridRespondTo($until: M) {
+	.registry__component--nav,
+	.registry__sidebar {
+		display: none;
+	}
+}
+
+@include oGridRespondTo(M) {
+	.registry__component--image-item {
+		flex-basis: 20%;
+	}
+
+	.registry__table-cell--show {
+		display: table-cell;
+	}
+
+	.registry__table-cell--info {
+		display: none;
+	}
+
+	.status-label {
+		margin: 0;
+	}
+};
+
+@include oGridRespondTo($until: L) {
+	.registry__component--sidebar {
+		display: none;
+	}
+};
