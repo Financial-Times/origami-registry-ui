@@ -1,6 +1,6 @@
 
 {{#unless component.support.isOrigami}}
-	<div class="o-registry-ui__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
+	<div class="registry__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
 				<p class="o-message__content--detail"><span class="o-message__content--highlight">This component is not maintained by the Origami team</span></p>
@@ -14,7 +14,7 @@
 {{else}}
 
 	{{#ifEquals component.support.status "experimental"}}
-	<div class="o-registry-ui__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
+	<div class="registry__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
 				<p class="o-message__content--detail"><span class="o-message__content--highlight">This component is experimental</span></p>
@@ -28,7 +28,7 @@
 	{{/ifEquals}}
 
 	{{#ifEquals component.support.status "deprecated"}}
-	<div class="o-registry-ui__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
+	<div class="registry__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
 				<p class="o-message__content--detail"><span class="o-message__content--highlight">This component is deprecated</span></p>
@@ -43,7 +43,7 @@
 	{{/ifEquals}}
 
 	{{#ifEquals component.support.status "dead"}}
-	<div class="o-registry-ui__component-alert o-message o-message--alert--inline o-message--alert-error" data-o-component="o-message">
+	<div class="registry__component-alert o-message o-message--alert--inline o-message--alert-error" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
 				<p class="o-message__content--detail"><span class="o-message__content--highlight">This component is dead</span></p>

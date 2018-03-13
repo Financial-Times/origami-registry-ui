@@ -24,7 +24,7 @@ class LinkedHeading {
 			this.link.setAttribute('href', `#${this.id}`);
 			this.link.setAttribute('title', 'Link directly to this section of the page');
 			this.link.innerHTML = '&nbsp;¶';
-			this.link.classList.add('o-registry-ui__linked-heading__permalink');
+			this.link.classList.add('registry__linked-heading__permalink');
 			this.headingElement.innerHTML = this.headingElement.innerHTML.trim();
 			this.headingElement.appendChild(this.link);
 		}

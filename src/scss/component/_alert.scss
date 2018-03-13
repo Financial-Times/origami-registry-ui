@@ -1,13 +1,12 @@
 //TODO: remove this when we've added styling for warning on o-message
 
-.o-registry-ui__component-alert {
+.registry__component-alert {
 	@include oTypographyMargin($bottom: 4);
 	padding: 20px;
 
 	.o-message {
 
 		&__container {
-			@include oTypographySans($scale: 0);
 			height: 100%;
 			// sass-lint:disable no-vendor-prefixes
 			-webkit-font-smoothing: antialiased;
@@ -16,7 +15,7 @@
 
 		&__content {
 			&--highlight {
-				@include oTypographySansBold($scale: 0);
+				@include oTypographyBold('sans');
 				padding-right: oTypographySpacingSize(2);
 			}
 

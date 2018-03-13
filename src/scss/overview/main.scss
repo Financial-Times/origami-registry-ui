@@ -1,7 +1,7 @@
 @import 'src/scss/overview/table';
 @import 'src/scss/overview/sidebar';
 
-.o-registry-ui__overview {
+.registry__overview {
 	@include oTypographyMargin($top: 5);
 	display: flex;
 }

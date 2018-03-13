@@ -1,7 +1,9 @@
-.o-registry-ui__component {
+.registry__component {
+	display: flex;
+
 	&--container {
 		@include oGridContainer($grid-mode: "fluid", $bleed: true);
-		margin: 20px 32px 0;
+		margin: 20px 20px 0;
 		width: 100%;
 	}
 
@@ -36,7 +38,7 @@
 	}
 
 	&-links {
-		@include oTypographySansBold(0);
+		@include oTypographyBold('sans');
 		@include oTypographyMargin($top: 2);
 
 		.external-link {
@@ -57,14 +59,13 @@
 		}
 	}
 
-	.o-registry-ui__status-label {
+	.registry__status-label {
 		align-self: left;
 		margin: 0;
 	}
 
-	.o-registry-ui__selection {
-		@include oFormsSmallFeature( 'o-registry-ui');
-		@include oTypographySans(0);
+	.registry__selection {
+		@include oFormsSmallFeature('registry');
 		@include oTypographyMargin($top: 2);
 		align-self: center;
 		display: flex;
@@ -75,7 +76,7 @@
 		}
 	}
 
-	.o-registry-ui__select {
+	.registry__select {
 		@include oFormsCommonFieldBase();
 		@include oFormsSelect();
 		@include oTypographyMargin($top: 1);
@@ -83,7 +84,7 @@
 	}
 }
 
-.o-registry-ui__component--demo {
+.registry__component--demo {
 	@include oTypographyMargin($bottom: 8);
 
 	&-title {
@@ -92,7 +93,6 @@
 	}
 
 	&-description {
-		@include oTypographySans(0);
 		@include oTypographyMargin($top: 0, $bottom: 0);
 		color: oColorsGetPaletteColor('grey-80');
 	}
@@ -126,7 +126,7 @@
 	}
 }
 
-.o-registry-ui__demo-button {
+.registry__demo-button {
 	@include oButtons();
 	@include oButtonsCustomTheme($theme: $demo-custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
 	text-transform: uppercase;
@@ -148,7 +148,7 @@
 @include oTabs(); //because oTabs doesn't accept class names.
 @include oTabsButtonTabs();
 
-.o-registry-ui__component--demo-nav {
+.registry__component--demo-nav {
 	& .o-tabs--buttontabs [role=tab] { //this is repeated to overwrite otabs button tabs styling, which applies a load of styling for the toggle of tab buttons.
 		@include oButtonsCustomTheme($theme: $demo-custom-buttons); //same as above
 		text-transform: uppercase;
@@ -162,7 +162,7 @@
 	}
 }
 
-.o-registry-ui__component--image {
+.registry__component--image {
 	&-grid {
 		display: flex;
 		justify-content: space-around;
@@ -190,7 +190,6 @@
 
 
 	&-title {
-		@include oTypographySans(0);
 		@include oTypographyPadding($top: 1, $bottom: 1);
 		text-align: center;
 		margin-top: auto;
@@ -198,11 +197,11 @@
 	}
 }
 
-.o-registry-ui__component--service {
+.registry__component--service {
 	&-info {
 		@include oTypographySans(1);
 		span {
-			@include oTypographySansBold(1);
+			@include oTypographyBold('sans');
 			text-transform: uppercase;
 		}
 
@@ -223,7 +222,7 @@ a.secondary-button {
 	text-transform: uppercase;
 }
 
-.o-registry-ui__component--support {
+.registry__component--support {
 	@include oTypographySans(1);
 	background-color: oColorsGetPaletteColor('grey-10');
 	padding: 16px;
@@ -239,11 +238,11 @@ a.secondary-button {
 	}
 
 	span {
-		@include oTypographySansBold(1);
+		@include oTypographyBold('sans');
 		text-transform: uppercase;
 	}
 
-	.o-registry-ui__component--contact a {
+	.registry__component--contact a {
 		@include oTypographyLink();
 		border-bottom: none;
 	}

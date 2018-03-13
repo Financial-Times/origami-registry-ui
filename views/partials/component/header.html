@@ -1,19 +1,19 @@
-<div class="o-registry-ui__component-info">
-	<div class="o-registry-ui__component-header">
-		<h1 class="o-registry-ui__component-name">{{component.name}}</h1>
-		<p class="o-registry-ui__component-description">{{component.description}}</p>
-		<div class="o-registry-ui__component-links">
+<div class="registry__component-info">
+	<div class="registry__component-header">
+		<h1 class="registry__component-name">{{component.name}}</h1>
+		<p class="registry__component-description">{{component.description}}</p>
+		<div class="registry__component-links">
 			<a class="external-link" href="{{component.url}}#readme">Readme</a>
 			{{#if component.hasJS}}<a class="external-link" href="http://codedocs.webservices.ft.com/v1/jsdoc/{{component.name}}@v{{component.version}}">JSDoc</a>{{/if}}
 			{{#if component.hasCSS}}<a class="external-link" href="http://codedocs.webservices.ft.com/v1/sassdoc/{{component.name}}@v{{component.version}}">SassDoc</a>{{/if}}
 		</div>
 	</div>
 
-	<div class="o-registry-ui__component-status">
-		<span class="o-registry-ui__status-label o-registry-ui__status-label--{{component.support.status}}" data-test="support-status">{{component.support.status}}</span>
-		<div class="o-registry-ui__selection">
+	<div class="registry__component-status">
+		<span class="registry__status-label registry__status-label--{{component.support.status}}" data-test="support-status">{{component.support.status}}</span>
+		<div class="registry__selection">
 			<label for="version-select">Version:</label>
-			<select id="version-select" class="o-registry-ui__select o-registry-ui__select--small">
+			<select id="version-select" class="registry__select registry__select--small">
 				{{#versions}}
 					<option value="/components/{{name}}@{{version}}" {{#ifEquals version @root.component.version}}data-test="current-version" selected{{/ifEquals}}>{{version}}</option>
 				{{/versions}}

@@ -1,9 +1,4 @@
-
-.o-registry-ui__form {
-	@include oTypographySans(0);
-}
-
-.o-registry-ui__form--nav {
+.registry__form--nav {
 	@include oTypographyPadding($top: 5, $bottom: 0);
 	padding-left: 6px;
 	padding-right: 6px;

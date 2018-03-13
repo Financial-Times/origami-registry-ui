@@ -1,5 +1,4 @@
-.o-registry-ui__sidebar {
-	@include oTypographySans(0);
+.registry__sidebar {
 	flex-shrink: 2;
 	border-left: 1px solid oColorsGetPaletteColor('grey-10');
 	max-width: 35%;

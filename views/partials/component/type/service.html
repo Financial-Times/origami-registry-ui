@@ -1,6 +1,6 @@
-<h3 class="o-registry-ui__component--demo-title">Service Details</h3>
+<h3 class="registry__component--demo-title">Service Details</h3>
 
-<div class="o-registry-ui__component--service-info">
+<div class="registry__component--service-info">
 	{{#if service.systemCode}}
 		<p><span>System Code</span> — {{service.systemCode}}</p>
 	{{/if}}
@@ -14,8 +14,8 @@
 	{{/if}}
 
 	{{#if service.links}}
-		<h3 class="o-registry-ui__component--demo-title">Service Links</h3>
-		<ul class="o-registry-ui__component--service-links">
+		<h3 class="registry__component--demo-title">Service Links</h3>
+		<ul class="registry__component--service-links">
 			{{#service.links}}
 				<li class="service-link--{{category}}">
 					<a href="{{url}}">{{#if description}}{{description}}{{else}}{{url}}{{/if}}</a>

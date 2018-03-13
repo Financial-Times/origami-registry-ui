@@ -35,9 +35,10 @@ $o-normalise-is-silent: false;
 
 html, body {
 	height: 100%;
+	@include oTypographySans(0);
 }
 
-.o-registry-ui {
+.registry {
 	display: flex;
 	flex-direction: column;
 }
