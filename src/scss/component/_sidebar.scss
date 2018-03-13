@@ -21,13 +21,9 @@
 		padding: oTypographySpacingSize(5);
 		margin: oTypographySpacingSize(6);
 
-		a {
-			@include oTypographyLink();
-
-			&.secondary-button {
-				color: oColorsGetPaletteColor('black');
-				border-bottom: 1px solid oColorsGetPaletteColor('black');
-			}
+		a.secondary-button {
+			color: oColorsGetPaletteColor('black');
+			border-bottom: 1px solid oColorsGetPaletteColor('black');
 		}
 
 		code {
@@ -67,8 +63,9 @@
 	}
 
 	a {
-		@include oTypographyLink();
-		border-bottom: none;
+		&.link {
+			border-bottom: none;
+		}
 
 		&__close {
 			background-color: transparent;

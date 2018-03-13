@@ -7,10 +7,6 @@
 		display: flex;
 	}
 
-	a {
-		@include oTypographyLink();
-	}
-
 	&--logo {
 		@include oTypographySansBold(1);
 		align-self: center;

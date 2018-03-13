@@ -15,10 +15,6 @@
 		padding: oTypographySpacingSize(1) oTypographySpacingSize(5);
 		margin: 0 oTypographySpacingSize(6);
 
-		a {
-			@include oTypographyLink();
-		}
-
 		pre {
 			overflow: scroll;
 			tab-size: 0;
