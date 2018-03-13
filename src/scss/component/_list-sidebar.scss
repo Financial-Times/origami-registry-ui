@@ -30,3 +30,9 @@
 		border-bottom: none;
 	}
 }
+
+.registry__form--nav {
+	@include oTypographyPadding($top: 5, $bottom: 0);
+	padding-left: 6px;
+	padding-right: 6px;
+}

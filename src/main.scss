@@ -26,9 +26,9 @@ $o-normalise-is-silent: false;
 @import 'src/scss/component-listing';
 @import 'src/scss/error';
 @import 'src/scss/footer';
-@import 'src/scss/form';
 @import 'src/scss/navigation/main';
 @import 'src/scss/overview/main';
+@import 'src/scss/status-labels';
 @import 'src/scss/media-queries';
 
 @include oFontsInclude(MetricWeb, regular);
