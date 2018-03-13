@@ -3,7 +3,7 @@
 
 	&--container {
 		@include oGridContainer($grid-mode: "fluid", $bleed: true);
-		margin: 20px 20px 0;
+		margin: 20px 28px 0;
 		width: 100%;
 	}
 }
@@ -34,16 +34,6 @@
 			appearance: none;
 		}
 	}
-
-
-	&-tabs {
-		@include oTypographyMargin($top: 4, $bottom: 2);
-		display: flex;
-
-		span {
-			margin-left: auto;
-		}
-	}
 }
 
 .registry__demo-button {
@@ -68,7 +58,14 @@
 @include oTabs(); //because oTabs doesn't accept class names.
 @include oTabsButtonTabs();
 
-.registry__component--demo-nav {
+.registry__component--demo-tabs {
+	@include oTypographyMargin($top: 4, $bottom: 2);
+	display: flex;
+
+	span {
+		margin-left: auto;
+	}
+
 	& .o-tabs--buttontabs [role=tab] { //this is repeated to overwrite otabs button tabs styling, which applies a load of styling for the toggle of tab buttons.
 		@include oButtonsCustomTheme($theme: $demo-custom-buttons); //same as above
 		text-transform: uppercase;
