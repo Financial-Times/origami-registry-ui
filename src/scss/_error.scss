@@ -9,8 +9,7 @@
 		line-height: 40px;
 	}
 
-	a {
-		@include oTypographyLink();
+	a.link {
 		border-bottom: none;
 	}
 }

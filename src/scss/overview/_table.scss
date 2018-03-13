@@ -54,14 +54,14 @@
 		@include oTypographyPadding($top: 2);
 		display: table-cell;
 		color: oColorsGetPaletteColor('grey-80');
-		
+
 		@include oGridRespondTo(M) {
 			display: none;
 		}
 	};
 }
 
-.registry__status-label {
+.status-label {
 	@include oTypographySansBold(-1);
 	padding: 2px 6px 4px 6px;
 	text-align: center;

@@ -6,82 +6,6 @@
 		margin: 20px 20px 0;
 		width: 100%;
 	}
-
-	&-header {
-		display: flex;
-		flex-direction: column;
-	}
-
-	&-info {
-		@include oTypographyPadding($bottom: 3);
-		@include oTypographyMargin($bottom: 6);
-		display: flex;
-		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
-	}
-
-	&-status {
-		@include oTypographyPadding($top: 1);
-		display: flex;
-		flex-direction: column;
-		padding-left: 16px;
-		margin-left: auto;
-	}
-
-	&-name {
-		@include oTypographyProductHeadingLevel1();
-		@include oTypographyMargin($bottom: 3);
-	}
-
-	&-description {
-		@include oTypographySans(1);
-		@include oTypographyMargin($top: 0, $bottom: 0);
-	}
-
-	&-links {
-		@include oTypographyBold('sans');
-		@include oTypographyMargin($top: 2);
-
-		.external-link {
-			color: oColorsGetPaletteColor('black');
-			border-bottom: none;
-			text-decoration: none;
-			padding-right: 8px;
-
-			&:hover {
-				color: oColorsGetPaletteColor('grey-60');
-			}
-
-			&:after {
-				content: '';
-				@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('black'), 20);
-				vertical-align: bottom;
-			}
-		}
-	}
-
-	.registry__status-label {
-		align-self: left;
-		margin: 0;
-	}
-
-	.registry__selection {
-		@include oFormsSmallFeature('registry');
-		@include oTypographyMargin($top: 2);
-		align-self: center;
-		display: flex;
-		flex-direction: column;
-
-		label {
-			text-transform: uppercase;
-		}
-	}
-
-	.registry__select {
-		@include oFormsCommonFieldBase();
-		@include oFormsSelect();
-		@include oTypographyMargin($top: 1);
-		width: 100px;
-	}
 }
 
 .registry__component--demo {
@@ -220,36 +144,4 @@ a.secondary-button {
 	width: 100%;
 	border-bottom: 1px solid oColorsGetPaletteColor('black');
 	text-transform: uppercase;
-}
-
-.registry__component--support {
-	@include oTypographySans(1);
-	background-color: oColorsGetPaletteColor('grey-10');
-	padding: 16px;
-	margin-bottom: 20px;
-	display: flex;
-
-	h4 {
-		@include oTypographyProductHeadingLevel4();
-	}
-
-	p {
-		@include oTypographyMargin($bottom: 0);
-	}
-
-	span {
-		@include oTypographyBold('sans');
-		text-transform: uppercase;
-	}
-
-	.registry__component--contact a {
-		@include oTypographyLink();
-		border-bottom: none;
-	}
-
-	a.secondary-button {
-			align-self: flex-end;
-			margin-left: auto;
-			width: 50%;
-	}
 }

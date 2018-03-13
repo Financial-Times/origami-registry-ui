@@ -12,17 +12,17 @@
 			</p>
 			{{#unlessEquals missingComponentVersion "latest"}}
 				<p>
-					Try requesting the <a href="/components/{{missingComponentName}}@latest">component without a version number</a>,
+					Try requesting the <a class="link" href="/components/{{missingComponentName}}@latest">component without a version number</a>,
 					to see whether it actually exists.
 				</p>
 			{{/unlessEquals}}
 			<p>
-				Try <a href="/components?search={{missingComponentName}}&module=true&imageset=true&service=true&active=true&maintained=true&deprecated=true&dead=true&experimental=true">searching for the component name on the registry home page</a>.
+				Try <a class="link" href="/components?search={{missingComponentName}}&module=true&imageset=true&service=true&active=true&maintained=true&deprecated=true&dead=true&experimental=true">searching for the component name on the registry home page</a>.
 			</p>
 		{{else}}
 			<p>
 				The page that you're looking for was not found.
-				Try the <a href="/components">Registry Homepage</a>,
+				Try the <a class="link" href="/components">Registry Homepage</a>,
 				if you're still having trouble, please get in touch with us via email or Slack.
 			</p>
 		{{/if}}

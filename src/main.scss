@@ -35,10 +35,14 @@ $o-normalise-is-silent: false;
 
 html, body {
 	height: 100%;
-	@include oTypographySans(0);
 }
 
 .registry {
 	display: flex;
 	flex-direction: column;
+	@include oTypographySans(0);
+
+	.link {
+		@include oTypographyLink();
+	}
 }
