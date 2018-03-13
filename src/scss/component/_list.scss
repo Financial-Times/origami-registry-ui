@@ -2,6 +2,10 @@
 	@include oTypographySans(1);
 	background-color: oColorsGetPaletteColor('grey-20');
 	min-width: 220px;
+
+	@include oGridRespondTo($until: M) {
+		display: none;
+	}
 }
 
 .o-registry-ui__component--list {
