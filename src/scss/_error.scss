@@ -1,5 +1,4 @@
-.o-registry-ui__error {
-	@include oTypographySans;
+.registry__error {
 	padding: 36px;
 	margin: auto;
 	max-width: 450px;
@@ -10,8 +9,7 @@
 		line-height: 40px;
 	}
 
-	a {
-		@include oTypographyLink();
+	a.link {
 		border-bottom: none;
 	}
 }

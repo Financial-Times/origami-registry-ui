@@ -1,12 +1,7 @@
-.o-registry-ui__component--sidebar {
-	@include oTypographySans(0);
+.registry__component--sidebar {
 	flex-shrink: 2;
 	border-left: 1px solid oColorsGetPaletteColor('grey-10');
 	min-width: 25%;
-
-	@include oGridRespondTo($until: L) {
-		display: none;
-	};
 
 	h2,
 	h3,
@@ -21,15 +16,6 @@
 		background-color: oColorsGetPaletteColor('grey-10');
 		padding: oTypographySpacingSize(5);
 		margin: oTypographySpacingSize(6);
-
-		a {
-			@include oTypographyLink();
-
-			&.secondary-button {
-				color: oColorsGetPaletteColor('black');
-				border-bottom: 1px solid oColorsGetPaletteColor('black');
-			}
-		}
 
 		code {
 			font-size: 14px;
@@ -60,7 +46,6 @@
 }
 
 .o-overlay {
-	@include oTypographySans;
 	box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.2);
 
 	&__heading {
@@ -69,8 +54,9 @@
 	}
 
 	a {
-		@include oTypographyLink();
-		border-bottom: none;
+		&.link {
+			border-bottom: none;
+		}
 
 		&__close {
 			background-color: transparent;

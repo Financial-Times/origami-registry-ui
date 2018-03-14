@@ -1,14 +1,27 @@
-.o-registry-ui__components {
+
+.registry__search-bar {
+	display: flex;
+
+	#filter-search {
+		margin-right: 20px;
+	}
+
+	.o-buttons {
+		align-self: flex-end;
+	}
+}
+
+.registry__components {
 	padding: 0 20px;
 	flex-grow: 1;
 }
 
-.o-registry-ui__table-head {
+.registry__table-head {
 	background-color: oColorsGetPaletteColor('grey-10');
 }
 
-.o-registry-ui__table-body {
-	tr:not(.o-registry-ui__group-title):hover {
+.registry__table-body {
+	tr:not(.registry__group-title):hover {
 		background-color: oColorsGetPaletteColor('grey-20');;
 	}
 
@@ -16,29 +29,28 @@
 		vertical-align: middle;
 	}
 
-	.o-registry-ui__group {
+	.registry__group {
 		cursor: pointer;
 	}
 
-	.o-registry-ui__group-title {
+	.registry__group-title {
 		border-bottom: 1px solid oColorsGetPaletteColor('grey-20');;
 
 		td {
-			@include oTypographySansBold(0);
+			@include oTypographyBold('sans');
 			@include oTypographyPadding($top: 4, $bottom: 4);
 		}
 	}
 }
 
-.o-registry-ui__table-cell {
+.registry__table-cell {
 	&--link {
-		@include oTypographySansBold($scale: 1);
+		@include oTypographySansBold(1);
 		text-decoration: none;
 		color: oColorsGetPaletteColor('grey-80');;
 	}
 
 	&--description {
-		@include oTypographySans($scale: 0);
 		@include oTypographyMargin($top: 2, $bottom: 1);
 		color: oColorsGetPaletteColor('grey-60');;
 		font-weight: 400;
@@ -46,45 +58,11 @@
 
 	&--show {
 		display: none;
-		@include oGridRespondTo(M) {
-			display: table-cell;
-		}
 	}
 
 	&--info {
 		@include oTypographyPadding($top: 2);
 		display: table-cell;
-		color: oColorsGetPaletteColor('grey-80');;
-		@include oGridRespondTo(M) {
-			display: none;
-		}
+		color: oColorsGetPaletteColor('grey-80');
 	};
-}
-
-.o-registry-ui__status-label {
-	@include oTypographySansBold(-1);
-	padding: 2px 6px 4px 6px;
-	text-align: center;
-	border-radius: 5px;
-	margin: 0 4px;
-
-	@include oGridRespondTo(M) {
-		margin: 0;
-	};
-
- 	&--active,
-	&--maintained {
-		background-color: oColorsMix('jade', 'black', 80);
-		color: oColorsGetTextColor(oColorsMix('jade', 'black', 80), 100);
-	}
-
- 	&--experimental {
-		background-color: oColorsGetPaletteColor('lemon');
-		color: oColorsGetTextColor(oColorsGetPaletteColor('lemon'), 100);
-	}
-
- 	&--deprecated {
-		background-color: oColorsGetPaletteColor('crimson');
-		color: oColorsGetTextColor(oColorsGetPaletteColor('crimson'), 100);
-	}
 }

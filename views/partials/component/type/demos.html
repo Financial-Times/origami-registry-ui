@@ -1,14 +1,14 @@
-<div class="o-registry-ui__component--demo-container">
+<div class="registry__component--demo-container">
 	{{#demos}}
-		<div class="o-registry-ui__component--demo">
-			<h3 class="o-registry-ui__component--demo-title o-registry-ui__linked-heading" id="demo-{{slugify title}}" data-o-component="o-linked-heading">
+		<div class="registry__component--demo">
+			<h3 class="registry__component--demo-title registry__linked-heading" id="demo-{{slugify title}}" data-o-component="o-linked-heading">
 				{{capitalise title}}
 			</h3>
 			{{#if description}}
-				<p class="o-registry-ui__component--demo-description">{{description}}</p>
+				<p class="registry__component--demo-description">{{description}}</p>
 			{{/if}}
 
-			<div class="o-registry-ui__component--demo-nav">
+			<div class="registry__component--demo-tabs">
 				<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs" role=tablist>
 					{{#if display.html}}
 						{{#if display.live}}
@@ -18,10 +18,10 @@
 					{{/if}}
 				</ul>
 
-				<span><a class="o-registry-ui__demo-button" href="{{supportingUrls.live}}" target="_blank">Open Demo in a New Tab</a></span>
+				<span><a class="registry__demo-button" href="{{supportingUrls.live}}" target="_blank">Open Demo in a New Tab</a></span>
 			</div>
 
-			<div class="o-registry-ui__component--demo-display">
+			<div class="registry__component--demo-display">
 				{{#if display.live}}
 					<div class="o-tabs__tabpanel" id="{{title}}-demo-{{@index}}">
 						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live"></iframe>
@@ -30,7 +30,7 @@
 				{{#if display.html}}
 					<div class="o-tabs__tabpanel" id="{{title}}-html-{{@index}}">
 						{{#if display.plainHTML}}
-							<button class="o-registry-ui__demo-button select-html">Select Full Code Snippet</button>
+							<button class="registry__demo-button select-html">Select Full Code Snippet</button>
 							<pre class="demo__code"><code class='html'>{{{display.highlightedHTML}}}</code></pre>
 						{{else}}
 							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>

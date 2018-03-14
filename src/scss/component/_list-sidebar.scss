@@ -1,22 +1,22 @@
-.o-registry-ui__component--nav {
+.registry__component--nav {
 	@include oTypographySans(1);
 	background-color: oColorsGetPaletteColor('grey-20');
 	min-width: 220px;
 }
 
-.o-registry-ui__component--list {
+.registry__component--list {
 	list-style: none;
 	padding: 0 24px;
 	margin: 0;
 }
 
-.o-registry-ui__component--list-title {
+.registry__component--list-title {
 	@include oTypographySansBold(2);
 	@include oTypographyPadding($top: 5, $bottom: 2);
 	color: oColorsGetPaletteColor('grey-80');
 }
 
-.o-registry-ui__component--list-item {
+.registry__component--list-item {
 	@include oTypographyPadding($top: 1, $bottom: 2);
 
 	a {
@@ -29,4 +29,10 @@
 
 		border-bottom: none;
 	}
+}
+
+.registry__form--nav {
+	@include oTypographyPadding($top: 5, $bottom: 0);
+	padding-left: 6px;
+	padding-right: 6px;
 }

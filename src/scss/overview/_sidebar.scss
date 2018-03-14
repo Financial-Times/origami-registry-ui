@@ -1,12 +1,7 @@
-.o-registry-ui__sidebar {
-	@include oTypographySans(0);
+.registry__sidebar {
 	flex-shrink: 2;
 	border-left: 1px solid oColorsGetPaletteColor('grey-10');
 	max-width: 35%;
-
-	@include oGridRespondTo($until: M) {
-		display: none;
-	};
 
 	&--content {
 		position: sticky;
@@ -15,10 +10,6 @@
 		background-color: oColorsGetPaletteColor('grey-10');
 		padding: oTypographySpacingSize(1) oTypographySpacingSize(5);
 		margin: 0 oTypographySpacingSize(6);
-
-		a {
-			@include oTypographyLink();
-		}
 
 		pre {
 			overflow: scroll;

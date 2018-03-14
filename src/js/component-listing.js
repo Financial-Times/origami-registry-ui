@@ -66,19 +66,19 @@ class ComponentListing {
 		for (const component of this.components) {
 			if (component.visible) {
 				component.element.removeAttribute('aria-hidden');
-				component.element.classList.remove('o-registry-ui__component-listing--hidden');
+				component.element.classList.remove('registry__component-listing--hidden');
 			} else {
 				component.element.setAttribute('aria-hidden', 'true');
-				component.element.classList.add('o-registry-ui__component-listing--hidden');
+				component.element.classList.add('registry__component-listing--hidden');
 			}
 		}
 		for (const [categoryName, category] of Object.entries(repoListing.categorise(this.components))) {
 			if (category.visible) {
 				this.categoryElements[categoryName].removeAttribute('aria-hidden');
-				this.categoryElements[categoryName].classList.remove('o-registry-ui__component-listing--hidden');
+				this.categoryElements[categoryName].classList.remove('registry__component-listing--hidden');
 			} else {
 				this.categoryElements[categoryName].setAttribute('aria-hidden', 'true');
-				this.categoryElements[categoryName].classList.add('o-registry-ui__component-listing--hidden');
+				this.categoryElements[categoryName].classList.add('registry__component-listing--hidden');
 			}
 		}
 	}

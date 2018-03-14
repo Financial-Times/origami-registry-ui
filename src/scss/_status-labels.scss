@@ -1,0 +1,23 @@
+.status-label {
+	@include oTypographySansBold(-1);
+	padding: 2px 6px 4px 6px;
+	text-align: center;
+	border-radius: 5px;
+	margin: 0 4px;
+
+ 	&--active,
+	&--maintained {
+		background-color: oColorsMix('jade', 'black', 80);
+		color: oColorsGetTextColor(oColorsMix('jade', 'black', 80), 100);
+	}
+
+ 	&--experimental {
+		background-color: oColorsGetPaletteColor('lemon');
+		color: oColorsGetTextColor(oColorsGetPaletteColor('lemon'), 100);
+	}
+
+ 	&--deprecated {
+		background-color: oColorsGetPaletteColor('crimson');
+		color: oColorsGetTextColor(oColorsGetPaletteColor('crimson'), 100);
+	}
+}

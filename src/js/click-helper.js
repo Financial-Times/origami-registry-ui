@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (function() {
-	const links = document.querySelectorAll('.o-registry-ui__table-cell--link');
+	const links = document.querySelectorAll('.registry__table-cell--link');
 	Array.from(links, link => {
 		const row = link.parentNode.parentNode;
 		if (link.href) {

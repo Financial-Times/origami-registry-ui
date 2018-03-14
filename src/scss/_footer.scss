@@ -1,15 +1,10 @@
-.o-registry-ui__footer {
-	@include oTypographySans(0);
+.registry__footer {
 	background-color: oColorsGetPaletteColor('grey-5');
 	padding: 20px;
 	margin-top: auto;
 
 	&--content {
 		display: flex;
-	}
-
-	a {
-		@include oTypographyLink();
 	}
 
 	&--logo {
