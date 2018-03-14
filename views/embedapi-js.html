@@ -1,0 +1,61 @@
+// This is included in demos, not referenced directly in the JavaScript
+var OrigamiRegistry = (function() {
+
+	function sendResizeToParent(el) {
+		if (!parent || !parent.postMessage || window.top == window) return;
+		el = (el && el instanceof HTMLElement) ? el : document.documentElement;
+		var msg = {
+			type: 'resize',
+			url: location.href
+		};
+
+		// If sizing the frame to the body, make sure the body cannot scroll before measuring height (otherwise addition and removal of scroll bars can cause resize loops)
+		if (el == document.documentElement) {
+			document.body.style.overflow = 'hidden';
+			document.documentElement.style.overflow = 'hidden';
+
+		// If sizing to a particular element, set the width as well (not set if we resize to body since viewport size is not under the control of the page)
+		} else {
+			msg.width = el.offsetWidth;
+		}
+		msg.height = el.offsetHeight;
+		parent.postMessage(JSON.stringify(msg), '*');
+	}
+
+	function processPostMessage(msg) {
+		var data, ifr, plusborders, style;
+		try { data = JSON.parse(msg.data); } catch (e) { return; }
+		data.url = data.url.replace(location.protocol+'\/\/'+location.hostname, '');
+		if (data.type == 'resize' && (ifr = document.querySelector('iframe[src="'+data.url+'"]'))) {
+			style = getComputedStyle(ifr);
+			plusborders = style.getPropertyValue('box-sizing') == 'border-box';
+			if (data.width) {
+				ifr.style.width = data.width + (plusborders ? parseInt(style.getPropertyValue('border-left-width'))+parseInt(style.getPropertyValue('border-right-width')) : 0) + 'px';
+			}
+			if (data.height) {
+				ifr.style.height = data.height + (plusborders ? parseInt(style.getPropertyValue('border-top-width'))+parseInt(style.getPropertyValue('border-bottom-width')) : 0) + 'px';
+			}
+			ifr.classList.add('sized');
+			sendResizeToParent();
+		}
+	}
+
+	if (window.addEventListener) {
+		window.addEventListener('message', processPostMessage, false);
+		{{#ifEquals autoload "resize"}}
+		window.addEventListener('load', function() {
+			sendResizeToParent();
+			if ('MutationObserver' in window) {
+				var observer = new MutationObserver(function() { sendResizeToParent(); });
+				observer.observe(document.documentElement, {subtree: true, childList: true});
+			}
+			window.addEventListener('resize', sendResizeToParent, false);
+		}, false);
+		{{/ifEquals}}
+	}
+
+	return {
+		resize: sendResizeToParent
+	};
+
+}());
