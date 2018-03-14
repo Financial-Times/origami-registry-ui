@@ -4,7 +4,7 @@
 	"systemCode": "origami-registry-ui",
 	"purpose": "Get information about Origami components, services, and repositories",
 	"audience": "internal",
-	"primaryUrl": "https://origami-registry.ft.com/",
+	"primaryUrl": "https://registry.origami.ft.com/",
 	"serviceTier": "bronze",
 	"dateCreated": "2018-01-24",
 	"contacts": [
