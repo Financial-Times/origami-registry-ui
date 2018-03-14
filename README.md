@@ -3,8 +3,6 @@
 
 Get information about Origami components, services, and repositories.
 
-⚠️ This is a work in progress ⚠️
-
 [![Build status](https://img.shields.io/circleci/project/Financial-Times/origami-registry-ui.svg)][ci]
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)][license]
 
