@@ -38,7 +38,7 @@
 
 .registry__demo-button {
 	@include oButtons();
-	@include oButtonsCustomTheme($theme: $demo-custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
+	@include oButtonsTheme($theme: $demo-custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
 	text-transform: uppercase;
 
 	&:not([disabled]):focus {  //because oButtonsCustomTheme doesn't style focus;
@@ -67,7 +67,7 @@
 	}
 
 	& .o-tabs--buttontabs [role=tab] { //this is repeated to overwrite otabs button tabs styling, which applies a load of styling for the toggle of tab buttons.
-		@include oButtonsCustomTheme($theme: $demo-custom-buttons); //same as above
+		@include oButtonsTheme($theme: $demo-custom-buttons); //same as above
 		text-transform: uppercase;
 
 		&:not([disabled]):focus {

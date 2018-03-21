@@ -1,4 +1,3 @@
-@import 'src/scss/component/alert';
 @import 'src/scss/component/container';
 @import 'src/scss/component/header';
 @import 'src/scss/component/linked-heading';
@@ -6,3 +5,9 @@
 @import 'src/scss/component/support';
 @import 'src/scss/component/syntax-highlight';
 @import 'src/scss/component/quickstart-sidebar';
+
+@include oMessage($types: 'alert-inner' 'notice-inner', $status: 'error' 'warning-light');
+
+.registry__alert {
+	margin-bottom: 20px;
+}
