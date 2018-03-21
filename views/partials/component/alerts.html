@@ -1,12 +1,10 @@
 
 {{#unless component.support.isOrigami}}
-	<div class="registry__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
+	<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
-				<p class="o-message__content--detail"><span class="o-message__content--highlight">This component is not maintained by the Origami team</span></p>
-				<p class="o-message__content--additional-info">
-					While this component may be used, it is not supported directly by the Origami team.
-					We make no guarantees about the support status, though we will help you if we can.
+				<p class="o-message__content-main">
+					This component is not maintained by the Origami team. While this component may be used, it is not supported directly by the Origami team. We make no guarantees about the support status, though we will help you if we can.
 				</p>
 			</div>
 		</div>
@@ -14,26 +12,20 @@
 {{else}}
 
 	{{#ifEquals component.support.status "experimental"}}
-	<div class="registry__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
+	<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
-				<p class="o-message__content--detail"><span class="o-message__content--highlight">This component is experimental</span></p>
-				<p class="o-message__content--additional-info">
-					This component is not guaranteed to be ready for production use, and the API should be
-					considered unstable.
-				</p>
+				<p class="o-message__content-main">This component is experimental. This component is not guaranteed to be ready for production use, and the API should be considered unstable.</p>
 			</div>
 		</div>
 	</div>
 	{{/ifEquals}}
 
 	{{#ifEquals component.support.status "deprecated"}}
-	<div class="registry__component-alert o-message o-message--alert--inline o-message--alert-warning" data-o-component="o-message">
+	<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
-				<p class="o-message__content--detail"><span class="o-message__content--highlight">This component is deprecated</span></p>
-				<p class="o-message__content--additional-info">
-					This component should not be used for new projects. Only the most severe security-related
+				<p class="o-message__content-main">This component is deprecated. This component should not be used for new projects. Only the most severe security-related
 					bugs will be fixed for this component, though existing implementations will continue to work.
 					This page is here for existing users to refer to documentation.
 				</p>
@@ -43,11 +35,13 @@
 	{{/ifEquals}}
 
 	{{#ifEquals component.support.status "dead"}}
-	<div class="registry__component-alert o-message o-message--alert--inline o-message--alert-error" data-o-component="o-message">
+	<div class="o-message o-message--alert-inner o-message--error" data-o-component="o-message">
 		<div class="o-message__container">
 			<div class="o-message__content">
-				<p class="o-message__content--detail"><span class="o-message__content--highlight">This component is dead</span></p>
-				<p class="o-message__content--additional-info">
+				<p class="o-message__content-main">
+					<span class="o-message__content-highlight">This component is dead</span>
+				</p>
+				<p class="o-message__content-detail">
 					This component is known to be broken, or is very likely to break.
 					There are no plans to fix any issues with this component.
 				</p>

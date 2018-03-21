@@ -1,9 +1,10 @@
 $o-buttons-is-silent: false;
 $o-forms-is-silent: false;
 $o-header-services-is-silent: false;
+$o-normalise-is-silent: false;
+// $o-message-is-silent: false;
 $o-overlay-is-silent: false;
 $o-table-is-silent: false;
-$o-normalise-is-silent: false;
 
 // Dependencies.
 @import 'o-colors/main';
@@ -13,7 +14,7 @@ $o-normalise-is-silent: false;
 @import 'o-grid/main';
 @import 'o-header-services/main';
 @import 'o-normalise/main';
-
+@import 'o-message/main';
 @import 'o-overlay/main';
 @import 'o-table/main';
 @import 'o-tabs/main';
