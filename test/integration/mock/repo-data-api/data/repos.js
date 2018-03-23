@@ -19,7 +19,8 @@ module.exports = [
 			isOrigami: true
 		},
 		resources: {
-			demos: null
+			demos: null,
+			dependencies: null
 		},
 
 		// mock use only
