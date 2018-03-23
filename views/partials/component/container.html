@@ -18,7 +18,7 @@
 		{{> component/type/service}}
 	{{/if}}
 
-	{{#ifEither dependencies.bower dependencies.npm}}
+	{{#ifEither dependencies.bower.length dependencies.npm.length}}
 		{{> component/dependencies dependencies}}
 	{{/ifEither}}
 
