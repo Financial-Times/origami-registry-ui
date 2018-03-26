@@ -1,5 +1,5 @@
-@import 'src/scss/overview/table';
-@import 'src/scss/overview/sidebar';
+@import 'table';
+@import 'sidebar';
 
 .registry__overview {
 	@include oTypographyMargin($top: 5);

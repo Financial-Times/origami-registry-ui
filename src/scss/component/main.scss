@@ -1,10 +1,11 @@
-@import 'src/scss/component/container';
-@import 'src/scss/component/header';
-@import 'src/scss/component/linked-heading';
-@import 'src/scss/component/list-sidebar';
-@import 'src/scss/component/support';
-@import 'src/scss/component/syntax-highlight';
-@import 'src/scss/component/quickstart-sidebar';
+@import 'dependencies';
+@import 'container';
+@import 'header';
+@import 'linked-heading';
+@import 'list-sidebar';
+@import 'support';
+@import 'syntax-highlight';
+@import 'quickstart-sidebar';
 
 @include oMessage($types: 'alert-inner' 'notice-inner', $status: 'error' 'warning-light');
 

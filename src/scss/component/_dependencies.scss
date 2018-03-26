@@ -1,0 +1,23 @@
+.registry__component__dependencies {
+	padding: 20px;
+	margin-bottom: 20px;
+	background: oColorsGetPaletteColor('grey-10');
+
+	.registry__dependency-tables {
+		display: flex;
+		justify-content: space-around;
+		width: 100%
+	}
+
+	.registry__dependency-table tr {
+		th {
+			// text-align: left;
+			text-transform: uppercase;
+		}
+
+		td:nth-child(1) {
+			text-align: right;
+			padding-right: 10px;
+		}
+	}
+}
