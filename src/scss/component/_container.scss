@@ -18,13 +18,13 @@
 
 	&-description {
 		@include oTypographyMargin($top: 0, $bottom: 0);
-		color: oColorsGetPaletteColor('grey-80');
+		color: oColorsGetPaletteColor('slate-white-80');
 	}
 
 	&-display {
 		@include oTypographyMargin($top: 3);
 		@include oTypographyPadding($bottom: 2);
-		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
+		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 		position: relative;
 
 		.demo__code,
@@ -38,7 +38,7 @@
 
 .registry__demo-button {
 	@include oButtons();
-	@include oButtonsTheme($theme: $demo-custom-buttons); // because oButtonsTheme('inverse') has a weird hover colour
+	@include oButtonsTheme($theme: $demo-custom-buttons); // because oButtonsTheme('mono') has a weird hover colour
 	text-transform: uppercase;
 
 	&:not([disabled]):focus {  //because oButtonsCustomTheme doesn't style focus;
@@ -106,7 +106,7 @@
 		@include oTypographyPadding($top: 1, $bottom: 1);
 		text-align: center;
 		margin-top: auto;
-		border-bottom: 1px solid oColorsGetPaletteColor('grey-5');
+		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 	}
 }
 
