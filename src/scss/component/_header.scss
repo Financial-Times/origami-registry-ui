@@ -3,7 +3,7 @@
 		@include oTypographyPadding($bottom: 3);
 		@include oTypographyMargin($bottom: 6);
 		display: flex;
-		border-bottom: 1px solid oColorsGetPaletteColor('grey-10');
+		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 	}
 
 	&-header {
@@ -26,18 +26,18 @@
 		@include oTypographyMargin($top: 2);
 
 		.external-link {
-			color: oColorsGetPaletteColor('black');
+			color: oColorsGetPaletteColor('slate-white-80');
 			border-bottom: none;
 			text-decoration: none;
 			padding-right: 8px;
 
 			&:hover {
-				color: oColorsGetPaletteColor('grey-60');
+				color: oColorsGetPaletteColor('slate-white-60');
 			}
 
 			&:after {
 				content: '';
-				@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('black'), 20);
+				@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('slate'), 20);
 				vertical-align: bottom;
 			}
 		}
