@@ -5,13 +5,12 @@
 
 	.registry__dependency-tables {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		width: 100%
 	}
 
 	.registry__dependency-table tr {
 		th {
-			// text-align: left;
 			text-transform: uppercase;
 		}
 
