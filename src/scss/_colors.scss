@@ -11,17 +11,13 @@
 @include oColorsSetColor('mandarin-black-90', oColorsMix(mandarin, black, 90));
 @include oColorsSetColor('wasabi-white-70',oColorsMix(wasabi, black	, 70));
 
-$demo-custom-buttons: (
-	background: 'white',
-	accent: 'grey-60'
-);
 
 $imageset-custom-buttons: (
-	background: 'grey-10',
-	accent: 'grey-60'
+	background: 'slate-white-15',
+	accent: 'slate-white-60'
 );
 
 $inverse-custom-buttons: (
-	background: 'black',
+	background: 'slate',
 	accent: 'white'
 );
