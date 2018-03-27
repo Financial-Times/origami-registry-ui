@@ -1,3 +1,5 @@
+@include oColorsSetColor('slate-white-80', oColorsMix(slate, white, 80));
+@include oColorsSetColor('slate-white-60', oColorsMix(slate, white, 60));
 @include oColorsSetColor('grey-5', oColorsMix(black, white, 5));
 @include oColorsSetColor('grey-10', oColorsMix(black, white, 10));
 @include oColorsSetColor('grey-20', oColorsMix(black, white, 20));
