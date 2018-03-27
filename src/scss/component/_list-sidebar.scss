@@ -1,6 +1,6 @@
 .registry__component--nav {
 	@include oTypographySans(1);
-	background-color: oColorsGetPaletteColor('grey-20');
+	background-color: oColorsGetPaletteColor('slate-white-15');
 	min-width: 220px;
 }
 
@@ -13,7 +13,7 @@
 .registry__component--list-title {
 	@include oTypographySansBold(2);
 	@include oTypographyPadding($top: 5, $bottom: 2);
-	color: oColorsGetPaletteColor('grey-80');
+	color: oColorsGetPaletteColor('slate-white-80');
 }
 
 .registry__component--list-item {
@@ -21,9 +21,9 @@
 
 	a {
 		@include oTypographyLinkCustom(
-			$baseColor: 'grey-80',
-			$hoverColor: 'grey-60',
-			$backgroundColor: 'grey-20',
+			$baseColor: 'slate-white-80',
+			$hoverColor: 'slate-white-60',
+			$backgroundColor: 'slate-white-15',
 			$outlineColor: 'teal-100'
 		)
 

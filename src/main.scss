@@ -5,7 +5,8 @@ $o-normalise-is-silent: false;
 $o-overlay-is-silent: false;
 $o-table-is-silent: false;
 
-// Dependencies.
+$o-brand: 'internal';
+
 @import 'o-colors/main';
 @import 'o-buttons/main';
 @import 'o-fonts/main';
@@ -20,7 +21,6 @@ $o-table-is-silent: false;
 @import 'o-typography/main';
 @import 'o-visual-effects/main';
 
-// Includes.
 @import 'src/scss/colors';
 @import 'src/scss/component/main';
 @import 'src/scss/component-listing';
