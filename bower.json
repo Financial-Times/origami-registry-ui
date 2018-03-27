@@ -20,7 +20,7 @@
 		"o-tabs": "^4.0.4",
 		"o-typography": "^5.5.0",
 		"o-normalise": "^1.5.3",
-		"o-overlay": "^2.4.0",
+		"o-overlay": "^2.4.1",
 		"o-visual-effects": "^2.0.3"
 	}
 }
