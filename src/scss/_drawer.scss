@@ -1,0 +1,6 @@
+.registry__drawer.o-header__drawer {
+	.o-header__drawer-tools {
+		@include oTypographySansBold(1);
+		padding: 12px 0 4px 16px; //makes the drawer tool strip the same height as the header bar
+	}
+}
