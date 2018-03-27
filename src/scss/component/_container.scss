@@ -38,15 +38,17 @@
 
 .registry__demo-button {
 	@include oButtons($theme: 'mono');
-
+	text-transform: uppercase;
+	
 	&.select-html {
 		position: absolute;
 		top: oTypographySpacingSize(2);
 		right: oTypographySpacingSize(2);
+		background: oColorsGetPaletteColor('white');
 	}
 }
 
-// oustide of a block because oTabs doesn't accept class names.
+// oustide of a block because the below mixins don't accept class names.
 @include oTabs();
 @include oTabsButtonTabs();
 
@@ -57,10 +59,9 @@
 	span {
 		margin-left: auto;
 	}
-
-	& .o-tabs--buttontabs [role=tab], //this is repeated to overwrite otabs button tabs styling, which applies a load of styling for the toggle of tab buttons.
-	.registry__demo-button {
-		@include oButtonsTheme($theme: 'mono'); //same as above
+	
+	ul {
+		@include oTabsButtonTabsTheme($theme: 'mono', $selector: false);
 		text-transform: uppercase;
 	}
 }
