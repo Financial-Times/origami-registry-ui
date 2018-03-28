@@ -42,26 +42,24 @@
 	}
 }
 
-.registry__table-cell {
-	&--link {
-		@include oTypographySansBold(1);
-		text-decoration: none;
-		color: oColorsGetPaletteColor('slate-white-80');
-	}
-
-	&--description {
-		@include oTypographyMargin($top: 2, $bottom: 1);
-		color: oColorsGetPaletteColor('slate-white-60');
-		font-weight: 400;
-	}
-
-	&--show {
-		display: none;
-	}
-
-	&--info {
-		@include oTypographyPadding($top: 2);
-		display: table-cell;
-		color: oColorsGetPaletteColor('slate-white-80');
-	};
+.registry__table-cell-link {
+	@include oTypographySansBold(1);
+	text-decoration: none;
+	color: oColorsGetPaletteColor('slate-white-80');
 }
+
+.registry__table-cell-description {
+	@include oTypographyMargin($top: 2, $bottom: 1);
+	font-weight: 400;
+	color: oColorsGetPaletteColor('slate-white-80');
+}
+
+.registry__table-cell-show {
+	display: none;
+}
+
+.registry__table-cell-info {
+	@include oTypographyPadding($top: 2);
+	display: table-cell;
+	color: oColorsGetPaletteColor('slate-white-80');
+};
