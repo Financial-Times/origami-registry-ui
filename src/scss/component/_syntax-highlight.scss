@@ -1,14 +1,14 @@
-//Possible TODO: add more styling to hljs classes as and when required
+//Possible TODO: add more styling to syntax highlight classes as and when required
 
 .demo__code {
-	background: oColorsGetPaletteColor('grey-5');
+	background: oColorsGetPaletteColor('slate-white-5');
 	word-break: break-all;
 	tab-size: 4;
 
 	code {
 		display: block;
 		padding: 8px;
-		color: oColorsGetPaletteColor('grey-80');
+		color: oColorsGetPaletteColor('slate-white-80');
 		overflow-x: auto;
 		font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 		font-size: 14px;
@@ -22,7 +22,7 @@
 	}
 
 	.punctuation {
-		color: oColorsGetPaletteColor('grey-80');
+		color: oColorsGetPaletteColor('slate-white-80');
 	}
 
 	.attr-name {

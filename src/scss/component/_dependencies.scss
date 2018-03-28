@@ -1,17 +1,16 @@
 .registry__component__dependencies {
 	padding: 20px;
 	margin-bottom: 20px;
-	background: oColorsGetPaletteColor('grey-10');
+	background: oColorsGetPaletteColor('slate-white-5');
 
 	.registry__dependency-tables {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		width: 100%
 	}
 
 	.registry__dependency-table tr {
 		th {
-			// text-align: left;
 			text-transform: uppercase;
 		}
 

@@ -1,4 +1,3 @@
-
 .registry__search-bar {
 	display: flex;
 
@@ -17,12 +16,12 @@
 }
 
 .registry__table-head {
-	background-color: oColorsGetPaletteColor('grey-10');
+	background-color: oColorsGetPaletteColor('slate-white-5');
 }
 
 .registry__table-body {
 	tr:not(.registry__group-title):hover {
-		background-color: oColorsGetPaletteColor('grey-20');;
+		background-color: oColorsGetPaletteColor('slate-white-15');
 	}
 
 	td {
@@ -34,7 +33,7 @@
 	}
 
 	.registry__group-title {
-		border-bottom: 1px solid oColorsGetPaletteColor('grey-20');;
+		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 
 		td {
 			@include oTypographyBold('sans');
@@ -47,12 +46,12 @@
 	&--link {
 		@include oTypographySansBold(1);
 		text-decoration: none;
-		color: oColorsGetPaletteColor('grey-80');;
+		color: oColorsGetPaletteColor('slate-white-80');
 	}
 
 	&--description {
 		@include oTypographyMargin($top: 2, $bottom: 1);
-		color: oColorsGetPaletteColor('grey-60');;
+		color: oColorsGetPaletteColor('slate-white-60');
 		font-weight: 400;
 	}
 
@@ -63,6 +62,6 @@
 	&--info {
 		@include oTypographyPadding($top: 2);
 		display: table-cell;
-		color: oColorsGetPaletteColor('grey-80');
+		color: oColorsGetPaletteColor('slate-white-80');
 	};
 }

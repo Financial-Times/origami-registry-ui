@@ -1,6 +1,6 @@
 .registry__component--sidebar {
 	flex-shrink: 2;
-	border-left: 1px solid oColorsGetPaletteColor('grey-10');
+	border-left: 1px solid oColorsGetPaletteColor('slate-white-15');
 	min-width: 25%;
 
 	h2,
@@ -13,21 +13,21 @@
 		position: sticky;
 		top: 0;
 		align-self: flex-start;
-		background-color: oColorsGetPaletteColor('grey-10');
+		background-color: oColorsGetPaletteColor('slate-white-5');
 		padding: oTypographySpacingSize(5);
 		margin: oTypographySpacingSize(6);
 
 		code {
 			font-size: 14px;
 			padding: 2px;
-			background-color: oColorsGetPaletteColor('grey-20');
+			background-color: oColorsGetPaletteColor('slate-white-15');
 		}
 
 		pre {
 			font-size: 14px;
 			tab-size: 0;
 			padding: oTypographySpacingSize(2);
-			background-color: oColorsGetPaletteColor('grey-20');
+			background-color: oColorsGetPaletteColor('slate-white-15');
 
 			&.overflow {
 				overflow: scroll;
@@ -38,7 +38,8 @@
 	.github-link {
 		@include oButtons();
 		@include oButtonsSize(big);
-		@include oButtonsTheme($theme: $inverse-custom-buttons);
+		@include oButtonsTheme('inverse');
+		background-color: oColorsGetPaletteColor('slate');
 		width: 100%;
 		text-transform: uppercase;
 		border: none;
@@ -47,11 +48,6 @@
 
 .o-overlay {
 	box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.2);
-
-	&__heading {
-		background: oColorsGetPaletteColor('black');
-		color: oColorsGetPaletteColor('white');
-	}
 
 	a {
 		&.link {
@@ -71,14 +67,14 @@
 	code {
 		font-size: 14px;
 		padding: 2px;
-		background-color: oColorsGetPaletteColor('grey-10');
+		background-color: oColorsGetPaletteColor('slate-white-15');
 	}
 
 	pre {
 		font-size: 14px;
 		tab-size: 0;
 		padding: oTypographySpacingSize(2);
-		background-color: oColorsGetPaletteColor('grey-10');
+		background-color: oColorsGetPaletteColor('slate-white-15');
 
 		&.overflow {
 			overflow: scroll;

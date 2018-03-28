@@ -5,7 +5,8 @@ $o-normalise-is-silent: false;
 $o-overlay-is-silent: false;
 $o-table-is-silent: false;
 
-// Dependencies.
+$o-brand: 'internal';
+
 @import 'o-colors/main';
 @import 'o-buttons/main';
 @import 'o-fonts/main';
@@ -20,13 +21,12 @@ $o-table-is-silent: false;
 @import 'o-typography/main';
 @import 'o-visual-effects/main';
 
-// Includes.
 @import 'src/scss/colors';
 @import 'src/scss/component/main';
 @import 'src/scss/component-listing';
+@import 'src/scss/drawer';
 @import 'src/scss/error';
 @import 'src/scss/footer';
-@import 'src/scss/navigation/main';
 @import 'src/scss/overview/main';
 @import 'src/scss/status-labels';
 @import 'src/scss/media-queries';
@@ -50,8 +50,8 @@ html, body {
 	.secondary-button {
 		@include oButtons();
 		@include oButtonsSize(big);
-		@include oButtonsCustomTheme($theme: $imageset-custom-buttons);
-		color: oColorsGetPaletteColor('black');
+		@include oButtonsTheme($theme: 'mono');
+		background-color: oColorsGetPaletteColor('slate-white-5');
 		width: 100%;
 		border-bottom: 1px solid oColorsGetPaletteColor('black');
 		text-transform: uppercase;
