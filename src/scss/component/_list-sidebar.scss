@@ -21,12 +21,14 @@
 	a {
 		@include oTypographyLinkCustom(
 			$baseColor: 'slate',
-			$hoverColor: 'slate-white-80',
+			$hoverColor: 'slate',
 			$backgroundColor: 'slate-white-5',
 			$outlineColor: 'teal-100'
-		)
+		);
 
-		border-bottom: none;
+		:not(:hover) {
+			border-bottom: none;
+		}
 	}
 }
 
