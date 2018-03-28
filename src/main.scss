@@ -50,8 +50,8 @@ html, body {
 	.secondary-button {
 		@include oButtons();
 		@include oButtonsSize(big);
-		@include oButtonsCustomTheme($theme: $imageset-custom-buttons);
-		color: oColorsGetPaletteColor('black');
+		@include oButtonsCustomTheme($theme: 'mono');
+		background-color: oColorsGetPaletteColor('slate-white-5');
 		width: 100%;
 		border-bottom: 1px solid oColorsGetPaletteColor('black');
 		text-transform: uppercase;

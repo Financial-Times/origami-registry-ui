@@ -1,23 +1,8 @@
 @include oColorsSetColor('slate-white-80', oColorsMix(slate, white, 80));
 @include oColorsSetColor('slate-white-60', oColorsMix(slate, white, 60));
-@include oColorsSetColor('grey-5', oColorsMix(black, white, 5));
-@include oColorsSetColor('grey-10', oColorsMix(black, white, 10));
-@include oColorsSetColor('grey-20', oColorsMix(black, white, 20));
-@include oColorsSetColor('grey-30', oColorsMix(black, white, 30));
-@include oColorsSetColor('grey-60', oColorsMix(black, white, 60));
-@include oColorsSetColor('grey-80', oColorsMix(black, white, 80));
 
 @include oColorsSetColor('crimson-black-90', oColorsMix(crimson, black, 90));
 @include oColorsSetColor('mandarin-black-90', oColorsMix(mandarin, black, 90));
 @include oColorsSetColor('wasabi-white-70',oColorsMix(wasabi, black	, 70));
 
-
-$imageset-custom-buttons: (
-	background: 'slate-white-15',
-	accent: 'slate-white-60'
-);
-
-$inverse-custom-buttons: (
-	background: 'slate',
-	accent: 'white'
-);
+@include oColorsSetColor('lemon-white-30', oColorsMix(lemon, white, 30));

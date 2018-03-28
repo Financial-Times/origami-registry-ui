@@ -38,7 +38,8 @@
 	.github-link {
 		@include oButtons();
 		@include oButtonsSize(big);
-		@include oButtonsTheme($theme: $inverse-custom-buttons);
+		@include oButtonsTheme('inverse');
+		background-color: oColorsGetPaletteColor('slate');
 		width: 100%;
 		text-transform: uppercase;
 		border: none;

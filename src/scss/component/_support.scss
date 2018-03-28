@@ -1,6 +1,6 @@
 .registry__component--support {
 	@include oTypographySans(1);
-	background-color: oColorsGetPaletteColor('slate-white-15');
+	background-color: oColorsGetPaletteColor('slate-white-5');
 	padding: 16px;
 	margin-bottom: 20px;
 	display: flex;
@@ -24,9 +24,9 @@
 		}
 
 		&.secondary-button {
-				align-self: flex-end;
-				margin-left: auto;
-				width: 50%;
+			align-self: flex-end;
+			margin-left: auto;
+			width: 50%;
 		}
 	}
 }

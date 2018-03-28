@@ -22,7 +22,7 @@
 
 @keyframes o-linked-heading-fade {
 	0% {
-		background-color: oColorsMix('lemon', 'white', 30);
+		background-color: oColorsGetPaletteColor('lemon-white-30');
 	}
 	100% {
 		background-color: transparent;
