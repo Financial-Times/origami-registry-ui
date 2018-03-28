@@ -12,9 +12,13 @@
 				<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs" role=tablist>
 					{{#if display.html}}
 						{{#if display.live}}
-							<li role=tab><a href="#{{title}}-demo-{{@index}}">Demo</a></li>
+							<li role=tab>
+								<a href="#{{slugify title}}-demo-{{@index}}">Demo</a>
+							</li>
 						{{/if}}
-						<li role=tab><a href="#{{title}}-html-{{@index}}">HTML</a></li>
+						<li role=tab>
+							<a href="#{{slugify title}}-html-{{@index}}">HTML</a>
+						</li>
 					{{/if}}
 				</ul>
 
@@ -23,17 +27,17 @@
 
 			<div class="registry__component--demo-display">
 				{{#if display.live}}
-					<div class="o-tabs__tabpanel" id="{{title}}-demo-{{@index}}">
-						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live"></iframe>
+					<div class="o-tabs__tabpanel" id="{{slugify title}}-demo-{{@index}}">
+						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live" title="{{capitalise title}} Live Demo"></iframe>
 					</div>
 				{{/if}}
 				{{#if display.html}}
-					<div class="o-tabs__tabpanel" id="{{title}}-html-{{@index}}">
+					<div class="o-tabs__tabpanel" id="{{slugify title}}-html-{{@index}}">
 						{{#if display.plainHTML}}
 							<button class="registry__demo-button select-html">Select Full Code Snippet</button>
 							<pre class="demo__code"><code class='html'>{{{display.highlightedHTML}}}</code></pre>
 						{{else}}
-							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code"></iframe>
+							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code" title="{{capitalise title}} HTML Code Snippet"></iframe>
 						{{/if}}
 					</div>
 				{{/if}}
