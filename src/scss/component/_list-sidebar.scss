@@ -26,7 +26,7 @@
 			$outlineColor: 'teal-100'
 		);
 
-		:not(:hover) {
+		&:not(:hover) {
 			border-bottom: none;
 		}
 	}
