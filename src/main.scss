@@ -50,7 +50,7 @@ html, body {
 	.secondary-button {
 		@include oButtons();
 		@include oButtonsSize(big);
-		@include oButtonsCustomTheme($theme: 'mono');
+		@include oButtonsTheme($theme: 'mono');
 		background-color: oColorsGetPaletteColor('slate-white-5');
 		width: 100%;
 		border-bottom: 1px solid oColorsGetPaletteColor('black');
