@@ -9,7 +9,7 @@
 	"homepage": "https://github.com/Financial-Times/origami-registry-ui",
 	"dependencies": {
 		"o-autoinit": "^1.3.3",
-		"o-buttons": "^5.10.3",
+		"o-buttons": "^5.11.1",
 		"o-colors": "^4.2.4",
 		"o-grid": "^4.3.7",
 		"o-header-services": "^2.1.0",
