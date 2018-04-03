@@ -16,8 +16,12 @@
 	flex-grow: 1;
 }
 
-.registry__table-head {
-	background-color: oColorsGetPaletteColor('slate-white-5');
+.registry__table {
+	@include oTableBase();
+
+	&-head {
+		background-color: oColorsGetPaletteColor('slate-white-5');
+	}
 }
 
 .registry__table-body {
