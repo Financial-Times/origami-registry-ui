@@ -47,22 +47,34 @@
 }
 
 .o-overlay {
+	@include oOverlay();
 	box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.2);
 
-	a {
-		&.link {
-			border-bottom: none;
-		}
+	&--full-height {
+		@include oOverlayFullscreen($fill: 'height');
+	}
 
-		&__close {
-			background-color: transparent;
-		}
+	&-shadow {
+		@include oOverlayShadow;
+	}
+
+	&__heading--shaded {
+		@include oOverlayHeading;
+		@include oOverlayHeadingShaded;
+	}
+
+	&__close {
+		@include oOverlayHeadingShadedClose;
 	}
 
 	&__content {
+		@include oOverlayContent;
 		max-width: 600px;
 	}
 
+	a.link {
+		border-bottom: none;
+	}
 
 	code {
 		font-size: 14px;
