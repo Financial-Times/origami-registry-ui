@@ -17,7 +17,7 @@
 	}
 
 	&-description {
-		@include oTypographySans(1);
+		@include oTypographySize(1);
 		@include oTypographyMargin($top: 0, $bottom: 0);
 	}
 

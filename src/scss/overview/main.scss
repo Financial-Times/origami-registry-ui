@@ -5,3 +5,7 @@
 	@include oTypographyMargin($top: 5);
 	display: flex;
 }
+
+@include oFormsBaseFeatures();
+@include oFormsWideFeature();
+@include oFormsRadioCheckboxFeatures();

@@ -5,7 +5,8 @@
 		margin-right: 20px;
 	}
 
-	.o-buttons {
+	.registry__filter-button {
+		@include oButtons(big, primary);
 		align-self: flex-end;
 	}
 }
@@ -15,8 +16,12 @@
 	flex-grow: 1;
 }
 
-.registry__table-head {
-	background-color: oColorsGetPaletteColor('slate-white-5');
+.registry__table {
+	@include oTableBase();
+
+	&-head {
+		background-color: oColorsGetPaletteColor('slate-white-5');
+	}
 }
 
 .registry__table-body {
