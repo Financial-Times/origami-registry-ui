@@ -1,6 +1,4 @@
-$o-header-services-is-silent: false;
 $o-normalise-is-silent: false;
-
 $o-brand: 'internal';
 
 @import 'o-colors/main';
@@ -20,12 +18,12 @@ $o-brand: 'internal';
 @import 'src/scss/colors';
 @import 'src/scss/component/main';
 @import 'src/scss/component-listing';
-@import 'src/scss/drawer';
 @import 'src/scss/error';
 @import 'src/scss/footer';
+@import 'src/scss/header';
+@import 'src/scss/media-queries';
 @import 'src/scss/overview/main';
 @import 'src/scss/status-labels';
-@import 'src/scss/media-queries';
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
