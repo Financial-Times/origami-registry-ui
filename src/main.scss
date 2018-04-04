@@ -44,12 +44,8 @@ html, body {
 	}
 
 	.secondary-button {
-		@include oButtons();
-		@include oButtonsSize(big);
-		@include oButtonsTheme($theme: 'mono');
-		background-color: oColorsGetPaletteColor('slate-white-5');
+		@include oButtons(big, mono);
 		width: 100%;
-		border-bottom: 1px solid oColorsGetPaletteColor('black');
+		border-bottom: 1px solid oColorsGetPaletteColor('slate');
 		text-transform: uppercase;
 	}
-}

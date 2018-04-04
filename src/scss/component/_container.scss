@@ -39,7 +39,7 @@
 .registry__demo-button {
 	@include oButtons($theme: 'mono');
 	text-transform: uppercase;
-	
+
 	&.select-html {
 		position: absolute;
 		top: oTypographySpacingSize(2);
@@ -59,7 +59,7 @@
 	span {
 		margin-left: auto;
 	}
-	
+
 	ul {
 		@include oTabsButtonTabsTheme($theme: 'mono', $selector: false);
 		text-transform: uppercase;
@@ -99,7 +99,7 @@
 
 .registry__component--service {
 	&-info {
-		@include oTypographySans(1);
+		@include oTypographySize(1);
 		span {
 			@include oTypographyBold('sans');
 			text-transform: uppercase;

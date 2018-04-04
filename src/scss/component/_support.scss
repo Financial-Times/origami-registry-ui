@@ -1,5 +1,5 @@
 .registry__component--support {
-	@include oTypographySans(1);
+	@include oTypographySize(1);
 	background-color: oColorsGetPaletteColor('slate-white-5');
 	padding: 16px;
 	margin-bottom: 20px;

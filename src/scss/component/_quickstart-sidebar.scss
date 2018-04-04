@@ -36,60 +36,9 @@
 	}
 
 	.github-link {
-		@include oButtons();
-		@include oButtonsSize(big);
-		@include oButtonsTheme('inverse');
-		background-color: oColorsGetPaletteColor('slate');
+		@include oButtons(big, (mono, primary));
 		width: 100%;
 		text-transform: uppercase;
 		border: none;
-	}
-}
-
-.o-overlay {
-	@include oOverlay();
-	box-shadow: 0 0 30px 7px rgba(0, 0, 0, 0.2);
-
-	&--full-height {
-		@include oOverlayFullscreen($fill: 'height');
-	}
-
-	&-shadow {
-		@include oOverlayShadow;
-	}
-
-	&__heading--shaded {
-		@include oOverlayHeading;
-		@include oOverlayHeadingShaded;
-	}
-
-	&__close {
-		@include oOverlayHeadingShadedClose;
-	}
-
-	&__content {
-		@include oOverlayContent;
-		max-width: 600px;
-	}
-
-	a.link {
-		border-bottom: none;
-	}
-
-	code {
-		font-size: 14px;
-		padding: 2px;
-		background-color: oColorsGetPaletteColor('slate-white-15');
-	}
-
-	pre {
-		font-size: 14px;
-		tab-size: 0;
-		padding: oTypographySpacingSize(2);
-		background-color: oColorsGetPaletteColor('slate-white-15');
-
-		&.overflow {
-			overflow: scroll;
-		}
 	}
 }
