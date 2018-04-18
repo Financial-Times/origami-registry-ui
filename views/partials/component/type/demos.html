@@ -32,10 +32,10 @@
 					</div>
 				{{/if}}
 				{{#if display.html}}
-					<div class="o-tabs__tabpanel" id="{{slugify title}}-html-{{@index}}">
+					<div class="o-tabs__tabpanel" data-o-component="o-syntax-highlight"` id="{{slugify title}}-html-{{@index}}">
 						{{#if display.plainHTML}}
 							<button class="registry__demo-button select-html">Select Full Code Snippet</button>
-							<pre class="demo__code"><code class='html'>{{{display.highlightedHTML}}}</code></pre>
+							<pre><code class='syntax-html'>{{{display.highlightedHTML}}}</code></pre>
 						{{else}}
 							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code" title="{{capitalise title}} HTML Code Snippet"></iframe>
 						{{/if}}
