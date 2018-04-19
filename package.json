@@ -30,7 +30,6 @@
     "@financial-times/origami-service": "^3.0.1",
     "@financial-times/origami-service-makefile": "^6.1.0",
     "dotenv": "^4.0.0",
-    "esm": "^3.0.18",
     "heroku-node-settings": "^1.1.0",
     "http-errors": "^1.6.2",
     "prismjs": "^1.11.0",
