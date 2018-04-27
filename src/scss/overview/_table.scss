@@ -1,5 +1,6 @@
 .registry__search-bar {
 	display: flex;
+	max-width: 25%;
 
 	.core & #filter-search {
 		margin-right: 20px;

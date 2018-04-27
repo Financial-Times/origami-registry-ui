@@ -1,4 +1,12 @@
 <form action="/components" method="get" class="registry__form" data-o-component="o-filter-form" data-o-filter-form-browser-history="true">
+	<div class="o-forms o-forms--wide">
+		<label for="filter-search" class="o-forms__label">Filter components</label>
+		<div class="o-forms__additional-info">Filter the components below by name and tag</div>
+		<div class="registry__search-bar">
+			<input id="filter-search" type="search" name="search" value="{{filter.search}}" class="o-forms__text"/>
+			<input type="submit" value="Filter" class="registry__filter-button o--if-no-js"/>
+		</div>
+	</div>
 
 	<fieldset class="o-forms o-forms--wide">
 		<legend class="o-forms__label">Display component types</legend>
@@ -27,13 +35,4 @@
 			<label for="status-experimental" class="o-forms__label">Experimental</label>
 		</div>
 	</fieldset>
-
-	<div class="o-forms o-forms--wide">
-		<label for="filter-search" class="o-forms__label">Filter components</label>
-		<div class="o-forms__additional-info">Filter the components below by name and tag</div>
-		<div class="registry__search-bar">
-			<input id="filter-search" type="search" name="search" value="{{filter.search}}" class="o-forms__text"/>
-			<input type="submit" value="Filter" class="registry__filter-button o--if-no-js"/>
-		</div>
-	</div>
 </form>

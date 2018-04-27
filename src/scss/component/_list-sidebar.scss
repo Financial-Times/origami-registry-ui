@@ -1,9 +1,3 @@
-.registry__component--nav {
-	@include oTypographySans(1);
-	background-color: oColorsGetPaletteColor('slate-white-5');
-	min-width: 220px;
-}
-
 .registry__component--list {
 	list-style: none;
 	padding: 0 24px 12px;
