@@ -25,6 +25,7 @@ $o-brand: 'internal';
 @import 'src/scss/header';
 @import 'src/scss/media-queries';
 @import 'src/scss/overview/main';
+@import 'src/scss/sidebar';
 @import 'src/scss/status-labels';
 
 @include oFontsInclude(MetricWeb, regular);

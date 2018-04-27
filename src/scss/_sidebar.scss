@@ -1,4 +1,4 @@
-.registry__component--quickstart {
+.registry__container-right__inner {
 	position: sticky;
 	top: 0;
 	align-self: flex-start;
@@ -6,6 +6,10 @@
 	padding: oTypographySpacingSize(5);
 	margin: oTypographySpacingSize(6);
 
+	h2:first-of-type {
+		margin: 0;
+	}
+	
 	code {
 		font-size: 14px;
 		padding: 2px;
@@ -25,6 +29,7 @@
 	
 	.github-link {
 		@include oButtons(big, (mono, primary));
+		@include oTypographyMargin($bottom: 4);
 		width: 100%;
 		text-transform: uppercase;
 		border: none;

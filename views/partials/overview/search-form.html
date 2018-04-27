@@ -1,5 +1,5 @@
-<form action="/components" method="get" class="registry__form" data-o-component="o-filter-form" data-o-filter-form-browser-history="true">
-	<div class="o-forms o-forms--wide">
+<form action="/components" method="get" class="registry__form registry__form--overview" data-o-component="o-filter-form" data-o-filter-form-browser-history="true">
+	<div class="o-forms">
 		<label for="filter-search" class="o-forms__label">Filter components</label>
 		<div class="o-forms__additional-info">Filter the components below by name and tag</div>
 		<div class="registry__search-bar">
@@ -8,9 +8,9 @@
 		</div>
 	</div>
 
-	<fieldset class="o-forms o-forms--wide">
+	<fieldset class="o-forms">
 		<legend class="o-forms__label">Display component types</legend>
-		<div class="o-forms__group o-forms__group--inline">
+		<div class="o-forms__group">
 			<input id="type-module" type="checkbox" name="module" value="true" {{#if filter.module}}checked{{/if}} class="o-forms__checkbox"/>
 			<label for="type-module" class="o-forms__label">Modules</label>
 			<input id="type-imageset" type="checkbox" name="imageset" value="true" {{#if filter.imageset}}checked{{/if}} class="o-forms__checkbox"/>
@@ -20,9 +20,9 @@
 		</div>
 	</fieldset>
 
-	<fieldset class="o-forms o-forms--wide">
+	<fieldset class="o-forms">
 		<legend class="o-forms__label">Display components with status</legend>
-		<div class="o-forms__group o-forms__group--inline">
+		<div class="o-forms__group">
 			<input id="status-active" type="checkbox" name="active" value="true" {{#if filter.active}}checked{{/if}} class="o-forms__checkbox"/>
 			<label for="status-active" class="o-forms__label">Active</label>
 			<input id="status-maintained" type="checkbox" name="maintained" value="true" {{#if filter.maintained}}checked{{/if}} class="o-forms__checkbox"/>
