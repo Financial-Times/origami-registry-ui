@@ -1,21 +1,23 @@
 @include oGridRespondTo($until: S) {
+	.registry__container-left,
 	.registry__component--demo-tabs span {
 		display: none;
 	}
 };
 
 @include oGridRespondTo($until: M) {
+	.registry__table-cell-toggle,
 	.registry__component--nav,
 	.registry__sidebar {
 		display: none;
 	}
 
-	.registry__table-cell-toggle {
-		display: none;
+	.registry__table-cell--info {
+		display: table-cell;
 	}
 }
 
-@include oGridRespondTo($from: M) {
+@include oGridRespondTo(M) {
 	.registry__component--image-item {
 		flex-basis: 20%;
 	}

@@ -2,6 +2,10 @@
 	list-style: none;
 	padding: 0 24px 12px;
 	margin: 0;
+
+	li:first-of-type {
+		padding-top: 0;
+	}
 }
 
 .registry__component--list-title {
