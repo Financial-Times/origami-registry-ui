@@ -1,9 +1,9 @@
 <table class="registry__table" data-o-component="o-table" data-test="component-table">
 	<thead class="registry__table-head">
 		<tr>
-			<th data-o-table-heading-disable-sort class="registry__table-cell-show">Component</th>
-			<th data-o-table-heading-disable-sort data-o-table-data-type="numeric" class="o-table__cell--numeric registry__table-cell-show">Version</th>
-			<th data-o-table-heading-disable-sort class="registry__table-cell-show">Status</th>
+			<th data-o-table-heading-disable-sort class="registry__table-cell-toggle">Component</th>
+			<th data-o-table-heading-disable-sort data-o-table-data-type="numeric" class="o-table__cell--numeric registry__table-cell-toggle">Version</th>
+			<th data-o-table-heading-disable-sort class="registry__table-cell-toggle">Status</th>
 		</tr>
 	</thead>
 	<tbody class="registry__table-body" data-o-component="o-component-listing">
@@ -22,8 +22,8 @@
 								</span>
 							</p>
 						</td>
-						<td data-o-table-data-type="numeric" class='o-table__cell--numeric registry__table-cell-show'>{{version}}</td>
-						<td class='registry__table-cell-show'>
+						<td data-o-table-data-type="numeric" class="o-table__cell--numeric registry__table-cell-toggle">{{version}}</td>
+						<td class="registry__table-cell-toggle">
 							<span class="status-label status-label--{{support.status}}">
 								{{support.status}}
 							</span>

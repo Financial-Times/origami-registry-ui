@@ -9,15 +9,15 @@
 	.registry__sidebar {
 		display: none;
 	}
+
+	.registry__table-cell-toggle {
+		display: none;
+	}
 }
 
-@include oGridRespondTo(M) {
+@include oGridRespondTo($from: M) {
 	.registry__component--image-item {
 		flex-basis: 20%;
-	}
-
-	.registry__table-cell-show {
-		display: table-cell;
 	}
 
 	.registry__table-cell--info {
@@ -30,7 +30,7 @@
 };
 
 @include oGridRespondTo($until: L) {
-	.registry__component--sidebar {
+	.registry__container-right {
 		display: none;
 	}
 };

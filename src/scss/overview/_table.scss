@@ -41,10 +41,6 @@
 	color: oColorsGetPaletteColor('slate-white-80');
 }
 
-.registry__table-cell-show {
-	display: none;
-}
-
 .registry__table-cell-info {
 	@include oTypographyPadding($top: 2);
 	display: table-cell;
