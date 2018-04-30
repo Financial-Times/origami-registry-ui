@@ -2,14 +2,26 @@
 	position: sticky;
 	top: 0;
 	align-self: flex-start;
-	background-color: oColorsGetPaletteColor('slate-white-5');
 	padding: oTypographySpacingSize(5);
-	margin: oTypographySpacingSize(6);
+
+	h2,
+	h3 {
+		@include oTypographyMargin($bottom: 3);
+	}
 
 	h2:first-of-type {
+		@include oTypographyMargin($top: 0);
+	}
+
+	p {
 		margin: 0;
 	}
-	
+
+	ul {
+		@include oTypographyMargin($top: 1);
+		padding-left: oTypographySpacingSize(5);
+	}
+
 	code {
 		font-size: 14px;
 		padding: 2px;
@@ -26,7 +38,7 @@
 			overflow: scroll;
 		}
 	}
-	
+
 	.github-link {
 		@include oButtons(big, (mono, primary));
 		@include oTypographyMargin($bottom: 4);

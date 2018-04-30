@@ -2,20 +2,22 @@
 	&-left {
 		@include oTypographySans(1);
 		background-color: oColorsGetPaletteColor('slate-white-5');
+		border-right: 1px solid oColorsGetPaletteColor('slate-white-15');
 		min-width: 220px;
 	}
-	
+
 	&-center {
 		display: flex;
 		width: 100%;
 		padding: 20px;
 	}
-	
+
 	&-right {
 		flex-shrink: 2;
+		background-color: oColorsGetPaletteColor('slate-white-5');
 		border-left: 1px solid oColorsGetPaletteColor('slate-white-15');
 		min-width: 25%;
-	
+
 		h2,
 		h3,
 		h4 {
