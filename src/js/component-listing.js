@@ -26,12 +26,19 @@ class ComponentListing {
 
 		// Perform the visibility marking
 		this.components = this.components.map(component => {
+
 			component.visible = true;
 			return component;
 		});
+
 		if (filter.search !== undefined) {
 			this.components = repoListing.markVisibilityBySearchTerm(this.components, filter.search);
 		}
+
+		if (filter.internal !== undefined) {
+			this.components = repoListing.markVisibilityByBrand(this.components, filter.internal);
+		}
+
 		if (filter.module !== undefined) {
 			this.components = repoListing.markVisibilityByType(this.components, {
 				imageset: filter.imageset,
@@ -39,6 +46,7 @@ class ComponentListing {
 				service: filter.service
 			});
 		}
+
 		if (filter.active !== undefined) {
 			this.components = repoListing.markVisibilityByStatus(this.components, {
 				active: filter.active,
@@ -91,6 +99,7 @@ class ComponentListing {
 		return Array.from(elements, element => {
 			return {
 				name: element.getAttribute('data-o-component-name'),
+				brands: JSON.parse(element.getAttribute('data-o-component-brands')),
 				keywords: JSON.parse(element.getAttribute('data-o-component-keywords')),
 				type: element.getAttribute('data-o-component-type'),
 				subType: element.getAttribute('data-o-component-sub-type') || null,

@@ -9,6 +9,14 @@
 	</div>
 
 	<fieldset class="o-forms">
+		<legend class="o-forms__label">Brand</legend>
+		<div class="o-forms__group">
+			<input id="brand-internal" type="checkbox" name="internal" value="true" {{#if filter.internal}}checked{{/if}} class="o-forms__checkbox"/>
+			<label for="brand-internal" class="o-forms__label">Internal</label>
+		</div>
+	</fieldset>
+
+	<fieldset class="o-forms">
 		<legend class="o-forms__label">Display component types</legend>
 		<div class="o-forms__group">
 			<input id="type-module" type="checkbox" name="module" value="true" {{#if filter.module}}checked{{/if}} class="o-forms__checkbox"/>
