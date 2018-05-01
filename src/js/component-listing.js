@@ -23,7 +23,6 @@ class ComponentListing {
 	 */
 	handleFilterFormUpdateEvent(event) {
 		const filter = event.detail;
-
 		// Perform the visibility marking
 		this.components = this.components.map(component => {
 
@@ -35,8 +34,8 @@ class ComponentListing {
 			this.components = repoListing.markVisibilityBySearchTerm(this.components, filter.search);
 		}
 
-		if (filter.internal !== undefined) {
-			this.components = repoListing.markVisibilityByBrand(this.components, filter.internal);
+		if (filter.brand !== undefined) {
+			this.components = repoListing.markVisibilityByBrand(this.components, filter.brand);
 		}
 
 		if (filter.module !== undefined) {

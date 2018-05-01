@@ -8,13 +8,14 @@
 		</div>
 	</div>
 
-	<fieldset class="o-forms">
-		<legend class="o-forms__label">Brand</legend>
-		<div class="o-forms__group">
-			<input id="brand-internal" type="checkbox" name="internal" value="true" {{#if filter.internal}}checked{{/if}} class="o-forms__checkbox"/>
-			<label for="brand-internal" class="o-forms__label">Internal</label>
-		</div>
-	</fieldset>
+	<div class="o-forms">
+		<label aria-describedby="select-box-info" for="select-brand" class="o-forms__label">Brand</label>
+		<select id="select-brand" name="brand" class="o-forms__select">
+			<option value="master" {{#ifEquals filter.brand 'master'}}selected{{/ifEquals}}>Default</option>
+			<option value="internal" {{#ifEquals filter.brand 'internal'}}selected{{/ifEquals}}>Internal</option>
+			<option value="whitelabel" {{#ifEquals filter.brand 'whitelabel'}}selected{{/ifEquals}}>Whitelabel</option>
+		</select>
+	</div>
 
 	<fieldset class="o-forms">
 		<legend class="o-forms__label">Display component types</legend>
