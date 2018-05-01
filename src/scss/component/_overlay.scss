@@ -15,7 +15,12 @@
 		@include oOverlayHeadingShaded;
 	}
 
+	&__title {
+		@include oOverlayTitle;
+	}
+
 	&__close {
+		@include oOverlayClose;
 		@include oOverlayHeadingShadedClose;
 	}
 
