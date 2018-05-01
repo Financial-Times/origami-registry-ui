@@ -7,7 +7,7 @@
 	}
 
 	&-center {
-		display: flex;
+		@include oGridContainer($grid-mode: "fluid", $bleed: true);
 		width: 100%;
 		padding: 20px;
 	}
@@ -24,12 +24,6 @@
 			text-transform: uppercase;
 		}
 	}
-}
-
-.registry__component {
-	@include oGridContainer($grid-mode: "fluid", $bleed: true);
-	margin: 20px 8px 0;
-	width: 100%;
 }
 
 .registry__component--demo {
@@ -51,7 +45,6 @@
 		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 		position: relative;
 
-		.demo__code,
 		.demo__live {
 			width: 100%;
 			border: 0;
