@@ -74,6 +74,10 @@ class ComponentListing {
 			if (component.visible) {
 				component.element.removeAttribute('aria-hidden');
 				component.element.classList.remove('registry__component-listing--hidden');
+
+				const componentAnchor = component.element.querySelector('.registry__table-cell-link');
+				//checks for existing brand query parameter, sets it if it is not present
+				componentAnchor.href += componentAnchor.search === `?brand=${filter.brand}` ? '' : `?brand=${filter.brand}`;
 			} else {
 				component.element.setAttribute('aria-hidden', 'true');
 				component.element.classList.add('registry__component-listing--hidden');
