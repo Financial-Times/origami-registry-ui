@@ -1,10 +1,28 @@
-.registry__component {
-	display: flex;
+.registry__container {
+	&-left {
+		@include oTypographySans(1);
+		background-color: oColorsGetPaletteColor('slate-white-5');
+		border-right: 1px solid oColorsGetPaletteColor('slate-white-15');
+		min-width: 220px;
+	}
 
-	&--container {
+	&-center {
 		@include oGridContainer($grid-mode: "fluid", $bleed: true);
-		margin: 20px 28px 0;
 		width: 100%;
+		padding: 20px;
+	}
+
+	&-right {
+		flex-shrink: 2;
+		background-color: oColorsGetPaletteColor('slate-white-5');
+		border-left: 1px solid oColorsGetPaletteColor('slate-white-15');
+		min-width: 25%;
+
+		h2,
+		h3,
+		h4 {
+			text-transform: uppercase;
+		}
 	}
 }
 
@@ -27,7 +45,6 @@
 		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 		position: relative;
 
-		.demo__code,
 		.demo__live {
 			width: 100%;
 			border: 0;

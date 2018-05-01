@@ -1,13 +1,11 @@
-.registry__component--nav {
-	@include oTypographySans(1);
-	background-color: oColorsGetPaletteColor('slate-white-5');
-	min-width: 220px;
-}
-
 .registry__component--list {
 	list-style: none;
 	padding: 0 24px 12px;
 	margin: 0;
+
+	li:first-of-type {
+		padding-top: 0;
+	}
 }
 
 .registry__component--list-title {
@@ -30,10 +28,4 @@
 			border-bottom: none;
 		}
 	}
-}
-
-.registry__form--nav {
-	@include oTypographyPadding($top: 5, $bottom: 0);
-	padding-left: 6px;
-	padding-right: 6px;
 }

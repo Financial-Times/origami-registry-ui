@@ -1,10 +1,5 @@
 @import 'table';
-@import 'sidebar';
-
-.registry__overview {
-	@include oTypographyMargin($top: 5);
-	display: flex;
-}
+@import 'search-form';
 
 @include oFormsBaseFeatures();
 @include oFormsWideFeature();
