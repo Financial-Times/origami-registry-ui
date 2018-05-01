@@ -7,6 +7,7 @@
 	}
 
 	&-center {
+		display:flex;
 		width: 100%;
 		padding: 20px;
 	}
@@ -87,6 +88,12 @@
 		@include oTabsButtonTabsTheme($theme: 'mono', $selector: false);
 		text-transform: uppercase;
 	}
+}
+
+.registry__component--brand-tabs.o-tabs--big[role=tablist] {
+	@include oTypographyMargin($bottom: 5);
+	@include oTabsButtonTabsTheme($theme: 'mono', $selector: false);
+	text-transform: uppercase;
 }
 
 .registry__component--image {
