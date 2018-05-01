@@ -1,6 +1,6 @@
 <div class="registry__component-info">
 	<div class="registry__component-header">
-		<h1 class="registry__component-name">{{component.name}}</h1>
+		<h1 class="registry__component-name">{{component.name}} {{#if component.requestedBrand}}({{component.requestedBrand}} brand){{/if}}</h1>
 		<p class="registry__component-description">{{component.description}}</p>
 		<div class="registry__component-links">
 			<a class="external-link" href="{{component.url}}#readme">Readme</a>
