@@ -1,34 +1,30 @@
-<div class="registry__component">
+{{> component/alerts}}
 
-	{{> component/alerts}}
+{{> component/header}}
 
-	{{> component/header}}
+{{#if demos}}
+	{{> component/type/demos}}
+{{/if}}
 
-	{{#if demos}}
-		{{> component/branded}}
-	{{/if}}
+{{#if images}}
+	{{> component/type/images}}
+{{/if}}
 
-	{{#if images}}
-		{{> component/type/images}}
-	{{/if}}
+{{#if service}}
+	{{> component/type/service}}
+{{/if}}
 
-	{{#if service}}
-		{{> component/type/service}}
-	{{/if}}
+{{#ifEither dependencies.bower.length dependencies.npm.length}}
+	{{> component/dependencies dependencies}}
+{{/ifEither}}
 
-	{{#ifEither dependencies.bower.length dependencies.npm.length}}
-		{{> component/dependencies dependencies}}
-	{{/ifEither}}
-
-	<div class="registry__component--support">
-		<div class="registry__component--contact">
-		<h4 id="support" data-o-component="o-linked-heading" class="registry__linked-heading">Support</h4>
-			<p><span>Email </span><a class="link" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
-			{{#if component.support.channel}}
-			<p><span>Slack </span><a class="link" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></p>
-			{{/if}}
-		</div>
-		<a href="{{component.supportingUrls.issues}}" class="secondary-button">Report an issue on GitHub</a>
+<div class="registry__component--support">
+	<div class="registry__component--contact">
+	<h4 id="support" data-o-component="o-linked-heading" class="registry__linked-heading">Support</h4>
+		<p><span>Email </span><a class="link" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+		{{#if component.support.channel}}
+		<p><span>Slack </span><a class="link" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></p>
+		{{/if}}
 	</div>
-
+	<a href="{{component.supportingUrls.issues}}" class="secondary-button">Report an issue on GitHub</a>
 </div>

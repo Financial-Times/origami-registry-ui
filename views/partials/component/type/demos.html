@@ -13,11 +13,11 @@
 					{{#if display.html}}
 						{{#if display.live}}
 							<li role=tab>
-								<a href="#{{slugify title}}-demo-{{@index}}">Demo</a>
+								<a href="#{{slugify title}}-demo-{{@index}}-{{@root.component.requestedBrand}}">Demo</a>
 							</li>
 						{{/if}}
 						<li role=tab>
-							<a href="#{{slugify title}}-html-{{@index}}">HTML</a>
+							<a href="#{{slugify title}}-html-{{@index}}-{{@root.component.requestedBrand}}">HTML</a>
 						</li>
 					{{/if}}
 				</ul>
@@ -27,12 +27,12 @@
 
 			<div class="registry__component--demo-display">
 				{{#if display.live}}
-					<div class="o-tabs__tabpanel" id="{{slugify title}}-demo-{{@index}}">
+					<div class="o-tabs__tabpanel" id="{{slugify title}}-demo-{{@index}}-{{@root.component.requestedBrand}}">
 						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live" title="{{capitalise title}} Live Demo"></iframe>
 					</div>
 				{{/if}}
 				{{#if display.html}}
-					<div class="o-tabs__tabpanel" data-o-component="o-syntax-highlight"` id="{{slugify title}}-html-{{@index}}">
+					<div class="o-tabs__tabpanel" data-o-component="o-syntax-highlight"` id="{{slugify title}}-html-{{@index}}-{{@root.component.requestedBrand}}">
 						{{#if display.plainHTML}}
 							<button class="registry__demo-button select-html">Select Full Code Snippet</button>
 							<pre><code class='o-syntax-highlight--html'>{{{display.highlightedHTML}}}</code></pre>
