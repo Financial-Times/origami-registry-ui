@@ -1,8 +1,3 @@
-.registry__component {
-	@include oGridContainer($grid-mode: "fluid", $bleed: true);
-	width: 100%;
-}
-
 .registry__component--demo {
 	@include oTypographyMargin($bottom: 8);
 

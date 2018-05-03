@@ -5,7 +5,7 @@
 
 .registry__container {
 	display: flex;
-	
+
 	&-left {
 		@include oTypographySans(1);
 		background-color: oColorsGetPaletteColor('slate-white-5');
@@ -14,6 +14,7 @@
 	}
 
 	&-center {
+		@include oGridContainer($grid-mode: "fluid", $bleed: true);
 		width: 100%;
 		padding: 20px;
 	}
