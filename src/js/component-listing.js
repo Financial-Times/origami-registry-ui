@@ -76,6 +76,7 @@ class ComponentListing {
 				component.element.classList.remove('registry__component-listing--hidden');
 
 				const componentAnchor = component.element.querySelector('a');
+				console.log(componentAnchor);
 				const brandQuery = new RegExp(/^\?brand=*\w+/);
 
 				//checks for existing brand query parameter, sets it if it is not present

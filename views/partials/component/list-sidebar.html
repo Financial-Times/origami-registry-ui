@@ -27,7 +27,7 @@
 					data-o-component-sub-type="{{subType}}"
 					data-o-component-brands="{{json brands}}"
 				 {{#unless visible}}aria-hidden="true"{{/unless}}>
-					<a href="/components/{{name}}@{{version}}">{{name}}</a>
+					<a href="/components/{{name}}@{{version}}{{#unlessEquals @root.component.requestedBrand 'master'}}?brand={{@root.component.requestedBrand}}{{/unlessEquals}}">{{name}}</a>
 				</li>
 			{{/repos}}
 		{{/if}}
