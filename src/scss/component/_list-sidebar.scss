@@ -3,7 +3,7 @@
 	padding: 0 24px 12px;
 	margin: 0;
 
-	li:first-of-type {
+	li:first-of-type:not([aria-hidden="true"]) {
 		padding-top: 0;
 	}
 }
