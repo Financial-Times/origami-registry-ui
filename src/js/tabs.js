@@ -7,7 +7,8 @@ module.exports = (function() {
 	Array.from(brandTabs, tab => {
 		tab.addEventListener('click', () => {
 			const brand = tab.firstElementChild.innerHTML;
-			location.href = `${location.origin}${location.pathname}?brand=${brand}`;
+			const baseUri = location.origin + location.pathname;
+			location.href = (brand === 'master') ? baseUri : `${baseUri}?brand=${brand}`;
 		});
 	});
 }());

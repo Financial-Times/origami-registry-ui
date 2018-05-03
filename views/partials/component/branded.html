@@ -2,7 +2,8 @@
 	{{#unlessEquals component.brands.length 0}}
 		<ul data-o-tabs--js class="o-tabs o-tabs--big o-tabs--buttontabs registry__component--brand-tabs" role="tablist">
 			{{#component.brands}}
-				<li role="tab" {{#ifEquals this @root.component.requestedBrand}}aria-selected="true"{{/ifEquals}}>
+				<li role="tab"
+					{{#ifEquals this @root.component.requestedBrand}}aria-selected="true"{{/ifEquals}}>
 					<a href="#{{this}}">{{this}}</a>
 				</li>
 			{{/component.brands}}
