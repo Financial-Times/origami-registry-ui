@@ -1,8 +1,10 @@
 <div class="registry__component">
 	{{#unlessEquals component.brands.length 0}}
-		<ul class="o-tabs o-tabs--big o-tabs--buttontabs registry__component--brand-tabs" role="tablist">
+		<ul data-o-tabs--js class="o-tabs o-tabs--big o-tabs--buttontabs registry__component--brand-tabs" role="tablist">
 			{{#component.brands}}
-				<li role="tab" {{#ifEquals this @root.component.requestedBrand}}aria-selected="true"{{/ifEquals}}><a href="#{{this}}">{{this}}</a></li>
+				<li role="tab" {{#ifEquals this @root.component.requestedBrand}}aria-selected="true"{{/ifEquals}}>
+					<a href="#{{this}}">{{this}}</a>
+				</li>
 			{{/component.brands}}
 		</ul>
 		<div id="{{component.requestedBrand}}" class="o-tabs__tabpanel">
