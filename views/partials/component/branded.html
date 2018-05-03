@@ -8,9 +8,9 @@
 				</li>
 			{{/component.brands}}
 		</ul>
-		<div id="{{component.requestedBrand}}" class="o-tabs__tabpanel">
-			{{> component/container @root}}
-		</div>
+
+		{{> component/container @root}}
+
 	{{else}}
 		{{> component/container }}
 	{{/unlessEquals}}

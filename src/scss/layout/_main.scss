@@ -4,6 +4,8 @@
 @import 'sidebar';
 
 .registry__container {
+	display: flex;
+	
 	&-left {
 		@include oTypographySans(1);
 		background-color: oColorsGetPaletteColor('slate-white-5');
@@ -12,7 +14,6 @@
 	}
 
 	&-center {
-		display:flex;
 		width: 100%;
 		padding: 20px;
 	}
