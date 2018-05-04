@@ -6,9 +6,9 @@ module.exports = (function() {
 
 	Array.from(brandTabs, tab => {
 		tab.addEventListener('click', () => {
-			const brand = tab.firstElementChild.innerHTML;
+			const brand = tab.firstElementChild.href;
 			const baseUri = location.origin + location.pathname;
-			location.href = (brand === 'master') ? baseUri : `${baseUri}?brand=${brand}`;
+			location.href = (brand === 'master') ? baseUri : baseUri + brand;
 		});
 	});
 }());
