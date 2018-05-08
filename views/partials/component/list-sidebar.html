@@ -3,31 +3,19 @@
 		<label for="filter-search" class="o-forms__label">Filter components</label>
 		<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
 	</div>
-
-	<div class="o-forms o-forms--brand">
-		<label aria-describedby="select-box-info" for="select-brand" class="o-forms__label">Brand</label>
-		<select id="select-brand" name="brand" class="o-forms__select">
-			<option value="master" {{#ifEquals requestedBrand 'master'}}selected{{/ifEquals}}>Default</option>
-			<option value="internal" {{#ifEquals requestedBrand 'internal'}}selected{{/ifEquals}}>Internal</option>
-			<option value="whitelabel" {{#ifEquals requestedBrand 'whitelabel'}}selected{{/ifEquals}}>Whitelabel</option>
-		</select>
-	</div>
-
 </form>
 
 <ul class="registry__component--list" data-o-component="o-component-listing">
 	{{#each categories}}
 		{{#if repos.length}}
-			<li class="registry__component--list-title {{#unless visible}}registry__component-listing--hidden{{/unless}}" {{#unless visible}}aria-hidden="true"{{/unless}}  data-o-component-category="{{id}}">{{name}}</li>
+			<li class="registry__component--list-title" data-o-component-category="{{id}}">{{name}}</li>
 			{{#repos}}
-				<li class="registry__component--list-item {{#unless visible}}registry__component-listing--hidden{{/unless}}"
+				<li class="registry__component--list-item"
 					data-o-component-name="{{name}}"
 					data-o-component-keywords="{{json keywords}}"
 					data-o-component-type="{{type}}"
-					data-o-component-sub-type="{{subType}}"
-					data-o-component-brands="{{json brands}}"
-				 {{#unless visible}}aria-hidden="true"{{/unless}}>
-					<a href="/components/{{name}}@{{version}}{{#unlessEquals @root.component.requestedBrand 'master'}}?brand={{@root.component.requestedBrand}}{{/unlessEquals}}">{{name}}</a>
+					data-o-component-sub-type="{{subType}}">
+					<a href="/components/{{name}}@{{version}}">{{name}}</a>
 				</li>
 			{{/repos}}
 		{{/if}}

@@ -34,10 +34,6 @@ class ComponentListing {
 			this.components = repoListing.markVisibilityBySearchTerm(this.components, filter.search);
 		}
 
-		if (filter.brand !== undefined) {
-			this.components = repoListing.markVisibilityByBrand(this.components, filter.brand);
-		}
-
 		if (filter.module !== undefined) {
 			this.components = repoListing.markVisibilityByType(this.components, {
 				imageset: filter.imageset,
@@ -74,16 +70,6 @@ class ComponentListing {
 			if (component.visible) {
 				component.element.removeAttribute('aria-hidden');
 				component.element.classList.remove('registry__component-listing--hidden');
-
-				const componentAnchor = component.element.querySelector('a');
-				console.log(componentAnchor);
-				const brandQuery = new RegExp(/^\?brand=*\w+/);
-
-				//checks for existing brand query parameter, sets it if it is not present
-				if (!brandQuery.test(componentAnchor.search)) {
-					componentAnchor.search = `?brand=${filter.brand}`;
-				}
-
 			} else {
 				component.element.setAttribute('aria-hidden', 'true');
 				component.element.classList.add('registry__component-listing--hidden');
@@ -108,7 +94,6 @@ class ComponentListing {
 		return Array.from(elements, element => {
 			return {
 				name: element.getAttribute('data-o-component-name'),
-				brands: JSON.parse(element.getAttribute('data-o-component-brands')),
 				keywords: JSON.parse(element.getAttribute('data-o-component-keywords')),
 				type: element.getAttribute('data-o-component-type'),
 				subType: element.getAttribute('data-o-component-sub-type') || null,
