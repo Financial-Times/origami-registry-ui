@@ -40,7 +40,7 @@ class FilterForm {
 	 */
 	constructor(formElement) {
 		this.formElement = formElement;
-		this.inputs = Array.from(formElement.querySelectorAll('input, select'));
+		this.inputs = Array.from(formElement.querySelectorAll('input'));
 		this.lastFilter = this.getUrlEncodedFilterValues();
 
 		this.alterBrowserHistory = Boolean(formElement.getAttribute('data-o-filter-form-browser-history'));
