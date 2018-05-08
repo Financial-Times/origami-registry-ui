@@ -1,13 +1,11 @@
 <div class="registry__component">
 	{{#unlessEquals component.brands.length 0}}
-		<ul data-o-tabs--js class="o-tabs o-tabs--big o-tabs--buttontabs registry__component--brand-tabs" role="tablist">
+		<div class="registry__brands">
 			{{#component.brands}}
-				<li role="tab"
-					{{#ifEquals this @root.component.requestedBrand}}aria-selected="true"{{/ifEquals}}>
-					<a href="?brand={{this}}">{{this}} brand</a>
-				</li>
+				<a class="registry__brands-button {{#ifEquals this @root.component.requestedBrand}}registry__brands-button--current{{/ifEquals}}"
+				href="{{#ifEquals this 'master'}}{{@root.component.name}}{{else}}?brand={{this}}{{/ifEquals}}">{{this}} brand</a>
 			{{/component.brands}}
-		</ul>
+		</div>
 
 		{{> component/container @root}}
 
