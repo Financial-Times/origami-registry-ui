@@ -3,6 +3,7 @@
 require('./click-helper');
 require('./demo');
 require('./select-text');
+require('./sticky-scroll');
 require('./tabs');
 require('./versioning');
 
