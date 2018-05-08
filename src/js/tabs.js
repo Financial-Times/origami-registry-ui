@@ -8,7 +8,6 @@ module.exports = (function() {
 		tab.addEventListener('click', () => {
 			const brand = tab.firstElementChild.href;
 			const baseUri = location.origin + location.pathname;
-			console.log(location.href);
 			location.href = (brand === 'master') ? baseUri : baseUri + brand;
 		});
 	});

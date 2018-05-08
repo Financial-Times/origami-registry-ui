@@ -9,7 +9,7 @@
 						</p>
 					</div>
 				</div>
-			</div>		
+			</div>
 		</div>
 {{else}}
 	{{#ifEquals component.support.status "experimental"}}
@@ -56,4 +56,19 @@
 			</div>
 		</div>
 	{{/ifEquals}}
+
+	{{#if component.brandable }}
+		<div class="registry__notice">
+			<div class="o-message o-message--notice o-message--inform" data-o-component="o-message">
+				<div class="o-message__container">
+					<div class="o-message__content">
+						<p class="o-message__content-main">
+							<span class="o-message__content-highlight">This component hasn't been branded yet.</span>
+							If you need it to be branded please get in touch with the Origami team.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	{{/if}}
 {{/unless}}
