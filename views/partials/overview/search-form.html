@@ -1,7 +1,7 @@
 <form action="/components" method="get" class="registry__form registry__form--overview" data-o-component="o-filter-form" data-o-filter-form-browser-history="true">
 	<div class="registry__container--wrapper">
 		<div class="o-forms">
-			<label for="filter-search" class="o-forms__label">Filter components</label>
+			<label for="filter-search" class="o-forms__label">Search components</label>
 			<div class="o-forms__additional-info">Filter available components by name and tag</div>
 			<div class="registry__search-bar">
 				<input id="filter-search" type="search" name="search" value="{{filter.search}}" class="o-forms__text"/>
@@ -10,7 +10,8 @@
 		</div>
 
 		<fieldset class="o-forms">
-			<legend class="o-forms__label">Display component types</legend>
+			<label class="o-forms__label">Types</label>
+			<div class="o-forms__additional-info">Filter available components by type</div>
 			<div class="o-forms__group">
 				<input id="type-module" type="checkbox" name="module" value="true" {{#if filter.module}}checked{{/if}} class="o-forms__checkbox"/>
 				<label for="type-module" class="o-forms__label">Modules</label>
@@ -22,18 +23,19 @@
 		</fieldset>
 
 		<fieldset class="o-forms">
-			<legend class="o-forms__label">Display components with status</legend>
+			<label class="o-forms__label">Status</label>
+			<div class="o-forms__additional-info">Filter available components by status</div>
 			<div class="o-forms__group">
 				<input id="status-active" type="checkbox" name="active" value="true" {{#if filter.active}}checked{{/if}} class="o-forms__checkbox"/>
 				<label for="status-active" class="o-forms__label">Active</label>
 				<input id="status-maintained" type="checkbox" name="maintained" value="true" {{#if filter.maintained}}checked{{/if}} class="o-forms__checkbox"/>
 				<label for="status-maintained" class="o-forms__label">Maintained</label>
+				<input id="status-experimental" type="checkbox" name="experimental" value="true" {{#if filter.experimental}}checked{{/if}} class="o-forms__checkbox"/>
+				<label for="status-experimental" class="o-forms__label">Experimental</label>
 				<input id="status-deprecated" type="checkbox" name="deprecated" value="true" {{#if filter.deprecated}}checked{{/if}} class="o-forms__checkbox"/>
 				<label for="status-deprecated" class="o-forms__label">Deprecated</label>
 				<input id="status-dead" type="checkbox" name="dead" value="true" {{#if filter.dead}}checked{{/if}} class="o-forms__checkbox"/>
 				<label for="status-dead" class="o-forms__label">Dead</label>
-				<input id="status-experimental" type="checkbox" name="experimental" value="true" {{#if filter.experimental}}checked{{/if}} class="o-forms__checkbox"/>
-				<label for="status-experimental" class="o-forms__label">Experimental</label>
 			</div>
 		</fieldset>
 	</div>
