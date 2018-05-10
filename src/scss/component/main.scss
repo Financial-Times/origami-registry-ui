@@ -12,4 +12,8 @@
 .registry__alert,
 .registry__notice {
 	margin-bottom: 20px;
+
+	a.o-message__actions__secondary {
+		white-space: normal;
+	}
 }
