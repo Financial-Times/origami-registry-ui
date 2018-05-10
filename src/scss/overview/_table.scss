@@ -2,13 +2,17 @@
 	@include oTableBase();
 
 	&-head {
-		background-color: oColorsGetPaletteColor('slate-white-5');
+		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 	}
 }
 
 .registry__table-body {
-	tr:not(.registry__group-title):hover {
-		background-color: oColorsGetPaletteColor('slate-white-15');
+	tr:not(.registry__group-title) {
+		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-5');
+
+		&:hover {
+			background-color: oColorsGetPaletteColor('slate-white-15');
+		}
 	}
 
 	td {
@@ -20,11 +24,11 @@
 	}
 
 	.registry__group-title {
-		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
+		background-color: oColorsGetPaletteColor('slate-white-5');
 
 		td {
 			@include oTypographyBold('sans');
-			@include oTypographyPadding($top: 4, $bottom: 4);
+			color: oColorsGetPaletteColor('black-80');
 		}
 	}
 }
