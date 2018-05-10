@@ -23,15 +23,17 @@ class ComponentListing {
 	 */
 	handleFilterFormUpdateEvent(event) {
 		const filter = event.detail;
-
 		// Perform the visibility marking
 		this.components = this.components.map(component => {
+
 			component.visible = true;
 			return component;
 		});
+
 		if (filter.search !== undefined) {
 			this.components = repoListing.markVisibilityBySearchTerm(this.components, filter.search);
 		}
+
 		if (filter.module !== undefined) {
 			this.components = repoListing.markVisibilityByType(this.components, {
 				imageset: filter.imageset,
@@ -39,6 +41,7 @@ class ComponentListing {
 				service: filter.service
 			});
 		}
+
 		if (filter.active !== undefined) {
 			this.components = repoListing.markVisibilityByStatus(this.components, {
 				active: filter.active,

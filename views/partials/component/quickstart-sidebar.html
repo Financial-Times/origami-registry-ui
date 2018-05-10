@@ -1,5 +1,4 @@
-<div class="registry__component--sidebar">
-	<div class="registry__component--sidebar--content">
+<div class="registry__container-right__inner">
 	<a class="github-link" href="{{component.url}}">GitHub Repository</a>
 
 	{{#ifEquals component.type 'imageset'}}
@@ -7,8 +6,6 @@
 	{{/ifEquals}}
 
 	{{#ifEquals component.type 'module'}}
-		{{> component/quickstart/build-service}}
+		{{> component/quickstart/build-service component}}
 	{{/ifEquals}}
-
-	</div>
 </div>

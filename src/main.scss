@@ -21,9 +21,7 @@ $o-brand: 'internal';
 @import 'src/scss/component/main';
 @import 'src/scss/component-listing';
 @import 'src/scss/error';
-@import 'src/scss/footer';
-@import 'src/scss/header';
-@import 'src/scss/media-queries';
+@import 'src/scss/layout/main';
 @import 'src/scss/overview/main';
 @import 'src/scss/status-labels';
 
@@ -35,8 +33,6 @@ html, body {
 }
 
 .registry {
-	display: flex;
-	flex-direction: column;
 	@include oTypographySans(0);
 
 	.link {

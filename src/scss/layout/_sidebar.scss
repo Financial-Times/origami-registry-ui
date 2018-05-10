@@ -1,0 +1,49 @@
+.registry__container-right__inner {
+	position: sticky;
+	top: 0;
+	align-self: flex-start;
+	padding: oTypographySpacingSize(5);
+
+	h2,
+	h3 {
+		@include oTypographyMargin($bottom: 3);
+	}
+
+	h2:first-of-type {
+		@include oTypographyMargin($top: 0);
+	}
+
+	p {
+		margin: 0;
+	}
+
+	ul {
+		@include oTypographyMargin($top: 1);
+		padding-left: oTypographySpacingSize(5);
+	}
+
+	code {
+		font-size: 14px;
+		padding: 2px;
+		background-color: oColorsGetPaletteColor('slate-white-15');
+	}
+
+	pre {
+		font-size: 14px;
+		tab-size: 0;
+		padding: oTypographySpacingSize(2);
+		background-color: oColorsGetPaletteColor('slate-white-15');
+
+		&.overflow {
+			overflow: scroll;
+		}
+	}
+
+	.github-link {
+		@include oButtons(big, (mono, primary));
+		@include oTypographyMargin($bottom: 4);
+		width: 100%;
+		text-transform: uppercase;
+		border: none;
+	}
+}

@@ -1,18 +1,23 @@
-<div class="registry__component--nav">
-	<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" data-o-component="o-filter-form">
-		<div class="o-forms">
-			<label for="filter-search" class="o-forms__label">Filter components</label>
-			<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
-		</div>
-	</form>
-	<ul class="registry__component--list" data-o-component="o-component-listing">
-		{{#each categories}}
+<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" data-o-component="o-filter-form">
+	<div class="o-forms">
+		<label for="filter-search" class="o-forms__label">Filter components</label>
+		<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
+	</div>
+</form>
+
+<ul class="registry__component--list" data-o-component="o-component-listing">
+	{{#each categories}}
+		{{#if repos.length}}
 			<li class="registry__component--list-title" data-o-component-category="{{id}}">{{name}}</li>
-			{{#each repos}}
-				<li class="registry__component--list-item" data-o-component-name="{{name}}" data-o-component-keywords="{{json keywords}}" data-o-component-type="{{type}}" data-o-component-sub-type="{{subType}}">
+			{{#repos}}
+				<li class="registry__component--list-item"
+					data-o-component-name="{{name}}"
+					data-o-component-keywords="{{json keywords}}"
+					data-o-component-type="{{type}}"
+					data-o-component-sub-type="{{subType}}">
 					<a href="/components/{{name}}@{{version}}">{{name}}</a>
 				</li>
-			{{/each}}
-		{{/each}}
-	</ul>
-</div>
+			{{/repos}}
+		{{/if}}
+	{{/each}}
+</ul>

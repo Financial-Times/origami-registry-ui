@@ -1,7 +1,7 @@
 
 {{#unless component.support.isOrigami}}
 		<div class="registry__alert">
-			<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message">
+			<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message" data-close=false>
 				<div class="o-message__container">
 					<div class="o-message__content">
 						<p class="o-message__content-main">
@@ -9,12 +9,12 @@
 						</p>
 					</div>
 				</div>
-			</div>		
+			</div>
 		</div>
 {{else}}
 	{{#ifEquals component.support.status "experimental"}}
 		<div class="registry__alert">
-			<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message">
+			<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message" data-close=false>
 				<div class="o-message__container">
 					<div class="o-message__content">
 						<p class="o-message__content-main">This component is experimental. This component is not guaranteed to be ready for production use, and the API should be considered unstable.</p>
@@ -26,7 +26,7 @@
 
 	{{#ifEquals component.support.status "deprecated"}}
 		<div class="registry__alert">
-			<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message">
+			<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message" data-close=false>
 				<div class="o-message__container">
 					<div class="o-message__content">
 						<p class="o-message__content-main">This component is deprecated. This component should not be used for new projects. Only the most severe security-related
@@ -41,7 +41,7 @@
 
 	{{#ifEquals component.support.status "dead"}}
 		<div class="registry__alert">
-			<div class="o-message o-message--alert-inner o-message--error" data-o-component="o-message">
+			<div class="o-message o-message--alert-inner o-message--error" data-o-component="o-message" data-close=false>
 				<div class="o-message__container">
 					<div class="o-message__content">
 						<p class="o-message__content-main">
@@ -56,4 +56,19 @@
 			</div>
 		</div>
 	{{/ifEquals}}
+
+	{{#if component.brandable }}
+		<div class="registry__notice">
+			<div class="o-message o-message--notice o-message--inform" data-o-component="o-message" data-close=false>
+				<div class="o-message__container">
+					<div class="o-message__content">
+						<p class="o-message__content-main">
+							<span class="o-message__content-highlight">This component hasn't been branded yet.</span>
+							If you need it to be branded please get in touch with the Origami team.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	{{/if}}
 {{/unless}}

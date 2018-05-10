@@ -6,10 +6,10 @@
 @import 'overlay';
 @import 'support';
 @import 'syntax-highlight';
-@import 'quickstart-sidebar';
 
-@include oMessage($types: 'alert-inner' 'notice-inner', $status: 'error' 'warning-light');
+@include oMessage($types: 'alert-inner' 'notice-inner' 'notice', $status: 'error' 'warning-light' 'inform');
 
-.registry__alert {
+.registry__alert,
+.registry__notice {
 	margin-bottom: 20px;
 }

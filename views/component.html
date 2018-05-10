@@ -1,7 +1,13 @@
-<div class="registry__component">
-	{{> component/list-sidebar}}
+<div class="registry__container">
+	<div class="registry__container-left">
+		{{> component/list-sidebar}}
+	</div>
 
-	{{> component/container}}
+	<div class="registry__container-center">
+		{{> component/brand-tabs}}
+	</div>
 
-	{{> component/quickstart-sidebar}}
+	<div class="registry__container-right">
+		{{> component/quickstart-sidebar}}
+	</div>
 </div>

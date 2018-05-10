@@ -1,13 +1,3 @@
-.registry__component {
-	display: flex;
-
-	&--container {
-		@include oGridContainer($grid-mode: "fluid", $bleed: true);
-		margin: 20px 28px 0;
-		width: 100%;
-	}
-}
-
 .registry__component--demo {
 	@include oTypographyMargin($bottom: 8);
 
@@ -63,6 +53,22 @@
 	ul {
 		@include oTabsButtonTabsTheme($theme: 'mono', $selector: false);
 		text-transform: uppercase;
+	}
+}
+
+// Faux tabs made to look like tabs
+.registry__brands {
+	@include oTypographyMargin($bottom: 5);
+	text-transform: uppercase;
+	border-bottom: 1px solid oColorsGetPaletteColor('black');
+
+	&-button {
+		@include oButtons('big', 'mono');
+		border-bottom: 0;
+
+		&--current {
+			@include oButtonsTheme(('primary','mono'));
+		}
 	}
 }
 

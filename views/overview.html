@@ -1,4 +1,13 @@
-<div class="registry__overview">
-	{{> overview/component-table}}
-	{{> overview/sidebar }}
+<div class="registry__container">
+	<div class="registry__container-left">
+		{{> overview/search-form}}
+	</div>
+
+	<div class="registry__container-center">
+		{{> overview/component-table}}
+	</div>
+	
+	<div class="registry__container-right">
+		{{> overview/sidebar }}
+	</div>
 </div>

@@ -405,7 +405,5 @@ describe('lib/repo-listing', () => {
 			});
 
 		});
-
 	});
-
 });

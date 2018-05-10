@@ -1,41 +1,44 @@
-<div class="registry__components">
-
-	{{> overview/search-form }}
-
-	<table class="registry__table" data-o-component="o-table" data-test="component-table">
-		<thead class="registry__table-head">
-			<tr>
-				<th data-o-table-heading-disable-sort class="registry__table-cell-show">Component</th>
-				<th data-o-table-heading-disable-sort data-o-table-data-type="numeric" class="o-table__cell--numeric registry__table-cell-show">Version</th>
-				<th data-o-table-heading-disable-sort class="registry__table-cell-show">Status</th>
-			</tr>
-		</thead>
-		<tbody class="registry__table-body" data-o-component="o-component-listing">
-			{{#each categories}}
-				{{#if repos.length}}
-					<tr class="registry__group-title {{#unless visible}}registry__component-listing--hidden{{/unless}}" {{#unless visible}}aria-hidden="true"{{/unless}} data-o-component-category="{{id}}">
-						<td colspan="3">{{name}}</td>
-					</tr>
-					{{#each repos}}
-						<tr data-test="component-row" class="registry__group {{#unless visible}}registry__component-listing--hidden{{/unless}}" {{#unless visible}}aria-hidden="true"{{/unless}} data-o-component-name="{{name}}" data-o-component-keywords="{{json keywords}}" data-o-component-type="{{type}}" data-o-component-sub-type="{{subType}}" data-o-component-support-status="{{support.status}}">
-							<td>
-								<a class='registry__table-cell-link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
-								<p class='registry__table-cell-description'>{{description}}
-									<span class='registry__table-cell--info' aria-hidden='true'>v{{version}}
-										<span class="status-label status-label--{{support.status}}">{{support.status}}</span>
-									</span>
-								</p>
-							</td>
-							<td data-o-table-data-type="numeric" class='o-table__cell--numeric registry__table-cell-show'>{{version}}</td>
-							<td class='registry__table-cell-show'>
-								<span class="status-label status-label--{{support.status}}">
-									{{support.status}}
+<table class="registry__table" data-o-component="o-table" data-test="component-table">
+	<thead class="registry__table-head">
+		<tr>
+			<th data-o-table-heading-disable-sort class="registry__table-cell-toggle">Component</th>
+			<th data-o-table-heading-disable-sort data-o-table-data-type="numeric" class="o-table__cell--numeric registry__table-cell-toggle">Version</th>
+			<th data-o-table-heading-disable-sort class="registry__table-cell-toggle">Status</th>
+		</tr>
+	</thead>
+	<tbody class="registry__table-body" data-o-component="o-component-listing">
+		{{#each categories}}
+			{{#if repos.length}}
+				<tr class="registry__group-title {{#unless visible}}registry__component-listing--hidden{{/unless}}"
+					{{#unless visible}}aria-hidden="true"{{/unless}}
+					data-o-component-category="{{id}}">
+					<td colspan="3">{{name}}</td>
+				</tr>
+				{{#each repos}}
+					<tr data-test="component-row" class="registry__group {{#unless visible}}registry__component-listing--hidden{{/unless}}"
+						{{#unless visible}}aria-hidden="true"{{/unless}}
+						data-o-component-name="{{name}}"
+						data-o-component-keywords="{{json keywords}}"
+						data-o-component-type="{{type}}"
+						data-o-component-sub-type="{{subType}}"
+						data-o-component-support-status="{{support.status}}">
+						<td>
+							<a class='registry__table-cell-link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
+							<p class='registry__table-cell-description'>{{description}}
+								<span class='registry__table-cell--info' aria-hidden='true'>v{{version}}
+									<span class="status-label status-label--{{support.status}}">{{support.status}}</span>
 								</span>
-							</td>
-						</tr>
-					{{/each}}
-				{{/if}}
-			{{/each}}
-		</tbody>
-	</table>
-</div>
+							</p>
+						</td>
+						<td data-o-table-data-type="numeric" class="o-table__cell--numeric registry__table-cell-toggle">{{version}}</td>
+						<td class="registry__table-cell-toggle">
+							<span class="status-label status-label--{{support.status}}">
+								{{support.status}}
+							</span>
+						</td>
+					</tr>
+				{{/each}}
+			{{/if}}
+		{{/each}}
+	</tbody>
+</table>

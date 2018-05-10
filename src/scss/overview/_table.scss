@@ -1,21 +1,3 @@
-.registry__search-bar {
-	display: flex;
-
-	.core & #filter-search {
-		margin-right: 20px;
-	}
-
-	.registry__filter-button {
-		@include oButtons(big, primary);
-		align-self: flex-end;
-	}
-}
-
-.registry__components {
-	padding: 0 20px;
-	flex-grow: 1;
-}
-
 .registry__table {
 	@include oTableBase();
 
@@ -59,12 +41,8 @@
 	color: oColorsGetPaletteColor('slate-white-80');
 }
 
-.registry__table-cell-show {
-	display: none;
-}
-
-.registry__table-cell-info {
+.registry__table-cell--info {
 	@include oTypographyPadding($top: 2);
-	display: table-cell;
-	color: oColorsGetPaletteColor('slate-white-80');
+	@include oTypographySans(0);
+	color: oColorsGetPaletteColor('black');
 };
