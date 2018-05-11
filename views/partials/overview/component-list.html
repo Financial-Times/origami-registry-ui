@@ -1,11 +1,11 @@
-<ul class="registry__component-list" data-o-component="o-component-listing" role="list">
+<ul class="registry__component-list" data-o-component="o-component-listing" data-test="component-list" role="list">
 	{{#each categories}}
 		{{#if repos.length}}
 			<li class="registry__group-title {{#unless visible}}registry__component-listing--hidden{{/unless}}"
 				{{#unless visible}}aria-hidden="true"{{/unless}}
 				data-o-component-category="{{id}}" role="listitem">{{name}}</li>
 			{{#each repos}}
-			<li data-test="component-row" class="registry__group {{#unless visible}}registry__component-listing--hidden{{/unless}}"
+			<li data-test="component-list-item" class="registry__group {{#unless visible}}registry__component-listing--hidden{{/unless}}"
 				{{#unless visible}}aria-hidden="true"{{/unless}}
 				data-o-component-name="{{name}}"
 				data-o-component-keywords="{{json keywords}}"

@@ -22,39 +22,36 @@ describe('GET /components', () => {
 	// Assertions here are based on data in `../mock/repo-data-api/data`
 	describe('HTML response', () => {
 		let dom;
-		let table;
+		let list;
 
 		beforeEach(async () => {
 			dom = new JSDOM((await request.then()).text);
-			table = dom.window.document.querySelector('[data-test=component-table]');
+			list = dom.window.document.querySelector('[data-test=component-list]');
 		});
 
-		it('contains a table of all components', () => {
-			assert.isNotNull(table);
+		it('contains a list of all components', () => {
+			assert.isNotNull(list);
 
-			const tableRows = table.querySelectorAll('[data-test=component-row]');
-			assert.lengthEquals(tableRows, 4);
+			const listItems = list.querySelectorAll('[data-test=component-list-item]');
+			assert.lengthEquals(listItems, 4);
 
 			let link;
 
-			link = tableRows[0].querySelector('[data-test=component-link]');
+			link = listItems[0].querySelector('[data-test=component-link]');
 			assert.strictEqual(link.getAttribute('href'), '/components/o-example-active@2.0.0');
 			assert.strictEqual(link.textContent.trim(), 'o-example-active');
 
-			link = tableRows[1].querySelector('[data-test=component-link]');
+			link = listItems[1].querySelector('[data-test=component-link]');
 			assert.strictEqual(link.getAttribute('href'), '/components/o-example-maintained@1.5.0');
 			assert.strictEqual(link.textContent.trim(), 'o-example-maintained');
 
-			link = tableRows[2].querySelector('[data-test=component-link]');
+			link = listItems[2].querySelector('[data-test=component-link]');
 			assert.strictEqual(link.getAttribute('href'), '/components/o-example-deprecated@1.0.0');
 			assert.strictEqual(link.textContent.trim(), 'o-example-deprecated');
 
-			link = tableRows[3].querySelector('[data-test=component-link]');
+			link = listItems[3].querySelector('[data-test=component-link]');
 			assert.strictEqual(link.getAttribute('href'), '/components/n-example-active@1.2.3');
 			assert.strictEqual(link.textContent.trim(), 'n-example-active');
-
 		});
-
 	});
-
 });

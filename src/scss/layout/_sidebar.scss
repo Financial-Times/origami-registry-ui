@@ -37,7 +37,7 @@
 
 	.github-link {
 		@include oButtons(big, (mono, primary));
-		@include oTypographyMargin($bottom: 4);
+		@include oTypographyMargin($top: 5);
 		width: 100%;
 		text-transform: uppercase;
 		border: none;
