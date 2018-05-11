@@ -2,7 +2,7 @@
 	<div class="registry__container--wrapper">
 		<div class="o-forms">
 			<label for="filter-search" class="o-forms__label">Search components</label>
-			<div class="o-forms__additional-info">Filter available components by name and tag</div>
+			<div class="o-forms__additional-info">Filter components by name or tag</div>
 			<div class="registry__search-bar">
 				<input id="filter-search" type="search" name="search" value="{{filter.search}}" class="o-forms__text"/>
 				<input type="submit" value="Filter" class="registry__filter-button o--if-no-js"/>
@@ -11,7 +11,7 @@
 
 		<fieldset class="o-forms">
 			<label class="o-forms__label">Types</label>
-			<div class="o-forms__additional-info">Filter available components by type</div>
+			<div class="o-forms__additional-info">Filter components by type</div>
 			<div class="o-forms__group">
 				<input id="type-module" type="checkbox" name="module" value="true" {{#if filter.module}}checked{{/if}} class="o-forms__checkbox"/>
 				<label for="type-module" class="o-forms__label">Modules</label>
@@ -24,7 +24,7 @@
 
 		<fieldset class="o-forms">
 			<label class="o-forms__label">Status</label>
-			<div class="o-forms__additional-info">Filter available components by status</div>
+			<div class="o-forms__additional-info">Filter components by status</div>
 			<div class="o-forms__group">
 				<input id="status-active" type="checkbox" name="active" value="true" {{#if filter.active}}checked{{/if}} class="o-forms__checkbox"/>
 				<label for="status-active" class="o-forms__label">Active</label>

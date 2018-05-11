@@ -5,8 +5,40 @@
 	li {
 		padding: 8px;
 
+		&:not(.registry__group-title) {
+			display: flex;
+			border-bottom: 1px solid oColorsGetPaletteColor('slate-white-5');
+
+			&:hover {
+				background-color: oColorsGetPaletteColor('slate-white-15');
+			}
+		}
+
+		&.registry__group {
+			cursor: pointer;
+
+			&-title {
+				@include oTypographyBold('sans');
+				background-color: oColorsGetPaletteColor('slate-white-5');
+				color: oColorsGetPaletteColor('black-80');
+			}
+		}
+
 		.registry__group-item {
 			padding: 0 4px;
+
+			&--link {
+				@include oTypographySansBold(1);
+				text-decoration: none;
+				color: oColorsGetPaletteColor('slate-white-80');
+			}
+
+			&--description {
+				@include oTypographyMargin($top: 2, $bottom: 1);
+				padding: 0 4px;
+				font-weight: 400;
+				color: oColorsGetPaletteColor('slate-white-80');
+			}
 		}
 
 		.registry__group-stats {
@@ -17,32 +49,9 @@
 			margin-left: auto;
 			width: 15%;
 		}
-	}
 
-	.registry__group-title {
-		@include oTypographyBold('sans');
-		background-color: oColorsGetPaletteColor('slate-white-5');
-		color: oColorsGetPaletteColor('black-80');
-	}
-
-	li:not(.registry__group-title) {
-		display: flex;
-		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-5');
-
-		&:hover {
-			background-color: oColorsGetPaletteColor('slate-white-15');
+		&.registry__component-listing--hidden {
+			display: none;
 		}
 	}
-}
-
-.registry__group-item--link {
-	@include oTypographySansBold(1);
-	text-decoration: none;
-	color: oColorsGetPaletteColor('slate-white-80');
-}
-
-.registry__group-item--description {
-	@include oTypographyMargin($top: 2, $bottom: 1);
-	font-weight: 400;
-	color: oColorsGetPaletteColor('slate-white-80');
 }
