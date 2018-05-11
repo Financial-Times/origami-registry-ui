@@ -21,10 +21,12 @@
 		position: sticky;
 		top: 0;
 		align-self: flex-start;
+		min-width: 260px;
 	}
 
 	&--nav {
 		padding-bottom: 0;
+		min-width: 220px;
 	}
 }
 
