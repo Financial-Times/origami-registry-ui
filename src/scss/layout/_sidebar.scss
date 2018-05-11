@@ -2,15 +2,11 @@
 	position: sticky;
 	top: 0;
 	align-self: flex-start;
-	padding: oTypographySpacingSize(5);
+	padding: 0 oTypographySpacingSize(5);
 
 	h2,
 	h3 {
 		@include oTypographyMargin($bottom: 3);
-	}
-
-	h2:first-of-type {
-		@include oTypographyMargin($top: 0);
 	}
 
 	p {

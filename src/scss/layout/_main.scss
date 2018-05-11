@@ -12,7 +12,7 @@
 		border-right: 1px solid oColorsGetPaletteColor('slate-white-15');
 		min-width: 260px;
 
-		& .registry__container--wrapper {
+		.registry__container--wrapper {
 			width: 260px;
 		}
 	}
@@ -34,11 +34,21 @@
 		h4 {
 			text-transform: uppercase;
 		}
+
+		.registry__container--sticky {
+			width: 24%;
+			padding-right: 20px;
+		}
 	}
 
 	&--wrapper {
 		top: 0;
 		bottom: 0;
 		overflow-x: hidden;
+	}
+
+	&--sticky {
+		position: fixed;
+		overflow-y: scroll;
 	}
 }

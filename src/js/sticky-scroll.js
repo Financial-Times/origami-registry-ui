@@ -7,8 +7,11 @@ module.exports = (function() {
 	document.addEventListener('scroll', () => {
 		Array.from(wrappers, wrapper => {
 			if (wrapper && wrapper.offsetHeight >= window.innerHeight) {
-				wrapper.style.overflowY = 'scroll';
-				wrapper.style.position = (header.offsetHeight <= window.scrollY) ? 'fixed' : 'relative';
+				if (header.offsetHeight <= window.scrollY) {
+					wrapper.classList.add('registry__container--sticky');
+				} else {
+					wrapper.classList.remove('registry__container--sticky');
+				}
 			}
 		});
 	});
