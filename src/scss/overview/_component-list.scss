@@ -1,0 +1,48 @@
+.registry__component-list {
+	list-style-type: none;
+	padding-left: 0;
+
+	li {
+		padding: 8px;
+
+		.registry__group-item {
+			padding: 0 4px;
+		}
+
+		.registry__group-stats {
+			display: flex;
+			flex-flow: column;
+			flex-shrink: 0;
+			align-items: center;
+			margin-left: auto;
+			width: 15%;
+		}
+	}
+
+	.registry__group-title {
+		@include oTypographyBold('sans');
+		background-color: oColorsGetPaletteColor('slate-white-5');
+		color: oColorsGetPaletteColor('black-80');
+	}
+
+	li:not(.registry__group-title) {
+		display: flex;
+		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-5');
+
+		&:hover {
+			background-color: oColorsGetPaletteColor('slate-white-15');
+		}
+	}
+}
+
+.registry__group-item--link {
+	@include oTypographySansBold(1);
+	text-decoration: none;
+	color: oColorsGetPaletteColor('slate-white-80');
+}
+
+.registry__group-item--description {
+	@include oTypographyMargin($top: 2, $bottom: 1);
+	font-weight: 400;
+	color: oColorsGetPaletteColor('slate-white-80');
+}

@@ -10,10 +10,10 @@
 		@include oTypographySans(1);
 		background-color: oColorsGetPaletteColor('slate-white-5');
 		border-right: 1px solid oColorsGetPaletteColor('slate-white-15');
-		min-width: 220px;
+		min-width: 260px;
 
 		& .registry__container--wrapper {
-			width: 220px;
+			width: 260px;
 		}
 	}
 
