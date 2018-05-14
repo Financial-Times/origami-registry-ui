@@ -34,7 +34,7 @@ describe('helpers', () => {
 		describe('.ifAny', () => {
 			it('confirms one argument out of many is a match (||)', () => {
 				args = ['string', 'string1'];
-				assert.strictEqual(helper.ifAny('string', args[0], args[2], opts), true);
+				assert.strictEqual(helper.ifAny('string', args[0], args[1], opts), true);
 			});
 
 			it('confirms no argument out of many is a match', () => {
