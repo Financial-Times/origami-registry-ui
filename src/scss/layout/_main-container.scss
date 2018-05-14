@@ -1,0 +1,46 @@
+
+.registry__container {
+	display: flex;
+
+	&-left {
+		@include oTypographySans(1);
+		background-color: oColorsGetPaletteColor('slate-white-5');
+		border-right: 1px solid oColorsGetPaletteColor('slate-white-15');
+
+		.registry__container--wrapper {
+			width: 260px;
+		}
+	}
+
+	&-center {
+		@include oGridContainer($grid-mode: "fluid", $bleed: true);
+		width: 100%;
+		padding: 20px;
+	}
+
+	&-right {
+		flex-shrink: 2;
+		background-color: oColorsGetPaletteColor('slate-white-5');
+		border-left: 1px solid oColorsGetPaletteColor('slate-white-15');
+		min-width: 25%;
+
+		h2,
+		h3,
+		h4 {
+			text-transform: uppercase;
+		}
+		.registry__container--wrapper {
+			padding: 0 20px;
+		}
+	}
+
+	&--wrapper {
+		top: 0;
+		bottom: 0;
+		overflow-x: hidden;
+	}
+
+	&--sticky {
+		max-height: 100vh;
+	}
+}

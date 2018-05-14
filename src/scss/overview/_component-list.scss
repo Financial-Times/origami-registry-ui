@@ -3,11 +3,11 @@
 	padding-left: 0;
 
 	li {
-		padding: 8px;
+		padding: 8px 0 8px 8px;
 
 		&:not(.registry__group-title) {
 			display: flex;
-			border-bottom: 1px solid oColorsGetPaletteColor('slate-white-5');
+			border-bottom: 2px solid oColorsGetPaletteColor('slate-white-5');
 
 			&:hover {
 				background-color: oColorsGetPaletteColor('slate-white-15');
@@ -34,7 +34,7 @@
 			}
 
 			&--description {
-				@include oTypographyMargin($top: 2, $bottom: 1);
+				@include oTypographyMargin($top: 2, $bottom: 0);
 				padding: 0 4px;
 				font-weight: 400;
 				color: oColorsGetPaletteColor('slate-white-80');
