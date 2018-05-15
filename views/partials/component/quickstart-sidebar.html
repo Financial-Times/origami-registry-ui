@@ -1,11 +1,13 @@
 <div class="registry__container-right__inner">
-	<a class="github-link" href="{{component.url}}">GitHub Repository</a>
+	<div class="registry__container--wrapper">
+		<a class="github-link" href="{{component.url}}">GitHub Repository</a>
 
-	{{#ifEquals component.type 'imageset'}}
-		{{> component/quickstart/imageset}}
-	{{/ifEquals}}
+		{{#ifEquals component.type 'imageset'}}
+			{{> component/quickstart/imageset}}
+		{{/ifEquals}}
 
-	{{#ifEquals component.type 'module'}}
-		{{> component/quickstart/build-service component}}
-	{{/ifEquals}}
+		{{#ifEquals component.type 'module'}}
+			{{> component/quickstart/build-service component}}
+		{{/ifEquals}}
+	</div>
 </div>

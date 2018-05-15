@@ -1,5 +1,6 @@
+@import 'demos';
+@import 'brand-tabs';
 @import 'dependencies';
-@import 'container';
 @import 'header';
 @import 'linked-heading';
 @import 'list-sidebar';
@@ -7,9 +8,13 @@
 @import 'support';
 @import 'syntax-highlight';
 
-@include oMessage($types: 'alert-inner' 'notice-inner' 'notice', $status: 'error' 'warning-light' 'inform');
+@include oMessage($types: 'alert-inner' 'notice-inner', $status: 'error' 'warning-light' 'inform');
 
 .registry__alert,
 .registry__notice {
 	margin-bottom: 20px;
+
+	a.o-message__actions__secondary {
+		white-space: normal;
+	}
 }

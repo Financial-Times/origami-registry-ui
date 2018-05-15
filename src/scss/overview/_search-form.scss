@@ -2,14 +2,18 @@
 	@include oTypographyPadding($bottom: 5);
 
 	.o-forms {
-		padding: 20px 20px 0 20px;
-
-		&--brand {
-			padding-top: 0;
-		}
+		padding: 20px 20px 0;
 
 		&__group {
 			margin: 0
+		}
+	}
+
+	fieldset.o-forms {
+		@include oTypographyPadding($top: 0);
+
+		.o-forms__additional-info {
+			@include oTypographyPadding($bottom: 4);
 		}
 	}
 
@@ -17,10 +21,12 @@
 		position: sticky;
 		top: 0;
 		align-self: flex-start;
+		min-width: 260px;
 	}
 
 	&--nav {
 		padding-bottom: 0;
+		min-width: 220px;
 	}
 }
 

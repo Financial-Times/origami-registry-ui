@@ -56,22 +56,6 @@
 	}
 }
 
-// Faux tabs made to look like tabs
-.registry__brands {
-	@include oTypographyMargin($bottom: 5);
-	text-transform: uppercase;
-	border-bottom: 1px solid oColorsGetPaletteColor('black');
-
-	&-button {
-		@include oButtons('big', 'mono');
-		border-bottom: 0;
-
-		&--current {
-			@include oButtonsTheme(('primary','mono'));
-		}
-	}
-}
-
 .registry__component--image {
 	&-grid {
 		display: flex;

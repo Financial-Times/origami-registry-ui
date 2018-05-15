@@ -2,15 +2,10 @@
 	position: sticky;
 	top: 0;
 	align-self: flex-start;
-	padding: oTypographySpacingSize(5);
 
 	h2,
 	h3 {
 		@include oTypographyMargin($bottom: 3);
-	}
-
-	h2:first-of-type {
-		@include oTypographyMargin($top: 0);
 	}
 
 	p {
@@ -41,7 +36,7 @@
 
 	.github-link {
 		@include oButtons(big, (mono, primary));
-		@include oTypographyMargin($bottom: 4);
+		@include oTypographyMargin($top: 5);
 		width: 100%;
 		text-transform: uppercase;
 		border: none;

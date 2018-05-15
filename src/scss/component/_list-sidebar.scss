@@ -6,6 +6,10 @@
 	li:first-of-type:not([aria-hidden="true"]) {
 		padding-top: 0;
 	}
+
+	.registry__component-listing--hidden {
+		display: none;
+	}
 }
 
 .registry__component--list-title {
