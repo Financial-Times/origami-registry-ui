@@ -9,7 +9,7 @@
 		border-bottom: 0;
 
 		&--current {
-			@include oButtonsTheme(('primary','mono'));
+			@include oButtonsTheme('primary-mono');
 		}
 	}
 }
