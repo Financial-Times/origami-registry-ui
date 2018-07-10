@@ -10,7 +10,7 @@
 				{{#if @root.component.hasCSS}}<code>&lt;link&gt;</code> tag{{/if}}
 			{{/ifBoth}}
 		</p>
-		<pre  class="overflow">{{@root.component.name}}@^{{@root.component.version}}{{#unlessEquals requestedBrand 'master'}}?brand={{requestedBrand}}{{/unlessEquals}}</pre>
+		<pre  class="overflow">{{@root.component.name}}@^{{@root.component.version}}{{#unlessEquals requestedBrand 'master'}}&brand={{requestedBrand}}{{/unlessEquals}}</pre>
 		<p><a class="o-overlay-trigger link"
 					data-o-overlay-id="overlay"
 					data-o-overlay-src="#how-do-i-build-service"
@@ -38,11 +38,11 @@
 			to your page:
 		</p>
 
-		<pre class="overflow">&lt;link rel="stylesheet" href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules={{@root.component.name}}@^{{@root.component.version}}{{#if requestedBrand}}?brand={{requestedBrand}}{{/if}}" /><br>&lt;script src="https://www.ft.com/__origami/service/build/v2/bundles/js?modules={{@root.component.name}}@^{{@root.component.version}}">&lt;/script></pre>
+		<pre class="overflow">&lt;link rel="stylesheet" href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules={{@root.component.name}}@^{{@root.component.version}}{{#if requestedBrand}}&brand={{requestedBrand}}{{/if}}" /><br>&lt;script src="https://www.ft.com/__origami/service/build/v2/bundles/js?modules={{@root.component.name}}@^{{@root.component.version}}">&lt;/script></pre>
 
 		<p>You should have <strong>only one</strong> (Origami related) <code>&lt;script&gt;</code> and one <code>&lt;link&gt;</code> tag in your page, even if you want to load more than one component. <br>You can request all <strong>{{#unlessEquals requestedBrand 'master'}}branded{{/unlessEquals}}</strong> components you need in a single request, by adding more modules to the link and/or script URLs like so:</p>
 
-		<pre class="overflow">https://www.ft.com/__origami/service/build/v2/bundles/css?modules={{@root.component.name}}@^{{@root.component.version}},module@version,module@version{{#unlessEquals requestedBrand 'master'}}?brand={{requestedBrand}}{{/unlessEquals}}</pre>
+		<pre class="overflow">https://www.ft.com/__origami/service/build/v2/bundles/css?modules={{@root.component.name}}@^{{@root.component.version}},module@version,module@version{{#unlessEquals requestedBrand 'master'}}&brand={{requestedBrand}}{{/unlessEquals}}</pre>
 
 		<p>For full build service options see the <a class="link" href="http://origami.ft.com/docs/developer-guide/build-service/#api-reference">build service API docs</a></p>
 	</script>
