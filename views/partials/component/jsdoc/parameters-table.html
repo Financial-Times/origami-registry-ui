@@ -1,0 +1,23 @@
+<table class="o-table o-table--row-stripes">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this}}
+        <tr>
+            <th>{{name}}</th>
+            <th>
+                {{#each type}}
+                    {{ this }}
+                    {{#unless @last}} | {{/unless}}
+                {{/each}}
+            </th>
+            <th>{{description}}</th>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

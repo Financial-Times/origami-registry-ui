@@ -1,0 +1,22 @@
+<h1 id="longname">{{name}}{{#if constructor}}({{#each constructor.parameters}}{{name}}{{/each}}){{/if}}</h1>
+<p>{{description}}</p>
+
+{{#if constructor}}
+    {{#if constructor.description}}
+        <p>{{constructor.description}}</p>
+    {{/if}}
+    {{#if constructor.parameters}}
+        {{> component/jsdoc/parameters-table constructor.parameters }}
+    {{/if}}
+    {{#if functions}}
+        <h2>methods</h2>
+        <ul>
+        {{#each functions}}
+            <li><a href="#{{longname}}">{{name}}</a></li>
+        {{/each}}
+        </ul>
+    {{/if}}
+    {{#each functions}}
+        {{> component/jsdoc/functions-node }}
+    {{/each}}
+{{/if}}

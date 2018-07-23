@@ -1,3 +1,6 @@
 <div id="{{ longname }}" class="registry__doclet">
+    {{#ifEquals kind 'class'}}
+        {{> component/jsdoc/class-node }}
+    {{/ifEquals}}
     {{{ json this }}}
 </div>
