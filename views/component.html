@@ -4,7 +4,29 @@
 	</div>
 
 	<div class="registry__container-center">
-		{{> component/brand-tabs}}
+		{{#> component/container}}
+			{{#*inline "content"}}
+				{{> component/brand-tabs}}
+
+				{{> component/header}}
+
+				{{#if demos}}
+					{{> component/type/demos}}
+				{{/if}}
+
+				{{#if images}}
+					{{> component/type/images}}
+				{{/if}}
+
+				{{#if service}}
+					{{> component/type/service}}
+				{{/if}}
+
+				{{#ifEither dependencies.bower.length dependencies.npm.length}}
+					{{> component/dependencies dependencies}}
+				{{/ifEither}}
+			{{/inline}}
+		{{/component/container}}
 	</div>
 
 	<div class="registry__container-right">
