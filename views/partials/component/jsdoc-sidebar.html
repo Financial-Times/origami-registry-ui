@@ -1,0 +1,16 @@
+<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" data-o-component="o-filter-form">
+	<div class="o-forms">
+		<label for="filter-search" class="o-forms__label">Filter components</label>
+		<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
+	</div>
+</form>
+
+
+<ul class="registry__component--list" data-o-component="o-component-listing">
+	{{#each navItems}}
+        <li class="registry__component--list-title">
+            {{title}}
+             {{> component/jsdoc-sidebase-subnav }}
+        </li>
+	{{/each}}
+</ul>

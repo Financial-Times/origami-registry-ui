@@ -1,0 +1,10 @@
+{{#each items}}
+    <li class="registry__component--list-item">
+        <a href="{{link}}">{{title}}</a>
+    </li>
+    {{#each subnavs}}
+        <ul>
+            {{> component/jsdoc-sidebase-subnav }}
+        </ul>
+    {{/each}}
+{{/each}}

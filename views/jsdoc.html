@@ -1,12 +1,19 @@
 <div class="registry__container">
     <div class="registry__container-left">
-        {{> component/list-sidebar}}
+        {{> component/jsdoc-sidebar }}
     </div>
 
     <div class="registry__container-center">
 		{{#> component/container}}
-			{{#*inline "content"}}
-                jsdoc
+            {{#*inline "content"}}
+                {{#each jsDocsByHierarchy}}
+                    {{#each this}}
+                        {{> component/jsdoc-doclet }}
+                    {{/each}}
+                {{/each}}
+                {{#each nestedEventJsdocs}}
+                    {{> component/jsdoc-doclet }}
+                {{/each}}
 			{{/inline}}
 		{{/component/container}}
     </div>
