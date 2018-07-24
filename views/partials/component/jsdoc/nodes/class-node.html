@@ -1,0 +1,37 @@
+<h1 id="longname">new {{name}}{{#if constructor}}({{#each constructor.parameters}}{{name}}{{#unless @last}}, {{/unless}}{{/each}}){{/if}}</h1>
+
+{{#if description}}
+    <p>{{description}}</p>
+{{/if}}
+
+{{#if constructor}}
+    {{#if constructor.description}}
+        <p>{{constructor.description}}</p>
+    {{/if}}
+
+    {{#if constructor.parameters}}
+        {{> component/jsdoc/parameters-table constructor.parameters }}
+    {{/if}}
+{{/if}}
+
+{{#if functions}}
+    {{> component/jsdoc/functions functions }}
+{{/if}}
+
+{{#if properties}}
+    {{> component/jsdoc/properties properties }}
+{{/if}}
+
+{{#if extends}}
+    {{> component/jsdoc/extends extends }}
+{{/if}}
+
+{{#if fires}}
+    {{> component/jsdoc/fires-events fires }}
+{{/if}}
+
+{{#if constructor}}
+    {{#if constructor.examples}}
+        {{> component/jsdoc/examples constructor.examples }}
+    {{/if}}
+{{/if}}

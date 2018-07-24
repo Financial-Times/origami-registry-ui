@@ -1,0 +1,18 @@
+<h1 id="#{{longname}}">{{longname}}</h1>
+
+{{#if type}}
+    <h2>Type: {{#each type}}{{ this }}{{#unless @last}} | {{/unless}}{{/each}}</h2>
+{{/if}}
+
+{{#if description}}
+    <p>{{description}}</p>
+{{/if}}
+
+{{#if properties}}
+    {{> component/jsdoc/properties-table properties }}
+{{/if}}
+
+{{#if examples}}
+    {{> component/jsdoc/examples this }}
+{{/if}}
+

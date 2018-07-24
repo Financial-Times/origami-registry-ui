@@ -1,0 +1,17 @@
+<h1 id="#{{longname}}">{{longname}}</h1>
+
+{{#if description}}
+    <p>{{description}}</p>
+{{/if}}
+
+{{#if functions}}
+    {{> component/jsdoc/functions functions }}
+{{/if}}
+
+{{#if classes}}
+    {{> component/jsdoc/classes classes }}
+{{/if}}
+
+{{#if properties}}
+    {{> component/jsdoc/properties properties }}
+{{/if}}

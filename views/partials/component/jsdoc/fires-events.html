@@ -1,0 +1,10 @@
+{{#if this}}
+    <h2>Fires Event{{#unlessEquals this.length 1}}s{{/unlessEquals}}</h2>
+    <ul>
+    {{#each this}}
+        <li>
+            <a class="link" href="#{{this}}">{{this}}</a>
+        </li>
+    {{/each}}
+    </ul>
+{{/if}}

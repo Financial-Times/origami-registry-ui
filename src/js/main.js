@@ -1,5 +1,6 @@
 'use strict';
 
+require('o-syntax-highlight');
 require('./click-helper');
 require('./demo');
 require('./select-text');

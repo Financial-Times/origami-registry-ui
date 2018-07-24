@@ -1,0 +1,14 @@
+<h1 id="#{{longname}}">{{longname}}</h1>
+
+{{#if type}}
+    <h2>Types</h2>
+    <ul>
+        {{#each type}}
+        <li>{{ this }}</li>
+        {{/each}}
+    </ul>
+{{/if}}
+
+{{#if description}}
+    <p>{{description}}</p>
+{{/if}}

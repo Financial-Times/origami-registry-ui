@@ -1,0 +1,13 @@
+{{#if this}}
+    <h2>Constructor Functions / Classes</h2>
+    <ul>
+    {{#each this}}
+        <li>
+            <a class="link" href="#{{longname}}">{{name}}{{#if parameters.length}}({{#each parameters}}{{name}}{{#unless @last}}, {{/unless}}{{/each}}){{/if}}</a>
+            {{#if description}}
+                - {{description}}
+            {{/if}}
+        </li>
+    {{/each}}
+    </ul>
+{{/if}}
