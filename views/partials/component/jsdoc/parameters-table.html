@@ -1,22 +1,22 @@
-<table class="o-table o-table--row-stripes">
+<table class="o-table o-table--responsive-scroll o-table--code-docs" data-o-component="o-table">
     <thead>
         <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
+            <th data-o-table-heading-disable-sort>parameter</th>
+            <th data-o-table-heading-disable-sort>type</th>
+            <th data-o-table-heading-disable-sort class="o-table__description">description</th>
         </tr>
     </thead>
     <tbody>
         {{#each this}}
         <tr>
-            <th>{{name}}</th>
-            <th>
+            <td>{{name}}</td>
+            <td>
                 {{#each type}}
                     {{ this }}
                     {{#unless @last}} | {{/unless}}
                 {{/each}}
-            </th>
-            <th>{{description}}</th>
+            </td>
+            <td>{{description}}</td>
         </tr>
         {{/each}}
     </tbody>

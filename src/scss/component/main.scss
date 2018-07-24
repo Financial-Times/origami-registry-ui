@@ -7,7 +7,7 @@
 @import 'overlay';
 @import 'support';
 @import 'syntax-highlight';
-@import 'techdocs';
+@import 'codedocs';
 
 @include oMessage($types: 'alert-inner' 'notice-inner', $status: 'error' 'warning-light' 'inform');
 

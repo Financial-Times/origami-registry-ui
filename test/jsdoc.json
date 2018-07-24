@@ -1,5 +1,5 @@
 [
-{
+    {
         "comment": "/**\n * A global variable called 'foo'.\n * http://usejsdoc.org/tags-member.html\n * @type {number}\n */",
         "meta": {
             "range": [
@@ -249,11 +249,11 @@
         "scope": "static"
     },
     {
-        "comment": "/**\n * Creates a new Person.\n * http://usejsdoc.org/tags-class.html\n * @class\n * @param {string} name\n */",
+        "comment": "/**\n * Creates a new Person.\n * http://usejsdoc.org/tags-class.html\n * @constructor\n * @param {string} name\n */",
         "meta": {
             "range": [
-                106,
-                181
+                112,
+                187
             ],
             "filename": "class.js",
             "lineno": 7,
@@ -291,8 +291,8 @@
         "comment": "/** @member {string} */",
         "meta": {
             "range": [
-                162,
-                178
+                168,
+                184
             ],
             "filename": "class.js",
             "lineno": 9,
@@ -321,8 +321,8 @@
         "comment": "/**\n * A function for a person to say hello.\n */",
         "meta": {
             "range": [
-                232,
-                317
+                238,
+                323
             ],
             "filename": "class.js",
             "lineno": 15,
@@ -343,18 +343,73 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n * Creates a new Cat.\n * Uses JSDoc class tag with doc comments on class and constructor.\n * http://usejsdoc.org/tags-class.html\n * @class\n */",
+        "comment": "/**\n * Class representing a domesticated animal.\n */",
         "meta": {
             "range": [
-                466,
-                686
+                378,
+                446
             ],
             "filename": "class.js",
-            "lineno": 25,
+            "lineno": 22,
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
                 "id": "astnode100000084",
+                "name": "Pet",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "classdesc": "Class representing a domesticated animal.",
+        "name": "Pet",
+        "longname": "Pet",
+        "kind": "class",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                394,
+                444
+            ],
+            "filename": "class.js",
+            "lineno": 23,
+            "columnno": 4,
+            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "code": {
+                "id": "astnode100000087",
+                "name": "Pet#eat",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "food"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "undocumented": true,
+        "name": "eat",
+        "longname": "Pet#eat",
+        "kind": "function",
+        "memberof": "Pet",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n * Creates a new Cat.\n * Uses JSDoc class tag with doc comments on class and constructor.\n * http://usejsdoc.org/tags-class.html\n * @class\n * @extends Pet\n */",
+        "meta": {
+            "range": [
+                611,
+                860
+            ],
+            "filename": "class.js",
+            "lineno": 35,
+            "columnno": 0,
+            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "code": {
+                "id": "astnode100000098",
                 "name": "Cat",
                 "type": "ClassDeclaration",
                 "paramnames": [
@@ -364,6 +419,9 @@
         },
         "classdesc": "Creates a new Cat.\nUses JSDoc class tag with doc comments on class and constructor.\nhttp://usejsdoc.org/tags-class.html",
         "kind": "class",
+        "augments": [
+            "Pet"
+        ],
         "name": "Cat",
         "longname": "Cat",
         "scope": "global",
@@ -382,15 +440,15 @@
         "comment": "/**\n     * @param {string} name\n     */",
         "meta": {
             "range": [
-                526,
-                577
+                683,
+                751
             ],
             "filename": "class.js",
-            "lineno": 29,
+            "lineno": 39,
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000087",
+                "id": "astnode100000102",
                 "name": "Cat",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -421,15 +479,15 @@
         "comment": "",
         "meta": {
             "range": [
-                554,
-                570
+                728,
+                744
             ],
             "filename": "class.js",
-            "lineno": 30,
+            "lineno": 41,
             "columnno": 8,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000093",
+                "id": "astnode100000111",
                 "name": "this.name",
                 "type": "Identifier",
                 "value": "name",
@@ -447,15 +505,15 @@
         "comment": "/**\n     * Log a sound of a cat.\n     */",
         "meta": {
             "range": [
-                628,
-                684
+                802,
+                858
             ],
             "filename": "class.js",
-            "lineno": 36,
+            "lineno": 47,
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000098",
+                "id": "astnode100000116",
                 "name": "Cat.makeSound",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -473,18 +531,18 @@
         "params": []
     },
     {
-        "comment": "",
+        "comment": "/**\n * @extends Pet\n */",
         "meta": {
             "range": [
-                688,
-                1039
+                886,
+                1266
             ],
             "filename": "class.js",
-            "lineno": 41,
+            "lineno": 55,
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000108",
+                "id": "astnode100000126",
                 "name": "Dog",
                 "type": "ClassDeclaration",
                 "paramnames": [
@@ -492,25 +550,38 @@
                 ]
             }
         },
-        "undocumented": true,
+        "augments": [
+            "Pet"
+        ],
         "name": "Dog",
         "longname": "Dog",
         "kind": "class",
-        "scope": "global"
+        "scope": "global",
+        "description": "Creates a new Dog.\nMissing class tag and doc comment on constructor only.\nhttp://usejsdoc.org/tags-class.html",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "name": "name"
+            }
+        ]
     },
     {
         "comment": "/**\n     * Creates a new Dog.\n     * Missing class tag and doc comment on constructor only.\n     * http://usejsdoc.org/tags-class.html\n     * @param {string} name\n     */",
         "meta": {
             "range": [
-                879,
-                930
+                1089,
+                1157
             ],
             "filename": "class.js",
-            "lineno": 48,
+            "lineno": 62,
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000111",
+                "id": "astnode100000130",
                 "name": "Dog",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -535,21 +606,22 @@
         "name": "Dog",
         "longname": "Dog",
         "kind": "class",
-        "scope": "global"
+        "scope": "global",
+        "undocumented": true
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                907,
-                923
+                1134,
+                1150
             ],
             "filename": "class.js",
-            "lineno": 49,
+            "lineno": 64,
             "columnno": 8,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000117",
+                "id": "astnode100000139",
                 "name": "this.name",
                 "type": "Identifier",
                 "value": "name",
@@ -567,15 +639,15 @@
         "comment": "/**\n     * Log a sound of a dog.\n     */",
         "meta": {
             "range": [
-                981,
-                1037
+                1208,
+                1264
             ],
             "filename": "class.js",
-            "lineno": 55,
+            "lineno": 70,
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000122",
+                "id": "astnode100000144",
                 "name": "Dog.makeSound",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -596,15 +668,15 @@
         "comment": "",
         "meta": {
             "range": [
-                1041,
-                1090
+                1268,
+                1317
             ],
             "filename": "class.js",
-            "lineno": 60,
+            "lineno": 75,
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000133",
+                "id": "astnode100000155",
                 "name": "module.exports",
                 "type": "ObjectExpression",
                 "value": "{\"Person\":\"\",\"Cat\":\"\",\"Dog\":\"\"}",
@@ -622,15 +694,15 @@
         "comment": "",
         "meta": {
             "range": [
-                1064,
-                1070
+                1291,
+                1297
             ],
             "filename": "class.js",
-            "lineno": 61,
+            "lineno": 76,
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000138",
+                "id": "astnode100000160",
                 "name": "Person",
                 "type": "Identifier",
                 "value": "Person"
@@ -647,15 +719,15 @@
         "comment": "",
         "meta": {
             "range": [
-                1076,
-                1079
+                1303,
+                1306
             ],
             "filename": "class.js",
-            "lineno": 62,
+            "lineno": 77,
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000140",
+                "id": "astnode100000162",
                 "name": "Cat",
                 "type": "Identifier",
                 "value": "Cat"
@@ -672,15 +744,15 @@
         "comment": "",
         "meta": {
             "range": [
-                1085,
-                1088
+                1312,
+                1315
             ],
             "filename": "class.js",
-            "lineno": 63,
+            "lineno": 78,
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000142",
+                "id": "astnode100000164",
                 "name": "Dog",
                 "type": "Identifier",
                 "value": "Dog"
@@ -694,6 +766,199 @@
         "scope": "static"
     },
     {
+        "comment": "/** @module ComplexModule */",
+        "meta": {
+            "filename": "complex-module.js",
+            "lineno": 1,
+            "columnno": 0,
+            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "code": {}
+        },
+        "kind": "module",
+        "name": "ComplexModule",
+        "longname": "module:ComplexModule"
+    },
+    {
+        "comment": "/**\n * Test the JsDoc example tag.\n * http://usejsdoc.org/tags-example.html\n * Solves equations of the form a * x = b\n * @example\n * // returns 3\n * solveAsExample(5, 15);\n * @example <caption>Captioned example usage of solveAsExample.</caption>\n * // returns 2\n * solveAsExample(5, 10);\n * @returns {Number} Returns the value of x for the equation.\n */",
+        "meta": {
+            "range": [
+                384,
+                467
+            ],
+            "filename": "complex-module.js",
+            "lineno": 15,
+            "columnno": 0,
+            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "code": {
+                "id": "astnode100000169",
+                "name": "module.exports.solveAsExample",
+                "type": "FunctionExpression",
+                "value": "solveAsExample",
+                "paramnames": [
+                    "a",
+                    "b"
+                ]
+            }
+        },
+        "description": "Test the JsDoc example tag.\nhttp://usejsdoc.org/tags-example.html\nSolves equations of the form a * x = b",
+        "examples": [
+            "// returns 3\nsolveAsExample(5, 15);",
+            "<caption>Captioned example usage of solveAsExample.</caption>\n// returns 2\nsolveAsExample(5, 10);"
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "description": "Returns the value of x for the equation."
+            }
+        ],
+        "name": "solveAsExample",
+        "longname": "module:ComplexModule.solveAsExample",
+        "kind": "function",
+        "memberof": "module:ComplexModule",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n * An example constructor within a module.\n * @constructor\n * @example\n * const myIncrementer = new incrementer();\n * myIncrementer.increment(4); // 4\n * myIncrementer.increment(4); // 8\n * myIncrementer.increment(1); // 9\n */",
+        "meta": {
+            "range": [
+                701,
+                1034
+            ],
+            "filename": "complex-module.js",
+            "lineno": 28,
+            "columnno": 0,
+            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "code": {
+                "id": "astnode100000185",
+                "name": "module.exports.incrementer",
+                "type": "FunctionExpression",
+                "value": "incrementer",
+                "paramnames": []
+            },
+            "vars": {
+                "this.num": "module:ComplexModule.incrementer#num",
+                "this.increment": "module:ComplexModule.incrementer#increment",
+                "": null
+            }
+        },
+        "description": "An example constructor within a module.",
+        "kind": "class",
+        "examples": [
+            "const myIncrementer = new incrementer();\nmyIncrementer.increment(4); // 4\nmyIncrementer.increment(4); // 8\nmyIncrementer.increment(1); // 9"
+        ],
+        "name": "incrementer",
+        "longname": "module:ComplexModule.incrementer",
+        "memberof": "module:ComplexModule",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                759,
+                771
+            ],
+            "filename": "complex-module.js",
+            "lineno": 29,
+            "columnno": 4,
+            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "code": {
+                "id": "astnode100000195",
+                "name": "this.num",
+                "type": "Literal",
+                "value": 0,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "num",
+        "longname": "module:ComplexModule.incrementer#num",
+        "kind": "member",
+        "memberof": "module:ComplexModule.incrementer",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * An example constructor within a module.\n     * @param {Number} num - The number to increment by.\n     * @returns {Number} - The updated value.\n     */",
+        "meta": {
+            "range": [
+                943,
+                1032
+            ],
+            "filename": "complex-module.js",
+            "lineno": 35,
+            "columnno": 4,
+            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "code": {
+                "id": "astnode100000201",
+                "name": "this.increment",
+                "type": "FunctionExpression",
+                "paramnames": [
+                    "num"
+                ]
+            },
+            "vars": {
+                "this.num": "module:ComplexModule.incrementer#num"
+            }
+        },
+        "description": "An example constructor within a module.",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "description": "The number to increment by.",
+                "name": "num"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "description": "- The updated value."
+            }
+        ],
+        "name": "increment",
+        "longname": "module:ComplexModule.incrementer#increment",
+        "kind": "function",
+        "memberof": "module:ComplexModule.incrementer",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                985,
+                1000
+            ],
+            "filename": "complex-module.js",
+            "lineno": 36,
+            "columnno": 8,
+            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "code": {
+                "id": "astnode100000209",
+                "name": "this.num",
+                "type": "Identifier",
+                "value": "num",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "num",
+        "longname": "module:ComplexModule.incrementer#num",
+        "kind": "member",
+        "memberof": "module:ComplexModule.incrementer",
+        "scope": "instance"
+    },
+    {
         "comment": "/**\n * Throws things to test JSDoc events.\n * http://usejsdoc.org/tags-event.html\n */",
         "meta": {
             "range": [
@@ -705,7 +970,7 @@
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000146",
+                "id": "astnode100000220",
                 "name": "Hurl",
                 "type": "FunctionDeclaration",
                 "paramnames": []
@@ -730,7 +995,7 @@
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000150",
+                "id": "astnode100000224",
                 "name": "Hurl.prototype.snowball",
                 "type": "FunctionExpression",
                 "paramnames": []
@@ -790,7 +1055,7 @@
             "columnno": 8,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000167",
+                "id": "astnode100000241",
                 "name": "detail",
                 "type": "ObjectExpression",
                 "value": "{\"isPacked\":\"\"}"
@@ -814,7 +1079,7 @@
             "columnno": 12,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000169",
+                "id": "astnode100000243",
                 "name": "isPacked",
                 "type": "MemberExpression",
                 "value": "this._snowball.isPacked"
@@ -839,7 +1104,7 @@
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000176",
+                "id": "astnode100000250",
                 "name": "module.exports",
                 "type": "Identifier",
                 "value": "Hurl",
@@ -854,61 +1119,6 @@
         "scope": "static"
     },
     {
-        "comment": "/**\n * Test the JsDoc example tag.\n * http://usejsdoc.org/tags-example.html\n * Solves equations of the form a * x = b\n * @module example\n * @example\n * // returns 3\n * solveAsExample(5, 15);\n * @example <caption>Captioned example usage of solveAsExample.</caption>\n * // returns 2\n * solveAsExample(5, 10);\n * @returns {Number} Returns the value of x for the equation.\n */",
-        "meta": {
-            "filename": "example.js",
-            "lineno": 1,
-            "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
-            "code": {}
-        },
-        "description": "Test the JsDoc example tag.\nhttp://usejsdoc.org/tags-example.html\nSolves equations of the form a * x = b",
-        "kind": "module",
-        "name": "example",
-        "examples": [
-            "// returns 3\nsolveAsExample(5, 15);",
-            "<caption>Captioned example usage of solveAsExample.</caption>\n// returns 2\nsolveAsExample(5, 10);"
-        ],
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Number"
-                    ]
-                },
-                "description": "Returns the value of x for the equation."
-            }
-        ],
-        "longname": "module:example"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                373,
-                441
-            ],
-            "filename": "example.js",
-            "lineno": 14,
-            "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
-            "code": {
-                "id": "astnode100000184",
-                "name": "module.exports",
-                "type": "FunctionExpression",
-                "value": "solveAsExample",
-                "paramnames": [
-                    "a",
-                    "b"
-                ]
-            }
-        },
-        "undocumented": true,
-        "name": "module:example",
-        "longname": "module:example",
-        "kind": "function"
-    },
-    {
         "comment": "/**\n *\n * Test the JSDoc mixin tag.\n * http://usejsdoc.org/tags-mixin.html\n *\n * This provides methods used for event handling. It's not meant to\n * be used directly.\n *\n * @mixin\n */",
         "meta": {
             "range": [
@@ -920,7 +1130,7 @@
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000200",
+                "id": "astnode100000258",
                 "name": "Eventful",
                 "type": "ObjectExpression",
                 "value": "{\"on\":\"\",\"fire\":\"\"}"
@@ -945,7 +1155,7 @@
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000203",
+                "id": "astnode100000261",
                 "name": "on",
                 "type": "FunctionExpression"
             }
@@ -989,7 +1199,7 @@
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000208",
+                "id": "astnode100000266",
                 "name": "fire",
                 "type": "FunctionExpression"
             }
@@ -1033,7 +1243,7 @@
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000214",
+                "id": "astnode100000272",
                 "name": "module.exports",
                 "type": "Identifier",
                 "value": "Eventful",
@@ -1059,7 +1269,7 @@
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000222",
+                "id": "astnode100000280",
                 "name": "module.exports",
                 "type": "CallExpression",
                 "value": "",
@@ -1100,7 +1310,7 @@
         "longname": "highlightSearchTerm"
     },
     {
-        "comment": "/**\n * A namespace MyNamespace.\n * http://usejsdoc.org/tags-namespace.html\n * @namespace MyNamespace\n */",
+        "comment": "/** @namespace window */",
         "meta": {
             "filename": "namespace.js",
             "lineno": 1,
@@ -1108,102 +1318,47 @@
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {}
         },
-        "description": "A namespace MyNamespace.\nhttp://usejsdoc.org/tags-namespace.html",
         "kind": "namespace",
-        "name": "MyNamespace",
-        "longname": "MyNamespace",
+        "name": "window",
+        "longname": "window",
         "scope": "global"
     },
     {
-        "comment": "/**\n * A function in MyNamespace (MyNamespace.myFunction).\n * @function myFunction\n * @memberof MyNamespace\n */",
+        "comment": "/**\n * Alertnate for the alert function.\n * Example of a namespace tag http://usejsdoc.org/tags-namespace.html\n * @param {string} msg - Message to show in an alert dialogue.\n */",
         "meta": {
+            "range": [
+                204,
+                248
+            ],
             "filename": "namespace.js",
-            "lineno": 7,
+            "lineno": 8,
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
-            "code": {}
+            "code": {
+                "id": "astnode100000294",
+                "name": "window[\"!\"]",
+                "type": "FunctionExpression",
+                "paramnames": [
+                    "msg"
+                ]
+            }
         },
-        "description": "A function in MyNamespace (MyNamespace.myFunction).",
+        "description": "Alertnate for the alert function.\nExample of a namespace tag http://usejsdoc.org/tags-namespace.html",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "Message to show in an alert dialogue.",
+                "name": "msg"
+            }
+        ],
+        "name": "\"!\"",
+        "longname": "window.\"!\"",
         "kind": "function",
-        "name": "myFunction",
-        "memberof": "MyNamespace",
-        "scope": "static",
-        "longname": "MyNamespace.myFunction"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                218,
-                298
-            ],
-            "filename": "namespace.js",
-            "lineno": 12,
-            "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
-            "code": {
-                "id": "astnode100000235",
-                "name": "myFunction",
-                "type": "FunctionDeclaration",
-                "paramnames": []
-            }
-        },
-        "undocumented": true,
-        "name": "myFunction",
-        "longname": "myFunction",
-        "kind": "function",
-        "scope": "global",
-        "params": []
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                300,
-                335
-            ],
-            "filename": "namespace.js",
-            "lineno": 16,
-            "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
-            "code": {
-                "id": "astnode100000245",
-                "name": "module.exports",
-                "type": "ObjectExpression",
-                "value": "{\"myFunction\":\"\"}",
-                "paramnames": []
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                323,
-                333
-            ],
-            "filename": "namespace.js",
-            "lineno": 17,
-            "columnno": 4,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
-            "code": {
-                "id": "astnode100000250",
-                "name": "myFunction",
-                "type": "Identifier",
-                "value": "myFunction"
-            }
-        },
-        "undocumented": true,
-        "name": "myFunction",
-        "longname": "module.exports.myFunction",
-        "kind": "member",
-        "memberof": "module.exports",
+        "memberof": "window",
         "scope": "static"
     },
     {
@@ -1218,7 +1373,7 @@
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000254",
+                "id": "astnode100000307",
                 "name": "myReturnSum",
                 "type": "FunctionDeclaration",
                 "paramnames": [
@@ -1284,7 +1439,7 @@
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000275",
+                "id": "astnode100000328",
                 "name": "module.exports",
                 "type": "ObjectExpression",
                 "value": "{\"myReturnSum\":\"\"}",
@@ -1310,7 +1465,7 @@
             "columnno": 4,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000280",
+                "id": "astnode100000333",
                 "name": "myReturnSum",
                 "type": "Identifier",
                 "value": "myReturnSum"
@@ -1324,6 +1479,56 @@
         "scope": "static"
     },
     {
+        "comment": "/**\n * Tests a single export module.\n * @module SimpleModule\n * @see module:example-module for an example of multi export module documentation.\n * @returns {String} Returns a fixed string.\n */",
+        "meta": {
+            "filename": "simple-module.js",
+            "lineno": 1,
+            "columnno": 0,
+            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "code": {}
+        },
+        "description": "Tests a single export module.",
+        "kind": "module",
+        "name": "SimpleModule",
+        "see": [
+            "module:example-module for an example of multi export module documentation."
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "description": "Returns a fixed string."
+            }
+        ],
+        "longname": "module:SimpleModule"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                193,
+                268
+            ],
+            "filename": "simple-module.js",
+            "lineno": 7,
+            "columnno": 0,
+            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "code": {
+                "id": "astnode100000338",
+                "name": "module.exports",
+                "type": "FunctionExpression",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "module:SimpleModule",
+        "longname": "module:SimpleModule",
+        "kind": "function"
+    },
+    {
         "comment": "/**\n * Test the JsDoc throws tag.\n * http://usejsdoc.org/tags-throws.html\n * @throws {Error} This was never going to work.\n */",
         "meta": {
             "range": [
@@ -1335,7 +1540,7 @@
             "columnno": 0,
             "path": "/Users/leemoody/dev/o-test-component/src/js",
             "code": {
-                "id": "astnode100000285",
+                "id": "astnode100000349",
                 "name": "module.exports",
                 "type": "CallExpression",
                 "value": "",
@@ -1366,12 +1571,13 @@
             "/Users/leemoody/dev/o-test-component/main.js",
             "/Users/leemoody/dev/o-test-component/src/js/access.js",
             "/Users/leemoody/dev/o-test-component/src/js/class.js",
+            "/Users/leemoody/dev/o-test-component/src/js/complex-module.js",
             "/Users/leemoody/dev/o-test-component/src/js/event.js",
-            "/Users/leemoody/dev/o-test-component/src/js/example.js",
             "/Users/leemoody/dev/o-test-component/src/js/mixin.js",
             "/Users/leemoody/dev/o-test-component/src/js/name.js",
             "/Users/leemoody/dev/o-test-component/src/js/namespace.js",
             "/Users/leemoody/dev/o-test-component/src/js/returns.js",
+            "/Users/leemoody/dev/o-test-component/src/js/simple-module.js",
             "/Users/leemoody/dev/o-test-component/src/js/throws.js"
         ]
     }

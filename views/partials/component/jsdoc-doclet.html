@@ -2,5 +2,8 @@
     {{#ifEquals kind 'class'}}
         {{> component/jsdoc/class-node }}
     {{/ifEquals}}
+    {{#ifEquals kind 'function'}}
+        {{> component/jsdoc/function-node }}
+    {{/ifEquals}}
     {{{ json this }}}
 </div>

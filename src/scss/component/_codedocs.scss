@@ -1,0 +1,26 @@
+.registry__doclet {
+    display: none;
+    @include oTypographyMargin($top: 4, $bottom: 8);
+    h1 {
+        margin-top: 0;
+    }
+}
+
+.registry__doclet:target {
+    display: block;
+}
+
+.o-table--code-docs {
+    max-width: oTypographyMaxLineWidth($scale: 2);
+    tr td:first-child, tr th:first-child {
+        padding-left: 0;
+    }
+    @include oGridRespondTo($until: S) {
+        th {
+            padding-left: 0;
+        }
+    }
+    th.o-table__description {
+        width: 100%;
+    }
+}

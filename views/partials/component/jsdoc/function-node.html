@@ -1,0 +1,5 @@
+<h1 id="#{{longname}}">{{longname}}{{#if parameters.length}}({{#each parameters}}{{name}}{{/each}}){{/if}}</h1>
+<p>{{description}}</p>
+{{#if parameters}}
+    {{> component/jsdoc/parameters-table parameters }}
+{{/if}}
