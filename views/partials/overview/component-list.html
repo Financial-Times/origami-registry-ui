@@ -14,7 +14,7 @@
 				data-o-component-support-status="{{support.status}}"
 				role="listitem">
 					<div class="registry__group-item">
-						<a class='registry__group-item--link' href="/components/{{name}}@{{version}}{{#unlessEquals @root.requestedBrand 'master' }}?brand={{ @root.requestedBrand }}{{/unlessEquals}}" data-test="component-link">{{name}}</a>
+						<a class='registry__group-item--link' href="/components/{{name}}@{{version}}" data-test="component-link">{{name}}</a>
 						<p class='registry__group-item--description'>{{description}}</p>
 					</div>
 					<div class="registry__group-stats">
