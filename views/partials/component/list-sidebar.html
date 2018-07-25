@@ -15,7 +15,7 @@
 					data-o-component-keywords="{{json keywords}}"
 					data-o-component-type="{{type}}"
 					data-o-component-sub-type="{{subType}}">
-					<a href="/components/{{name}}@{{version}}{{#unlessEquals @root.currentBrand 'master' }}?brand={{ @root.currentBrand }}{{/unlessEquals}}">{{name}}</a>
+					<a href="/components/{{name}}@{{version}}">{{name}}</a>
 				</li>
 			{{/repos}}
 		{{/if}}
