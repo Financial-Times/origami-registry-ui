@@ -8,14 +8,20 @@
 		{{#if missingComponentName}}
 			<p>
 				The component that you're looking for was not found:<br/>
-				<span>{{missingComponentName}} @ {{missingComponentVersion}}</span>
+				<span>{{missingComponentName}} @ {{missingComponentVersion}}{{#if requestedBrand}} ("{{requestedBrand}}" brand){{/if}}</span>
 			</p>
 			{{#unlessEquals missingComponentVersion "latest"}}
 				<p>
-					Try requesting the <a class="link" href="/components/{{missingComponentName}}@latest">component without a version number</a>,
+					Try requesting the <a class="link" href="/components/{{missingComponentName}}@latest">component without a version number</a>,<br/>
 					to see whether it actually exists.
 				</p>
 			{{/unlessEquals}}
+			{{#if requestedBrand}}
+				<p>
+					The brand "{{requestedBrand}}" may not be implemented for this component,<br/>
+					try requesting the <a class="link" href="/components/{{missingComponentName}}@{{missingComponentVersion}}">component without a brand</a>.
+				</p>
+			{{/if}}
 			<p>
 				Try <a class="link" href="/components?search={{missingComponentName}}&module=true&imageset=true&service=true&active=true&maintained=true&deprecated=true&dead=true&experimental=true">searching for the component name on the registry home page</a>.
 			</p>
