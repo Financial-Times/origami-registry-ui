@@ -1,21 +1,21 @@
 <h1 id="#{{longname}}">{{longname}}{{#if parameters.length}}({{#each parameters}}{{name}}{{#unless @last}}, {{/unless}}{{/each}}){{/if}}</h1>
-<h2>{{capitalise scope}} Function</h2>
+<h2>{{ capitalise scope }} {{ label }}</h2>
 {{#if description}}
     <p>{{description}}</p>
 {{/if}}
 
 {{#if parameters}}
-    {{> component/jsdoc/parameters-table parameters }}
+    {{> jsdoc/nodes/sections/parameters-table parameters }}
 {{/if}}
 
 {{#if returns}}
-    {{> component/jsdoc/returns returns }}
+    {{> jsdoc/nodes/sections/returns returns }}
 {{/if}}
 
 {{#if fires}}
-    {{> component/jsdoc/fires-events fires }}
+    {{> jsdoc/nodes/sections/fires-events fires }}
 {{/if}}
 
 {{#if examples}}
-    {{> component/jsdoc/examples examples }}
+    {{> jsdoc/nodes/sections/examples examples }}
 {{/if}}

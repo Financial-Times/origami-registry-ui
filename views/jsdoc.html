@@ -1,20 +1,33 @@
 <div class="registry__container">
     <div class="registry__container-left">
-        {{> component/jsdoc-sidebar }}
+        {{> jsdoc/jsdoc-sidebar }}
     </div>
 
     <div class="registry__container-center">
-		{{#> component/container}}
-            {{#*inline "content"}}
-                {{#each jsDocsByHierarchy}}
-                    {{#each this}}
-                        {{> component/jsdoc-doclet }}
-                    {{/each}}
+		<div class="registry__component">
+            {{> component/messages}}
+
+            {{!-- {{ Output global JSDoc nodes with links to their member nodes. }} --}}
+            {{#each jsDocNodesByHierarchy }}
+                {{#each this}}
+                    {{> jsdoc/jsdoc-node }}
                 {{/each}}
-                {{#each nestedJsDocs}}
-                    {{> component/jsdoc-doclet }}
-                {{/each}}
-			{{/inline}}
-		{{/component/container}}
+            {{/each}}
+
+            {{!-- {{ Output member nodes so they can be viewed in more detail. }} --}}
+            {{#each memberJsDocs}}
+                {{> jsdoc/jsdoc-node }}
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="registry__container-right">
+        <div clss="registry__container-right__inner">
+            <div class="registry__container--wrapper">
+                <p>
+                    <a href="{{component.supportingUrls.issues}}" class="link-external">Contribute on GitHub</a>
+                </p>
+            </div>
+        </div>
     </div>
 </div>

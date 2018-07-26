@@ -39,6 +39,10 @@ html, body {
 		@include oTypographyLink();
 	}
 
+	.link-external {
+		@include oTypographyLinkExternal();
+	}
+
 	.secondary-button {
 		@include oButtons(big, mono);
 		width: 100%;

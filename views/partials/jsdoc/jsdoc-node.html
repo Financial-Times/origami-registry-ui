@@ -1,26 +1,26 @@
 <div id="{{ longname }}" class="registry__doclet">
     {{#ifEquals kind 'class'}}
-        {{> component/jsdoc/nodes/class-node }}
+        {{> jsdoc/nodes/class-node }}
     {{/ifEquals}}
     {{#ifEquals kind 'function'}}
-        {{> component/jsdoc/nodes/function-node }}
+        {{> jsdoc/nodes/function-node }}
     {{/ifEquals}}
     {{#ifEquals kind 'event'}}
-        {{> component/jsdoc/nodes/event-node }}
+        {{> jsdoc/nodes/event-node }}
     {{/ifEquals}}
     {{#ifEquals kind 'module'}}
-        {{> component/jsdoc/nodes/module-node }}
+        {{> jsdoc/nodes/module-node }}
     {{/ifEquals}}
     {{#ifEquals kind 'namespace'}}
-        {{> component/jsdoc/nodes/namespace-node }}
+        {{> jsdoc/nodes/namespace-node }}
     {{/ifEquals}}
     {{#ifEquals kind 'mixin'}}
-        {{> component/jsdoc/nodes/mixin-node }}
+        {{> jsdoc/nodes/mixin-node }}
     {{/ifEquals}}
     {{#ifEquals kind 'constant'}}
-        {{> component/jsdoc/nodes/property-node }}
+        {{> jsdoc/nodes/property-node }}
     {{/ifEquals}}
     {{#ifEquals kind 'member'}}
-        {{> component/jsdoc/nodes/property-node }}
+        {{> jsdoc/nodes/property-node }}
     {{/ifEquals}}
 </div>
