@@ -1,6 +1,6 @@
 <form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" data-o-component="o-filter-form">
 	<div class="o-forms">
-		<label for="filter-search" class="o-forms__label">Filter JSDoc ({{component.name}})</label>
+		<label for="filter-search" class="o-forms__label">Filter CodeDocs</label>
 		<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
 	</div>
 </form>
@@ -9,8 +9,8 @@
 <ul class="registry__component--list" data-o-component="o-component-listing">
 	{{#each navItems}}
         <li class="registry__component--list-title">
-            {{title}}
-             {{> jsdoc/jsdoc-sidebar-subnav }}
+        	{{title}}
+        	{{> codedocs/codedocs-sidebar-subnav }}
         </li>
 	{{/each}}
 </ul>

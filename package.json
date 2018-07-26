@@ -35,6 +35,7 @@
     "prismjs": "^1.11.0",
     "request-promise-native": "^1.0.5",
     "require-all": "^2.2.0",
+    "sassdoc-extras": "^2.4.3",
     "showdown": "^1.8.6",
     "throng": "^4.0.0"
   },

@@ -36,13 +36,18 @@
 
 					<ul class="o-header__subnav-list o-header__subnav-list--children" aria-label="Subsections">
 						<li class="o-header__subnav-item">
+							<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/" {{#ifEquals nav 'demos'}}aria-selected="true"{{/ifEquals}}>
+								Demos
+							</a>
+						</li>
+						<li class="o-header__subnav-item">
 							<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/readme" {{#ifEquals nav 'readme'}}aria-selected="true"{{/ifEquals}}>
 								Readme
 							</a>
 						</li>
 						<li class="o-header__subnav-item">
 							<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/sassdoc" {{#ifEquals nav 'sassdoc'}}aria-selected="true"{{/ifEquals}}>
-								Sassdoc
+								SassDoc
 							</a>
 						</li>
 						<li class="o-header__subnav-item">

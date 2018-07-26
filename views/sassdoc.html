@@ -1,14 +1,29 @@
 <div class="registry__container">
     <div class="registry__container-left">
-        {{> component/list-sidebar}}
+        {{> codedocs/codedocs-sidebar }}
     </div>
 
     <div class="registry__container-center">
-		{{#> component/container}}
-			{{#*inline "content"}}
-                {{> component/brand-tabs}}
-                sassdoc
-			{{/inline}}
-		{{/component/container}}
+		<div class="registry__component">
+            {{> component/messages}}
+
+            {{#each sassDocNodes}}
+                <div id="{{ group }}-{{ context.type }}-{{ context.name }}" class="registry__doclet">
+                    <h1>{{ context.name }}</h1>
+                    {{{ description }}}
+                </div>
+            {{/each}}
+
+        </div>
+    </div>
+
+    <div class="registry__container-right">
+        <div clss="registry__container-right__inner">
+            <div class="registry__container--wrapper">
+                <p>
+                    <a href="{{component.supportingUrls.issues}}" class="link-external">Contribute on GitHub</a>
+                </p>
+            </div>
+        </div>
     </div>
 </div>
