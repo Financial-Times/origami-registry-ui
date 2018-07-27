@@ -1,6 +1,7 @@
 'use strict';
 
 require('o-syntax-highlight');
+require('prism/components/prism-scss.js');
 require('./click-helper');
 require('./demo');
 require('./select-text');

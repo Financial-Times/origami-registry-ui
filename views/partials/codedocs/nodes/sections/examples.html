@@ -5,10 +5,10 @@
     <h3>Example #{{increment @index}}</h3>
     {{/unlessEquals}}
     {{#if this.caption}}
-        <p>{{ this.caption }}</p>
+        {{{markdown this.caption 4}}}
     {{/if}}
     <div data-o-component="o-syntax-highlight">
-        <pre><code class='o-syntax-highlight--js'>{{ this.code }}</code></pre>
+        <pre><code class='o-syntax-highlight--{{ this.type }}'>{{ this.code }}</code></pre>
     </div>
 {{/each}}
 {{/if}}

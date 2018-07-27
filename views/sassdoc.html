@@ -6,14 +6,7 @@
     <div class="registry__container-center">
 		<div class="registry__component">
             {{> component/messages}}
-
-            {{#each sassDocNodes}}
-                <div id="{{ group }}-{{ context.type }}-{{ context.name }}" class="registry__doclet">
-                    <h1>{{ context.name }}</h1>
-                    {{{ description }}}
-                </div>
-            {{/each}}
-
+            {{> codedocs/sassdoc/sassdoc-node }}
         </div>
     </div>
 
