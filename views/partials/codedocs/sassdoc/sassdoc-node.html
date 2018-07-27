@@ -1,7 +1,7 @@
 {{#each sassDocNodes}}
-    <div id="{{ group }}-{{ context.type }}-{{ context.name }}" class="registry__doclet">
-        <h1>{{ context.name }}</h1>
+    <div id="{{ longname }}" class="registry__doclet">
+        <h1>{{ name }}</h1>
         {{{ markdown description }}}
-        {{> codedocs/nodes/sections/examples this.examples }}
+        {{> codedocs/nodes/sections/examples examples }}
     </div>
 {{/each}}
