@@ -1,11 +1,11 @@
-<h1 id="#{{longname}}">{{longname}}{{#if parameters.length}}({{#each parameters}}{{name}}{{#unless @last}}, {{/unless}}{{/each}}){{/if}}</h1>
+<h1 id="#{{longname}}">{{> codedocs/nodes/sections/name name=longname parameters=parameters}}</h1>
 
 {{#if description}}
     <p>{{description}}</p>
 {{/if}}
 
 {{#if parameters}}
-    {{> jsdoc/nodes/sections/parameters-table parameters }}
+    {{> codedocs/nodes/sections/parameters-table parameters }}
 {{/if}}
 
 {{#if returns}}

@@ -1,7 +1,44 @@
 {{#each sassDocNodes}}
     <div id="{{ longname }}" class="registry__doclet">
-        <h1>{{ name }}</h1>
-        {{{ markdown description }}}
+        {{> codedocs/nodes/sections/deprecation-warning }}
+
+        <h1 class="registry__component-name">
+            {{> codedocs/nodes/sections/name }}
+        </h1>
+        
+        {{#if description }}
+            {{{ markdown description }}}
+        {{/if}}
+
+        {{#if output }}
+            {{{ markdown output }}}
+        {{/if}}
+
+        {{#if parameters }}
+            {{> codedocs/nodes/sections/parameters-table parameters }}
+        {{/if}}
+
+        {{#if return }}
+            <h2>Returns</h2>
+            {{#if return.types}}
+                {{#each return.types}}{{this}}{{#unless @last}} | {{/unless}}{{/each}}
+            {{/if}}
+            {{#if return.description}}
+                {{#if return.types}} - {{/if}}
+                {{return.description}}
+            {{/if}}
+            </ul>
+        {{/if}}
+
+        {{#if aliases }}
+            <h2>Aliases</h2>
+            <ul>
+            {{#each aliases}}
+                <li>{{ this }}</li>
+            {{/each}}
+            </ul>
+        {{/if}}
+
         {{> codedocs/nodes/sections/examples examples }}
     </div>
 {{/each}}
