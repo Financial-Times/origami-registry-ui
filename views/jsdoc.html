@@ -8,7 +8,7 @@
             {{> component/messages}}
 
             {{!-- {{ Output global JSDoc nodes with links to their member nodes. }} --}}
-            {{#each jsDocNodesByHierarchy }}
+            {{#each jsDocByTypeWithMembers }}
                 {{#each this}}
                     {{> jsdoc/jsdoc-node }}
                 {{/each}}
