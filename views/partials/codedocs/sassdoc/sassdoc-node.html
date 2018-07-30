@@ -5,7 +5,7 @@
         <h1 class="registry__component-name">
             {{> codedocs/nodes/sections/name }}
         </h1>
-        
+
         {{#if description }}
             {{{ markdown description }}}
         {{/if}}
@@ -40,5 +40,7 @@
         {{/if}}
 
         {{> codedocs/nodes/sections/examples examples }}
+
+        {{> codedocs/nodes/sections/links }}
     </div>
 {{/each}}

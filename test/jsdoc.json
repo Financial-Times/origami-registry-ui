@@ -9,7 +9,7 @@
             "filename": "main.js",
             "lineno": 6,
             "columnno": 6,
-            "path": "/Users/leemoody/dev/o-test-component",
+            "path": "",
             "code": {
                 "id": "astnode100000003",
                 "name": "foo",
@@ -30,16 +30,16 @@
         "params": []
     },
     {
-        "comment": "/**\n * A global function with param, to say hello to somebody. Anything could say hello!\n * Even an alian could say hello! If a person is saying hello consider using {@link Person#sayHello} instead.\n * This peculiar example is inspired by [a jsdoc example]{@link http://usejsdoc.org/tags-function.html}.\n * This comment is also a great test of the jsdoc {@link http://usejsdoc.org/tags-function.html link tag}\n * @param {string} somebody\n */",
+        "comment": "/**\n * A global function with param, to say hello to somebody.\n * http://usejsdoc.org/tags-function.html\n * @param {string} somebody\n */",
         "meta": {
             "range": [
-                560,
-                626
+                255,
+                321
             ],
             "filename": "main.js",
-            "lineno": 15,
+            "lineno": 13,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component",
+            "path": "",
             "code": {
                 "id": "astnode100000006",
                 "name": "sayHello",
@@ -49,7 +49,7 @@
                 ]
             }
         },
-        "description": "A global function with param, to say hello to somebody. Anything could say hello!\nEven an alian could say hello! If a person is saying hello consider using {@link Person#sayHello} instead.\nThis peculiar example is inspired by [a jsdoc example]{@link http://usejsdoc.org/tags-function.html}.\nThis comment is also a great test of the jsdoc {@link http://usejsdoc.org/tags-function.html link tag}",
+        "description": "A global function with param, to say hello to somebody.\nhttp://usejsdoc.org/tags-function.html",
         "params": [
             {
                 "type": {
@@ -75,7 +75,7 @@
             "filename": "access.js",
             "lineno": 7,
             "columnno": 6,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000030",
                 "name": "privateMember",
@@ -106,7 +106,7 @@
             "filename": "access.js",
             "lineno": 14,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000033",
                 "name": "whisper",
@@ -132,7 +132,7 @@
             "filename": "access.js",
             "lineno": 22,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000042",
                 "name": "_utterQuietly",
@@ -157,7 +157,7 @@
             "filename": "access.js",
             "lineno": 26,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000052",
                 "name": "module.exports",
@@ -183,7 +183,7 @@
             "filename": "access.js",
             "lineno": 27,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000057",
                 "name": "privateMember",
@@ -208,7 +208,7 @@
             "filename": "access.js",
             "lineno": 28,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000059",
                 "name": "whisper",
@@ -233,7 +233,7 @@
             "filename": "access.js",
             "lineno": 29,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000061",
                 "name": "_utterQuietly",
@@ -258,7 +258,7 @@
             "filename": "class.js",
             "lineno": 7,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000065",
                 "name": "Person",
@@ -297,7 +297,7 @@
             "filename": "class.js",
             "lineno": 9,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000070",
                 "name": "this.name",
@@ -327,7 +327,7 @@
             "filename": "class.js",
             "lineno": 15,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000076",
                 "name": "Person.prototype.sayHello",
@@ -352,7 +352,7 @@
             "filename": "class.js",
             "lineno": 22,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000095",
                 "name": "Pet",
@@ -377,7 +377,7 @@
             "filename": "class.js",
             "lineno": 23,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000098",
                 "name": "Pet",
@@ -405,7 +405,7 @@
             "filename": "class.js",
             "lineno": 24,
             "columnno": 2,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000103",
                 "name": "this.hasEaten",
@@ -431,7 +431,7 @@
             "filename": "class.js",
             "lineno": 26,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000108",
                 "name": "Pet#eat",
@@ -462,7 +462,7 @@
             "filename": "class.js",
             "lineno": 27,
             "columnno": 2,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000114",
                 "name": "this.hasEaten",
@@ -488,7 +488,7 @@
             "filename": "class.js",
             "lineno": 39,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000128",
                 "name": "Cat",
@@ -527,7 +527,7 @@
             "filename": "class.js",
             "lineno": 43,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000132",
                 "name": "Cat",
@@ -566,7 +566,7 @@
             "filename": "class.js",
             "lineno": 45,
             "columnno": 2,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000141",
                 "name": "this.name",
@@ -592,7 +592,7 @@
             "filename": "class.js",
             "lineno": 51,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000146",
                 "name": "Cat.makeSound",
@@ -621,7 +621,7 @@
             "filename": "class.js",
             "lineno": 59,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000156",
                 "name": "Dog",
@@ -660,7 +660,7 @@
             "filename": "class.js",
             "lineno": 66,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000160",
                 "name": "Dog",
@@ -700,7 +700,7 @@
             "filename": "class.js",
             "lineno": 68,
             "columnno": 2,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000169",
                 "name": "this.name",
@@ -726,7 +726,7 @@
             "filename": "class.js",
             "lineno": 74,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000174",
                 "name": "Dog.makeSound",
@@ -755,7 +755,7 @@
             "filename": "class.js",
             "lineno": 79,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000185",
                 "name": "module.exports",
@@ -781,7 +781,7 @@
             "filename": "class.js",
             "lineno": 80,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000190",
                 "name": "Person",
@@ -806,7 +806,7 @@
             "filename": "class.js",
             "lineno": 81,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000192",
                 "name": "Cat",
@@ -831,7 +831,7 @@
             "filename": "class.js",
             "lineno": 82,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000194",
                 "name": "Dog",
@@ -852,7 +852,7 @@
             "filename": "complex-module.js",
             "lineno": 1,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {}
         },
         "kind": "module",
@@ -869,7 +869,7 @@
             "filename": "complex-module.js",
             "lineno": 15,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000199",
                 "name": "module.exports.solveAsExample",
@@ -912,7 +912,7 @@
             "filename": "complex-module.js",
             "lineno": 28,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000215",
                 "name": "module.exports.incrementer",
@@ -946,7 +946,7 @@
             "filename": "complex-module.js",
             "lineno": 29,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000225",
                 "name": "this.num",
@@ -972,7 +972,7 @@
             "filename": "complex-module.js",
             "lineno": 35,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000231",
                 "name": "this.increment",
@@ -1023,7 +1023,7 @@
             "filename": "complex-module.js",
             "lineno": 36,
             "columnno": 2,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
                 "id": "astnode100000239",
                 "name": "this.num",
@@ -1040,43 +1040,6 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n * @deprecated Use {@link Person#sayHello} instead.\n * @param {string} name\n * To make a human says hello, announcing their name.\n */",
-        "meta": {
-            "range": [
-                138,
-                213
-            ],
-            "filename": "deprecated.js",
-            "lineno": 6,
-            "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
-            "code": {
-                "id": "astnode100000250",
-                "name": "humanSayHello",
-                "type": "FunctionDeclaration",
-                "paramnames": [
-                    "name"
-                ]
-            }
-        },
-        "deprecated": "Use {@link Person#sayHello} instead.",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "To make a human says hello, announcing their name.",
-                "name": "name"
-            }
-        ],
-        "name": "humanSayHello",
-        "longname": "humanSayHello",
-        "kind": "function",
-        "scope": "global"
-    },
-    {
         "comment": "/**\n * Throws things to test JSDoc events.\n * http://usejsdoc.org/tags-event.html\n */",
         "meta": {
             "range": [
@@ -1086,9 +1049,9 @@
             "filename": "event.js",
             "lineno": 5,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000265",
+                "id": "astnode100000250",
                 "name": "Hurl",
                 "type": "FunctionDeclaration",
                 "paramnames": []
@@ -1111,9 +1074,9 @@
             "filename": "event.js",
             "lineno": 14,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000269",
+                "id": "astnode100000254",
                 "name": "Hurl.prototype.snowball",
                 "type": "FunctionExpression",
                 "paramnames": []
@@ -1135,7 +1098,7 @@
             "filename": "event.js",
             "lineno": 15,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {}
         },
         "description": "Snowball event.",
@@ -1171,9 +1134,9 @@
             "filename": "event.js",
             "lineno": 23,
             "columnno": 2,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000286",
+                "id": "astnode100000271",
                 "name": "detail",
                 "type": "ObjectExpression",
                 "value": "{\"isPacked\":\"\"}"
@@ -1195,9 +1158,9 @@
             "filename": "event.js",
             "lineno": 24,
             "columnno": 3,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000288",
+                "id": "astnode100000273",
                 "name": "isPacked",
                 "type": "MemberExpression",
                 "value": "this._snowball.isPacked"
@@ -1220,9 +1183,9 @@
             "filename": "event.js",
             "lineno": 30,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000295",
+                "id": "astnode100000280",
                 "name": "module.exports",
                 "type": "Identifier",
                 "value": "Hurl",
@@ -1246,9 +1209,9 @@
             "filename": "mixin.js",
             "lineno": 11,
             "columnno": 6,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000303",
+                "id": "astnode100000288",
                 "name": "Eventful",
                 "type": "ObjectExpression",
                 "value": "{\"on\":\"\",\"fire\":\"\"}"
@@ -1271,9 +1234,9 @@
             "filename": "mixin.js",
             "lineno": 18,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000306",
+                "id": "astnode100000291",
                 "name": "on",
                 "type": "FunctionExpression"
             }
@@ -1315,9 +1278,9 @@
             "filename": "mixin.js",
             "lineno": 27,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000311",
+                "id": "astnode100000296",
                 "name": "fire",
                 "type": "FunctionExpression"
             }
@@ -1359,9 +1322,9 @@
             "filename": "mixin.js",
             "lineno": 33,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000317",
+                "id": "astnode100000302",
                 "name": "module.exports",
                 "type": "Identifier",
                 "value": "Eventful",
@@ -1385,9 +1348,9 @@
             "filename": "name.js",
             "lineno": 1,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000325",
+                "id": "astnode100000310",
                 "name": "module.exports",
                 "type": "FunctionExpression",
                 "paramnames": []
@@ -1406,7 +1369,7 @@
             "filename": "name.js",
             "lineno": 2,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {}
         },
         "description": "Testing JsDoc name tag.\nCasual use of eval :scream:\nhttp://usejsdoc.org/tags-name.html",
@@ -1432,7 +1395,7 @@
             "filename": "namespace.js",
             "lineno": 1,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {}
         },
         "kind": "namespace",
@@ -1450,9 +1413,9 @@
             "filename": "namespace.js",
             "lineno": 8,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000338",
+                "id": "astnode100000323",
                 "name": "window[\"!\"]",
                 "type": "FunctionExpression",
                 "paramnames": [
@@ -1488,9 +1451,9 @@
             "filename": "returns.js",
             "lineno": 9,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000351",
+                "id": "astnode100000336",
                 "name": "myReturnSum",
                 "type": "FunctionDeclaration",
                 "paramnames": [
@@ -1554,9 +1517,9 @@
             "filename": "returns.js",
             "lineno": 16,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000372",
+                "id": "astnode100000357",
                 "name": "module.exports",
                 "type": "ObjectExpression",
                 "value": "{\"myReturnSum\":\"\"}",
@@ -1580,9 +1543,9 @@
             "filename": "returns.js",
             "lineno": 17,
             "columnno": 1,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000377",
+                "id": "astnode100000362",
                 "name": "myReturnSum",
                 "type": "Identifier",
                 "value": "myReturnSum"
@@ -1601,7 +1564,7 @@
             "filename": "simple-module.js",
             "lineno": 1,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {}
         },
         "description": "Tests a single export module.",
@@ -1632,9 +1595,9 @@
             "filename": "simple-module.js",
             "lineno": 7,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000382",
+                "id": "astnode100000367",
                 "name": "module.exports",
                 "type": "FunctionExpression",
                 "paramnames": []
@@ -1655,9 +1618,9 @@
             "filename": "throws.js",
             "lineno": 6,
             "columnno": 0,
-            "path": "/Users/leemoody/dev/o-test-component/src/js",
+            "path": "/src/js",
             "code": {
-                "id": "astnode100000393",
+                "id": "astnode100000378",
                 "name": "module.exports",
                 "type": "FunctionExpression",
                 "paramnames": []
@@ -1684,18 +1647,17 @@
         "kind": "package",
         "longname": "package:undefined",
         "files": [
-            "/Users/leemoody/dev/o-test-component/main.js",
-            "/Users/leemoody/dev/o-test-component/src/js/access.js",
-            "/Users/leemoody/dev/o-test-component/src/js/class.js",
-            "/Users/leemoody/dev/o-test-component/src/js/complex-module.js",
-            "/Users/leemoody/dev/o-test-component/src/js/deprecated.js",
-            "/Users/leemoody/dev/o-test-component/src/js/event.js",
-            "/Users/leemoody/dev/o-test-component/src/js/mixin.js",
-            "/Users/leemoody/dev/o-test-component/src/js/name.js",
-            "/Users/leemoody/dev/o-test-component/src/js/namespace.js",
-            "/Users/leemoody/dev/o-test-component/src/js/returns.js",
-            "/Users/leemoody/dev/o-test-component/src/js/simple-module.js",
-            "/Users/leemoody/dev/o-test-component/src/js/throws.js"
+            "/main.js",
+            "/src/js/access.js",
+            "/src/js/class.js",
+            "/src/js/complex-module.js",
+            "/src/js/event.js",
+            "/src/js/mixin.js",
+            "/src/js/name.js",
+            "/src/js/namespace.js",
+            "/src/js/returns.js",
+            "/src/js/simple-module.js",
+            "/src/js/throws.js"
         ]
     }
 ]
