@@ -1,24 +1,28 @@
-.registry__component--list {
+.registry__sidebar-list {
+	margin: oTypographySpacingSize(5);
+	padding: 0;
 	list-style: none;
-	padding: 0 24px 12px;
-	margin: 0;
 
-	li:first-of-type:not([aria-hidden="true"]) {
-		padding-top: 0;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 
-	.registry__component-listing--hidden {
+	[aria-hidden="true"] {
 		display: none;
 	}
 }
 
-.registry__component--list-title {
+.registry__sidebar-list-title {
 	@include oTypographySansBold(2);
-	@include oTypographyPadding($top: 5, $bottom: 2);
+	@include oTypographyMargin($bottom: 3);
+	@include oTypographyMargin($top: 5);
+	display: block;
 }
 
-.registry__component--list-item {
-	@include oTypographyPadding($top: 1, $bottom: 2);
+.registry__sidebar-list-item {
+	@include oTypographyMargin($bottom: 3);
 
 	a {
 		@include oTypographyLinkCustom(

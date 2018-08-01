@@ -6,15 +6,8 @@
 </form>
 
 
-<ul class="registry__component--list" data-o-component="o-component-listing">
+<ul class="registry__sidebar-list" data-o-component="o-component-listing">
 	{{#each navItems}}
-        <li class="registry__component--list-title" data-o-component-category="{{title}}"
-            data-o-component-name="{{@root.component.name}}"
-            data-o-component-type="{{@root.component.type}}"
-            data-o-component-sub-type="{{@root.component.subType}}"
-            data-o-component-keywords='["{{title}}"]'>
-        	{{title}}
-        	{{> codedocs/codedocs-sidebar-subnav }}
-        </li>
+		{{> codedocs/codedocs-sidebar-subnav }}
 	{{/each}}
 </ul>

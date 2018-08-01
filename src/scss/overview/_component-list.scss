@@ -50,7 +50,7 @@
 			width: 15%;
 		}
 
-		&.registry__component-listing--hidden {
+		&[aria-hidden="true"] {
 			display: none;
 		}
 	}

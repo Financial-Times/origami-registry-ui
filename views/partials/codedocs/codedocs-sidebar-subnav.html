@@ -1,14 +1,19 @@
-{{#each items}}
-    <li class="registry__component--list-item"
-            data-o-component-name="{{@root.component.name}}"
-            data-o-component-type="{{@root.component.type}}"
-            data-o-component-sub-type="{{@root.component.subType}}"
-            data-o-component-keywords='["{{../title}}", "{{title}}"]'>
-        <a>{{title}}</a>
-    </li>
-    {{#each subnavs}}
-        <ul>
-            {{> codedocs/codedocs-sidebar-subnav }}
-        </ul>
-    {{/each}}
-{{/each}}
+ <li data-o-component-category="{{title}}">
+    <span class="registry__sidebar-list-title">{{title}}</span>
+    <ul>
+        {{#each items}}
+            <li
+                class="registry__sidebar-list-item"
+                data-o-component-name="{{title}}"
+                data-o-component-keywords='["{{ ../title }}"]'
+            >
+                <a href="{{link}}">{{title}}</a>
+            </li>
+            {{#each subnavs}}
+                <ul>
+                    {{> codedocs/codedocs-sidebar-subnav }}
+                </ul>
+            {{/each}}
+        {{/each}}
+    </ul>
+</li>
