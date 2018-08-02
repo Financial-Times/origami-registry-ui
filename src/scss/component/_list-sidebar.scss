@@ -4,10 +4,10 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		li:not([data-o-component-category]) ul {
-			padding-left: oTypographySpacingSize(5);
+		li:not([data-o-component-category]) > ul {
+			padding-left: oTypographySpacingSize(3);
 			@include oTypographyMargin($top: 3);
-			@include oTypographyMargin($bottom: 6);
+			@include oTypographySans(0);
 		}
 	}
 

@@ -45,16 +45,20 @@
 								Readme
 							</a>
 						</li>
-						<li class="o-header__subnav-item">
-							<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/sassdoc" {{#ifEquals nav 'sassdoc'}}aria-selected="true"{{/ifEquals}}>
-								SassDoc
-							</a>
-						</li>
-						<li class="o-header__subnav-item">
-							<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/jsdoc" {{#ifEquals nav 'jsdoc'}}aria-selected="true"{{/ifEquals}} >
-								JsDoc
-							</a>
-						</li>
+						{{#if component.hasCSS}}
+							<li class="o-header__subnav-item">
+								<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/sassdoc" {{#ifEquals nav 'sassdoc'}}aria-selected="true"{{/ifEquals}}>
+									SassDoc
+								</a>
+							</li>
+						{{/if}}
+						{{#if component.hasJS}}
+							<li class="o-header__subnav-item">
+								<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/jsdoc" {{#ifEquals nav 'jsdoc'}}aria-selected="true"{{/ifEquals}} >
+									JsDoc
+								</a>
+							</li>
+						{{/if}}
 					</ul>
 				</div>
 			</div>

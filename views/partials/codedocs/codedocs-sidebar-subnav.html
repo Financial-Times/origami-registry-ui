@@ -4,20 +4,7 @@
     {{ else }}
         <span class="registry__sidebar-list-title">{{title}}</span>
     {{/if}}
-    <ul>
-        {{#each items}}
-            <li
-                class="registry__sidebar-list-item"
-                data-o-component-name="{{title}}"
-                data-o-component-keywords='["{{ ../title }}"]'
-            >
-                <a href="{{link}}">{{title}}</a>
-            </li>
-            {{#each subnavs}}
-                <ul>
-                    {{> codedocs/codedocs-sidebar-subnav }}
-                </ul>
-            {{/each}}
-        {{/each}}
-    </ul>
+    {{#if items}}
+        {{> codedocs/codedocs-sidebar-items }}
+    {{/if}}
 </li>

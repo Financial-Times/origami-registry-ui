@@ -1,0 +1,14 @@
+{{#if items}}
+<ul>
+    {{#each items}}
+        <li
+            class="registry__sidebar-list-item"
+            data-o-component-name="{{title}}"
+            data-o-component-keywords='["{{ ../title }}"{{#each items}},"{{title}}"{{/each}}]'
+        >
+            <a href="{{link}}">{{title}}</a>
+            {{> codedocs/codedocs-sidebar-items }}
+        </li>
+    {{/each}}
+</ul>
+{{/if}}
