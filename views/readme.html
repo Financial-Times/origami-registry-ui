@@ -1,13 +1,25 @@
 <div class="registry__container">
-    <div class="registry__container-left">
-        {{> component/list-sidebar}}
+    <div class="registry__container__left">
+      <form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" data-o-component="o-filter-form">
+        <div class="o-forms">
+          <label for="filter-search" class="o-forms__label">Find In Readme</label>
+          <input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
+        </div>
+      </form>
+      <ul class="registry__sidebar-list" data-o-component="o-component-listing">
+        {{#each navItems}}
+          {{> codedocs/codedocs-sidebar-subnav }}
+        {{/each}}
+      </ul>
+      {{{ navHtml }}}
     </div>
 
-    <div class="registry__container-center">
-		{{#> component/container}}
-			{{#*inline "content"}}
-                {{{ markdown readme }}}
-			{{/inline}}
-		{{/component/container}}
+    <div class="registry__container__center">
+      <div class="registry__readme">
+        {{{ readme }}}
+      </div>
+    </div>
+
+    <div class="registry__container__right">
     </div>
 </div>

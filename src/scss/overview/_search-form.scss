@@ -1,29 +1,12 @@
 .registry__form {
-	margin: oTypographySpacingSize(5);
 
 	.o-forms,
 	.o-forms__group {
 		padding: 0;
-		margin: 0
 	}
 
 	fieldset.o-forms {
 		@include oTypographyPadding($top: 0);
-
-		.o-forms__additional-info {
-			@include oTypographyPadding($bottom: 4);
-		}
-	}
-
-	&--overview {
-		position: sticky;
-		top: 0;
-		align-self: flex-start;
-		min-width: 260px;
-	}
-
-	&--nav {
-		min-width: 220px;
 	}
 }
 

@@ -1,12 +1,14 @@
 .registry__sidebar-list {
-	margin: oTypographySpacingSize(5);
-	padding: 0;
-	list-style: none;
-
+	&,
 	ul {
 		margin: 0;
 		padding: 0;
 		list-style: none;
+		li:not([data-o-component-category]) ul {
+			padding-left: oTypographySpacingSize(5);
+			@include oTypographyMargin($top: 3);
+			@include oTypographyMargin($bottom: 6);
+		}
 	}
 
 	[aria-hidden="true"] {

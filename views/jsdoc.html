@@ -1,9 +1,9 @@
 <div class="registry__container">
-    <div class="registry__container-left">
+    <div class="registry__container__left">
         {{> codedocs/codedocs-sidebar }}
     </div>
 
-    <div class="registry__container-center">
+    <div class="registry__container__center">
 		<div class="registry__component">
             {{> component/messages}}
 
@@ -21,13 +21,11 @@
         </div>
     </div>
 
-    <div class="registry__container-right">
-        <div clss="registry__container-right__inner">
-            <div class="registry__container--wrapper">
-                <p>
-                    <a href="{{component.supportingUrls.issues}}" class="link-external">Contribute on GitHub</a>
-                </p>
-            </div>
+    <div class="registry__container__right">
+        <div clss="registry__container__sticky">
+            <p>
+                <a href="{{component.supportingUrls.issues}}" class="link-external">Contribute on GitHub</a>
+            </p>
         </div>
     </div>
 </div>

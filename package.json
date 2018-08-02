@@ -16,7 +16,7 @@
     "url": "https://github.com/Financial-Times/origami-registry-ui.git"
   },
   "engines": {
-    "node": "^8.6.0",
+    "node": "^10.8.0",
     "npm": "^5"
   },
   "main": "./lib/service.js",
@@ -29,6 +29,7 @@
     "@financial-times/origami-repo-data-client": "^1.4.0",
     "@financial-times/origami-service": "^3.0.1",
     "@financial-times/origami-service-makefile": "^6.1.0",
+    "cheerio": "^1.0.0-rc.2",
     "dotenv": "^4.0.0",
     "heroku-node-settings": "^1.1.0",
     "http-errors": "^1.6.2",
