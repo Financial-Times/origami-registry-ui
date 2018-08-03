@@ -14,6 +14,7 @@ class ComponentListing {
 	constructor(listingElement) {
 		this.listingElement = listingElement;
 		this.components = this.getComponents();
+		this.categoryElements = this.getCategoryElements();
 		document.addEventListener('o.filterFormUpdate', this.handleFilterFormUpdateEvent.bind(this));
 	}
 
@@ -24,6 +25,7 @@ class ComponentListing {
 		const filter = event.detail;
 		// Perform the visibility marking
 		this.components = this.components.map(component => {
+
 			component.visible = true;
 			return component;
 		});
@@ -67,33 +69,28 @@ class ComponentListing {
 		for (const component of this.components) {
 			if (component.visible) {
 				component.element.removeAttribute('aria-hidden');
+				component.element.classList.remove('registry__component-listing--hidden');
 			} else {
 				component.element.setAttribute('aria-hidden', 'true');
+				component.element.classList.add('registry__component-listing--hidden');
 			}
 		}
-
-		this.getCategoryElements().forEach(categoryElement => {
-			const allVisibleComponents = this.components.filter(component => component.visible);
-
-			const categoryComponentElements = this.getComponents(categoryElement).filter(
-				component => allVisibleComponents.find(visibleComponent => visibleComponent.element === component.element)
-			);
-
-			if (categoryComponentElements.length !== 0) {
-				categoryElement.removeAttribute('aria-hidden');
-				categoryElement.classList.remove('registry__component-listing--hidden');
+		for (const [categoryName, category] of Object.entries(repoListing.categorise(this.components))) {
+			if (category.visible) {
+				this.categoryElements[categoryName].removeAttribute('aria-hidden');
+				this.categoryElements[categoryName].classList.remove('registry__component-listing--hidden');
 			} else {
-				categoryElement.setAttribute('aria-hidden', 'true');
-				categoryElement.classList.add('registry__component-listing--hidden');
+				this.categoryElements[categoryName].setAttribute('aria-hidden', 'true');
+				this.categoryElements[categoryName].classList.add('registry__component-listing--hidden');
 			}
-		});
+		}
 	}
 
 	/**
 	 * Get the list of components.
 	 */
-	getComponents(categoryElement = this.listingElement) {
-		const elements = categoryElement.querySelectorAll('[data-o-component-name]');
+	getComponents() {
+		const elements = this.listingElement.querySelectorAll('[data-o-component-name]');
 		return Array.from(elements, element => {
 			return {
 				name: element.getAttribute('data-o-component-name'),
@@ -113,7 +110,10 @@ class ComponentListing {
 	 */
 	getCategoryElements() {
 		const elements = this.listingElement.querySelectorAll('[data-o-component-category]');
-		return Array.from(elements);
+		return Array.from(elements).reduce((categoryMap, element) => {
+			categoryMap[element.getAttribute('data-o-component-category')] = element;
+			return categoryMap;
+		}, {});
 	}
 
 	/**
