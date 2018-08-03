@@ -44,7 +44,7 @@ class FilterableNav {
             throw new Error(`Could not find an input in form "#${formId}" to filter the nav.`);
         }
         inputElement.addEventListener('input', event => this.filterNav(event.target.value));
-        inputElement.addEventListener('submit', (event) => {console.log(event);});
+        formElement.addEventListener('submit', event => this.feelingLucky(event));
         this.navElement = navElement;
     }
 
@@ -52,9 +52,13 @@ class FilterableNav {
         setNavVisibility(this.navElement, searchTerm);
     }
 
-    feelingLucky() {
-        const visibleItem = this.navElement.querySelector(`li:not('aria-hidden="false"'):first-of-type`);
-        console.log(visibleItem);
+    feelingLucky(event) {
+        event.preventDefault();
+        const selector = 'ul:not([aria-hidden="true"]) li:not([aria-hidden="true"]) > a:first-of-type';
+        const firstLink = this.navElement.querySelector(selector);
+        if (firstLink) {
+            window.location = firstLink.getAttribute('href');
+        }
     }
 
     static init(rootEl) {
