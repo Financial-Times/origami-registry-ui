@@ -43,6 +43,10 @@ html, body {
 		@include oTypographyLinkExternal();
 	}
 
+	blockquote {
+		@include oTypographyBlockquote();
+	}
+
 	.secondary-button {
 		@include oButtons(big, mono);
 		width: 100%;
