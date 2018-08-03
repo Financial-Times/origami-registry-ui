@@ -1,0 +1,47 @@
+{
+  "name": "origami-registry-ui",
+  "scripts": {},
+  "env": {
+    "CMDB_API_KEY": {
+      "required": true
+    },
+    "GITHUB_RELEASE_TOKEN": {
+      "required": true
+    },
+    "GITHUB_RELEASE_USER": {
+      "required": true
+    },
+    "GRAPHITE_API_KEY": {
+      "required": true
+    },
+    "REGION": {
+      "required": true
+    },
+    "RELEASE_LOG_API_KEY": {
+      "required": true
+    },
+    "RELEASE_LOG_ENVIRONMENT": {
+      "required": true
+    },
+    "REPO_DATA_API_KEY": {
+      "required": true
+    },
+    "REPO_DATA_API_SECRET": {
+      "required": true
+    },
+    "SENTRY_DSN": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
