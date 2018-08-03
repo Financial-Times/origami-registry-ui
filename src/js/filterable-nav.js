@@ -46,6 +46,7 @@ class FilterableNav {
         inputElement.addEventListener('input', event => this.filterNav(event.target.value));
         formElement.addEventListener('submit', event => this.feelingLucky(event));
         this.navElement = navElement;
+        this.inputElement = inputElement;
     }
 
     filterNav(searchTerm) {
