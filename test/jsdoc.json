@@ -30,14 +30,14 @@
         "params": []
     },
     {
-        "comment": "/**\n * A global function with param, to say hello to somebody.\n * http://usejsdoc.org/tags-function.html\n * @param {string} somebody\n */",
+        "comment": "/**\n * A global function with param, to say hello to somebody. Anything could say hello!\n * Even an alian could say hello! If a person is saying hello consider using {@link Person#sayHello} instead.\n * This peculiar example is inspired by [a jsdoc example]{@link http://usejsdoc.org/tags-function.html}.\n * This comment is also a great test of the jsdoc {@link http://usejsdoc.org/tags-function.html link tag}\n * @param {string} somebody\n */",
         "meta": {
             "range": [
-                255,
-                321
+                560,
+                626
             ],
             "filename": "main.js",
-            "lineno": 13,
+            "lineno": 15,
             "columnno": 0,
             "path": "",
             "code": {
@@ -49,7 +49,7 @@
                 ]
             }
         },
-        "description": "A global function with param, to say hello to somebody.\nhttp://usejsdoc.org/tags-function.html",
+        "description": "A global function with param, to say hello to somebody. Anything could say hello!\nEven an alian could say hello! If a person is saying hello consider using {@link Person#sayHello} instead.\nThis peculiar example is inspired by [a jsdoc example]{@link http://usejsdoc.org/tags-function.html}.\nThis comment is also a great test of the jsdoc {@link http://usejsdoc.org/tags-function.html link tag}",
         "params": [
             {
                 "type": {
@@ -1040,6 +1040,43 @@
         "scope": "instance"
     },
     {
+        "comment": "/**\n * @deprecated Use {@link Person#sayHello} instead.\n * @param {string} name\n * To make a human says hello, announcing their name.\n */",
+        "meta": {
+            "range": [
+                138,
+                213
+            ],
+            "filename": "deprecated.js",
+            "lineno": 6,
+            "columnno": 0,
+            "path": "/src/js",
+            "code": {
+                "id": "astnode100000250",
+                "name": "humanSayHello",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "name"
+                ]
+            }
+        },
+        "deprecated": "Use {@link Person#sayHello} instead.",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "To make a human says hello, announcing their name.",
+                "name": "name"
+            }
+        ],
+        "name": "humanSayHello",
+        "longname": "humanSayHello",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
         "comment": "/**\n * Throws things to test JSDoc events.\n * http://usejsdoc.org/tags-event.html\n */",
         "meta": {
             "range": [
@@ -1051,7 +1088,7 @@
             "columnno": 0,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000250",
+                "id": "astnode100000265",
                 "name": "Hurl",
                 "type": "FunctionDeclaration",
                 "paramnames": []
@@ -1076,7 +1113,7 @@
             "columnno": 0,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000254",
+                "id": "astnode100000269",
                 "name": "Hurl.prototype.snowball",
                 "type": "FunctionExpression",
                 "paramnames": []
@@ -1136,7 +1173,7 @@
             "columnno": 2,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000271",
+                "id": "astnode100000286",
                 "name": "detail",
                 "type": "ObjectExpression",
                 "value": "{\"isPacked\":\"\"}"
@@ -1160,7 +1197,7 @@
             "columnno": 3,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000273",
+                "id": "astnode100000288",
                 "name": "isPacked",
                 "type": "MemberExpression",
                 "value": "this._snowball.isPacked"
@@ -1185,7 +1222,7 @@
             "columnno": 0,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000280",
+                "id": "astnode100000295",
                 "name": "module.exports",
                 "type": "Identifier",
                 "value": "Hurl",
@@ -1211,7 +1248,7 @@
             "columnno": 6,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000288",
+                "id": "astnode100000303",
                 "name": "Eventful",
                 "type": "ObjectExpression",
                 "value": "{\"on\":\"\",\"fire\":\"\"}"
@@ -1236,7 +1273,7 @@
             "columnno": 1,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000291",
+                "id": "astnode100000306",
                 "name": "on",
                 "type": "FunctionExpression"
             }
@@ -1280,7 +1317,7 @@
             "columnno": 1,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000296",
+                "id": "astnode100000311",
                 "name": "fire",
                 "type": "FunctionExpression"
             }
@@ -1324,7 +1361,7 @@
             "columnno": 0,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000302",
+                "id": "astnode100000317",
                 "name": "module.exports",
                 "type": "Identifier",
                 "value": "Eventful",
@@ -1350,7 +1387,7 @@
             "columnno": 0,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000310",
+                "id": "astnode100000325",
                 "name": "module.exports",
                 "type": "FunctionExpression",
                 "paramnames": []
@@ -1415,7 +1452,7 @@
             "columnno": 0,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000323",
+                "id": "astnode100000338",
                 "name": "window[\"!\"]",
                 "type": "FunctionExpression",
                 "paramnames": [
@@ -1453,7 +1490,7 @@
             "columnno": 0,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000336",
+                "id": "astnode100000351",
                 "name": "myReturnSum",
                 "type": "FunctionDeclaration",
                 "paramnames": [
@@ -1519,7 +1556,7 @@
             "columnno": 0,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000357",
+                "id": "astnode100000372",
                 "name": "module.exports",
                 "type": "ObjectExpression",
                 "value": "{\"myReturnSum\":\"\"}",
@@ -1545,7 +1582,7 @@
             "columnno": 1,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000362",
+                "id": "astnode100000377",
                 "name": "myReturnSum",
                 "type": "Identifier",
                 "value": "myReturnSum"
@@ -1597,7 +1634,7 @@
             "columnno": 0,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000367",
+                "id": "astnode100000382",
                 "name": "module.exports",
                 "type": "FunctionExpression",
                 "paramnames": []
@@ -1620,7 +1657,7 @@
             "columnno": 0,
             "path": "/src/js",
             "code": {
-                "id": "astnode100000378",
+                "id": "astnode100000393",
                 "name": "module.exports",
                 "type": "FunctionExpression",
                 "paramnames": []
@@ -1651,6 +1688,7 @@
             "/src/js/access.js",
             "/src/js/class.js",
             "/src/js/complex-module.js",
+            "/src/js/deprecated.js",
             "/src/js/event.js",
             "/src/js/mixin.js",
             "/src/js/name.js",

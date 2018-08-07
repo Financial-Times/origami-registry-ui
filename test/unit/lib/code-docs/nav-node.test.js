@@ -63,7 +63,6 @@ describe('lib/code-docs/nav-node', () => {
                 new NavNode('item 2', '#item2')
             ];
             const testNavNode = new NavNode(title, items);
-            console.log(testNavNode.getItems(), items);
             assert.deepEqual(testNavNode.getItems(), items);
         });
     });
