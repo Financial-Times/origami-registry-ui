@@ -7,12 +7,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: node-10-dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install Node.js dependencies
           command: npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: node-10-dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - run:
