@@ -1,9 +1,9 @@
 <h1 id="#{{longname}}">{{longname}}</h1>
 <h2>{{ capitalise scope }} Property</h2>
 {{#if type}}
-    <h3>Type{{#unlessEquals type.names.length 1}}s{{/unlessEquals}}</h3>
+    <h3>Type{{#unlessEquals type.length 1}}s{{/unlessEquals}}</h3>
     <ul>
-        {{#each type.names}}
+        {{#each type}}
             <li>{{ this }}</li>
         {{/each}}
     </ul>
