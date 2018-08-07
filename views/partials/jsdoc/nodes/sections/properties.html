@@ -5,10 +5,10 @@
         <li>
             <a class="link" href="#{{longname}}">{{name}}</a>
             {{#if type}}
-                - ({{#each type.names}}type{{#unlessEquals ../type.names.length 1}}s{{/unlessEquals}}: {{this}}{{#unless @last}} | {{/unless}}{{/each}})
+                - ({{#each type}}type{{#unlessEquals ../type.length 1}}s{{/unlessEquals}}: {{this}}{{#unless @last}} | {{/unless}}{{/each}})
             {{/if}}
             {{#if description}}
-                {{#unless type}}-{{/unless}} 
+                {{#unless type}}-{{/unless}}
                 {{description}}
             {{/if}}
         </li>

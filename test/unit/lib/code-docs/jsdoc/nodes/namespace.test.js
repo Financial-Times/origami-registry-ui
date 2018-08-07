@@ -1,4 +1,3 @@
-
 'use strict';
 
 const assert = require('proclaim');
@@ -20,7 +19,7 @@ describe('lib/code-docs/jsdoc/nodes/namespace', () => {
         'scope': 'global'
     };
 
-    it('adds properties for a doclet which represents a module', () => {
+    it('adds properties for a doclet which represents a namespace', () => {
         const doclet = namespaceDoclet;
         const node = new JsDocNamespaceNode(doclet);
         assert.equal(node.longname, doclet.longname, 'Did not add the "longname" property as expected.');
