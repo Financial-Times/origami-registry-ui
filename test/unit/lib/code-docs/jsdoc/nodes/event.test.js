@@ -3,7 +3,7 @@
 const assert = require('proclaim');
 const JsDocEventNode = require('../../../../../../lib/code-docs/jsdoc/nodes/event');
 
-describe('lib/code-docs/jsdoc/class', () => {
+describe('lib/code-docs/jsdoc/nodes/event', () => {
     const eventDoclet = {
         'comment': '/**\n\t * Snowball event.\n\t *\n\t * @event Hurl#snowball\n\t * @type {object}\n\t * @property {boolean} detail.isPacked - Indicates whether the snowball is tightly packed.\n\t */',
         'meta': {

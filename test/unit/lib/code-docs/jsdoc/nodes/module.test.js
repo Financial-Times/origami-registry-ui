@@ -4,7 +4,7 @@
 const assert = require('proclaim');
 const JsDocModuleNode = require('../../../../../../lib/code-docs/jsdoc/nodes/module');
 
-describe('lib/code-docs/jsdoc/class', () => {
+describe('lib/code-docs/jsdoc/nodes/module', () => {
     const moduleDoclet = {
         'comment': '/**\n * Tests a single export module.\n * @module SimpleModule\n * @see module:example-module for an example of multi export module documentation.\n * @returns {String} Returns a fixed string.\n */',
         'meta': {

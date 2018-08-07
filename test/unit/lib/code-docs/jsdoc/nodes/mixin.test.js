@@ -3,7 +3,7 @@
 const assert = require('proclaim');
 const JsDocMixinNode = require('../../../../../../lib/code-docs/jsdoc/nodes/mixin');
 
-describe('lib/code-docs/jsdoc/class', () => {
+describe('lib/code-docs/jsdoc/nodes/mixin', () => {
     const mixinDoclet = {
         'comment': '/**\n *\n * Test the JSDoc mixin tag.\n * http://usejsdoc.org/tags-mixin.html\n *\n * This provides methods used for event handling. It\'s not meant to\n * be used directly.\n *\n * @mixin\n */',
         'meta': {

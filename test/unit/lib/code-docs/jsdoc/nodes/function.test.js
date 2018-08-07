@@ -3,7 +3,7 @@
 const assert = require('proclaim');
 const JsDocFunctionNode = require('../../../../../../lib/code-docs/jsdoc/nodes/function');
 
-describe('lib/code-docs/jsdoc/class', () => {
+describe('lib/code-docs/jsdoc/nodes/function', () => {
     const globalFunctionDoclet = {
         'comment': '/**\n * @deprecated Use {@link Person#sayHello} instead.\n * @param {string} name\n * To make a human says hello, announcing their name.\n */',
         'meta': {

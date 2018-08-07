@@ -4,7 +4,7 @@ const assert = require('proclaim');
 const JsDocBaseNode = require('../../../../../../lib/code-docs/jsdoc/nodes/base');
 const Example = require('../../../../../../lib/code-docs/example');
 
-describe('lib/code-docs/jsdoc/base', () => {
+describe('lib/code-docs/jsdoc/nodes/base', () => {
     const comprehensiveDoclet = {
         'comment': '/**\n * A description of the function.\n * And {@link http://usejsdoc.org/tags-function.html a link}.\n * @param {string} worldName\n */',
         'meta': {

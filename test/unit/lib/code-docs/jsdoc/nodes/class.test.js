@@ -4,7 +4,7 @@ const assert = require('proclaim');
 const JsDocClassNode = require('../../../../../../lib/code-docs/jsdoc/nodes/class');
 const Example = require('../../../../../../lib/code-docs/example');
 
-describe('lib/code-docs/jsdoc/class', () => {
+describe('lib/code-docs/jsdoc/nodes/class', () => {
     const constructorDoclet = {
         'comment': '/**\n * An example constructor within a module.\n * @constructor\n * @example\n * const myIncrementer = new incrementer();\n * myIncrementer.increment(4); // 4\n * myIncrementer.increment(4); // 8\n * myIncrementer.increment(1); // 9\n */',
         'meta': {
