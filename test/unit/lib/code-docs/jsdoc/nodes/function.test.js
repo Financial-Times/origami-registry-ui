@@ -71,7 +71,7 @@ describe('lib/code-docs/jsdoc/class', () => {
         'scope': 'instance'
     };
 
-    it('adds properties for a doclet which represents an global function and does not fire an event', () => {
+    it('adds properties for a doclet which represents a global function and does not fire an event', () => {
         const doclet = globalFunctionDoclet;
         const node = new JsDocFunctionNode(doclet);
         assert.equal(node.longname, doclet.longname, 'Did not add the "longname" property as expected.');
