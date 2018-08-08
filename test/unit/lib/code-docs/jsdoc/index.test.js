@@ -1,7 +1,6 @@
 'use strict';
 
 const assert = require('proclaim');
-const sinon = require('sinon');
 const JsDoc = require('../../../../../lib/code-docs/jsdoc');
 const ClassNode = require('../../../../../lib/code-docs/jsdoc/nodes/class');
 const FunctionNode = require('../../../../../lib/code-docs/jsdoc/nodes/function');
@@ -67,6 +66,27 @@ describe('lib/code-docs/jsdoc/index', () => {
             assert.ok(nodes.find(node => node instanceof ClassNode),'Did not format the class node.');
             assert.ok(nodes.find(node => node instanceof FunctionNode),'Did not format the function node.');
         });
+    });
+
+    describe('getNodesByTypeWithMembers', () => {
+        const classDoclet = {
+            'kind': 'class',
+            'name': 'World',
+            'longname': 'World',
+        };
+        const memberFunctionDoclet = {
+            'kind': 'function',
+            'name': 'hello',
+            'longname': 'World#hello',
+            'memberof': 'World',
+        };
+        const testJsDoc = new JsDoc([
+            classDoclet,
+            memberFunctionDoclet,
+        ]);
+        const nodes = testJsDoc.getNodesByTypeWithMembers();
+        assert.isTrue(nodes.classes[0] instanceof ClassNode, 'Did not return an object with a classes property containing the formatted class node.');
+        assert.ok(nodes.classes[0].functions.find(node => node instanceof FunctionNode), 'Did not format the function node as a member of the class node as expected.');
     });
 
     describe('formatDoclet', () => {
