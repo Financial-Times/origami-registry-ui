@@ -9,15 +9,17 @@ const MixinNode = require('../../../../../lib/code-docs/jsdoc/nodes/mixin');
 const NamespaceNode = require('../../../../../lib/code-docs/jsdoc/nodes/namespace');
 const PropertyNode = require('../../../../../lib/code-docs/jsdoc/nodes/property');
 const ModuleNode = require('../../../../../lib/code-docs/jsdoc/nodes/module');
-const jsDocExampledata = require('../../../../../test/jsdoc.json'); //@todo replace with real data
+const jsDocExampleData = require('../../../../../test/jsdoc.json'); //@todo replace with real data
 
 describe('lib/code-docs/jsdoc/index', () => {
 
-    const testJsDoc = new JsDoc(jsDocExampledata);
+    const testJsDoc = new JsDoc(jsDocExampleData);
 
     describe('getNodes', () => {
         const nodes = testJsDoc.getNodes();
-        assert.isTrue(Array.isArray(nodes), 'Did not return an array.');
+        it('Did not return array.', () => {
+            assert.isTrue(Array.isArray(nodes));
+        });
         it('Returns the expected number of formatted class nodes.', () => {
             assert.equal(nodes.filter(node => node instanceof ClassNode).length, 5);
         });
