@@ -1,4 +1,3 @@
-/* global agent */
 'use strict';
 
 const assert = require('proclaim');
