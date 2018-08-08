@@ -105,7 +105,6 @@ describe('lib/code-docs/sassdoc/nodes/base', () => {
         const doclet = comprehensiveDoclet;
         const node = new SassDocBaseNode(doclet);
         node.addParameters(doclet);
-        console.log(node.parameters);
         assert.deepEqual(node.parameters, [{
             name: 'toDouble',
             type: ['Number'],
