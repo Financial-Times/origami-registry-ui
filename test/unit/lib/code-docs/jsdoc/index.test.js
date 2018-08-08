@@ -27,6 +27,48 @@ describe('lib/code-docs/jsdoc/index', () => {
         });
     });
 
+    describe('getNodes', () => {
+        const testDoclet = {
+            'kind': 'function',
+            'name': 'helloWorld',
+            'longname': 'helloWorld',
+        };
+        it('Removes undocumented doclets', () => {
+            const undocumentedDoclet = testDoclet;
+            undocumentedDoclet.undocumented = true;
+            assert.deepEqual(new JsDoc([undocumentedDoclet]).getNodes(), [], 'Did not remove undocumented doclet.');
+        });
+        it('Removes unsupported doclet kinds', () => {
+            const unsuportedKindDoclet = testDoclet;
+            unsuportedKindDoclet.kind = 'notarealkind';
+            assert.deepEqual(new JsDoc([unsuportedKindDoclet]).getNodes(), [], 'Did not remove a doclet of an unsupported kind.');
+        });
+        it('Removes doclets marked private', () => {
+            const privateDoclet = testDoclet;
+            privateDoclet.access = 'private';
+            assert.deepEqual(new JsDoc([privateDoclet]).getNodes(), [], 'Did not remove a private doclet.');
+        });
+        it('Removes pseudo private doclets (where the name starts with an underscore)', () => {
+            const pseudoPrivateDoclet = testDoclet;
+            pseudoPrivateDoclet.name = `_${pseudoPrivateDoclet.name}`;
+            pseudoPrivateDoclet.longname = `_${pseudoPrivateDoclet.longname}`;
+            assert.deepEqual(new JsDoc([pseudoPrivateDoclet]).getNodes(), [], 'Did not remove a pseudo private doclet.');
+        });
+        it('Does not remove a documented, supported, public doclet', () => {
+            assert.deepEqual(new JsDoc([testDoclet]).getNodes(), [], 'Removed supported doclet.');
+        });
+        it('Formats doclets', () => {
+            const testJsDoc = new JsDoc([
+                ClassDoclet.classDeclarationDoclet,
+                FunctionDoclet.globalFunctionDoclet,
+            ]);
+            const nodes = testJsDoc.getNodes();
+            assert.isTrue(Array.isArray(nodes), 'Did not return an array containing formatted nodes.');
+            assert.ok(nodes.find(node => node instanceof ClassNode),'Did not format the class node.');
+            assert.ok(nodes.find(node => node instanceof FunctionNode),'Did not format the function node.');
+        });
+    });
+
     describe('formatDoclet', () => {
         it('Formats a class doclet', () => {
             const doclet = ClassDoclet.classDeclarationDoclet;
