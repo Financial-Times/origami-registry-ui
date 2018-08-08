@@ -2,22 +2,10 @@
 
 const assert = require('proclaim');
 const JsDocNamespaceNode = require('../../../../../../lib/code-docs/jsdoc/nodes/namespace');
+const NamespaceDoclet = require('../../../../mock/code-docs/jsdoc/namespace');
 
 describe('lib/code-docs/jsdoc/nodes/namespace', () => {
-    const namespaceDoclet = {
-        'comment': '/** @namespace window */',
-        'meta': {
-            'filename': 'namespace.js',
-            'lineno': 1,
-            'columnno': 0,
-            'path': '/src/js',
-            'code': {}
-        },
-        'kind': 'namespace',
-        'name': 'window',
-        'longname': 'window',
-        'scope': 'global'
-    };
+    const namespaceDoclet = NamespaceDoclet.namespaceDoclet;
 
     it('adds properties for a doclet which represents a namespace', () => {
         const doclet = namespaceDoclet;

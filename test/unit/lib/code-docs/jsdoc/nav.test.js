@@ -54,7 +54,7 @@ describe('lib/code-docs/jsdoc/nav', () => {
         longname: 'sayHello'
     };
 
-    it('creates hierarchical nav of classes with properties and functions in a subnav', () => {
+    it('creates a nav item for each class, with its properties and functions in a subnav', () => {
         const jsDoc = new JsDoc([]);
         sinon.stub(jsDoc, 'getNodes').callsFake(() => {
             return [
@@ -81,7 +81,7 @@ describe('lib/code-docs/jsdoc/nav', () => {
         const classPropertiesSubNav = classSubNav.items.find(subnav => subnav.title.includes(memberPropertyNode.name));
         assert.equal(typeof classPropertiesSubNav, 'object', 'Did not add the class\'s property to a subnav.');
         const classFunctionsSubNav = classSubNav.items.find(subnav => subnav.title.includes(memberFunctionNode.name));
-        assert.equal(typeof classFunctionsSubNav, 'object', 'Did not add the class\'s function to a sub nav.');
+        assert.equal(typeof classFunctionsSubNav, 'object', 'Did not add the class\'s function to a subnav.');
     });
 
     it('creates a "global" nav item for nodes which are not a member of another node', () => {
@@ -104,7 +104,7 @@ describe('lib/code-docs/jsdoc/nav', () => {
         assert.equal(typeof globalSubNav, 'object', 'Did not add global nodes to the root of the nav.');
     });
 
-    it('creates an "events" nav item for all events', () => {
+    it('creates an "events" nav item for all event nodes', () => {
         const jsDoc = new JsDoc([]);
         sinon.stub(jsDoc, 'getNodes').callsFake(() => {
             return [

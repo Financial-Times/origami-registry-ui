@@ -2,38 +2,10 @@
 
 const assert = require('proclaim');
 const JsDocPropertyNode = require('../../../../../../lib/code-docs/jsdoc/nodes/property');
+const PropertyDoclet = require('../../../../mock/code-docs/jsdoc/property');
 
 describe('lib/code-docs/jsdoc/nodes/namespace', () => {
-    const propertyDoclet = {
-        'comment': '/** @member {string} */',
-        'meta': {
-            'range': [
-                162,
-                178
-            ],
-            'filename': 'class.js',
-            'lineno': 9,
-            'columnno': 1,
-            'path': '/src/js',
-            'code': {
-                'id': 'astnode100000070',
-                'name': 'this.name',
-                'type': 'Identifier',
-                'value': 'name',
-                'paramnames': []
-            }
-        },
-        'kind': 'member',
-        'type': {
-            'names': [
-                'string'
-            ]
-        },
-        'name': 'name',
-        'longname': 'Person#name',
-        'memberof': 'Person',
-        'scope': 'instance'
-    };
+    const propertyDoclet = PropertyDoclet.memberDoclet;
 
     it('adds properties for a doclet which represents a property with a defined type', () => {
         const doclet = propertyDoclet;

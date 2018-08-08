@@ -2,56 +2,11 @@
 
 const assert = require('proclaim');
 const JsDocEventNode = require('../../../../../../lib/code-docs/jsdoc/nodes/event');
+const EventDoclet = require('../../../../mock/code-docs/jsdoc/event');
 
 describe('lib/code-docs/jsdoc/nodes/event', () => {
-    const eventDoclet = {
-        'comment': '/**\n\t * Snowball event.\n\t *\n\t * @event Hurl#snowball\n\t * @type {object}\n\t * @property {boolean} detail.isPacked - Indicates whether the snowball is tightly packed.\n\t */',
-        'meta': {
-            'filename': 'event.js',
-            'lineno': 15,
-            'columnno': 1,
-            'path': '/src/js',
-            'code': {}
-        },
-        'description': 'Snowball event.',
-        'kind': 'event',
-        'name': 'snowball',
-        'type': {
-            'names': [
-                'object'
-            ]
-        },
-        'properties': [
-            {
-                'type': {
-                    'names': [
-                        'boolean'
-                    ]
-                },
-                'description': 'Indicates whether the snowball is tightly packed.',
-                'name': 'detail.isPacked'
-            }
-        ],
-        'memberof': 'Hurl',
-        'longname': 'Hurl#event:snowball',
-        'scope': 'instance'
-    };
-
-    const simpleEventDoclet = {
-        'comment': '/**\n\t * Snowball event.\n\t *\n\t * @event Hurl#snowball\n\t */',
-        'meta': {
-            'filename': 'event.js',
-            'lineno': 15,
-            'columnno': 1,
-            'path': '/src/js',
-            'code': {}
-        },
-        'kind': 'event',
-        'name': 'snowball',
-        'memberof': 'Hurl',
-        'longname': 'Hurl#event:snowball',
-        'scope': 'instance'
-    };
+    const eventDoclet = EventDoclet.eventDoclet;
+    const simpleEventDoclet = EventDoclet.simpleEventDoclet;
 
     it('adds properties for a doclet which represents an event', () => {
         const node = new JsDocEventNode(eventDoclet);
