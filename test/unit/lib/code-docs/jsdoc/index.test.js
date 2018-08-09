@@ -27,11 +27,14 @@ describe('lib/code-docs/jsdoc/index', () => {
     });
 
     describe('getNodes', () => {
-        const testDoclet = {
-            'kind': 'function',
-            'name': 'helloWorld',
-            'longname': 'helloWorld',
-        };
+        let testDoclet = {};
+        beforeEach(() => {
+            testDoclet = {
+                'kind': 'function',
+                'name': 'helloWorld',
+                'longname': 'helloWorld',
+            };
+        });
         it('Removes undocumented doclets', () => {
             const undocumentedDoclet = testDoclet;
             undocumentedDoclet.undocumented = true;
@@ -54,7 +57,7 @@ describe('lib/code-docs/jsdoc/index', () => {
             assert.deepEqual(new JsDoc([pseudoPrivateDoclet]).getNodes(), [], 'Did not remove a pseudo private doclet.');
         });
         it('Does not remove a documented, supported, public doclet', () => {
-            assert.deepEqual(new JsDoc([testDoclet]).getNodes(), [], 'Removed supported doclet.');
+            assert.ok(new JsDoc([testDoclet]).getNodes()[0], 'Removed supported doclet.');
         });
         it('Formats doclets', () => {
             const testJsDoc = new JsDoc([
