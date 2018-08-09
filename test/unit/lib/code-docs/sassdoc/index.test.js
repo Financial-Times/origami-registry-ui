@@ -11,8 +11,15 @@ const VariableDoclet = require('../../../mock/code-docs/sassdoc/variable');
 
 describe('lib/code-docs/sassdoc/index', () => {
 
+    it('has a groupNameAliases property which maps a group name of "undefined" to the component name', () => {
+        const testSassDoc = new SassDoc('o-test-component', 'master', []);
+        assert.deepEqual(testSassDoc.groupNameAliases, {
+            'undefined': 'o-test-component',
+        });
+    });
+
     describe('supportedDoclets', () => {
-        it('Returns an array of supported doclet kinds', () => {
+        it('returns an array of supported doclet kinds', () => {
             assert.isTrue(Array.isArray(SassDoc.supportedDoclets()), 'Did not return an array.');
             assert.isTrue(SassDoc.supportedDoclets().includes('mixin'), 'Expected at least mixin doclets to be supported.');
         });
@@ -20,8 +27,11 @@ describe('lib/code-docs/sassdoc/index', () => {
 
     describe('getNodesByKind', () => {
         const testSassDoc = new SassDoc('o-test-component', 'master', [
+            MixinDoclet.simpleDoclet,
             MixinDoclet.comprehensiveDoclet,
+            FunctionDoclet.simpleDoclet,
             FunctionDoclet.comprehensiveDoclet,
+            VariableDoclet.simpleDoclet,
             VariableDoclet.comprehensiveDoclet
         ]);
         const nodes = testSassDoc.getNodesByKind();
@@ -92,6 +102,23 @@ describe('lib/code-docs/sassdoc/index', () => {
         it('removes doclets which are implicity private (name with underscore), ignoring the access property', () => {
             doclet.context.name = '_oTestComponentDouble';
             assert.deepEqual(new SassDoc(componentName, brand, [doclet]).getNodes(), []);
+        });
+        it('removes doclets which do not belong to the current brand', () => {
+            doclet.brand = {
+                'supported': [
+                    'internal'
+                ],
+                'description': ''
+            };
+            assert.deepEqual(new SassDoc(componentName, brand, [doclet]).getNodes(), []);
+        });
+        it('does not remove doclets which define a brand property with no supported brands defined', () => {
+            doclet.brand = {
+                'supported': [
+                ],
+                'description': ''
+            };
+            assert.equal(new SassDoc(componentName, brand, [doclet]).getNodes().length, 1);
         });
         it('removes placeholder doclets', () => {
             doclet.context.type = 'placeholder';
