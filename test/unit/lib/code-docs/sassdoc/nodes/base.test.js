@@ -59,8 +59,14 @@ describe('lib/code-docs/sassdoc/nodes/base', () => {
         'parameter': [
             {
                 'type': 'Number',
-                'name': 'toDouble',
+                'name': 'to-double',
                 'description': 'The number to double'
+            },
+            {
+                'type': 'Bool',
+                'name': 'example-param',
+                'default': 'false',
+                'description': ''
             }
         ],
         'aliased': [
@@ -147,7 +153,7 @@ describe('lib/code-docs/sassdoc/nodes/base', () => {
         assert.equal(node.deprecated, undefined, 'Did not expect a deprecation notice on the simple SassDoc example.');
     });
 
-    it('if provided the groupName property added by SassDoc extras is used for the node group property', () => {
+    it('uses groupName for the node group property, if the groupName is provided by SassDoc extras', () => {
         // @see https://github.com/SassDoc/sassdoc-extras/blob/2.4.3/src/groupName.js#L30
         const simpleExampleDoclet = simpleDoclet;
         simpleExampleDoclet.groupName = {
@@ -172,6 +178,16 @@ describe('lib/code-docs/sassdoc/nodes/base', () => {
         });
     });
 
+    it('does not add a brand property if no brands are defined', () => {
+        const doclet = simpleDoclet;
+        doclet.brand = {
+            'supported': [],
+            'description': 'Have not specified brands.'
+        };
+        const node = new SassDocBaseNode(doclet);
+        assert.equal(node.brand, undefined);
+    });
+
     describe('addAliases', () => {
         it('Adds aliases to the node', () => {
             const doclet = comprehensiveDoclet;
@@ -194,11 +210,16 @@ describe('lib/code-docs/sassdoc/nodes/base', () => {
             const node = new SassDocBaseNode(doclet);
             node.addParameters(doclet);
             assert.deepEqual(node.parameters, [{
-                name: 'toDouble',
+                name: 'to-double',
                 type: ['Number'],
                 description: 'The number to double',
-                default: '',
                 optional: false
+            }, {
+                name: 'example-param',
+                type: ['Bool'],
+                description: '',
+                default: 'false',
+                optional: true
             }], 'Did not add expected parameters property.');
         });
 
@@ -207,6 +228,26 @@ describe('lib/code-docs/sassdoc/nodes/base', () => {
             const node = new SassDocBaseNode(doclet);
             node.addParameters(doclet);
             assert.deepEqual(node.parameters, []);
+        });
+
+        it('Names any unnamed parameter', () => {
+            const doclet = comprehensiveDoclet;
+            // Add mock parameter with no name
+            doclet.parameter = [];
+            doclet.parameter.push({
+                'type': 'Bool',
+                'default': 'false',
+                'description': 'Some unname parameter.'
+            });
+            const node = new SassDocBaseNode(doclet);
+            node.addParameters(doclet);
+            assert.deepEqual(node.parameters, [{
+                name: '[param #1]', // name added
+                type: ['Bool'],
+                default: 'false',
+                optional: true,
+                description: 'Some unname parameter.'
+            }]);
         });
     });
 

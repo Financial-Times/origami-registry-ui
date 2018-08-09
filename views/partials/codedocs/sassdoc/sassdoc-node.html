@@ -18,6 +18,11 @@
             {{> codedocs/nodes/sections/parameters-table parameters }}
         {{/if}}
 
+        {{#if content }}
+            <h2>Content Block</h2>
+            {{{ markdown content }}}
+        {{/if}}
+
         {{#if return }}
             <h2>Returns</h2>
             {{#if return.types}}
