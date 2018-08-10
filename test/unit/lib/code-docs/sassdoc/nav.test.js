@@ -11,12 +11,12 @@ const VariableDoclet = require('../../../mock/code-docs/sassdoc/variable');
 describe('lib/code-docs/sassdoc/nav', () => {
     describe('createNavigation', () => {
         const testSassDoc = new SassDoc('o-test-component', 'master', [
-            MixinDoclet.simpleDoclet,
-            MixinDoclet.comprehensiveDoclet,
             FunctionDoclet.simpleDoclet,
             FunctionDoclet.comprehensiveDoclet,
             VariableDoclet.simpleDoclet,
-            VariableDoclet.comprehensiveDoclet
+            VariableDoclet.comprehensiveDoclet,
+            MixinDoclet.simpleDoclet,
+            MixinDoclet.comprehensiveDoclet,
         ]);
         const testSassDocNav = SassDocNav.createNavigation(testSassDoc);
         it('creates a subnav of the mixins', () => {
@@ -39,6 +39,11 @@ describe('lib/code-docs/sassdoc/nav', () => {
             const expectedItemName = VariableDoclet.simpleDoclet.context.name;
             const variableNavItem = variableSubnav.items.find(navNode => navNode.title.toLowerCase().includes(expectedItemName.toLowerCase()));
             assert.isTrue(variableNavItem instanceof NavNode);
+        });
+        it('orders nav mixins then functions then variables', () => {
+            assert.ok(testSassDocNav[0].title.toLowerCase().includes('mixin'));
+            assert.ok(testSassDocNav[1].title.toLowerCase().includes('function'));
+            assert.ok(testSassDocNav[2].title.toLowerCase().includes('variable'));
         });
     });
 });
