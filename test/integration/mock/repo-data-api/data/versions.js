@@ -10,6 +10,9 @@ const versions = module.exports = {};
 // `_versions` property
 for (const repo of repos) {
 	versions[repo.name] = repo._versions.map(version => {
-		return defaults({version}, repo);
+		return defaults({
+			id: version,
+			repo: repo.name
+		}, {version}, repo);
 	});
 }
