@@ -25,6 +25,7 @@ var OrigamiRegistry = (function() {
 	function processPostMessage(msg) {
 		var data, ifr, plusborders, style;
 		try { data = JSON.parse(msg.data); } catch (e) { return; }
+		if (!data.url) { return; }
 		data.url = data.url.replace(location.protocol+'\/\/'+location.hostname, '');
 		if (data.type == 'resize' && (ifr = document.querySelector('iframe[src="'+data.url+'"]'))) {
 			style = getComputedStyle(ifr);
