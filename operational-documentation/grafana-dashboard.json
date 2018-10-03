@@ -37,7 +37,7 @@
 				"panels": [{
 						"aliasColors": {},
 						"bars": false,
-						"datasource": "graphite",
+						"datasource": "graphitev2",
 						"decimals": 0,
 						"editable": true,
 						"error": false,
@@ -107,7 +107,7 @@
 					{
 						"aliasColors": {},
 						"bars": false,
-						"datasource": "graphite",
+						"datasource": "graphitev2",
 						"decimals": 0,
 						"editable": true,
 						"error": false,
@@ -187,7 +187,7 @@
 				"panels": [{
 						"aliasColors": {},
 						"bars": false,
-						"datasource": "graphite",
+						"datasource": "graphitev2",
 						"decimals": 0,
 						"editable": true,
 						"error": false,
@@ -256,7 +256,7 @@
 					{
 						"aliasColors": {},
 						"bars": false,
-						"datasource": "graphite",
+						"datasource": "graphitev2",
 						"decimals": 0,
 						"editable": true,
 						"error": false,
@@ -326,7 +326,7 @@
 					{
 						"aliasColors": {},
 						"bars": false,
-						"datasource": "graphite",
+						"datasource": "graphitev2",
 						"decimals": 0,
 						"editable": true,
 						"error": false,
@@ -396,7 +396,7 @@
 					{
 						"aliasColors": {},
 						"bars": false,
-						"datasource": "graphite",
+						"datasource": "graphitev2",
 						"decimals": 0,
 						"editable": true,
 						"error": false,
@@ -478,7 +478,7 @@
 				"panels": [{
 						"aliasColors": {},
 						"bars": false,
-						"datasource": "graphite",
+						"datasource": "graphitev2",
 						"decimals": 0,
 						"editable": true,
 						"error": false,
@@ -548,7 +548,7 @@
 					{
 						"aliasColors": {},
 						"bars": false,
-						"datasource": "graphite",
+						"datasource": "graphitev2",
 						"decimals": 0,
 						"editable": true,
 						"error": false,
