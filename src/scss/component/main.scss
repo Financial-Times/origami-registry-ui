@@ -9,6 +9,7 @@
 @import 'syntax-highlight';
 @import 'codedocs';
 
+@include oSyntaxHighlightAll();
 @include oMessage($types: 'alert-inner' 'notice-inner', $status: 'error' 'warning' 'warning-light' 'inform');
 
 .registry__alert,
