@@ -6,6 +6,13 @@
     <div class="registry__container__center">
 		<div class="registry__component">
             {{> component/messages}}
+
+            {{#unless navItems }}
+                <h1>{{ component.name }} SassDocs</h1>
+                <p>It looks like SassDocs for {{ component.name }}@{{ component.version }} are missing or formatted incorrectly.<p>
+                <p>For component documentation see <a class="link"  href="/components/{{ component.name }}@{{ component.version }}/readme">the readme</a>.</p>
+            {{/unless}}
+
             {{#each sassDocNodes}}
                 {{> codedocs/sassdoc/sassdoc-node }}
             {{/each}}

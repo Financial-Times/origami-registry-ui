@@ -7,6 +7,13 @@
 		<div class="registry__component">
             {{> component/messages}}
 
+            {{!-- {{ Output message for no JSDocs. }} --}}
+            {{#unless navItems }}
+                <h1>{{ component.name }} JsDocs</h1>
+                <p>It looks like JsDocs for {{ component.name }}@{{ component.version }} are missing or formatted incorrectly.<p>
+                <p>For component documentation see <a class="link"  href="/components/{{ component.name }}@{{ component.version }}/readme">the readme</a>.</p>
+            {{/unless}}
+
             {{!-- {{ Output global JSDoc nodes with links to their member nodes. }} --}}
             {{#each jsDocByTypeWithMembers }}
                 {{#each this}}
