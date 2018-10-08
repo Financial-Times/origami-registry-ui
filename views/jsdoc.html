@@ -18,6 +18,11 @@
             {{#each memberJsDocs}}
                 {{> jsdoc/jsdoc-node }}
             {{/each}}
+
+            {{!-- {{ Output default node to display before selection is made. }} --}}
+            {{#if defaultNode}}
+                {{> jsdoc/jsdoc-node defaultNode default=true }}
+            {{/if}}
         </div>
     </div>
 </div>

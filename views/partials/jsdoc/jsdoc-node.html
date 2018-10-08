@@ -1,4 +1,4 @@
-<div id="{{ longname }}" class="registry__doclet">
+<div id="{{ longname }}" class="registry__doclet {{#if default}}registry__doclet--default{{/if}}">
     {{#ifEquals kind 'class'}}
         {{> jsdoc/nodes/class-node }}
     {{/ifEquals}}

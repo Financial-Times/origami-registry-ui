@@ -2,8 +2,14 @@
     display: none;
 }
 
+.registry__doclet--default,
 .registry__doclet:target {
     display: block;
+}
+
+// Hide default doclet if another doclet is the target.
+.registry__doclet:target ~ .registry__doclet--default {
+    display: none;
 }
 
 .o-table--code-docs {

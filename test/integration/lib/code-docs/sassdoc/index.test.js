@@ -2,7 +2,7 @@
 
 const assert = require('proclaim');
 const SassDoc = require('../../../../../lib/code-docs/sassdoc');
-const sassDocExampleData = require('../../../../../test/sassdoc.json'); //@todo replace with real data
+const sassDocExampleData = require('../../../../../test/sassdoc.json');
 const Mixin = require('../../../../../lib/code-docs/sassdoc/nodes/mixin');
 const Function = require('../../../../../lib/code-docs/sassdoc/nodes/function');
 const Variable = require('../../../../../lib/code-docs/sassdoc/nodes/variable');

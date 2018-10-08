@@ -1,51 +1,51 @@
-{{#each sassDocNodes}}
-    <div id="{{ longname }}" class="registry__doclet">
-        {{> codedocs/nodes/sections/deprecation-warning }}
+<div
+    id="{{ longname }}"
+    class="registry__doclet {{#if default}}registry__doclet--default{{/if}}">
+    {{> codedocs/nodes/sections/deprecation-warning }}
 
-        <h1 class="registry__component-name">
-            {{> codedocs/nodes/sections/name }}
-        </h1>
+    <h1 class="registry__component-name">
+        {{> codedocs/nodes/sections/name }}
+    </h1>
 
-        {{#if description }}
-            {{{ markdown description }}}
+    {{#if description }}
+        {{{ markdown description }}}
+    {{/if}}
+
+    {{#if output }}
+        {{{ markdown output }}}
+    {{/if}}
+
+    {{#if parameters }}
+        {{> codedocs/nodes/sections/parameters-table parameters }}
+    {{/if}}
+
+    {{#if content }}
+        <h2>Content Block</h2>
+        {{{ markdown content }}}
+    {{/if}}
+
+    {{#if return }}
+        <h2>Returns</h2>
+        {{#if return.types}}
+            {{#each return.types}}{{this}}{{#unless @last}} | {{/unless}}{{/each}}
         {{/if}}
-
-        {{#if output }}
-            {{{ markdown output }}}
+        {{#if return.description}}
+            {{#if return.types}} - {{/if}}
+            {{return.description}}
         {{/if}}
+        </ul>
+    {{/if}}
 
-        {{#if parameters }}
-            {{> codedocs/nodes/sections/parameters-table parameters }}
-        {{/if}}
+    {{#if aliases }}
+        <h2>Aliases</h2>
+        <ul>
+        {{#each aliases}}
+            <li>{{ this }}</li>
+        {{/each}}
+        </ul>
+    {{/if}}
 
-        {{#if content }}
-            <h2>Content Block</h2>
-            {{{ markdown content }}}
-        {{/if}}
+    {{> codedocs/nodes/sections/examples examples }}
 
-        {{#if return }}
-            <h2>Returns</h2>
-            {{#if return.types}}
-                {{#each return.types}}{{this}}{{#unless @last}} | {{/unless}}{{/each}}
-            {{/if}}
-            {{#if return.description}}
-                {{#if return.types}} - {{/if}}
-                {{return.description}}
-            {{/if}}
-            </ul>
-        {{/if}}
-
-        {{#if aliases }}
-            <h2>Aliases</h2>
-            <ul>
-            {{#each aliases}}
-                <li>{{ this }}</li>
-            {{/each}}
-            </ul>
-        {{/if}}
-
-        {{> codedocs/nodes/sections/examples examples }}
-
-        {{> codedocs/nodes/sections/links }}
-    </div>
-{{/each}}
+    {{> codedocs/nodes/sections/links }}
+</div>

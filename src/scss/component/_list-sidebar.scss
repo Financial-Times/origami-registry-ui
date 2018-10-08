@@ -25,6 +25,7 @@
 
 .registry__sidebar-list-item {
 	@include oTypographyMargin($bottom: 3);
+	overflow-wrap: break-word;
 
 	a {
 		@include oTypographyLinkCustom(

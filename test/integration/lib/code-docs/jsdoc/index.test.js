@@ -9,7 +9,7 @@ const MixinNode = require('../../../../../lib/code-docs/jsdoc/nodes/mixin');
 const NamespaceNode = require('../../../../../lib/code-docs/jsdoc/nodes/namespace');
 const PropertyNode = require('../../../../../lib/code-docs/jsdoc/nodes/property');
 const ModuleNode = require('../../../../../lib/code-docs/jsdoc/nodes/module');
-const jsDocExampleData = require('../../../../../test/jsdoc.json'); //@todo replace with real data
+const jsDocExampleData = require('../../../../../test/jsdoc.json');
 
 describe('lib/code-docs/jsdoc/index', () => {
 

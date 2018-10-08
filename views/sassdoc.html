@@ -6,7 +6,14 @@
     <div class="registry__container__center">
 		<div class="registry__component">
             {{> component/messages}}
-            {{> codedocs/sassdoc/sassdoc-node }}
+            {{#each sassDocNodes}}
+                {{> codedocs/sassdoc/sassdoc-node }}
+            {{/each}}
+
+            {{!-- {{ Output default node to display before selection is made. }} --}}
+            {{#if defaultNode}}
+                {{> codedocs/sassdoc/sassdoc-node defaultNode default=true }}
+            {{/if}}
         </div>
     </div>
 </div>
