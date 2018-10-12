@@ -28,6 +28,13 @@ module.exports = async function mockRepoDataApi() {
 		}
 		response.send(versions[request.params.name]);
 	});
+	api.get('/v1/repos/:name/versions/:versionId/markdown/:markdownType', (request, response, next) => {
+		const repo = repos.find(repo => repo.name === request.params.name);
+		if (!repo || !repo._versions.includes(request.params.versionId) || !repo.markdown.readme) {
+			return next(httpError(404));
+		}
+		response.send(repo.markdown.readme);
+	});
 	api.use((error, request, response, next) => { // eslint-disable-line no-unused-vars
 		response.status(error.status).send({
 			status: error.status,

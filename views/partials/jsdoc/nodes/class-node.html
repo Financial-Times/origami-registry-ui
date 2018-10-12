@@ -1,0 +1,37 @@
+<h1 id="longname">new {{#if constructor}}{{> codedocs/nodes/sections/name name=longname parameters=constructor.parameters}}{{/if}}</h1>
+
+{{#if description}}
+    <p>{{description}}</p>
+{{/if}}
+
+{{#if constructor}}
+    {{#if constructor.description}}
+        <p>{{constructor.description}}</p>
+    {{/if}}
+
+    {{#if constructor.parameters}}
+        {{> codedocs/nodes/sections/parameters-table constructor.parameters }}
+    {{/if}}
+{{/if}}
+
+{{#if functions}}
+    {{> jsdoc/nodes/sections/functions functions }}
+{{/if}}
+
+{{#if properties}}
+    {{> jsdoc/nodes/sections/properties properties }}
+{{/if}}
+
+{{#if extends}}
+    {{> jsdoc/nodes/sections/extends extends }}
+{{/if}}
+
+{{#if fires}}
+    {{> jsdoc/nodes/sections/fires-events fires }}
+{{/if}}
+
+{{#if constructor}}
+    {{#if constructor.examples}}
+        {{> codedocs/nodes/sections/examples constructor.examples }}
+    {{/if}}
+{{/if}}

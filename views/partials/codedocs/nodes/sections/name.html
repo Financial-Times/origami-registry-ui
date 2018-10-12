@@ -1,0 +1,9 @@
+{{#if parameters }}
+        {{#ifAny parameters.length 1 2}}
+            {{ name }}({{#each parameters}}{{name}}{{#unless @last}}, {{/unless}}{{/each}})
+        {{else}}
+            {{ name }}(...)
+        {{/ifAny}}
+{{else}}
+    {{ name }}
+{{/if}}

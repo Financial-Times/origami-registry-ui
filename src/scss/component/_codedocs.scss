@@ -1,0 +1,30 @@
+.registry__doclet {
+    display: none;
+}
+
+.registry__doclet--default,
+.registry__doclet:target {
+    display: block;
+}
+
+// Hide default doclet if another doclet is the target.
+.registry__doclet:target ~ .registry__doclet--default {
+    display: none;
+}
+
+.o-table--code-docs {
+    tr td:first-child, tr th:first-child {
+        padding-left: 0;
+    }
+    @include oGridRespondTo($until: S) {
+        th {
+            padding-left: 0;
+        }
+    }
+    .o-table__code-docs-shrink {
+        @include oGridRespondTo(M) {
+            width: 0.1%;
+            white-space: nowrap;
+        }
+    }
+}

@@ -22,6 +22,9 @@ module.exports = [
 			demos: null,
 			dependencies: null
 		},
+		markdown: {
+			readme: '# o-example-active\n## test-readme\nExample content.'
+		},
 
 		// mock use only
 		_versions: ['2.0.0', '1.1.1', '1.1.0', '1.0.1', '1.0.0']

@@ -1,0 +1,23 @@
+{{> codedocs/nodes/sections/deprecation-warning }}
+
+<h1 id="#{{longname}}">{{> codedocs/nodes/sections/name name=longname parameters=parameters}}</h1>
+<h2>{{ capitalise scope }} {{ label }}</h2>
+{{#if description}}
+    {{{markdown description}}}
+{{/if}}
+
+{{#if parameters}}
+    {{> codedocs/nodes/sections/parameters-table parameters }}
+{{/if}}
+
+{{#if returns}}
+    {{> jsdoc/nodes/sections/returns returns }}
+{{/if}}
+
+{{#if fires}}
+    {{> jsdoc/nodes/sections/fires-events fires }}
+{{/if}}
+
+{{#if examples}}
+    {{> codedocs/nodes/sections/examples examples }}
+{{/if}}

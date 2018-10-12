@@ -1,3 +1,4 @@
+.DS_Store
 .env
 .nyc_output
 coverage
@@ -5,3 +6,4 @@ node_modules/
 npm-debug.log
 public/
 bower_components/
+.vscode/

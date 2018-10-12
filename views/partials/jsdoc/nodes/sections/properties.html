@@ -1,0 +1,17 @@
+{{#if this}}
+    <h2>Properties</h2>
+    <ul>
+    {{#each this}}
+        <li>
+            <a class="link" href="#{{longname}}">{{name}}</a>
+            {{#if type}}
+                - ({{#each type}}type{{#unlessEquals ../type.length 1}}s{{/unlessEquals}}: {{this}}{{#unless @last}} | {{/unless}}{{/each}})
+            {{/if}}
+            {{#if description}}
+                {{#unless type}}-{{/unless}}
+                {{description}}
+            {{/if}}
+        </li>
+    {{/each}}
+    </ul>
+{{/if}}

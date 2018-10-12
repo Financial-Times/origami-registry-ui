@@ -6,9 +6,10 @@
 @import 'list-sidebar';
 @import 'overlay';
 @import 'support';
-@import 'syntax-highlight';
+@import 'codedocs';
 
-@include oMessage($types: 'alert-inner' 'notice-inner', $status: 'error' 'warning-light' 'inform');
+@include oSyntaxHighlightAll();
+@include oMessage($types: 'alert-inner' 'notice-inner', $status: 'error' 'warning' 'warning-light' 'inform');
 
 .registry__alert,
 .registry__notice {

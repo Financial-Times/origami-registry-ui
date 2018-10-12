@@ -1,0 +1,14 @@
+{{#if this}}
+    <h2>Returns</h2>
+    <ul>
+        <li>
+            <a class="link" href="#{{longname}}">{{name}}</a>
+            {{#if type}}
+                {{#each type}}{{this}}{{#unless @last}} | {{/unless}}{{/each}}
+            {{/if}}
+            {{#if description}}
+                - {{description}}
+            {{/if}}
+        </li>
+    </ul>
+{{/if}}
