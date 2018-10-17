@@ -107,7 +107,7 @@ describe('lib/code-docs/sassdoc/nodes/base', () => {
         assert.equal(node.description, '', 'Did not add expected description property.');
         assert.equal(node.longname, 'helpers-function-oTestComponentDouble', 'Did not add expected longname property.');
         assert.deepEqual(node.file, {
-            'path': 'src/scss/_functions.scss',
+            'path': 'src/scss/',
             'name': '_functions.scss',
             'lineno': 24
         }, 'Did not add expected file property.');
@@ -139,7 +139,7 @@ describe('lib/code-docs/sassdoc/nodes/base', () => {
         assert.equal(node.description, '', 'Did not add expected description property.');
         assert.equal(node.longname, 'function-oTestComponentDouble', 'Did not add expected longname property.');
         assert.deepEqual(node.file, {
-            'path': 'src/scss/_functions.scss',
+            'path': 'src/scss/',
             'name': '_functions.scss',
             'lineno': 24
         }, 'Did not add expected file property.');
