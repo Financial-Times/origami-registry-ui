@@ -45,14 +45,14 @@
 								Readme
 							</a>
 						</li>
-						{{#if component.hasCSS}}
+						{{#if component.showSassDoc}}
 							<li class="o-header__subnav-item">
 								<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/sassdoc" {{#ifEquals nav 'sassdoc'}}aria-selected="true"{{/ifEquals}}>
 									SassDoc
 								</a>
 							</li>
 						{{/if}}
-						{{#if component.hasJS}}
+						{{#if component.showJSDoc}}
 							<li class="o-header__subnav-item">
 								<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/jsdoc" {{#ifEquals nav 'jsdoc'}}aria-selected="true"{{/ifEquals}} >
 									JsDoc
