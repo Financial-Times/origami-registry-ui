@@ -1,48 +1,46 @@
+
+// Standard component list
 .registry__component-list {
 	list-style-type: none;
 	padding-left: 0;
-	margin-top: 0;
 
-	li {
-		padding: 8px 0 8px 8px;
+	.registry__component-list-item {
+		display: block;
+		border-bottom: 2px solid oColorsGetPaletteColor('slate-white-5');
 
-		&:not(.registry__group-title) {
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&-link {
 			display: flex;
-			border-bottom: 2px solid oColorsGetPaletteColor('slate-white-5');
+			padding: 8px 0 8px 8px;
+			text-decoration: none;
+			color: inherit;
 
 			&:hover {
 				background-color: oColorsGetPaletteColor('slate-white-15');
 			}
 		}
 
-		&.registry__group {
-			cursor: pointer;
-
-			&-title {
-				@include oTypographyBold('sans');
-				background-color: oColorsGetPaletteColor('slate-white-5');
-				color: oColorsGetPaletteColor('black-80');
-			}
-		}
-
-		.registry__group-item {
+		&-detail {
 			padding: 0 4px;
-
-			&--link {
-				@include oTypographySansBold(1);
-				text-decoration: none;
-				color: oColorsGetPaletteColor('slate-white-80');
-			}
-
-			&--description {
-				@include oTypographyMargin($top: 2, $bottom: 0);
-				padding: 0 4px;
-				font-weight: 400;
-				color: oColorsGetPaletteColor('slate-white-80');
-			}
 		}
 
-		.registry__group-stats {
+		&-name {
+			@include oTypographySansBold(1);
+			color: oColorsGetPaletteColor('slate-white-80');
+			margin: 0;
+		}
+
+		&-description {
+			@include oTypographyMargin($top: 2, $bottom: 0);
+			padding: 0 4px;
+			font-weight: 400;
+			color: oColorsGetPaletteColor('slate-white-80');
+		}
+
+		&-stats {
 			display: flex;
 			flex-flow: column;
 			flex-shrink: 0;
@@ -50,8 +48,24 @@
 			margin-left: auto;
 			width: 15%;
 		}
+	}
+}
 
-		&[aria-hidden="true"] {
+// Compact component list
+.registry__component-list.registry__component-list--compact {
+	.registry__component-list-item {
+		padding: 0;
+		@include oTypographyMargin($bottom: 3);
+
+		&-link,
+		&-detail,
+		&-name {
+			font-weight: normal;
+			padding: 0;
+		}
+
+		&-description,
+		&-stats {
 			display: none;
 		}
 	}
