@@ -1,22 +1,20 @@
 'use strict';
 
 module.exports = (function() {
-	const wrappers = document.querySelectorAll('.registry__container--wrapper');
-	const header = document.querySelector('header');
-	const footer = document.querySelector('footer');
+	const stickyElements = document.querySelectorAll('.registry__container__sticky');
 
-	document.addEventListener('scroll', () => {
-		Array.from(wrappers, wrapper => {
-			if (wrapper && wrapper.offsetHeight >= window.innerHeight) {
-				if ((wrapper.offsetHeight + window.scrollY) > footer.offsetTop) {
-					wrapper.classList.remove('registry__container--sticky');
-				} else if (header.offsetHeight <= window.scrollY) {
-					wrapper.classList.add('registry__container--sticky');
-				} else {
-					wrapper.classList.remove('registry__container--sticky');
-				}
+	const updateStickyScroll = () => {
+		Array.from(stickyElements, element => {
+			// Scroll page rather than element unless the element has stuck.
+			if (element.parentElement.getBoundingClientRect().top > 0) {
+				element.scrollTop = 0;
+				element.style['overflow-x'] = 'unset';
+			} else {
+				element.style['overflow-x'] = 'hidden';
 			}
-
 		});
-	});
+	};
+
+	document.addEventListener('scroll', () => window.requestAnimationFrame(updateStickyScroll));
+	updateStickyScroll();
 }());

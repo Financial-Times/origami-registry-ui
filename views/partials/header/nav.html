@@ -19,3 +19,52 @@
 		</ul>
 	</div>
 </nav>
+
+{{#if component}}
+<nav class="o-header__subnav" role="navigation" aria-label="Sub navigation" data-o-header-subnav="">
+	<div class="o-header-services__bleed-container">
+		<div class="o-header__subnav-wrap-outside">
+			<div class="o-header__subnav-wrap-inside" data-o-header-subnav-wrapper="">
+				<div class="o-header__subnav-content">
+					<ol class="o-header__subnav-list o-header__subnav-list--breadcrumb" aria-label="Breadcrumb">
+						<li class="o-header__subnav-item">
+							<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}" {{#unless nav}}aria-selected="true"{{/unless}}>
+								{{ component.name }}@{{ component.version }}
+							</a>
+						</li>
+					</ol>
+
+					<ul class="o-header__subnav-list o-header__subnav-list--children" aria-label="Subsections">
+						<li class="o-header__subnav-item">
+							<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/" {{#ifEquals nav 'demos'}}aria-selected="true"{{/ifEquals}}>
+								Demos
+							</a>
+						</li>
+						<li class="o-header__subnav-item">
+							<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/readme" {{#ifEquals nav 'readme'}}aria-selected="true"{{/ifEquals}}>
+								Readme
+							</a>
+						</li>
+						{{#if component.showSassDoc}}
+							<li class="o-header__subnav-item">
+								<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/sassdoc" {{#ifEquals nav 'sassdoc'}}aria-selected="true"{{/ifEquals}}>
+									SassDoc
+								</a>
+							</li>
+						{{/if}}
+						{{#if component.showJSDoc}}
+							<li class="o-header__subnav-item">
+								<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/jsdoc" {{#ifEquals nav 'jsdoc'}}aria-selected="true"{{/ifEquals}} >
+									JsDoc
+								</a>
+							</li>
+						{{/if}}
+					</ul>
+				</div>
+			</div>
+			<button class="o-header__subnav-button o-header__subnav-button--left" title="scroll left" aria-hidden="true" disabled></button>
+			<button class="o-header__subnav-button o-header__subnav-button--right" title="scroll right" aria-hidden="true" disabled></button>
+		</div>
+	</div>
+</nav>
+{{/if}}

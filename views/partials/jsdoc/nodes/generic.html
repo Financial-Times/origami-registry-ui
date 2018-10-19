@@ -1,0 +1,37 @@
+<h1 id="#{{longname}}">{{> codedocs/nodes/sections/name name=longname parameters=parameters}}</h1>
+
+{{#if description}}
+    <p>{{description}}</p>
+{{/if}}
+
+{{#if parameters}}
+    {{> codedocs/nodes/sections/parameters-table parameters }}
+{{/if}}
+
+{{#if returns}}
+    {{> jsdoc/nodes/sections/returns returns }}
+{{/if}}
+
+{{#if fires}}
+    {{> jsdoc/nodes/sections/fires-events fires }}
+{{/if}}
+
+{{#if functions}}
+    {{> jsdoc/nodes/sections/functions functions }}
+{{/if}}
+
+{{#if classes}}
+    {{> jsdoc/nodes/sections/classes classes }}
+{{/if}}
+
+{{#if properties}}
+    {{> jsdoc/nodes/sections/properties properties }}
+{{/if}}
+
+{{#if extends}}
+    {{> jsdoc/nodes/sections/extends extends }}
+{{/if}}
+
+{{#if examples}}
+    {{> codedocs/nodes/sections/examples examples }}
+{{/if}}

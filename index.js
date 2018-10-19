@@ -10,6 +10,8 @@ const options = {
 	log: console,
 	name: 'Origami Registry',
 	repoDataApiKey: process.env.REPO_DATA_API_KEY,
+	codedocsApiKey: process.env.CODEDOCS_API_KEY,
+	codedocsEndpoint: process.env.CODEDOCS_ENDPOINT,
 	repoDataApiSecret: process.env.REPO_DATA_API_SECRET,
 	workers: process.env.WEB_CONCURRENCY || 1
 };

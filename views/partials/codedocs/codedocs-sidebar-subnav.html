@@ -1,0 +1,10 @@
+ <li {{#if link}}class="registry__sidebar-list-item"{{/if}}>
+    {{#if link }}
+        <a href="{{link}}">{{title}}</a>
+    {{ else }}
+        <span class="registry__sidebar-list-title">{{title}}</span>
+    {{/if}}
+    {{#if items}}
+        {{> codedocs/codedocs-sidebar-items }}
+    {{/if}}
+</li>

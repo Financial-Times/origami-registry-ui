@@ -1,0 +1,25 @@
+<table class="o-table o-table--responsive-scroll o-table--code-docs" data-o-component="o-table">
+    <thead>
+        <tr>
+            <th data-o-table-heading-disable-sort class="o-table__code-docs-shrink">parameter</th>
+            <th data-o-table-heading-disable-sort class="o-table__code-docs-shrink">type</th>
+            <th data-o-table-heading-disable-sort class="o-table__code-docs-shrink">default</th>
+            <th data-o-table-heading-disable-sort>description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this}}
+        <tr>
+            <td class="o-table__code-docs-shrink">{{name}}{{#if optional}} (optional){{/if}}</td>
+            <td class="o-table__code-docs-shrink">
+                {{#each type}}
+                    {{ this }}
+                    {{#unless @last}} | {{/unless}}
+                {{/each}}
+            </td>
+            <td class="o-table__code-docs-shrink">{{default}}</td>
+            <td>{{description}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

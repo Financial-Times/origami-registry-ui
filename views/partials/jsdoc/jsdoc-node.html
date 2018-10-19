@@ -1,0 +1,28 @@
+<div id="{{ longname }}" class="registry__doclet {{#if default}}registry__doclet--default{{/if}}">
+    {{#ifEquals kind 'class'}}
+        {{> jsdoc/nodes/class-node }}
+    {{/ifEquals}}
+    {{#ifEquals kind 'function'}}
+        {{> jsdoc/nodes/function-node }}
+    {{/ifEquals}}
+    {{#ifEquals kind 'event'}}
+        {{> jsdoc/nodes/event-node }}
+    {{/ifEquals}}
+    {{#ifEquals kind 'module'}}
+        {{> jsdoc/nodes/module-node }}
+    {{/ifEquals}}
+    {{#ifEquals kind 'namespace'}}
+        {{> jsdoc/nodes/namespace-node }}
+    {{/ifEquals}}
+    {{#ifEquals kind 'mixin'}}
+        {{> jsdoc/nodes/mixin-node }}
+    {{/ifEquals}}
+    {{#ifEquals kind 'constant'}}
+        {{> jsdoc/nodes/property-node }}
+    {{/ifEquals}}
+    {{#ifEquals kind 'member'}}
+        {{> jsdoc/nodes/property-node }}
+    {{/ifEquals}}
+
+    {{> codedocs/nodes/sections/links }}
+</div>

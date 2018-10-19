@@ -1,7 +1,0 @@
-{
-	"checkPolicies": true,
-	"projectName": "origami-registry-ui",
-	"productName": "origami services and node modules",
-	"devDep": false,
-	"failOnError": true
-}

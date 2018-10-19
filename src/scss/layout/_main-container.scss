@@ -1,46 +1,109 @@
-
 .registry__container {
-	display: flex;
+	display: grid;
+	grid: auto-flow / minmax(0, 1fr);
 
-	&-left {
-		@include oTypographySans(1);
-		background-color: oColorsGetPaletteColor('slate-white-5');
-		border-right: 1px solid oColorsGetPaletteColor('slate-white-15');
+	@include oGridRespondTo(M) {
+		grid: auto-flow / 260px minmax(0, 1fr);
+	};
 
-		.registry__container--wrapper {
-			width: 260px;
+	@include oGridRespondTo(L) {
+		grid: auto-flow / 260px minmax(0, 1fr) 320px;
+	};
+
+	pre {
+		overflow: scroll;
+	}
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.registry__container__left {
+	display: none;
+	@include oTypographySans(1);
+	background-color: oColorsGetPaletteColor('slate-white-5');
+	padding: oTypographySpacingSize(5);
+	border-right: 1px solid oColorsGetPaletteColor('slate-white-15');
+	@include oGridRespondTo(M) {
+		display: block;
+	};
+	fieldset {
+		margin-bottom: oTypographySpacingSize(5);
+	}
+}
+
+.registry__container__center {
+	@include oGridContainer($grid-mode: "fluid");
+	padding: oTypographySpacingSize(5);
+	width: 100%;
+}
+
+.registry__container__right {
+	display: none;
+	background-color: oColorsGetPaletteColor('slate-white-5');
+	padding: oTypographySpacingSize(5);
+	border-left: 1px solid oColorsGetPaletteColor('slate-white-15');
+	@include oGridRespondTo(M) {
+		display: block;
+	};
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	h2,
+	h3 {
+		@include oTypographyMargin($bottom: 3);
+	}
+
+	h2,
+	h3,
+	h4 {
+		text-transform: uppercase;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	ul {
+		@include oTypographyMargin($top: 1);
+		padding-left: oTypographySpacingSize(5);
+	}
+
+	code {
+		font-size: 14px;
+		padding: 2px;
+		background-color: oColorsGetPaletteColor('slate-white-15');
+	}
+
+	pre {
+		font-size: 14px;
+		tab-size: 0;
+		padding: oTypographySpacingSize(2);
+		background-color: oColorsGetPaletteColor('slate-white-15');
+
+		&.overflow {
+			overflow: scroll;
 		}
 	}
 
-	&-center {
-		@include oGridContainer($grid-mode: "fluid", $bleed: true);
+	.github-link {
+		@include oButtons(big, 'primary-mono');
 		width: 100%;
-		padding: 20px;
+		text-transform: uppercase;
+		border: none;
 	}
+}
 
-	&-right {
-		flex-shrink: 2;
-		background-color: oColorsGetPaletteColor('slate-white-5');
-		border-left: 1px solid oColorsGetPaletteColor('slate-white-15');
-		min-width: 25%;
-
-		h2,
-		h3,
-		h4 {
-			text-transform: uppercase;
-		}
-		.registry__container--wrapper {
-			padding: 0 20px;
-		}
-	}
-
-	&--wrapper {
-		top: 0;
-		bottom: 0;
-		overflow-x: hidden;
-	}
-
-	&--sticky {
-		max-height: 100vh;
+.registry__container__sticky {
+	position: sticky;
+	max-height: calc(100vh - #{oTypographySpacingSize(10)});
+	top: oTypographySpacingSize(5);
+	bottom: oTypographySpacingSize(5);
+	overflow-x: hidden;
+	> :first-child {
+		margin-top: 0;
 	}
 }

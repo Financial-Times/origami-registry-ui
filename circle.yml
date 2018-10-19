@@ -3,16 +3,16 @@ jobs:
   test:
     working_directory: ~/origami-registry-ui
     docker:
-      - image: node:8
+      - image: node:10
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: node-10-dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install Node.js dependencies
           command: npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: node-10-dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - run:
@@ -21,9 +21,6 @@ jobs:
       - run:
           name: Run unit tests
           command: make test-unit-coverage
-      - run:
-          name: Run whitesource
-          command: make whitesource
       - run:
           name: Run integration tests
           command: make test-integration

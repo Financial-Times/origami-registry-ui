@@ -1,9 +1,9 @@
 @include oGridRespondTo($until: S) {
-	.registry__container-left,
 	.registry__component--demo-tabs span {
 		display: none;
 	}
 };
+
 
 @include oGridRespondTo($until: M) {
 	.registry__table-cell-toggle,
@@ -28,11 +28,5 @@
 
 	.status-label {
 		margin: 0;
-	}
-};
-
-@include oGridRespondTo($until: L) {
-	.registry__container-right {
-		display: none;
 	}
 };

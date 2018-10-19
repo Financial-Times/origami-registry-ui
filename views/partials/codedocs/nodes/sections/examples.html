@@ -1,0 +1,14 @@
+{{#if this.length }}
+<h2>Example{{#unlessEquals this.length 1}}s{{/unlessEquals}}</h2>
+{{#each this}} 
+    {{#unlessEquals ../length 1}}
+    <h3>Example #{{increment @index}}</h3>
+    {{/unlessEquals}}
+    {{#if this.caption}}
+        {{{markdown this.caption 4}}}
+    {{/if}}
+    <div data-o-component="o-syntax-highlight">
+        <pre><code class='o-syntax-highlight--{{ this.type }}'>{{ this.code }}</code></pre>
+    </div>
+{{/each}}
+{{/if}}
