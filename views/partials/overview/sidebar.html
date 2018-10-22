@@ -1,33 +1,33 @@
 <div class="registry__container__sticky">
 
-		<h2>Library Updates</h2>
-		<p>The registry is updated whenever a new tag is pushed to a repository that has an <code>origami.json</code> file in it. If your repository meets the following criteria then it should be ingested within 5 minutes:</p>
+	<h2>Library Updates</h2>
+	<p>The registry is updated whenever a new tag is pushed to a repository that has an <code>origami.json</code> file in it. If your repository meets the following criteria then it should be ingested within 5 minutes:</p>
 
-		<ul>
-			<li>
-				It lives in the
-				<a class="link" href="https://github.com/Financial-Times">Financial-Times GitHub organisation</a>
-			</li>
-			<li>
-				It contains a valid <code>origami.json</code> file
-				(see <a class="link" href="http://origami.ft.com/docs/syntax/origamijson/">the spec</a> for more information)
-			</li>
-			<li>
-				It has at least one git tag which complies with
-				<a class="link" href="https://semver.org/">semantic versioning</a>
-			</li>
-		</ul>
+	<ul>
+		<li>
+			It lives in the
+			<a class="link" href="https://github.com/Financial-Times">Financial-Times GitHub organisation</a>
+		</li>
+		<li>
+			It contains a valid <code>origami.json</code> file
+			(see <a class="link" href="http://origami.ft.com/docs/syntax/origamijson/">the spec</a> for more information)
+		</li>
+		<li>
+			It has at least one git tag which complies with
+			<a class="link" href="https://semver.org/">semantic versioning</a>
+		</li>
+	</ul>
 
-		<h2>Bower Registry</h2>
+	<h2>Bower Registry</h2>
 
-		<p>The Origami components library provides a read-only API conforming to the Bower Registry API spec (excluding registration and publishing).  To specify the Origami components library as your source for Bower components, create a <code>.bowerrc</code> file in your home directory or the root of your project's working tree, with the following content:</p>
+	<p>The Origami components library provides a read-only API conforming to the Bower Registry API spec (excluding registration and publishing).  To specify the Origami components library as your source for Bower components, create a <code>.bowerrc</code> file in your home directory or the root of your project's working tree, with the following content:</p>
 
-		<pre class="overflow"><code>{
-			"registry": {
-				"search": [
-					"https://origami-bower-registry.ft.com",
-					"https://registry.bower.io"
-				]
-			}
-		}</code></pre>
+	<pre class="overflow"><code>{
+	  "registry": {
+	    "search": [
+	      "https://origami-bower-registry.ft.com",
+	      "https://registry.bower.io"
+	    ]
+	  }
+	}</code></pre>
 </div>
