@@ -73,7 +73,7 @@ class FilterForm {
 
 		// If the filters haven't changed, exit early. Otherwise
 		// set the last filter to the new value
-		if (this.lastFilter === queryString) {
+		if (this.lastFilter === queryString && !feelingLucky) {
 			return;
 		}
 		this.lastFilter = queryString;
