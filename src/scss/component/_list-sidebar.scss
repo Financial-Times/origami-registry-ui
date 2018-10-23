@@ -1,0 +1,42 @@
+.registry__sidebar-list {
+	&,
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li:not([data-o-component-category]) > ul {
+			padding-left: oTypographySpacingSize(3);
+			@include oTypographyMargin($top: 3);
+			@include oTypographySans(0);
+		}
+	}
+
+	[aria-hidden="true"] {
+		display: none;
+	}
+}
+
+.registry__sidebar-list-title {
+	@include oTypographySansBold(2);
+	@include oTypographyMargin($bottom: 3);
+	@include oTypographyMargin($top: 5);
+	display: block;
+}
+
+.registry__sidebar-list-item {
+	@include oTypographyMargin($bottom: 3);
+	overflow-wrap: break-word;
+
+	a {
+		@include oTypographyLinkCustom(
+			$baseColor: 'slate',
+			$hoverColor: 'slate',
+			$backgroundColor: 'slate-white-5',
+			$outlineColor: 'teal-100'
+		);
+
+		&:not(:hover) {
+			border-bottom: none;
+		}
+	}
+}
