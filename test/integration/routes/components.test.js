@@ -39,19 +39,19 @@ describe('GET /components', () => {
 
 			link = listItems[0].querySelector('[data-test=component-link]');
 			assert.strictEqual(link.getAttribute('href'), '/components/o-example-active@2.0.0');
-			assert.strictEqual(link.textContent.trim(), 'o-example-active');
+			assert.include(link.textContent.trim(), 'o-example-active');
 
 			link = listItems[1].querySelector('[data-test=component-link]');
 			assert.strictEqual(link.getAttribute('href'), '/components/o-example-maintained@1.5.0');
-			assert.strictEqual(link.textContent.trim(), 'o-example-maintained');
+			assert.include(link.textContent.trim(), 'o-example-maintained');
 
 			link = listItems[2].querySelector('[data-test=component-link]');
 			assert.strictEqual(link.getAttribute('href'), '/components/o-example-deprecated@1.0.0');
-			assert.strictEqual(link.textContent.trim(), 'o-example-deprecated');
+			assert.include(link.textContent.trim(), 'o-example-deprecated');
 
 			link = listItems[3].querySelector('[data-test=component-link]');
 			assert.strictEqual(link.getAttribute('href'), '/components/n-example-active@1.2.3');
-			assert.strictEqual(link.textContent.trim(), 'n-example-active');
+			assert.include(link.textContent.trim(), 'n-example-active');
 		});
 	});
 });

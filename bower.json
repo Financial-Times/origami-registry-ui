@@ -23,6 +23,7 @@
     "o-normalise": "^1.6.2",
     "o-overlay": "^2.4.1",
     "o-table": "^6.8.1",
-    "o-visual-effects": "^2.0.3"
+    "o-visual-effects": "^2.0.3",
+    "o-loading": "^2.2.2"
   }
 }

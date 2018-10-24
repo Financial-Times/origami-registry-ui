@@ -8,9 +8,10 @@
 	<div class="o-forms">
 		<label for="filter-search" class="o-forms__label">Search components</label>
 		<div class="o-forms__additional-info">Filter components by name or tag</div>
-		<div class="registry__search-bar">
-			<input id="filter-search" type="search" name="search" value="{{filter.search}}" class="o-forms__text"/>
+		<div class="registry__search-bar registry__form-search">
+			<input id="filter-search" type="text" aria-role="search" name="search" value="{{filter.search}}" class="o-forms__text"/>
 			<input type="submit" value="Filter" class="registry__filter-button o--if-no-js"/>
+			<span class="registry__form-search-loading"></span>
 		</div>
 	</div>
 

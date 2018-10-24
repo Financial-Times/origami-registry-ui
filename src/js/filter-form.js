@@ -1,7 +1,5 @@
 'use strict';
 
-const repoListing = require('../../lib/repo-listing');
-
 // Simple debounce function for throttling input
 function debounce(fn, delay) {
 	let timer = null;
@@ -14,11 +12,6 @@ function debounce(fn, delay) {
 		}, delay);
 	};
 }
-
-// Debounced static push state
-const debouncedPushState = debounce((data, url) => {
-	window.history.pushState(data, '', url);
-}, 600);
 
 // Simple query string parsing
 function parseQueryString(queryString) {
@@ -48,53 +41,97 @@ class FilterForm {
 			window.addEventListener('popstate', this.handlePopStateEvents.bind(this));
 		}
 
-		const handleFormChangeEvent = this.handleFormChangeEvent.bind(this);
-		this.formElement.addEventListener('submit', handleFormChangeEvent);
-		this.formElement.addEventListener('input', handleFormChangeEvent);
-		this.formElement.addEventListener('change', handleFormChangeEvent);
+		// Bind and set up event handlers
+		this.handleFormChangeEvent = this.handleFormChangeEvent.bind(this);
+		this.handleFormChangeEventImmediate = this.handleFormChangeEventImmediate.bind(this);
+		this.handleFormChangeEventDebounced = debounce(this.handleFormChangeEventImmediate, 400);
+
+		this.formElement.addEventListener('submit', this.handleFormChangeEvent);
+		this.formElement.addEventListener('input', this.handleFormChangeEvent);
+		this.formElement.addEventListener('change', this.handleFormChangeEvent);
 	}
 
 	/**
-	 * Handle the form changing events.
+	 * Handle the form changing events, switching between immediate and debounced variants.
 	 */
 	handleFormChangeEvent(event) {
-		event.preventDefault();
-		const queryString = this.getUrlEncodedFilterValues();
-		const feelingLucky = (event.type === 'submit');
-		this.triggerFilterEvent(feelingLucky);
-		if (this.lastFilter !== queryString) {
-			this.lastFilter = queryString;
-			if (this.alterBrowserHistory) {
-				debouncedPushState({
-					oFilterFormFilters: this.getFilterValues()
-				}, `?${queryString}`);
+		if (event) {
+			event.preventDefault();
+			if (event.type === 'submit') {
+				return this.handleFormChangeEventImmediate(event);
 			}
 		}
+		this.handleFormChangeEventDebounced(event);
+	}
+
+	/**
+	 * Handle the form changing events immediately.
+	 */
+	handleFormChangeEventImmediate(event) {
+		const queryString = this.getUrlEncodedFilterValues();
+		const feelingLucky = (event && event.type === 'submit');
+
+		// If the filters haven't changed, exit early. Otherwise
+		// set the last filter to the new value
+		if (this.lastFilter === queryString && !feelingLucky) {
+			return;
+		}
+		this.lastFilter = queryString;
+
+		// Perform the search
+		return this.searchForRepos(feelingLucky).then(() => {
+			if (this.alterBrowserHistory) {
+				window.history.pushState({
+					oFilterFormFilters: this.getFilterValues()
+				}, '', `?${queryString}`);
+			}
+		});
+	}
+
+	/**
+	 * Search for repositories based on a set of filters
+	 */
+	searchForRepos(feelingLucky) {
+		const loadingClass = 'registry__form--loading';
+		this.formElement.classList.add(loadingClass);
+		document.dispatchEvent(new CustomEvent('o.filterFormInitSearch'));
+		return fetch(`/components.json?${this.getUrlEncodedFilterValues()}`)
+			.then(response => {
+				return response.json();
+			})
+			.then(repos => {
+				if (feelingLucky && repos.length) {
+					return document.location = `/components/${repos[0].name}@${repos[0].version}`;
+				}
+				this.formElement.classList.remove(loadingClass);
+				document.dispatchEvent(new CustomEvent('o.filterFormSuccess', {
+					detail: {
+						repos
+					}
+				}));
+			})
+			.catch(error => {
+				this.formElement.classList.remove(loadingClass);
+				document.dispatchEvent(new CustomEvent('o.filterFormError', {
+					detail: {
+						error
+					}
+				}));
+			});
 	}
 
 	/**
 	 * Handle the window push-state changing.
 	 */
 	handlePopStateEvents(event) {
-		let filter;
+		let filter = {};
 		if (event.state && event.state.oFilterFormFilters) {
 			filter = event.state.oFilterFormFilters;
 		} else if (document.location.search) {
 			filter = parseQueryString(document.location.search);
-		} else {
-			filter = repoListing.defaultFilter;
 		}
 		this.setFilterValues(filter);
-		this.triggerFilterEvent();
-	}
-
-	/**
-	 * Trigger the filter event
-	 */
-	triggerFilterEvent(feelingLucky = false) {
-		const detail = this.getFilterValues();
-		detail.feelingLucky = feelingLucky;
-		document.dispatchEvent(new CustomEvent('o.filterFormUpdate', {detail}));
+		this.handleFormChangeEvent();
 	}
 
 	/**

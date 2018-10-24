@@ -8,6 +8,28 @@
 	fieldset.o-forms {
 		@include oTypographyPadding($top: 0);
 	}
+
+	&-search {
+		position: relative;
+	}
+
+	&-search-loading {
+		@include oLoading();
+	}
+	&-search-loading {
+		@include oLoadingColor('dark');
+		width: 10px;
+		height: 10px;
+		border-width: 2px;
+		position: absolute;
+		right: 12px;
+		bottom: 12px;
+		display: none;
+	}
+
+	&--loading &-search-loading {
+		display: block;
+	}
 }
 
 .registry__search-bar {
