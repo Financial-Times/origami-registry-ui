@@ -51,23 +51,3 @@
 		}
 	}
 }
-
-// Compact component list
-.registry__component-list.registry__component-list--compact {
-	.registry__component-list-item {
-		padding: 0;
-		@include oTypographyMargin($bottom: 3);
-
-		&-link,
-		&-detail,
-		&-name {
-			font-weight: normal;
-			padding: 0;
-		}
-
-		&-description,
-		&-stats {
-			display: none;
-		}
-	}
-}
