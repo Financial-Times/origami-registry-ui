@@ -56,8 +56,10 @@ We configure Origami Registry UI using environment variables. In development, co
 
   * `NODE_ENV`: The environment to run the application in. One of `production`, `development` (default), or `test` (for use in automated tests).
   * `PORT`: The port to run the application on.
-  * `REPO_DATA_API_KEY`: The [Repo Data] API key to use when authenticating with that service.
-  * `REPO_DATA_API_SECRET`: The [Repo Data] API secret to use when authenticating with that service.
+  * `REPO_DATA_API_KEY`: The [Repo Data](repo-data) API key to use when authenticating with that service.
+  * `REPO_DATA_API_SECRET`: The [Repo Data](repo-data) API secret to use when authenticating with that service.
+  * `CODEDOCS_ENDPOINT`: The [Origami Codedocs](origami-codedocs) endpoint.
+  * `CODEDOCS_API_KEY`: The [Origami Codedocs](origami-codedocs) API key used to authenticate.
 
 ### Required in Heroku
 
@@ -189,3 +191,4 @@ The Financial Times has published this software under the [MIT license][license]
 [sentry-qa]: https://sentry.io/nextftcom/registry-ui-qa
 [service-options]: https://github.com/Financial-Times/origami-service#options
 [splunk]: https://financialtimes.splunkcloud.com/en-US/app/search/search?q=app%3Dorigami-registry-ui-*
+[origami-codedocs]: https://github.com/Financial-Times/origami-codedocs
