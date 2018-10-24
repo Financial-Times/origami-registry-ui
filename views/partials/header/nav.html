@@ -37,7 +37,7 @@
 					<ul class="o-header__subnav-list o-header__subnav-list--children" aria-label="Subsections">
 						<li class="o-header__subnav-item">
 							<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}" {{#ifEquals nav 'index'}}aria-selected="true"{{/ifEquals}}>
-								{{#if demos.length}}Demos{{else}}Info{{/if}}
+								{{#ifEquals component.type 'module'}}Demos{{else}}Info{{/ifEquals}}
 							</a>
 						</li>
 						<li class="o-header__subnav-item">
@@ -55,7 +55,7 @@
 						{{#if component.showJSDoc}}
 							<li class="o-header__subnav-item">
 								<a class="o-header__subnav-link" href="/components/{{ component.name }}@{{ component.version }}/jsdoc" {{#ifEquals nav 'jsdoc'}}aria-selected="true"{{/ifEquals}} >
-									JsDoc
+									JSDoc
 								</a>
 							</li>
 						{{/if}}
