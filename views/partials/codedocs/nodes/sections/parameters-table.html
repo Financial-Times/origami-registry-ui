@@ -1,25 +1,31 @@
-<table class="o-table o-table--responsive-scroll o-table--code-docs" data-o-component="o-table">
-    <thead>
-        <tr>
-            <th data-o-table-heading-disable-sort class="o-table__code-docs-shrink">parameter</th>
-            <th data-o-table-heading-disable-sort class="o-table__code-docs-shrink">type</th>
-            <th data-o-table-heading-disable-sort class="o-table__code-docs-shrink">default</th>
-            <th data-o-table-heading-disable-sort>description</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each this}}
-        <tr>
-            <td class="o-table__code-docs-shrink">{{name}}{{#if optional}} (optional){{/if}}</td>
-            <td class="o-table__code-docs-shrink">
-                {{#each type}}
-                    {{ this }}
-                    {{#unless @last}} | {{/unless}}
-                {{/each}}
-            </td>
-            <td class="o-table__code-docs-shrink">{{default}}</td>
-            <td>{{description}}</td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+<div class="o-table-container">
+    <div class="o-table-overlay-wrapper">
+    	<div class="o-table-scroll-wrapper">
+            <table class="o-table o-table--horizontal-lines o-table--responsive-overflow o-table--code-docs" data-o-table-sortable="false" data-o-component="o-table" data-o-table-responsive="overflow">
+                <thead>
+                    <tr>
+                        <th scope="col" role="columnheader" class="o-table__code-docs-shrink">parameter</th>
+                        <th scope="col" role="columnheader" class="o-table__code-docs-shrink">type</th>
+                        <th scope="col" role="columnheader" class="o-table__code-docs-shrink">default</th>
+                        <th scope="col" role="columnheader">description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each this}}
+                    <tr>
+                        <td class="o-table__code-docs-shrink">{{name}}{{#if optional}} (optional){{/if}}</td>
+                        <td class="o-table__code-docs-shrink">
+                            {{#each type}}
+                                {{ this }}
+                                {{#unless @last}} | {{/unless}}
+                            {{/each}}
+                        </td>
+                        <td class="o-table__code-docs-shrink">{{default}}</td>
+                        <td>{{description}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
