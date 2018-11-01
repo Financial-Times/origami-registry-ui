@@ -1,5 +1,4 @@
 $o-normalise-is-silent: false;
-$o-table-is-silent: false;
 $o-brand: 'internal';
 
 @import 'o-colors/main';
@@ -28,9 +27,15 @@ $o-brand: 'internal';
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);
+@include oTable($opts: ('responsive-overflow', 'lines'));
 
 html, body {
 	height: 100%;
+}
+
+.o-table-container,
+.o-table {
+    margin-bottom: oTypographySpacingSize(4);
 }
 
 .registry {
