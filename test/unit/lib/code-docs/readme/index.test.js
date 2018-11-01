@@ -54,7 +54,7 @@ describe('lib/code-docs/readme/index', () => {
     describe('formatTables', () => {
         it('formats tables for o-table "responsive scroll"', () => {
             const codeReadme = new Readme('| example | number |\n|---------|--------|\n| 1       | one    |\n| 2       | two    |\n');
-            assert.ok(codeReadme.toString().includes('<div class="o-table-container"><div class="o-table-overlay-wrapper"><div class="o-table-scroll-wrapper"><table class="o-table o-table--horizontal-lines o-table--responsive-scroll" data-o-component="o-table" data-o-table-responsive="overflow">'));
+            assert.ok(codeReadme.toString().includes('<div class="o-table-container"><div class="o-table-overlay-wrapper"><div class="o-table-scroll-wrapper"><table class="o-table o-table--horizontal-lines o-table--responsive-overflow" data-o-component="o-table" data-o-table-responsive="overflow">'));
         });
     });
     describe('formatAnchors', () => {
