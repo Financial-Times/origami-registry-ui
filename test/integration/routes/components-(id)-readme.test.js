@@ -29,6 +29,11 @@ describe('GET /components/:componentId/readme', () => {
                 dom = new JSDOM((await request.then()).text);
             });
 
+            it('includes a canonical url for the latest component version', () => {
+                const html = dom.window.document.documentElement.outerHTML;
+                assert.include(html, '<link rel="canonical" href="/components/o-example-active/readme">');
+            });
+
             it('includes the component\'s readme', () => {
                 const readmeContent = dom.window.document.querySelector('#test-readme');
                 assert.isNotNull(readmeContent);
