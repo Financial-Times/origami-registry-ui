@@ -47,6 +47,11 @@ describe('GET /components/:componentId', () => {
 				assert.strictEqual(supportStatus.textContent.trim(), 'active');
 			});
 
+			it('includes a canonical url for the latest component version', () => {
+				const html = dom.window.document.documentElement.outerHTML;
+				assert.include(html, '<link rel="canonical" href="/components/o-example-active">');
+			});
+
 		});
 
 	});
