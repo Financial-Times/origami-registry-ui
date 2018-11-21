@@ -9,7 +9,7 @@
 	"hostPlatform": "Heroku",
 	"primaryContact": {
 		"contact": [{
-			"dataItemID": "origamisupport"
+			"dataItemID": "origami-team"
 		}]
 	},
 	"programme": {
@@ -19,12 +19,12 @@
 	},
 	"productOwner": {
 		"contact": [{
-			"dataItemID": "origamisupport"
+			"dataItemID": "origami-team"
 		}]
 	},
 	"technicalLead": {
 		"contact": [{
-			"dataItemID": "origamisupport"
+			"dataItemID": "origami-team"
 		}]
 	},
 	"monitoring": "TODO",
