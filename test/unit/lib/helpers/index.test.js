@@ -24,6 +24,24 @@ describe('helpers', () => {
 		assert.strictEqual(helper.json(string), '{"string":"lowercase"}');
 	});
 
+	describe('.markdown', () => {
+		it('converts markdown to html', () => {
+			const string = 'some copy';
+			assert.strictEqual(helper.markdown(string), '<p>some copy</p>');
+		});
+
+		it('supports "header level start"', () => {
+			const string = '#my-h1\n##my-h2';
+			const headerLevelStart = 3;
+			assert.strictEqual(helper.markdown(string, headerLevelStart), '<h3 id="myh1">my-h1</h3>\n<h4 id="myh2">my-h2</h4>');
+		});
+
+		it('escapes HTML so code comments cannot break registry ui"', () => {
+			const string = 'Base tables styles - add to <table>';
+			assert.strictEqual(helper.markdown(string), '<p>Base tables styles - add to \<table\></p>');
+		});
+	});
+
 	describe('conditional helpers', () => {
 		let args = [];
 		const opts = {
