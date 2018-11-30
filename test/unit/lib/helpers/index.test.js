@@ -36,9 +36,14 @@ describe('helpers', () => {
 			assert.strictEqual(helper.markdown(string, headerLevelStart), '<h3 id="myh1">my-h1</h3>\n<h4 id="myh2">my-h2</h4>');
 		});
 
-		it('escapes HTML so code comments cannot break registry ui"', () => {
+		it('escapes HTML with backslashes', () => {
+			const string = 'Base tables styles - add to \<table\>';
+			assert.strictEqual(helper.markdown(string), '<p>Base tables styles - add to &lt;table&gt;</p>');
+		});
+
+		it('automatically escapes HTML tags so code comments cannot break registry ui"', () => {
 			const string = 'Base tables styles - add to <table>';
-			assert.strictEqual(helper.markdown(string), '<p>Base tables styles - add to \<table\></p>');
+			assert.strictEqual(helper.markdown(string), '<p>Base tables styles - add to &lt;table&gt;</p>');
 		});
 	});
 
