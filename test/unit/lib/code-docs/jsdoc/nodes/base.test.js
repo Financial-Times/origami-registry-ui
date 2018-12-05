@@ -166,7 +166,7 @@ describe('lib/code-docs/jsdoc/nodes/base', () => {
             assert.deepEqual(node.parameters, [
                 {
                     'name': doclet.params[0].name,
-                    'type': ['String'],
+                    'types': [{ name: 'String' }],
                     'description': doclet.params[0].description,
                     'default': '',
                     'optional': '',
