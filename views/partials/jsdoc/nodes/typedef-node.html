@@ -1,0 +1,7 @@
+{{!-- {{ A typedef may take one of many forms. }} --}}
+{{> jsdoc/nodes/generic this }}
+
+{{#if this.types.length }}
+<h2>Type{{#unlessEquals this.types.length 1}}s{{/unlessEquals}}</h2>
+<p>{{#each this.types}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>
+{{/if}}
