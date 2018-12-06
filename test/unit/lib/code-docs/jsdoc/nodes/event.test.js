@@ -15,13 +15,11 @@ describe('lib/code-docs/jsdoc/nodes/event', () => {
         assert.equal(node.label, 'Event', 'Did not add the "label" property as expected.');
         assert.deepEqual(node.type, ['object'], 'Did not add the "type" property as expected.');
         assert.deepEqual(node.examples, [], 'Did not add the "examples" property as expected.');
-        assert.deepEqual(node.properties, [
-            {
-                'name': eventDoclet.properties[0].name,
-                'type': eventDoclet.properties[0].type.names,
-                'description': eventDoclet.properties[0].description
-            }
-        ], 'Did not add the "properties" property as expected.');
+        assert.deepEqual(node.properties, [{
+            'description': 'Indicates whether the snowball is tightly packed.',
+            'name': 'detail.isPacked',
+            'type': [ 'boolean' ]
+        }], 'Did not add the "properties" property as expected.');
     });
 
     it('adds properties for a event doclet which has no type or properties defined ', () => {

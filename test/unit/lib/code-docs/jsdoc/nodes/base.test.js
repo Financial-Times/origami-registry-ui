@@ -174,6 +174,26 @@ describe('lib/code-docs/jsdoc/nodes/base', () => {
                 }
             ], 'Did not add parameters as expected.');
         });
+        it('Adds custom parameter "types" property from doclets (added by the registry) to node', () => {
+            const doclet = comprehensiveDoclet;
+            // Add custom param type mock.
+            doclet.params[0].types = [
+                {
+                    name: 'String'
+                },
+                {
+                    name: 'opts',
+                    longname: 'Thing~opts'
+                }
+            ];
+            const node = new JsDocBaseNode(doclet);
+            node.addParameters(doclet);
+            assert.deepEqual(
+                node.parameters[0].types,
+                [{ name: 'String' }, { name: 'opts', longname: 'Thing~opts' }],
+                'Did not add custom parameter types as expected.'
+            );
+        });
         it('Adds empty parameters array to node if the doclet has no parameters', () => {
             const doclet = simpleDoclet;
             const node = new JsDocBaseNode(doclet);
