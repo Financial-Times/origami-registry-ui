@@ -3,8 +3,8 @@
     <ul>
         <li>
             <a class="link" href="#{{longname}}">{{name}}</a>
-            {{#if type}}
-                {{#each type}}{{this}}{{#unless @last}} | {{/unless}}{{/each}}
+            {{#if types}}
+                {{#each types}}{{this}}{{#unless @last}} | {{/unless}}{{/each}}
             {{/if}}
             {{#if description}}
                 - {{description}}
@@ -12,3 +12,4 @@
         </li>
     </ul>
 {{/if}}
+

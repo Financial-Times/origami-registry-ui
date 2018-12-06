@@ -13,12 +13,12 @@ describe('lib/code-docs/jsdoc/nodes/event', () => {
         assert.equal(node.longname, eventDoclet.longname, 'Did not add the "longname" property as expected.');
         assert.equal(node.group, 'events', 'Did not add the "group" property as expected.');
         assert.equal(node.label, 'Event', 'Did not add the "label" property as expected.');
-        assert.deepEqual(node.type, ['object'], 'Did not add the "type" property as expected.');
+        assert.deepEqual(node.types, ['object'], 'Did not add the "type" property as expected.');
         assert.deepEqual(node.examples, [], 'Did not add the "examples" property as expected.');
         assert.deepEqual(node.properties, [{
             'description': 'Indicates whether the snowball is tightly packed.',
             'name': 'detail.isPacked',
-            'type': [ 'boolean' ]
+            'types': [ 'boolean' ]
         }], 'Did not add the "properties" property as expected.');
     });
 
@@ -27,7 +27,7 @@ describe('lib/code-docs/jsdoc/nodes/event', () => {
         assert.equal(node.longname, eventDoclet.longname, 'Did not add the "longname" property as expected.');
         assert.equal(node.group, 'events', 'Did not add the "group" property as expected.');
         assert.equal(node.label, 'Event', 'Did not add the "label" property as expected.');
-        assert.deepEqual(node.type, [], 'Did not add the "type" property as expected.');
+        assert.deepEqual(node.types, [], 'Did not add the "type" property as expected.');
         assert.deepEqual(node.examples, [], 'Did not add the "examples" property as expected.');
         assert.deepEqual(node.properties, [], 'Did not add the "properties" property as expected.');
     });

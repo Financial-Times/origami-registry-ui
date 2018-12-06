@@ -8,11 +8,11 @@
             {{else}}
                 <strong>{{name}}</strong>
             {{/if}}
-            {{#if type}}
-                - ({{#each type}}type{{#unlessEquals ../type.length 1}}s{{/unlessEquals}}: {{this}}{{#unless @last}} | {{/unless}}{{/each}})
+            {{#if types}}
+                - ({{#each types}}type{{#unlessEquals ../types.length 1}}s{{/unlessEquals}}: {{this}}{{#unless @last}} | {{/unless}}{{/each}})
             {{/if}}
             {{#if description}}
-                {{#unless type}}-{{/unless}}
+                {{#unless types}}-{{/unless}}
                 {{description}}
             {{/if}}
         </li>

@@ -12,25 +12,24 @@ describe('lib/code-docs/jsdoc/nodes/mixin', () => {
     it('adds properties for a doclet which represents a typedef', () => {
         const doclet = objectTypedefDoclet;
         const node = new JsDocTypedefNode(doclet);
+        assert.equal(node.longname, doclet.longname, 'Did not add the "longname" property as expected.');
+        assert.equal(node.group, 'typedefs', 'Did not add the "group" property as expected.');
+        assert.equal(node.label, 'Typedef', 'Did not add the "label" property as expected.');
+        assert.deepEqual(node.types, ['Object'], 'Did not add the "type" property as expected.');
+        assert.deepEqual(node.examples, [], 'Did not add the "examples" property as expected.');
         assert.deepEqual(node.properties, [{
             name: 'sortable',
-            type: ['Bool'],
+            types: ['Bool'],
             description: '[true] - Toggle the component\'s sort feature.'
         },
         {
             name: 'expanded',
-            type: ['Undefined', 'Bool'],
+            types: ['Undefined', 'Bool'],
             description: '[Undefined] - Toggle the component expand feature.'
         }], 'Did not add the "properties" property as expected.');
     });
 
-    it('adds examples for a doclet which represents a typedef', () => {
-        const doclet = functionTypedefDoclet;
-        const node = new JsDocTypedefNode(doclet);
-        assert.deepEqual(node.examples, [], 'Did not add the "examples" property as expected.');
-    });
-
-    it('adds parameters for a doclet which represents a typedef', () => {
+    it('adds parameters for a typedef doclet which represents a function', () => {
         const doclet = functionTypedefDoclet;
         const node = new JsDocTypedefNode(doclet);
         assert.deepEqual(node.parameters, [
@@ -45,9 +44,9 @@ describe('lib/code-docs/jsdoc/nodes/mixin', () => {
         ], 'Did not add the "parameters" property as expected.');
     });
 
-    it('adds returns for a doclet which represents a typedef', () => {
+    it('adds returns for a typedef doclet which represents a function with return values', () => {
         const doclet = functionTypedefDoclet;
         const node = new JsDocTypedefNode(doclet);
-        assert.deepEqual(node.returns, { type: ['String', 'Object'], description: '' }, 'Did not add the "returns" property as expected.');
+        assert.deepEqual(node.returns, { types: ['String', 'Object'], description: '' }, 'Did not add the "returns" property as expected.');
     });
 });

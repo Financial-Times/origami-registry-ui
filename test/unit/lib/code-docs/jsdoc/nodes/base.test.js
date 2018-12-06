@@ -208,7 +208,7 @@ describe('lib/code-docs/jsdoc/nodes/base', () => {
             const node = new JsDocBaseNode(doclet);
             node.addReturns(doclet);
             assert.deepEqual(node.returns, {
-                'type': ['String'],
+                'types': ['String'],
                 'description': 'Returns a hello.'
             }, 'Did not add return data as expected.');
         });
