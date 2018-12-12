@@ -15,10 +15,15 @@
                     <tr>
                         <td class="o-table__code-docs-shrink">{{name}}{{#if optional}} (optional){{/if}}</td>
                         <td class="o-table__code-docs-shrink">
-                            {{#each type}}
-                                {{ this }}
+                            {{#each types}}
+                                {{#if this.longname}}
+                                    <a class="link" href="#{{ this.name }}">{{ this.name }}</a>
+                                {{else}}
+                                    {{ this.name }}
+                                {{/if}}
                                 {{#unless @last}} | {{/unless}}
                             {{/each}}
+
                         </td>
                         <td class="o-table__code-docs-shrink">{{default}}</td>
                         <td>{{description}}</td>

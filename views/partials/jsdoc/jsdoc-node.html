@@ -17,6 +17,9 @@
     {{#ifEquals kind 'mixin'}}
         {{> jsdoc/nodes/mixin-node }}
     {{/ifEquals}}
+    {{#ifEquals kind 'typedef'}}
+        {{> jsdoc/nodes/typedef-node }}
+    {{/ifEquals}}
     {{#ifEquals kind 'constant'}}
         {{> jsdoc/nodes/property-node }}
     {{/ifEquals}}

@@ -18,10 +18,10 @@ describe('lib/code-docs/sassdoc/index', () => {
         });
     });
 
-    describe('supportedDoclets', () => {
+    describe('supportedDocletKinds', () => {
         it('returns an array of supported doclet kinds', () => {
-            assert.isTrue(Array.isArray(SassDoc.supportedDoclets()), 'Did not return an array.');
-            assert.isTrue(SassDoc.supportedDoclets().includes('mixin'), 'Expected at least mixin doclets to be supported.');
+            assert.isTrue(Array.isArray(SassDoc.supportedDocletKinds()), 'Did not return an array.');
+            assert.isTrue(SassDoc.supportedDocletKinds().includes('mixin'), 'Expected at least mixin doclets to be supported.');
         });
     });
 

@@ -3,12 +3,16 @@
     <ul>
     {{#each this}}
         <li>
-            <a class="link" href="#{{longname}}">{{name}}</a>
-            {{#if type}}
-                - ({{#each type}}type{{#unlessEquals ../type.length 1}}s{{/unlessEquals}}: {{this}}{{#unless @last}} | {{/unless}}{{/each}})
+            {{#if longname}}
+                <a class="link" href="#{{longname}}">{{name}}</a>
+            {{else}}
+                <strong>{{name}}</strong>
+            {{/if}}
+            {{#if types}}
+                - ({{#each types}}type{{#unlessEquals ../types.length 1}}s{{/unlessEquals}}: {{this}}{{#unless @last}} | {{/unless}}{{/each}})
             {{/if}}
             {{#if description}}
-                {{#unless type}}-{{/unless}}
+                {{#unless types}}-{{/unless}}
                 {{description}}
             {{/if}}
         </li>
