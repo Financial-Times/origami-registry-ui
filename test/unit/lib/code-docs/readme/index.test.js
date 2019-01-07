@@ -61,7 +61,7 @@ describe('lib/code-docs/readme/index', () => {
         });
     });
     describe('formatAnchors', () => {
-        it('formats in-pache anchor links as Origami style links', () => {
+        it('formats in-page anchor links as Origami style links', () => {
             const anchorReadme = new Readme('[anchor link](#myanchor)', versionTag, githubUrl);
             assert.ok(anchorReadme.toString().includes('<a href="#myanchor" class="link">anchor link</a>'));
         });
