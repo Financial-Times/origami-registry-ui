@@ -1,47 +1,13 @@
-.registry__component {
-	&-info {
-		@include oTypographyPadding($bottom: 3);
-		@include oTypographyMargin($bottom: 6);
-		display: flex;
-		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
-	}
+.registry__component-info {
+	@include oTypographyPadding($bottom: 3);
+	@include oTypographyMargin($bottom: 6);
+	display: flex;
+	border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
+}
 
-	&-header {
-		display: flex;
-		flex-direction: column;
-	}
-
-	// &-name {
-	// 	@include oTypographyProductHeadingLevel1();
-	// 	@include oTypographyMargin($bottom: 3);
-	// }
-
-	&-description {
-		// @include oTypographySize(1);
-		@include oTypographyMargin($top: 0, $bottom: 0);
-	}
-
-	// &-links {
-		// @include oTypographyBold('sans');
-		// @include oTypographyMargin($top: 2);
-
-		// .external-link {
-		// 	color: oColorsGetPaletteColor('slate-white-80');
-		// 	border-bottom: none;
-		// 	text-decoration: none;
-		// 	padding-right: 8px;
-		//
-		// 	&:hover {
-		// 		color: oColorsGetPaletteColor('slate');
-		// 	}
-		//
-		// 	&:after {
-		// 		content: '';
-		// 		@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('slate'), 20);
-		// 		vertical-align: bottom;
-		// 	}
-		// }
-	// }
+.registry__component-header {
+	display: flex;
+	flex-direction: column;
 }
 
 .registry__component-state {

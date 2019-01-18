@@ -45,20 +45,20 @@ html, body {
     margin-bottom: oTypographySpacingSize(4);
 }
 
+.registry-link--external {
+	@include oTypographyLinkExternal();
+}
+
 .registry {
-	@include oTypographySans(0);
-
-	.link {
-		@include oTypographyLink();
-	}
-
-	.link-external {
-		@include oTypographyLinkExternal();
-	}
-
-	blockquote {
-		@include oTypographyBlockquote();
-	}
+	// @include oTypographySans(0);
+	//
+	// .link {
+	// 	@include oTypographyLink();
+	// }
+	//
+	// blockquote {
+	// 	@include oTypographyBlockquote();
+	// }
 
 	.secondary-button {
 		@include oButtons(big, mono);
