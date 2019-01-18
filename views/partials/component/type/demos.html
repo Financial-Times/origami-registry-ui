@@ -1,28 +1,28 @@
 <div class="registry__component--demo-container">
 	{{#demos}}
 		<div class="registry__component--demo">
-			<h3 class="" id="demo-{{slugify title}}">
+			<h3 id="demo-{{slugify title}}">
 				{{capitalise title}}
 			</h3>
 			{{#if description}}
-				<p class="registry__component--demo-description">{{description}}</p>
+				<p>{{description}}</p>
 			{{/if}}
 
 			<div class="registry__component--demo-tabs">
-				<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs" role=tablist>
+				<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs o-layout__unstyled-element" role=tablist>
 					{{#if display.html}}
 						{{#if display.live}}
 							<li role=tab>
-								<a href="#{{slugify title}}-demo-{{@index}}">Demo</a>
+								<a href="#{{slugify title}}-demo-{{@index}}" class="o-layout__unstyled-element">Demo</a>
 							</li>
 						{{/if}}
 						<li role=tab>
-							<a href="#{{slugify title}}-html-{{@index}}">HTML</a>
+							<a href="#{{slugify title}}-html-{{@index}}" class="o-layout__unstyled-element">HTML</a>
 						</li>
 					{{/if}}
 				</ul>
 
-				<span><a class="registry__demo-button" href="{{supportingUrls.live}}" target="_blank">Open Demo in a New Tab</a></span>
+				<span><a class="registry__demo-button o-layout__unstyled-element" href="{{supportingUrls.live}}" target="_blank">Open Demo in a New Tab</a></span>
 			</div>
 
 			<div class="registry__component--demo-display">
