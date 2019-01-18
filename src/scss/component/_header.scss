@@ -11,37 +11,37 @@
 		flex-direction: column;
 	}
 
-	&-name {
-		@include oTypographyProductHeadingLevel1();
-		@include oTypographyMargin($bottom: 3);
-	}
+	// &-name {
+	// 	@include oTypographyProductHeadingLevel1();
+	// 	@include oTypographyMargin($bottom: 3);
+	// }
 
 	&-description {
-		@include oTypographySize(1);
+		// @include oTypographySize(1);
 		@include oTypographyMargin($top: 0, $bottom: 0);
 	}
 
-	&-links {
-		@include oTypographyBold('sans');
-		@include oTypographyMargin($top: 2);
+	// &-links {
+		// @include oTypographyBold('sans');
+		// @include oTypographyMargin($top: 2);
 
-		.external-link {
-			color: oColorsGetPaletteColor('slate-white-80');
-			border-bottom: none;
-			text-decoration: none;
-			padding-right: 8px;
-
-			&:hover {
-				color: oColorsGetPaletteColor('slate');
-			}
-
-			&:after {
-				content: '';
-				@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('slate'), 20);
-				vertical-align: bottom;
-			}
-		}
-	}
+		// .external-link {
+		// 	color: oColorsGetPaletteColor('slate-white-80');
+		// 	border-bottom: none;
+		// 	text-decoration: none;
+		// 	padding-right: 8px;
+		//
+		// 	&:hover {
+		// 		color: oColorsGetPaletteColor('slate');
+		// 	}
+		//
+		// 	&:after {
+		// 		content: '';
+		// 		@include oIconsGetIcon('outside-page', oColorsGetPaletteColor('slate'), 20);
+		// 		vertical-align: bottom;
+		// 	}
+		// }
+	// }
 }
 
 .registry__component-state {

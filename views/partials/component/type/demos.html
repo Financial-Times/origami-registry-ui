@@ -1,7 +1,7 @@
 <div class="registry__component--demo-container">
 	{{#demos}}
 		<div class="registry__component--demo">
-			<h3 class="registry__component--demo-title registry__linked-heading" id="demo-{{slugify title}}" data-o-component="o-linked-heading">
+			<h3 class="" id="demo-{{slugify title}}">
 				{{capitalise title}}
 			</h3>
 			{{#if description}}
@@ -32,7 +32,7 @@
 					</div>
 				{{/if}}
 				{{#if display.html}}
-					<div class="o-tabs__tabpanel" data-o-component="o-syntax-highlight" id="{{slugify title}}-html-{{@index}}">
+					<div class="o-tabs__tabpanel" id="{{slugify title}}-html-{{@index}}">
 						{{#if display.plainHTML}}
 							<button class="registry__demo-button select-html">Select Full Code Snippet</button>
 							<pre><code class='o-syntax-highlight--html'>{{{display.highlightedHTML}}}</code></pre>

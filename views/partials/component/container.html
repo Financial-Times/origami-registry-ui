@@ -1,7 +1,35 @@
-<div class="registry__component">
+<div class="o-layout__heading o-layout-typography">
 	{{> component/messages}}
 
-	{{> content}}
+	{{> component/brand-tabs}}
 
-	{{> component/support}}
+	{{> component/header}}
+</div>
+
+<div class="o-layout__query-sidebar o-layout-typography">
+	{{> component/sidebar-nav/main }}
+</div>
+
+<div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
+	{{#if demos}}
+		{{> component/type/demos}}
+	{{/if}}
+
+{{#if images}}
+	{{> component/type/images}}
+{{/if}}
+
+{{#if service}}
+	{{> component/type/service}}
+{{/if}}
+
+{{#ifEither dependencies.bower.length dependencies.npm.length}}
+	{{> component/dependencies dependencies}}
+{{/ifEither}}
+
+{{> component/support}}
+</div>
+
+<div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">
+	{{> component/quickstart-sidebar}}
 </div>

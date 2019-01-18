@@ -8,6 +8,7 @@ $o-brand: 'internal';
 @import 'o-footer-services/main';
 @import 'o-grid/main';
 @import 'o-header-services/main';
+@import 'o-layout/main';
 @import 'o-loading/main';
 @import 'o-normalise/main';
 @import 'o-message/main';
@@ -24,6 +25,12 @@ $o-brand: 'internal';
 @import 'src/scss/layout/main';
 @import 'src/scss/overview/main';
 @import 'src/scss/status-labels';
+
+
+@include oLayout($opts: (
+	'layouts': 'query',
+	'features': ('linked-headings', 'typography')
+));
 
 @include oFontsInclude(MetricWeb, regular);
 @include oFontsInclude(MetricWeb, semibold);

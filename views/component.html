@@ -1,35 +1,11 @@
-<div class="registry__container">
-	<div class="registry__container__left">
-		{{> component/sidebar-nav/main }}
+<div class="o-layout o-layout--query" data-o-component="o-layout">
+	<div class="o-layout__header">
+		 {{> header/main }}
 	</div>
 
-	<div class="registry__container__center">
-		{{#> component/container}}
-			{{#*inline "content"}}
-				{{> component/brand-tabs}}
+	{{> component/container}}
 
-				{{> component/header}}
-
-				{{#if demos}}
-					{{> component/type/demos}}
-				{{/if}}
-
-				{{#if images}}
-					{{> component/type/images}}
-				{{/if}}
-
-				{{#if service}}
-					{{> component/type/service}}
-				{{/if}}
-
-				{{#ifEither dependencies.bower.length dependencies.npm.length}}
-					{{> component/dependencies dependencies}}
-				{{/ifEither}}
-			{{/inline}}
-		{{/component/container}}
-	</div>
-
-	<div class="registry__container__right">
-		{{> component/quickstart-sidebar}}
+	<div class="o-layout__footer">
+		{{> footer}}
 	</div>
 </div>
