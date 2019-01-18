@@ -1,21 +1,16 @@
 .registry__component-support {
-	// @include oTypographySize(1);
 	background-color: oColorsGetPaletteColor('slate-white-5');
 	padding: 16px;
 	margin-bottom: 20px;
 	display: flex;
 
-	h4 {
-		@include oTypographyProductHeadingLevel4();
-	}
-
 	p {
 		@include oTypographyMargin($bottom: 0);
-	}
 
-	span {
-		@include oTypographyBold('sans');
-		text-transform: uppercase;
+		span {
+			@include oTypographyBold('sans');
+			text-transform: uppercase;
+		}
 	}
 
 	a.registry-button {

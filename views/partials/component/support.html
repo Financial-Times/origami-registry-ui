@@ -1,9 +1,9 @@
 <div class="registry__component-support">
 	<div class="registry__component-support--contact">
 		<h4 id="support">Support</h4>
-		<p><span>Email </span><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+		<p class="o-layout__unstyled-element"><span>Email </span><a href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
 		{{#if component.support.channel}}
-		<p><span>Slack </span><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></p>
+		<p class="o-layout__unstyled-element"><span>Slack </span><a href="{{component.support.channel.url}}">{{component.support.channel.name}}</a></p>
 		{{/if}}
 	</div>
 	<a href="{{component.supportingUrls.issues}}" class="o-layout__unstyled-element registry-button">Report an issue on GitHub</a>
