@@ -56,35 +56,33 @@
 	}
 }
 
-.registry__component--image {
-	&-grid {
-		display: flex;
-		justify-content: space-around;
-		flex-flow: row wrap;
-		padding: 0;
+.registry__component--image-grid {
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row wrap;
+	padding: 0;
 
-		img {
-			display: block;
-			width: 100%;
-			height: auto;
-			margin: 0;
-		}
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0;
 	}
+}
 
-	&-item {
-		flex: 0 1 35%;
-		margin: 0 4px 24px;
-		display: flex;
-		flex-direction: column;
-	}
+.registry__component--image-item {
+	flex: 0 1 35%;
+	margin: 0 4px 24px;
+	display: flex;
+	flex-direction: column;
+}
 
 
-	&-title {
-		@include oTypographyPadding($top: 1, $bottom: 1);
-		text-align: center;
-		margin-top: auto;
-		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
-	}
+.registry__component--image-title {
+	@include oTypographyPadding($top: 1, $bottom: 1);
+	text-align: center;
+	margin-top: auto;
+	border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 }
 
 .registry__component--service {
