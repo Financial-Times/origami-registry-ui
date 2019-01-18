@@ -22,3 +22,7 @@
 		white-space: normal;
 	}
 }
+
+.quickstart__imageset {
+	@include oTypographyMargin($top: 5);
+}

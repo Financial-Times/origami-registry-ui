@@ -50,8 +50,16 @@ html, body {
 }
 
 .registry-button {
-	@include oButtons(big, mono);
 	width: 100%;
-	border-bottom: 1px solid oColorsGetPaletteColor('slate');
 	text-transform: uppercase;
+}
+
+.registry-button--secondary {
+	@include oButtons(big, 'mono');
+	border-bottom: 1px solid oColorsGetPaletteColor('slate');
+}
+
+.registry-button--primary {
+	@include oButtons(big, 'primary-mono');
+	border: none;
 }
