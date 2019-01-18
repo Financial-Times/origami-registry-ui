@@ -23,6 +23,7 @@
 	}
 }
 
-.quickstart__imageset {
+.quickstart__imageset,
+.quickstart__build-service {
 	@include oTypographyMargin($top: 5);
 }
