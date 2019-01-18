@@ -1,15 +1,6 @@
 .registry__component--demo {
 	@include oTypographyMargin($bottom: 8);
-
-	// &-title {
-	// 	@include oTypographyProductHeadingLevel4();
-	// 	@include oTypographyMargin($bottom: 0);
-	// }
-	//
-	// &-description {
-	// 	@include oTypographyMargin($top: 0, $bottom: 0);
-	// 	color: oColorsGetPaletteColor('slate-white-80');
-	}
+}
 
 .registry__component--demo-display {
 		@include oTypographyMargin($top: 3);
@@ -23,7 +14,6 @@
 			border: 0;
 			appearance: none;
 		}
-	// }
 }
 
 .registry__demo-button {
@@ -77,7 +67,6 @@
 	flex-direction: column;
 }
 
-
 .registry__component--image-title {
 	@include oTypographyPadding($top: 1, $bottom: 1);
 	text-align: center;
@@ -85,16 +74,9 @@
 	border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 }
 
-.registry__component--service {
-	&-info {
-		@include oTypographySize(1);
-		span {
-			@include oTypographyBold('sans');
-			text-transform: uppercase;
-		}
-
-		a.link {
-			border-bottom: none;
-		}
+p.o-layout__unstyled-element {
+	span {
+		@include oTypographyBold('sans');
+		text-transform: uppercase;
 	}
 }
