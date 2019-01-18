@@ -1,7 +1,7 @@
 {{#if component.brands}}
 	<div class="registry__brands">
 		{{#component.brands}}
-			<a class="registry__brands-button {{#ifEquals this @root.currentBrand}}registry__brands-button--current{{/ifEquals}}"
+			<a class="registry__brands-button o-layout__unstyled-element {{#ifEquals this @root.currentBrand}}registry__brands-button--current{{/ifEquals}}"
 				href="{{#ifEquals this 'master'}}{{@root.component.name}}{{else}}?brand={{this}}{{/ifEquals}}">{{this}} brand</a>
 		{{/component.brands}}
 	</div>
