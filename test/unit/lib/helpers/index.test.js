@@ -12,6 +12,7 @@ describe('helpers', () => {
 	it('.capitalise', () => {
 		const string = 'lowercase';
 		assert.strictEqual(helper.capitalise(string), 'Lowercase');
+		assert.strictEqual(helper.capitalise(null), '', 'Expected `capitalise` to handle `null` values.');
 	});
 
 	it('.slugify', () => {
