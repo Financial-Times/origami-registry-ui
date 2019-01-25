@@ -162,7 +162,7 @@ describe('GET /components/:componentId', () => {
 
 	});
 
-	describe.only('when the named component has no demos for the brand', () => {
+	describe('when the named component has no demos for the brand', () => {
 
 		beforeEach(async () => {
 			request = agent.get('/components/o-example-demos-except-whitelabel@1.5.0?brand=whitelabel');
