@@ -99,7 +99,7 @@ module.exports = [
 		_versions: ['1.2.3', '1.2.2', '1.2.1', '1.2.0', '1.1.0', '1.0.0']
 	},
 
-	// Active Origami component with no demos but no whitelabel brand demo
+	// Active Origami component with demos, but no demos for the whitelabel brand
 	{
 		name: 'o-example-demos-except-whitelabel',
 		type: null,
