@@ -183,8 +183,8 @@ describe('GET /components/:componentId', () => {
 				html = (await request.then()).text;
 			});
 
-			it('contains the component Github link', () => {
-				assert.include(html, 'https://github.com/Financial-Times/o-fonts');
+			it('contains the component status', () => {
+				assert.include(html, 'data-test="support-status"');
 			});
 
 		});
