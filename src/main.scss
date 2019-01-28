@@ -42,7 +42,6 @@ $o-brand: 'internal';
 // Forms.
 @include oFormsBaseFeatures();
 @include oFormsWideFeature();
-@include oFormsInlineFeature();
 @include oFormsRadioCheckboxFeatures();
 
 html, body {
@@ -79,4 +78,18 @@ html, body {
 	margin: auto;
 	text-align: center;
 	max-width: oTypographyMaxLineWidth($scale: 1);
+}
+
+.registry-component-version-form {
+	fieldset {
+		appearance: none;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		min-width: 0;
+	}
+
+	legend {
+		@include oNormaliseVisuallyHidden();
+	}
 }

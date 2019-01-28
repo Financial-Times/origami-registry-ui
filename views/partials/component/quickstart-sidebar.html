@@ -1,28 +1,28 @@
 <div class="registry__container__sticky">
+	<form action="#" method="GET" class="registry-component-version-form">
+		<fieldset>
+			<legend>Switch component view</legend>
+			{{#if component.brands}}
+				<div class="o-forms">
+					<label for="select-brand" class="o-forms__label">Brand</label>
+					<select data-version-select id="select-brand" class="o-forms__select o-forms__select--small">
+					{{#component.brands}}
+						<option value="/components/{{@root.component.name}}@{{@root.component.version}}?brand={{this}}" {{#ifEquals this @root.currentBrand}}selected{{/ifEquals}}>{{this}}</option>
+					{{/component.brands}}
+					</select>
+				</div>
+			{{/if}}
 
-	<h2 id="overview">Overview</h2>
-	<fieldset>
-		<legend>Switch component view</legend>
-		{{#if component.brands}}
-			<div class="o-forms o-forms--inline">
-				<label for="select-brand" class="o-forms__label">Brand</label>
-				<select data-version-select id="select-brand" class="o-forms__select o-forms__select--small">
-				{{#component.brands}}
-					<option value="/components/{{@root.component.name}}@{{@root.component.version}}?brand={{this}}" {{#ifEquals this @root.currentBrand}}selected{{/ifEquals}}>{{this}}</option>
-				{{/component.brands}}
+			<div class="o-forms">
+				<label for="select-version" class="o-forms__label">Version</label>
+				<select data-version-select id="select-version" class="o-forms__select o-forms__select--small">
+				{{#versions}}
+					<option value="/components/{{@root.component.name}}@{{version}}?brand={{@root.currentBrand}}" {{#ifEquals version @root.component.version}}data-test="current-version" selected{{/ifEquals}}>{{version}}</option>
+				{{/versions}}
 				</select>
 			</div>
-		{{/if}}
-
-		<div class="o-forms o-forms--inline">
-			<label for="select-version" class="o-forms__label">Version</label>
-			<select data-version-select id="select-version" class="o-forms__select o-forms__select--small">
-			{{#versions}}
-				<option value="/components/{{@root.component.name}}@{{version}}?brand={{@root.currentBrand}}" {{#ifEquals version @root.component.version}}data-test="current-version" selected{{/ifEquals}}>{{version}}</option>
-			{{/versions}}
-			</select>
-		</div>
-	</fieldset>
+		</fieldset>
+	</form>
 
 	<p>
 		<a class="registry-link registry-link--external" href="{{component.url}}">GitHub Repository</a>
