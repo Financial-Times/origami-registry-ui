@@ -1,11 +1,28 @@
-<div class="registry__container">
-	<div class="registry__container__left">
-		{{> component/sidebar-nav/main }}
+<div class="o-layout o-layout--query" data-o-component="o-layout">
+	<div class="o-layout__header">
+		{{> header/main }}
 	</div>
 
-	<div class="registry__container__center">
-		<div class="registry__readme">
-			{{{ readme }}}
-		</div>
+	<div class="o-layout__heading o-layout-typography">
+		{{> component/messages}}
+
+		{{> component/header}}
+	</div>
+
+	<div class="o-layout__query-sidebar o-layout-typography">
+		{{> component/sidebar-nav }}
+	</div>
+
+	<div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
+		{{{ readme }}}
+	</div>
+
+	<div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">
+		{{> component/quickstart-sidebar}}
+	</div>
+
+
+	<div class="o-layout__footer">
+		{{> footer}}
 	</div>
 </div>
