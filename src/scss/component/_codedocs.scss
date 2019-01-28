@@ -1,11 +1,5 @@
 .registry__doclet {
     display: none;
-    h1 {
-		@include oTypographyProductHeadingLevel1();
-    }
-    h2 {
-		@include oTypographyProductHeadingLevel5();
-    }
 }
 
 .registry__doclet--default,

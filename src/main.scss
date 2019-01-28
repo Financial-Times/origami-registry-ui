@@ -21,20 +21,30 @@ $o-brand: 'internal';
 
 @import 'src/scss/colors';
 @import 'src/scss/component/main';
-@import 'src/scss/error';
-@import 'src/scss/layout/main';
+@import 'src/scss/layout';
 @import 'src/scss/overview/main';
 @import 'src/scss/status-labels';
 
-
+// Layout.
 @include oLayout($opts: (
-	'layouts': 'query',
+	'layouts': ('query', 'docs'),
 	'features': ('linked-headings', 'typography')
 ));
 
-@include oFontsInclude(MetricWeb, regular);
-@include oFontsInclude(MetricWeb, semibold);
+// Tables.
 @include oTable($opts: ('responsive-overflow', 'lines'));
+
+// Header.
+@include oHeaderServices();
+
+// Footer.
+@include oFooterServicesWithLogo($logo: 'origami');
+
+// Forms.
+@include oFormsBaseFeatures();
+@include oFormsWideFeature();
+@include oFormsInlineFeature();
+@include oFormsRadioCheckboxFeatures();
 
 html, body {
 	height: 100%;
@@ -59,7 +69,15 @@ html, body {
 	border-bottom: 1px solid oColorsGetPaletteColor('slate');
 }
 
-.registry-button--primary {
-	@include oButtons(big, 'primary-mono');
-	border: none;
+.o-forms {
+	// Padding overrides can be removed when the next major of o-forms is released.
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.registry-error {
+	position: relative;
+	margin: auto;
+	text-align: center;
+	max-width: oTypographyMaxLineWidth($scale: 1);
 }

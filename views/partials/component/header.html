@@ -1,21 +1,2 @@
-<div class="registry__component-info">
-	<div class="registry__component-header">
-		<h1>{{component.name}}</h1>
-		<p>{{component.description}}</p>
-		<div class="registry__component-links">
-			<a class="registry-link--external" target="_blank" rel="noopener" href="{{component.url}}">GitHub</a>
-		</div>
-	</div>
-
-	<div class="registry__component-state">
-		<span class="status-label status-label--{{component.support.status}}" data-test="support-status">{{component.support.status}}</span>
-		<div class="version-selection">
-			<label for="select">Version:</label>
-			<select id="select" class="version__select version__select--small">
-				{{#versions}}
-					<option value="/components/{{name}}@{{version}}" {{#ifEquals version @root.component.version}}data-test="current-version" selected{{/ifEquals}}>{{version}}</option>
-				{{/versions}}
-			</select>
-		</div>
-	</div>
-</div>
+<h1>{{component.name}}</h1>
+<span class="status-label status-label--{{component.support.status}}" data-test="support-status">{{component.support.status}}</span>

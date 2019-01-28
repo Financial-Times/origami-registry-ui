@@ -1,10 +1,8 @@
 'use strict';
 
 module.exports = (function () {
-	const selection = document.querySelector('.version__select');
-	if (selection) {
-		selection.addEventListener('change', () => {
-			location.href = selection.value + location.search;
-		});
-	}
+	const selections = document.querySelectorAll('[data-version-select]');
+	selections.forEach(selection => selection.addEventListener('change', () => {
+		location.href = selection.value;
+	}));
 }());
