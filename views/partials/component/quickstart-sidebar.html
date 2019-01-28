@@ -1,5 +1,6 @@
 <div class="registry__container__sticky">
 
+	<h2 id="overview">Overview</h2>
 	<fieldset>
 		<legend>Switch component view</legend>
 		{{#if component.brands}}
@@ -23,13 +24,39 @@
 		</div>
 	</fieldset>
 
-	<a class="registry-link registry-link--external" href="{{component.url}}">GitHub Repository</a>
+	<p>
+		<a class="registry-link registry-link--external" href="{{component.url}}">GitHub Repository</a>
+	</p>
 
-	{{#ifEquals component.type 'imageset'}}
-		{{> component/quickstart/imageset}}
-	{{/ifEquals}}
+	<details>
+		<summary id="quickstart">Quickstart</summary>
+		{{#ifEquals component.type 'imageset'}}
+			{{> component/quickstart/imageset}}
+		{{/ifEquals}}
 
-	{{#ifEquals component.type 'module'}}
-		{{> component/quickstart/build-service component}}
-	{{/ifEquals}}
+
+		<p>If using the <a class="registry-link registry-link--external" href="http://origami.ft.com/docs/developer-guide/modules/build-service/">Build Service</a>, add <code class="o-syntax-highlight--html">{{@root.component.name}}@^{{@root.component.version}}{{#unlessEquals @root.currentBrand 'master'}}&brand={{@root.currentBrand}}{{/unlessEquals}}</code> to your
+			{{#ifBoth @root.component.hasJS @root.component.hasCSS}}
+				script and link tags.
+			{{else}}
+				{{#if @root.component.hasJS}}script tag.{{/if}}
+				{{#if @root.component.hasCSS}}link tag.{{/if}}
+			{{/ifBoth}}
+		</p>
+
+		<p>
+			If running a <a class="registry-link registry-link--external" href="http://origami.ft.com/docs/developer-guide/building-modules/">Manual Build</a>, run <code class="o-syntax-highlight--bash">bower install --save "{{@root.component.name}}"@"^{{@root.component.version}}"</code>.
+		</p>
+	</details>
+
+	<details>
+		<summary id="support">Support Details</summary>
+		<p>
+			Email: <a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a>
+			{{#if component.support.channel}}
+				<br>Slack: <a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>
+			{{/if}}
+		</p>
+	</details>
+
 </div>
