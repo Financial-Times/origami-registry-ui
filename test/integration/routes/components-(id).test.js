@@ -162,4 +162,33 @@ describe('GET /components/:componentId', () => {
 
 	});
 
+	describe('when the named component has no demos for the brand', () => {
+
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-demos-except-whitelabel@1.5.0?brand=whitelabel');
+		});
+
+		it('responds with a 200 status', () => {
+			return request.expect(200);
+		});
+
+		it('responds with HTML', () => {
+			return request.expect('Content-Type', /text\/html/);
+		});
+
+		describe('HTML response', () => {
+			let html;
+
+			beforeEach(async () => {
+				html = (await request.then()).text;
+			});
+
+			it('contains the component status', () => {
+				assert.include(html, 'data-test="support-status"');
+			});
+
+		});
+
+	});
+
 });

@@ -33,7 +33,7 @@ describe('GET /components', () => {
 			assert.isNotNull(list);
 
 			const listItems = list.querySelectorAll('[data-test=component-list-item]');
-			assert.lengthEquals(listItems, 4);
+			assert.lengthEquals(listItems, 5);
 
 			let link;
 
