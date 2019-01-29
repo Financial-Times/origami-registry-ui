@@ -1,44 +1,31 @@
 {{#if navItems}}
-	<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" id="filter-form">
-		<div class="o-forms">
-			<label for="filter-search" class="o-forms__label">
-				{{#if subnavFilterLabel}}
-					{{subnavFilterLabel}}
-				{{else}}
-					Filter
-				{{/if}}
-			</label>
-			<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
-		</div>
-	</form>
+	<ol class="o-layout__navigation" data-filterable-nav="filter-form">
 
-	<ul class="registry__sidebar-list o-layout__unstyled-element" data-filterable-nav="filter-form">
+		{{! @todo update o-layout so `o-layout__navigation` is a containing div. }}
+		<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" id="filter-form">
+			<div class="o-forms">
+				<label for="filter-search" class="o-forms__label">
+					{{#if subnavFilterLabel}}
+						{{subnavFilterLabel}}
+					{{else}}
+						Filter
+					{{/if}}
+				</label>
+				<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
+			</div>
+		</form>
+
 		{{#each navItems}}
-			<li {{#if link}}class="registry__sidebar-list-item"{{/if}}>
-				{{#if link}}
-					<a href="{{link}}" class="o-layout__unstyled-element">{{title}}</a>
-				{{ else }}
-					<span class="registry__sidebar-list-title">{{title}}</span>
-				{{/if}}
+			<li>
+				<a href="{{ link }}">{{title}}</a>
 				{{#if items}}
-					<ul class="o-layout__unstyled-element">
-						{{#each items}}
-							<li class="registry__sidebar-list-item">
-								<a href="{{link}}" class="o-layout__unstyled-element">{{title}}</a>
-								{{#if items}}
-									<ul class="o-layout__unstyled-element">
-										{{#each items}}
-											<li class="registry__sidebar-list-item">
-												<a href="{{link}}" class="o-layout__unstyled-element">{{title}}</a>
-											</li>
-										{{/each}}
-									</ul>
-								{{/if}}
-							</li>
-						{{/each}}
-					</ul>
+					<ol>
+					{{#each items}}
+						<li><a href="{{ link }}">{{title}}</a></li>
+					{{/each}}
+					</ol>
 				{{/if}}
 			</li>
 		{{/each}}
-	</ul>
+	</ol>
 {{/if}}

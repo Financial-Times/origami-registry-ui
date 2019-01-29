@@ -93,3 +93,21 @@ html, body {
 		@include oNormaliseVisuallyHidden();
 	}
 }
+
+// Show navigation hierarchy.
+// @todo move to o-layout
+ol.o-layout__navigation .o-forms {
+	text-align: left !important;
+}
+ol.o-layout__navigation > li {
+	margin-right: calc(-1rem - 1px) !important;
+}
+ol.o-layout__navigation li a {
+	padding-left: 0 !important;
+}
+ol.o-layout__navigation > li ol a {
+	border-right: 2px solid rgba(13, 118, 128, 0.4)!important;
+}
+ol.o-layout__navigation > li ol li {
+	list-style: none !important;
+}
