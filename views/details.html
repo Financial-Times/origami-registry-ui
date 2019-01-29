@@ -3,12 +3,47 @@
 		 {{> header/main }}
 	</div>
 
+	<div class="o-layout__heading o-layout-typography">
+		<h1 id="details">Details: {{component.name}} {{component.version}}</h1>
+	</div>
+
+	<div class="o-layout__query-sidebar">
+		<ol class="o-layout__navigation">
+			<li><a href="#bower">Bower Dependencies</a></li>
+		</ol>
+	</div>
 
     <div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
+        <h2 id="bower">Bower Dependencies</h2>
 		{{#ifEither dependencies.bower.length dependencies.npm.length}}
-			{{> component/dependencies dependencies}}
+            <div class="o-table-container">
+                <div class="o-table-overlay-wrapper">
+                    <div class="o-table-scroll-wrapper">
+                        <table class="o-table o-table--horizontal-lines  o-table--responsive-overflow" data-o-component="o-table" data-o-table-sortable="false" data-o-table-responsive="overflow">
+                            <thead>
+                                <tr>
+                                    <th scope="col" role="columnheader">Dependency</th>
+                                    <th scope="col" role="columnheader" data-o-table-data-type="numeric">Version</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {{#each dependencies.bower}}
+                                <tr>
+                                    <td>{{name}}</td>
+                                    <td>{{version}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 		{{/ifEither}}
     </div>
+
+	<div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">
+		{{> component/quickstart-sidebar}}
+	</div>
 
 	<div class="o-layout__footer">
 		{{> footer}}
