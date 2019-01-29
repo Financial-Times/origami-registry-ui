@@ -32,7 +32,7 @@ describe('GET /components/:componentId', () => {
 			it('includes a heading with the component name', () => {
 				const heading = dom.window.document.querySelector('.o-layout__heading h1');
 				assert.isNotNull(heading);
-				assert.strictEqual(heading.textContent.trim(), 'o-example-active');
+				assert.include(heading.textContent.trim(), 'o-example-active');
 			});
 
 			it('includes the requested version number', () => {

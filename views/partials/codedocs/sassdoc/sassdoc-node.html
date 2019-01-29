@@ -3,9 +3,9 @@
     class="registry__doclet {{#if default}}registry__doclet--default{{/if}}">
     {{> codedocs/nodes/sections/deprecation-warning }}
 
-    <h1>
+    <h2>
         {{> codedocs/nodes/sections/name }}
-    </h1>
+    </h2>
 
     {{#if description }}
         {{{ markdown description }}}
@@ -20,12 +20,12 @@
     {{/if}}
 
     {{#if content }}
-        <h2>Content Block</h2>
+        <h3>Content Block</h3>
         {{{ markdown content }}}
     {{/if}}
 
     {{#if return }}
-        <h2>Returns</h2>
+        <h3>Returns</h3>
         {{#if return.types}}
             {{#each return.types}}{{this}}{{#unless @last}} | {{/unless}}{{/each}}
         {{/if}}
@@ -37,7 +37,7 @@
     {{/if}}
 
     {{#if aliases }}
-        <h2>Aliases</h2>
+        <h3>Aliases</h3>
         <ul>
         {{#each aliases}}
             <li>{{ this }}</li>
