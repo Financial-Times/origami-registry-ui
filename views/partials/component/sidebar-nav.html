@@ -5,11 +5,7 @@
 		<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" id="filter-form">
 			<div class="o-forms">
 				<label for="filter-search" class="o-forms__label">
-					{{#if subnavFilterLabel}}
-						{{subnavFilterLabel}}
-					{{else}}
-						Filter
-					{{/if}}
+					Filter {{@root.title}}
 				</label>
 				<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
 			</div>
@@ -17,11 +13,21 @@
 
 		{{#each navItems}}
 			<li>
-				<a href="{{ link }}">{{title}}</a>
+				{{#if link}}
+					<a href="{{ link }}">{{title}}</a>
+				{{else}}
+					<span>{{title}}</span>
+				{{/if}}
 				{{#if items}}
 					<ol>
 					{{#each items}}
-						<li><a href="{{ link }}">{{title}}</a></li>
+						<li>
+						{{#if link}}
+							<a href="{{ link }}">{{title}}</a>
+						{{else}}
+							<span>{{title}}</span>
+						{{/if}}
+						</li>
 					{{/each}}
 					</ol>
 				{{/if}}
