@@ -20,7 +20,15 @@ module.exports = [
 		},
 		resources: {
 			demos: null,
-			dependencies: null
+			dependencies: [
+				{
+					'name': 'example-dependency',
+					'version': '^1.2.3',
+					'source': 'bower',
+					'isDev': false,
+					'isOptional': false
+				}
+			]
 		},
 		markdown: {
 			readme: '# o-example-active\n## test-readme\nExample content.'

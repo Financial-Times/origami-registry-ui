@@ -1,0 +1,16 @@
+<div class="o-layout o-layout--query" data-o-component="o-layout">
+	<div class="o-layout__header">
+		 {{> header/main }}
+	</div>
+
+
+    <div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
+		{{#ifEither dependencies.bower.length dependencies.npm.length}}
+			{{> component/dependencies dependencies}}
+		{{/ifEither}}
+    </div>
+
+	<div class="o-layout__footer">
+		{{> footer}}
+	</div>
+</div>

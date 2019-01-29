@@ -35,6 +35,13 @@ module.exports = async function mockRepoDataApi() {
 		}
 		response.send(repo.markdown.readme);
 	});
+	api.get('/v1/repos/:name/versions/:versionId/dependencies', (request, response, next) => {
+		const repo = repos.find(repo => repo.name === request.params.name);
+		if (!repo || !repo._versions.includes(request.params.versionId) || !repo.resources || !repo.resources.dependencies) {
+			return next(httpError(404));
+		}
+		response.send(repo.resources.dependencies);
+	});
 	api.use((error, request, response, next) => { // eslint-disable-line no-unused-vars
 		response.status(error.status).send({
 			status: error.status,

@@ -3,7 +3,56 @@
 		 {{> header/main }}
 	</div>
 
-	{{> component/container}}
+	<div class="o-layout__heading o-layout-typography">
+		{{> component/messages}}
+
+		{{> component/header}}
+	</div>
+
+	<div class="o-layout__query-sidebar">
+		<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" id="filter-form">
+			<div class="o-forms">
+				<label for="filter-search" class="o-forms__label">
+					{{#if subnavFilterLabel}}
+						{{subnavFilterLabel}}
+					{{else}}
+						Filter
+					{{/if}}
+				</label>
+				<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
+			</div>
+		</form>
+
+
+		<ol class="o-layout__navigation" data-filterable-nav="filter-form">
+			{{#each navItems}}
+
+				{{#each items}}
+					<li><a href="{{ link }}">{{title}}</a></li>
+				{{/each}}
+
+			{{/each}}
+		</ol>
+	</div>
+
+	<div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
+		{{#if demos}}
+			{{> component/type/demos}}
+		{{/if}}
+
+		{{#if images}}
+			{{> component/type/images}}
+		{{/if}}
+
+		{{#if service}}
+			{{> component/type/service}}
+		{{/if}}
+	</div>
+
+	<div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">
+		{{> component/quickstart-sidebar}}
+	</div>
+
 
 	<div class="o-layout__footer">
 		{{> footer}}

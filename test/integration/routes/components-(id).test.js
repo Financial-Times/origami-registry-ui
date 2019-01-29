@@ -30,7 +30,7 @@ describe('GET /components/:componentId', () => {
 			});
 
 			it('includes a heading with the component name', () => {
-				const heading = dom.window.document.querySelector('[role=main] h1');
+				const heading = dom.window.document.querySelector('.o-layout__heading h1');
 				assert.isNotNull(heading);
 				assert.strictEqual(heading.textContent.trim(), 'o-example-active');
 			});
