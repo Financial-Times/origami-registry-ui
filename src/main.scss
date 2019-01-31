@@ -98,8 +98,19 @@ html, body {
 	vertical-align: middle;
 }
 
+details {
+	margin-bottom: oTypographySpacingSize(4);
+	summary {
+		margin-bottom: oTypographySpacingSize(2);
+	}
+}
+
 // Show navigation hierarchy.
 // @todo move to o-layout
+ol.o-layout__navigation {
+	margin-top: 0;
+}
+
 ol.o-layout__navigation .o-forms {
 	text-align: left !important;
 }

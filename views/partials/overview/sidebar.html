@@ -1,33 +1,31 @@
 <div class="registry__container__sticky">
 
-	<h2>Library Updates</h2>
-	<p>The registry is updated whenever a new tag is pushed to a repository that has an <code>origami.json</code> file in it. If your repository meets the following criteria then it should be ingested within 5 minutes:</p>
+	<details>
+		<summary id="what-is-an-origami-component">What is an Origami component?</summary>
+		<p>An Origami component is a collection of styles and functionality. It provides reusable <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="Sassy Cascading Style Sheets">SCSS</abbr> and JavaScript for a multitude of different products under the <abbr title="Financial Times">FT</abbr> umbrella.</p>
+	</details>
 
-	<ul>
-		<li>
-			It lives in the
-			<a class="link" href="https://github.com/Financial-Times">Financial-Times GitHub organisation</a>
-		</li>
-		<li>
-			It contains a valid <code>origami.json</code> file
-			(see <a class="link" href="http://origami.ft.com/docs/syntax/origamijson/">the spec</a> for more information)
-		</li>
-		<li>
-			It has at least one git tag which complies with
-			<a class="link" href="https://semver.org/">semantic versioning</a>
-		</li>
-	</ul>
+	<details>
+		<summary id="component-registry">When is the component registry updated?</summary>
+		<p>The component registry is updated whenever a new tag is pushed to a repository that has an <code>origami.json</code> file in it. If your repository meets the following criteria then it should be ingested within 5 minutes:</p>
+		<ul>
+			<li>
+				It lives in the
+				<a class="registry-link registry-link--external" href="https://github.com/Financial-Times">Financial-Times GitHub organisation</a>
+			</li>
+			<li>
+				It contains a valid <code>origami.json</code> file
+				(see <a class="registry-link" href="http://origami.ft.com/docs/syntax/origamijson/">the spec</a> for more information)
+			</li>
+			<li>
+				It has at least one git tag which complies with
+				<a class="registry-link registry-link--external" href="https://semver.org/">semantic versioning</a>
+			</li>
+		</ul>
+	</details>
 
-	<h2>Bower Registry</h2>
-
-	<p>The Origami components library provides a read-only API conforming to the Bower Registry API spec (excluding registration and publishing).  To specify the Origami components library as your source for Bower components, create a <code>.bowerrc</code> file in your home directory or the root of your project's working tree, with the following content:</p>
-
-	<pre class="overflow"><code>{
-	  "registry": {
-	    "search": [
-	      "https://origami-bower-registry.ft.com",
-	      "https://registry.bower.io"
-	    ]
-	  }
-	}</code></pre>
+	<details>
+		<summary id="quick-start">How do I include Origami components in my project?</summary>
+		<p>How you choose to include Origami components in your project will depend on your projects’ requirements. <a class="registry-link" href="https://origami.ft.com/docs/components/">Find out more in our useage documentation</a>.</p>
+	</details>
 </div>
