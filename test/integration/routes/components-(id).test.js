@@ -88,6 +88,54 @@ describe('GET /components/:componentId', () => {
 
 	});
 
+	describe('when a switch brand query parameter is provided', () => {
+
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-active@2.0.0?switch-brand=internal');
+		});
+
+		it('responds with a 307 status', () => {
+			return request.expect(307);
+		});
+
+		it('responds with a Location header pointing to correct brand', () => {
+			return request.expect('Location', '/components/o-example-active@2.0.0?brand=internal');
+		});
+
+	});
+
+	describe('when a switch version query parameter is provided', () => {
+
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-active@2.0.0?switch-version=1.1.1');
+		});
+
+		it('responds with a 307 status', () => {
+			return request.expect(307);
+		});
+
+		it('responds with a Location header pointing to correct brand', () => {
+			return request.expect('Location', '/components/o-example-active@1.1.1');
+		});
+
+	});
+
+	describe('when a switch version and switch brand query parameter is provided', () => {
+
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-active@2.0.0?switch-brand=internal&switch-version=1.1.1');
+		});
+
+		it('responds with a 307 status', () => {
+			return request.expect(307);
+		});
+
+		it('responds with a Location header pointing to correct brand', () => {
+			return request.expect('Location', '/components/o-example-active@1.1.1?brand=internal');
+		});
+
+	});
+
 	describe('when a component name and an empty version identifier is provided', () => {
 
 		beforeEach(async () => {

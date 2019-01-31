@@ -5,8 +5,8 @@ require('./click-helper');
 require('./demo');
 require('./select-text');
 require('./sticky-scroll');
-require('./versioning');
 
+const Versioning = require('./versioning');
 const FilterableNav = require('./filterable-nav');
 const ComponentListing = require('./component-listing');
 const FilterForm = require('./filter-form');
@@ -16,4 +16,5 @@ document.addEventListener('o.DOMContentLoaded', () => {
 	FilterableNav.init();
 	ComponentListing.init();
 	FilterForm.init();
+	Versioning.init();
 });

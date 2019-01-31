@@ -81,6 +81,7 @@ html, body {
 }
 
 .registry-component-version-form {
+	margin-bottom: oTypographySpacingSize(2);
 	fieldset {
 		appearance: none;
 		border: 0;
@@ -101,8 +102,18 @@ html, body {
 details {
 	margin-bottom: oTypographySpacingSize(4);
 	summary {
+		@include oTypographyItalic();
 		margin-bottom: oTypographySpacingSize(2);
 	}
+}
+
+.switch-button {
+	display: none;
+	margin-bottom: oTypographySpacingSize(4);
+}
+
+.core .switch-button {
+	display: block;
 }
 
 // Show navigation hierarchy.
