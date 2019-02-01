@@ -18,15 +18,24 @@
 
 .registry__demo-button {
 	@include oButtons($theme: 'mono');
-	text-transform: uppercase;
-
-	&.select-html {
-		position: absolute;
-		top: oTypographySpacingSize(2);
-		right: oTypographySpacingSize(2);
-		background: oColorsGetPaletteColor('white');
-	}
 }
+
+.core .select-html {
+	display: none;
+}
+
+.registry__demo-button.select-html {
+	position: absolute;
+	top: oTypographySpacingSize(2);
+	right: oTypographySpacingSize(2);
+	background: oColorsGetPaletteColor('white');
+}
+
+.demo-link {
+	@include oTypographyLinkCustom(oColorsGetUseCase(body, text), oColorsGetUseCase(body, text));
+	@include oTypographyLinkExternalIcon(oColorsGetColorFor(body, text));
+}
+
 
 // oustide of a block because the below mixins don't accept class names.
 @include oTabs();
@@ -77,6 +86,5 @@
 p.o-layout__unstyled-element {
 	span {
 		@include oTypographyBold('sans');
-		text-transform: uppercase;
 	}
 }

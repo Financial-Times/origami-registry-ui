@@ -130,6 +130,7 @@ ol.o-layout__navigation > li {
 }
 ol.o-layout__navigation li a {
 	padding-left: 0 !important;
+	word-break: break-all;
 }
 ol.o-layout__navigation > li ol a {
 	border-right: 2px solid rgba(13, 118, 128, 0.4)!important;
