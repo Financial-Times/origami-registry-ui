@@ -1,16 +1,16 @@
 {{#if navItems}}
-	<ol class="o-layout__navigation" data-filterable-nav="filter-form">
+<nav class="o-layout__navigation">
 
-		{{! @todo update o-layout so `o-layout__navigation` is a containing div. }}
-		<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" id="filter-form">
-			<div class="o-forms">
-				<label for="filter-search" class="o-forms__label">
-					Filter {{@root.heading}}
-				</label>
-				<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
-			</div>
-		</form>
+	<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" id="filter-form">
+		<div class="o-forms">
+			<label for="filter-search" class="o-forms__label">
+				Filter {{@root.heading}}
+			</label>
+			<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
+		</div>
+	</form>
 
+	<ol data-filterable-nav="filter-form">
 		{{#each navItems}}
 			<li>
 				{{#if link}}
@@ -34,4 +34,5 @@
 			</li>
 		{{/each}}
 	</ol>
+</nav>
 {{/if}}

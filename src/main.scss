@@ -27,7 +27,7 @@ $o-brand: 'internal';
 // Layout.
 @include oLayout($opts: (
 	'layouts': ('query', 'docs'),
-	'features': ('linked-headings', 'typography')
+	'features': ('sidebar-nav', 'linked-headings', 'typography')
 ));
 
 // Tables.
@@ -114,32 +114,4 @@ details {
 
 .core .switch-button {
 	display: block;
-}
-
-// Show navigation hierarchy.
-// @todo move to o-layout
-ol.o-layout__navigation {
-	margin-top: 0;
-}
-
-ol.o-layout__navigation .o-forms {
-	text-align: left !important;
-}
-ol.o-layout__navigation > li {
-	margin-right: calc(-1rem - 1px) !important;
-}
-ol.o-layout__navigation li a {
-	padding-left: 0 !important;
-	word-break: break-all;
-}
-ol.o-layout__navigation > li ol a {
-	border-right: 2px solid rgba(13, 118, 128, 0.4)!important;
-}
-ol.o-layout__navigation > li ol li {
-	list-style: none !important;
-}
-ol.o-layout__navigation li span {
-	@include oTypographySans(1);
-	display: inline-block;
-	padding: 0.4em 1em;
 }

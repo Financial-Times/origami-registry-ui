@@ -16,8 +16,6 @@
 	}
 }
 
-@include _oLayoutNavigation(); // @todo, allow in non-docs layouts
-
 [data-filterable-nav] [aria-hidden="true"]{
 	display: none !important; // overrides o-layout styles
 }
