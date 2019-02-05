@@ -9,14 +9,9 @@
 );
 
 .o-message {
-	margin-bottom: 20px;
+	margin-bottom: oTypographySpacingSize(4);
 
 	a.o-message__actions__secondary {
 		white-space: normal;
 	}
-}
-
-.quickstart__imageset,
-.quickstart__build-service {
-	@include oTypographyMargin($top: 5);
 }

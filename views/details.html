@@ -11,16 +11,48 @@
 	</div>
 
 	<div class="o-layout__query-sidebar">
+    {{#ifEither dependencies.bower.length dependencies.npm.length}}
         <nav class="o-layout__navigation">
             <ol>
-                <li><a href="#bower">Bower Dependencies</a></li>
+                {{#if dependencies.bower.length}}
+                    <li><a href="#bower">Bower Dependencies</a></li>
+                {{/if}}
+                {{#if dependencies.npm.length}}
+                    <li><a href="#npm">NPM Dependencies</a></li>
+                {{/if}}
             </ol>
         </nav>
+    {{/ifEither}}
 	</div>
 
     <div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
-        <h2 id="bower">Bower Dependencies</h2>
-		{{#ifEither dependencies.bower.length dependencies.npm.length}}
+        {{#if dependencies.npm.length}}
+            <h2 id="npm">NPM Dependencies</h2>
+            <div class="o-table-container">
+                <div class="o-table-overlay-wrapper">
+                    <div class="o-table-scroll-wrapper">
+                        <table class="o-table o-table--horizontal-lines  o-table--responsive-overflow" data-o-component="o-table" data-o-table-sortable="false" data-o-table-responsive="overflow">
+                            <thead>
+                                <tr>
+                                    <th scope="col" role="columnheader">Dependency</th>
+                                    <th scope="col" role="columnheader" data-o-table-data-type="numeric">Version</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {{#each dependencies.npm}}
+                                <tr>
+                                    <td>{{name}}</td>
+                                    <td>{{version}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+        {{#if dependencies.bower.length}}
+            <h2 id="bower">Bower Dependencies</h2>
             <div class="o-table-container">
                 <div class="o-table-overlay-wrapper">
                     <div class="o-table-scroll-wrapper">
@@ -43,7 +75,7 @@
                     </div>
                 </div>
             </div>
-		{{/ifEither}}
+        {{/if}}
     </div>
 
 	<div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">

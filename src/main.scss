@@ -44,10 +44,6 @@ $o-brand: 'internal';
 @include oFormsWideFeature();
 @include oFormsRadioCheckboxFeatures();
 
-html, body {
-	height: 100%;
-}
-
 .o-table-container,
 .o-table {
 	margin-bottom: oTypographySpacingSize(4);
@@ -57,9 +53,13 @@ html, body {
 	@include oTypographyLinkExternal();
 }
 
+.o-layout__aside-sidebar pre code {
+	white-space: normal;
+	word-break: break-all;
+}
+
 .registry-button {
 	width: 100%;
-	text-transform: uppercase;
 }
 
 .registry-button--secondary {
@@ -107,6 +107,12 @@ details {
 	}
 }
 
+
+.download-button,
+.switch-button {
+	margin-bottom: oTypographySpacingSize(4);
+}
+
 .switch-button {
 	display: none;
 	margin-bottom: oTypographySpacingSize(4);
@@ -114,4 +120,9 @@ details {
 
 .core .switch-button {
 	display: block;
+}
+
+// TODO - move to olayout
+.o-layout__aside-sidebar {
+	overflow-wrap: anywhere; // for long email addresses, etc.
 }

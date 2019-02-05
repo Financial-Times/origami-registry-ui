@@ -51,7 +51,6 @@
 
 	ul {
 		@include oTabsButtonTabsTheme($theme: 'mono', $selector: false);
-		text-transform: uppercase;
 	}
 }
 
