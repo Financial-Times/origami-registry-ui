@@ -58,13 +58,22 @@
 	</details>
 
 	<details>
-		<summary id="support">Support Details</summary>
-		<p>
-			Email: <a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a>
-			{{#if component.support.channel}}
-				<br>Slack: <a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>
-			{{/if}}
-		</p>
+		<summary id="help">Help &amp; Support</summary>
+		{{#unless component.support.isOrigami}}
+			<p>{{ component.name }} is not supported directly by the Origami team. We make no guarantees, but will help if we can. First try contacting its maintainers at:</p>
+			<p>{{#if component.support.channel}}Slack: <a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email: <a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+		{{else}}
+			<p>{{ component.name }} is maintained directly by the Origami team. If you have any questions about {{ component.name }} or Origami in general, we are happy to help. &#x1F60A;</p>
+			<p>{{#if component.support.channel}}Slack: <a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email: <a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+		{{/unless}}
 	</details>
+
+	{{#if component.support.isOrigami}}
+	<details>
+		<summary id="support">Feedback / Issues</summary>
+		<p>To report a bug or request features please <a class="registry-link registry-link--external" href="{{component.url}}/issues">create an issue</a> on Github. For support or general feedback please get in touch &#x1F60A;</p>
+		<p>{{#if component.support.channel}}Slack: <a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email: <a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+	</details>
+	{{/if}}
 
 </div>
