@@ -26,56 +26,60 @@
 	</div>
 
     <div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
-        {{#if dependencies.npm.length}}
-            <h2 id="npm">NPM Dependencies</h2>
-            <div class="o-table-container">
-                <div class="o-table-overlay-wrapper">
-                    <div class="o-table-scroll-wrapper">
-                        <table class="o-table o-table--horizontal-lines  o-table--responsive-overflow" data-o-component="o-table" data-o-table-sortable="false" data-o-table-responsive="overflow">
-                            <thead>
-                                <tr>
-                                    <th scope="col" role="columnheader">Dependency</th>
-                                    <th scope="col" role="columnheader" data-o-table-data-type="numeric">Version</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {{#each dependencies.npm}}
-                                <tr>
-                                    <td>{{name}}</td>
-                                    <td>{{version}}</td>
-                                </tr>
-                            {{/each}}
-                            </tbody>
-                        </table>
+        {{#ifEither dependencies.bower.length dependencies.npm.length}}
+            {{#if dependencies.npm.length}}
+                <h2 id="npm">NPM Dependencies</h2>
+                <div class="o-table-container">
+                    <div class="o-table-overlay-wrapper">
+                        <div class="o-table-scroll-wrapper">
+                            <table class="o-table o-table--horizontal-lines  o-table--responsive-overflow" data-o-component="o-table" data-o-table-sortable="false" data-o-table-responsive="overflow">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" role="columnheader">Dependency</th>
+                                        <th scope="col" role="columnheader" data-o-table-data-type="numeric">Version</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {{#each dependencies.npm}}
+                                    <tr>
+                                        <td>{{name}}</td>
+                                        <td>{{version}}</td>
+                                    </tr>
+                                {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {{/if}}
-        {{#if dependencies.bower.length}}
-            <h2 id="bower">Bower Dependencies</h2>
-            <div class="o-table-container">
-                <div class="o-table-overlay-wrapper">
-                    <div class="o-table-scroll-wrapper">
-                        <table class="o-table o-table--horizontal-lines  o-table--responsive-overflow" data-o-component="o-table" data-o-table-sortable="false" data-o-table-responsive="overflow">
-                            <thead>
-                                <tr>
-                                    <th scope="col" role="columnheader">Dependency</th>
-                                    <th scope="col" role="columnheader" data-o-table-data-type="numeric">Version</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {{#each dependencies.bower}}
-                                <tr>
-                                    <td>{{name}}</td>
-                                    <td>{{version}}</td>
-                                </tr>
-                            {{/each}}
-                            </tbody>
-                        </table>
+            {{/if}}
+            {{#if dependencies.bower.length}}
+                <h2 id="bower">Bower Dependencies</h2>
+                <div class="o-table-container">
+                    <div class="o-table-overlay-wrapper">
+                        <div class="o-table-scroll-wrapper">
+                            <table class="o-table o-table--horizontal-lines  o-table--responsive-overflow" data-o-component="o-table" data-o-table-sortable="false" data-o-table-responsive="overflow">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" role="columnheader">Dependency</th>
+                                        <th scope="col" role="columnheader" data-o-table-data-type="numeric">Version</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {{#each dependencies.bower}}
+                                    <tr>
+                                        <td>{{name}}</td>
+                                        <td>{{version}}</td>
+                                    </tr>
+                                {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {{/if}}
+            {{/if}}
+        {{ else }}
+            {{ component.name }} has no dependencies.
+        {{/ifEither}}
     </div>
 
 	<div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">
