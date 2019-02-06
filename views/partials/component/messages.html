@@ -1,24 +1,22 @@
 {{#unless component.support.isOrigami}}
-	<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message" data-close=false>
+	<div class="o-message o-message--notice o-message--inner o-message--warning-light" data-o-component="o-message" data-close="false">
 		<div class="o-message__container">
 			<div class="o-message__content">
-				<span class="o-message__content-highlight">This component is not maintained by the Origami team.</span>
-				<p class="o-message__content-additional">
-					While this component may be used, it is not supported directly by the Origami team.
-					We make no guarantees about the support status, though we will help you if we can.
+				<p class="o-message__content-main">
+					<span class="o-message__content-highlight">{{component.name}} is not maintained by the Origami team.</span>
+					<span class="o-message__content-detail">While this component may be used, we make no guarantees about the support status, though we will help if we can.</span>
 				</p>
 			</div>
 		</div>
 	</div>
 {{else}}
 	{{#ifEquals component.support.status "experimental"}}
-		<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message" data-close=false>
+		<div class="o-message o-message--notice o-message--inner o-message--warning-light" data-o-component="o-message" data-close="false">
 			<div class="o-message__container">
 				<div class="o-message__content">
-					<span class="o-message__content-highlight">This component is experimental.</span>
-					<p class="o-message__content-additional">
-						This component is not guaranteed to be ready for production use,
-						and the API should be considered unstable.
+					<p class="o-message__content-main">
+						<span class="o-message__content-highlight">{{component.name}} is experimental.</span>
+						<span class="o-message__content-detail">This component is not guaranteed to be ready for production use, and the API should be considered unstable.</span>
 					</p>
 				</div>
 			</div>
@@ -26,14 +24,12 @@
 	{{/ifEquals}}
 
 	{{#ifEquals component.support.status "deprecated"}}
-		<div class="o-message o-message--notice-inner o-message--warning-light" data-o-component="o-message" data-close=false>
+		<div class="o-message o-message--notice o-message--inner o-message--warning-light" data-o-component="o-message" data-close="false">
 			<div class="o-message__container">
 				<div class="o-message__content">
-					<span class="o-message__content-highlight">This component is deprecated.</span>
-					<p class="o-message__content-additional">
-						This component should not be used for new projects. Only the most severe security-related
-						bugs will be fixed for this component, though existing implementations will continue to work.
-						This page is here for existing users to refer to documentation.
+					<p class="o-message__content-main">
+						<span class="o-message__content-highlight">{{component.name}} is deprecated.</span>
+						<span class="o-message__content-detail">This component should not be used for new projects. Only security-related bugs will be fixed for this component, though existing implementations will continue to work.</span>
 					</p>
 				</div>
 			</div>
@@ -41,13 +37,12 @@
 	{{/ifEquals}}
 
 	{{#ifEquals component.support.status "dead"}}
-		<div class="o-message o-message--alert-inner o-message--error" data-o-component="o-message" data-close=false>
+		<div class="o-message o-message--alert o-message--inner o-message--error" data-o-component="o-message" data-close="false">
 			<div class="o-message__container">
 				<div class="o-message__content">
-					<span class="o-message__content-highlight">This component is dead</span>
-					<p class="o-message__content-additional">
-						This component is known to be broken, or is very likely to break.
-						There are no plans to fix any issues with this component.
+					<p class="o-message__content-main">
+						<span class="o-message__content-highlight">{{component.name}} is dead.</span>
+						<span class="o-message__content-detail">This component is known to be broken, or is very likely to break. There are no plans to fix any issues with this component.</span>
 					</p>
 				</div>
 			</div>
@@ -56,22 +51,20 @@
 
 	{{#ifAny component.support.status 'active' 'maintained'}}
 		{{#if component.brandable }}
-			<div class="o-message o-message--notice-inner o-message--inform" data-o-component="o-message" data-close=false>
+			<div class="o-message o-message--notice o-message--inner o-message--inform" data-o-component="o-message" data-close="false">
 				<div class="o-message__container">
 					<div class="o-message__content">
-							{{#ifEquals versions.0.version component.version}}
-								<span class="o-message__content-highlight">This component hasn't been branded yet.</span>
-								<p class="o-message__content-additional">If you would like to discuss having it branded
-									<a class="o-message__actions__secondary o-layout__unstyled-element" href="#support">please get in touch with the Origami team</a>.
-								</p>
-							{{else}}
-								<span class="o-message__content-highlight">This version of this component hasn't been branded yet.</span>
-								<p class="o-message__content-additional">Please check the latest version,
-									<a class="o-message__actions__secondary o-layout__unstyled-element"
-									href="{{component.name}}@{{versions.0.version}}">{{versions.0.version}}</a>, 
-									as branding is a relatively new addition to our components.
-								</p>
-							{{/ifEquals}}
+						{{#ifEquals versions.0.version component.version}}
+							<p class="o-message__content-main">
+								<span class="o-message__content-highlight">{{component.name}} hasn't been branded yet, it only supports the master brand.</span>
+								<span class="o-message__content-detail">If you would like to discuss having it branded <a class="o-message__actions__secondary o-layout__unstyled-element" href="#support"> please get in touch with the Origami team</a>.</span>
+							</p>
+						{{else}}
+							<p class="o-message__content-main">
+								<span class="o-message__content-highlight">This version of {{component.name}} hasn't been branded yet.</span>
+								<span class="o-message__content-detail">Please check the latest version, <a class="o-message__actions__secondary o-layout__unstyled-element" href="{{component.name}}@{{versions.0.version}}">{{versions.0.version}}</a>, as branding is a relatively new addition to our components.</span>
+							</p>
+						{{/ifEquals}}
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 <li class="o-layout__unstyled-element registry-component-list-item" data-test="component-list-item">
-    <a href="/components/{{name}}@{{version}}" class="o-layout__unstyled-element" data-test="component-link">
+    <a href="/components/{{name}}@{{version}}{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" class="o-layout__unstyled-element" data-test="component-link">
         <h2 class="o-layout__unstyled-element">{{name}}</h2>
 
         <span class="registry-component-status">

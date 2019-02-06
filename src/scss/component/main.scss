@@ -3,10 +3,11 @@
 @import 'codedocs';
 
 @include oSyntaxHighlightAll();
-@include oMessage(
-	$types: 'alert-inner' 'notice-inner',
-	$status: 'error' 'warning' 'warning-light' 'inform'
-);
+@include oMessage($opts: (
+	'types': ('notice', 'alert'),
+	'states': ('error', 'warning', 'warning-light', 'inform'),
+	'layout': 'inner'
+));
 
 .o-message {
 	margin-bottom: oTypographySpacingSize(4);

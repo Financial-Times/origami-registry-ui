@@ -121,8 +121,3 @@ details {
 .core .switch-button {
 	display: block;
 }
-
-// TODO - move to olayout
-.o-layout__aside-sidebar {
-	overflow-wrap: anywhere; // for long email addresses, etc.
-}

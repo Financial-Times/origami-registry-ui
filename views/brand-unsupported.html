@@ -1,0 +1,38 @@
+<div class="o-layout o-layout--query" data-o-component="o-layout">
+	<div class="o-layout__header">
+		 {{> header/main }}
+	</div>
+
+	<div class="o-layout__heading">
+		<div class="o-layout-typography">
+			{{> component/header}}
+		</div>
+	</div>
+
+	<div class="o-layout__query-sidebar"></div>
+
+	<div class="o-layout__main">
+
+		<div class="o-message o-message--notice  o-message--inform" data-o-component="o-message" data-close="false">
+			<div class="o-message__container">
+				<div class="o-message__content">
+					<p class="o-message__content-main">
+						<span class="o-message__content-highlight">{{component.name}} doesn't support the {{ currentBrand }} brand.</span>
+						<span>If you would like to discuss support for the {{ currentBrand }} brand
+						<a class="o-message__actions__secondary o-layout__unstyled-element" href="#support">please get in touch with the Origami team</a>.</span>
+					</p>
+
+					<div class="o-message__actions">
+						<a href="?brand={{supportedBrand}}" class="o-message__actions__primary">Switch to the {{supportedBrand}} brand</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="o-layout__aside-sidebar o-layout-typography"></div>
+
+	<div class="o-layout__footer">
+		{{> footer}}
+	</div>
+</div>
