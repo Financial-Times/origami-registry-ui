@@ -101,11 +101,14 @@ $o-brand: 'internal';
 
 details {
 	margin-bottom: oTypographySpacingSize(4);
+	&[open] summary {
+		@include oTypographyBold('sans');
+	}
 	summary {
-		@include oTypographyItalic();
 		margin-bottom: oTypographySpacingSize(2);
 	}
 }
+
 
 
 .download-button,
