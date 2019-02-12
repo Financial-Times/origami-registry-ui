@@ -1,5 +1,7 @@
 <h1 id="{{@root.heading}}" class="registry-title">
     {{#if @root.heading}}{{@root.heading}}{{/if}}{{#ifBoth @root.heading component.name}}: {{/ifBoth}}{{#if component.name}}{{component.name}}{{/if}}
-    <span class="status-label status-label--{{component.support.status}}" data-test="support-status">{{component.support.status}}</span>
+    {{#if component.support.status}}
+        <span class="status-label status-label--{{component.support.status}}" data-test="support-status">{{component.support.status}}</span>
+    {{/if}}
 </h1>
 
