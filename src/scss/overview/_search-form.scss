@@ -1,14 +1,5 @@
 .registry__form {
 
-	.o-forms,
-	.o-forms__group {
-		padding: 0;
-	}
-
-	fieldset.o-forms {
-		@include oTypographyPadding($top: 0);
-	}
-
 	&-search {
 		position: relative;
 	}

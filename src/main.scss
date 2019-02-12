@@ -18,9 +18,10 @@ $o-brand: 'internal';
 @import 'o-visual-effects/main';
 @import 'o-table/main';
 
-@import 'src/scss/component/main';
-@import 'src/scss/layout';
-@import 'src/scss/overview/main';
+@import 'src/scss/component/codedocs';
+@import 'src/scss/component/demos';
+@import 'src/scss/overview/component-list';
+@import 'src/scss/overview/search-form';
 @import 'src/scss/status-labels';
 
 // Layout.
@@ -31,6 +32,11 @@ $o-brand: 'internal';
 
 // Tables.
 @include oTable($opts: ('responsive-overflow', 'lines'));
+
+.o-table-container,
+.o-table {
+	margin-bottom: oTypographySpacingSize(4);
+}
 
 // Header.
 @include oHeaderServices();
@@ -43,20 +49,57 @@ $o-brand: 'internal';
 @include oFormsWideFeature();
 @include oFormsRadioCheckboxFeatures();
 
-.o-table-container,
-.o-table {
-	margin-bottom: oTypographySpacingSize(4);
+.o-forms {
+	// Padding overrides can be removed when the next major of o-forms is released.
+	padding-right: 0;
+	padding-left: 0;
 }
 
+// Typography.
 .registry-link--external {
 	@include oTypographyLinkExternal();
 }
 
+// Messages.
+@include oMessage($opts: (
+	'types': ('notice', 'alert'),
+	'states': ('error', 'warning', 'warning-light', 'inform'),
+	'layout': 'inner'
+));
+
+.o-message {
+	margin-bottom: oTypographySpacingSize(4);
+}
+
+// Syntax Highlighting.
+@include oSyntaxHighlightAll();
+
+// Tabs.
+@include oTabs();
+@include oTabsButtonTabs();
+
+// Registry aside sidebar.
 .o-layout__aside-sidebar pre code {
 	white-space: normal;
 	word-break: break-all;
 }
 
+.o-layout__aside-sidebar details {
+	margin-bottom: oTypographySpacingSize(4);
+	&[open] summary {
+		@include oTypographyBold('sans');
+	}
+	summary {
+		margin-bottom: oTypographySpacingSize(2);
+	}
+}
+
+// Registry query sidebar. Filterable nav.
+[data-filterable-nav] [aria-hidden="true"]{
+	display: none;
+}
+
+// Registry Buttons.
 .registry-button {
 	width: 100%;
 }
@@ -66,12 +109,21 @@ $o-brand: 'internal';
 	border-bottom: 1px solid oColorsGetPaletteColor('slate');
 }
 
-.o-forms {
-	// Padding overrides can be removed when the next major of o-forms is released.
-	padding-right: 0;
-	padding-left: 0;
+.download-button,
+.switch-button {
+	margin-bottom: oTypographySpacingSize(4);
 }
 
+.switch-button {
+	display: none;
+	margin-bottom: oTypographySpacingSize(4);
+}
+
+.core .switch-button {
+	display: block;
+}
+
+// Registry error page layout.
 .registry-error {
 	position: relative;
 	margin: auto;
@@ -79,6 +131,7 @@ $o-brand: 'internal';
 	max-width: oTypographyMaxLineWidth($scale: 1);
 }
 
+// Registry component version switcher.
 .registry-component-version-form {
 	margin-bottom: oTypographySpacingSize(2);
 	fieldset {
@@ -94,31 +147,7 @@ $o-brand: 'internal';
 	}
 }
 
+// Registry title.
 .registry-title span {
 	vertical-align: middle;
-}
-
-details {
-	margin-bottom: oTypographySpacingSize(4);
-	&[open] summary {
-		@include oTypographyBold('sans');
-	}
-	summary {
-		margin-bottom: oTypographySpacingSize(2);
-	}
-}
-
-
-.download-button,
-.switch-button {
-	margin-bottom: oTypographySpacingSize(4);
-}
-
-.switch-button {
-	display: none;
-	margin-bottom: oTypographySpacingSize(4);
-}
-
-.core .switch-button {
-	display: block;
 }

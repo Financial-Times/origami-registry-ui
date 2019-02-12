@@ -36,17 +36,15 @@
 	@include oTypographyLinkExternalIcon(oColorsGetColorFor(body, text));
 }
 
-
-// oustide of a block because the below mixins don't accept class names.
-@include oTabs();
-@include oTabsButtonTabs();
-
 .registry__component--demo-tabs {
 	@include oTypographyMargin($top: 4, $bottom: 2);
 	display: flex;
 
 	span {
 		margin-left: auto;
+		@include oGridRespondTo($until: S) {
+			display: none;
+		};
 	}
 
 	ul {
@@ -73,6 +71,9 @@
 	margin: 0 4px 24px;
 	display: flex;
 	flex-direction: column;
+	@include oGridRespondTo(M) {
+		flex-basis: 20%;
+	};
 }
 
 .registry__component--image-title {

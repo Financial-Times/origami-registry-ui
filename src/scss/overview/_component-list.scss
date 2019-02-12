@@ -40,6 +40,9 @@
 		.status-label {
 			margin-right: 0;
 			margin-left: 0;
+			@include oGridRespondTo(M) {
+				margin: 0;
+			};
 		}
 	}
 }
