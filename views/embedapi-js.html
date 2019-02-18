@@ -25,18 +25,20 @@ var OrigamiRegistry = (function() {
 	function processPostMessage(msg) {
 		var data, ifr, plusborders, style;
 		try { data = JSON.parse(msg.data); } catch (e) { return; }
-		data.url = data.url.replace(location.protocol+'\/\/'+location.hostname, '');
-		if (data.type == 'resize' && (ifr = document.querySelector('iframe[src="'+data.url+'"]'))) {
-			style = getComputedStyle(ifr);
-			plusborders = style.getPropertyValue('box-sizing') == 'border-box';
-			if (data.width) {
-				ifr.style.width = data.width + (plusborders ? parseInt(style.getPropertyValue('border-left-width'))+parseInt(style.getPropertyValue('border-right-width')) : 0) + 'px';
+		if (data.url && data.type) {
+			data.url = data.url.replace(location.protocol+'\/\/'+location.hostname, '');
+			if (data.type == 'resize' && (ifr = document.querySelector('iframe[src="'+data.url+'"]'))) {
+				style = getComputedStyle(ifr);
+				plusborders = style.getPropertyValue('box-sizing') == 'border-box';
+				if (data.width) {
+					ifr.style.width = data.width + (plusborders ? parseInt(style.getPropertyValue('border-left-width'))+parseInt(style.getPropertyValue('border-right-width')) : 0) + 'px';
+				}
+				if (data.height) {
+					ifr.style.height = data.height + (plusborders ? parseInt(style.getPropertyValue('border-top-width'))+parseInt(style.getPropertyValue('border-bottom-width')) : 0) + 'px';
+				}
+				ifr.classList.add('sized');
+				sendResizeToParent();
 			}
-			if (data.height) {
-				ifr.style.height = data.height + (plusborders ? parseInt(style.getPropertyValue('border-top-width'))+parseInt(style.getPropertyValue('border-bottom-width')) : 0) + 'px';
-			}
-			ifr.classList.add('sized');
-			sendResizeToParent();
 		}
 	}
 
