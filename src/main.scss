@@ -60,6 +60,18 @@ $o-brand: 'internal';
 	@include oTypographyLinkExternal();
 }
 
+.registry-link--github:before {
+	@include oIconsBaseStyles();
+	content: '';
+	width: 1.75rem;
+	height: 1.75rem;
+	vertical-align: bottom;
+	background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:github?source=registry-ui&tint=#{oColorsGetUseCase('link', 'text')}&format=svg");
+	&:hover {
+		background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:github?source=registry-ui&format=svg');
+	}
+}
+
 // Messages.
 @include oMessage($opts: (
 	'types': ('notice', 'alert'),
