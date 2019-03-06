@@ -83,8 +83,6 @@
 	border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 }
 
-p.o-layout__unstyled-element {
-	span {
-		@include oTypographyBold('sans');
-	}
+.service-details__title {
+	@include oTypographyBold('sans');
 }

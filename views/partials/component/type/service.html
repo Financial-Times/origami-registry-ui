@@ -1,22 +1,25 @@
 <h3>Service Details</h3>
 
+<ul class="service-details">
 {{#if service.systemCode}}
-	<p class="o-layout__unstyled-element">
-		<span>System Code</span> — {{service.systemCode}}
-	</p>
+	<li>
+		<span class="service-details__title">System Code</span>: {{service.systemCode}}
+	</li>
 {{/if}}
 
 {{#if service.serviceTier}}
-	<p class="o-layout__unstyled-element">
-		<span>Service Tier</span> — {{service.serviceTier}}
-	</p>
+	<li>
+		<span class="service-details__title">Service Tier</span>: {{service.serviceTier}}
+	</li>
 {{/if}}
 
 {{#if service.primaryUrl}}
-	<p class="o-layout__unstyled-element">
-		<span>Url</span> — <a class="link" href="{{service.primaryUrl}}">{{service.primaryUrl}}</a>
-	</p>
+	<li>
+		<span class="service-details__title"><abbr title="Uniform Resource Locator">URL</abbr></span>: <a class="link" href="{{service.primaryUrl}}">{{service.primaryUrl}}</a>
+	</li>
 {{/if}}
+
+</ul>
 
 {{#if service.links}}
 	<h3>Service Links</h3>
