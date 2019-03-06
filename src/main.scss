@@ -39,7 +39,10 @@ $o-brand: 'internal';
 }
 
 // Header.
-@include oHeaderServices();
+@include oHeaderServices($opts: (
+	'types': ('primary-nav', 'secondary-nav', 'bleed'),
+	'logo': 'origami'
+));
 
 // Footer.
 @include oFooterServicesWithLogo($logo: 'origami');
