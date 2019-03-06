@@ -20,7 +20,7 @@ class ComponentListing {
 	 * Handle the filter form initialise search event.
 	 */
 	handleFilterFormInitSearchEvent() {
-		this.listingElement.classList.add('registry__component-list--loading');
+		this.listingElement.classList.add('registry-component-list--loading');
 		this.listingElement.setAttribute('aria-busy', 'true');
 	}
 

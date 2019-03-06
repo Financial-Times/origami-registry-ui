@@ -1,10 +1,10 @@
 <div class="registry__component--demo-container">
-	<h3 class="registry__component--demo-title">Image Set</h3>
-	<ul class="registry__component--image-grid">
+	<h3>Image Set</h3>
+	<ul class="registry__component--image-grid o-layout__unstyled-element">
 		{{#images}}
-			<li class="registry__component--image-item">
+			<li id="{{slugify title}}" class="registry__component--image-item">
 				<img src="{{supportingUrls.w200}}" alt="{{title}}"/>
-				<p class="registry__component--image-title">{{title}}</p>
+				<p class="registry__component--image-title o-layout__unstyled-element">{{title}}</p>
 			</li>
 		{{/images}}
 	</ul>

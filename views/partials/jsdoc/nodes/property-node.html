@@ -1,7 +1,7 @@
-<h1 id="#{{longname}}">{{longname}}</h1>
-<h2>{{ capitalise scope }} Property</h2>
+<h2 id="#{{longname}}">{{longname}}</h2>
+<h3>{{ capitalise scope }} Property</h3>
 {{#if types}}
-    <h3>Type{{#unlessEquals types.length 1}}s{{/unlessEquals}}</h3>
+    <h4>Type{{#unlessEquals types.length 1}}s{{/unlessEquals}}</h4>
     <ul>
         {{#each types}}
             <li>{{ this }}</li>

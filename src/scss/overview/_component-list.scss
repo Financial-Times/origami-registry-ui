@@ -1,53 +1,48 @@
+.registry-component-list {
+	margin: 0;
+	padding: 0;
+}
 
-// Standard component list
-.registry__component-list {
+.registry-component-list-item {
+	padding: oTypographySpacingSize(2) 0;
 	list-style-type: none;
-	margin-top: 0;
-	padding-left: 0;
+	display: block;
+	border-top: 2px solid oColorsGetPaletteColor('slate-white-5');
 
-	.registry__component-list-item {
+	h2 {
+		@include oTypographyBody();
+		@include oTypographySansBold();
+		display: inline;
+	}
+
+	p {
+		@include oTypographyCaption();
+	}
+
+	a {
+		padding: oTypographySpacingSize(2) 0;
 		display: block;
-		border-bottom: 2px solid oColorsGetPaletteColor('slate-white-5');
+		overflow: hidden;
+		color: initial;
+		text-decoration: inherit;
+	}
 
-		&:last-child {
-			border-bottom: none;
-		}
+	a:hover {
+		padding: oTypographySpacingSize(2) oTypographySpacingSize(2);
+		margin: 0 -#{oTypographySpacingSize(2)};
+		background-color: oColorsGetPaletteColor('slate-white-15');
+	}
 
-		&-link {
-			display: flex;
-			padding: 8px 0 8px 8px;
-			text-decoration: none;
-			color: inherit;
-
-			&:hover {
-				background-color: oColorsGetPaletteColor('slate-white-15');
-			}
-		}
-
-		&-detail {
-			padding: 0 4px;
-		}
-
-		&-name {
-			@include oTypographySansBold(1);
-			color: oColorsGetPaletteColor('slate-white-80');
-			margin: 0;
-		}
-
-		&-description {
-			@include oTypographyMargin($top: 2, $bottom: 0);
-			padding: 0 4px;
-			font-weight: 400;
-			color: oColorsGetPaletteColor('slate-white-80');
-		}
-
-		&-stats {
-			display: flex;
-			flex-flow: column;
-			flex-shrink: 0;
-			align-items: center;
-			margin-left: auto;
-			width: 15%;
+	.registry-component-status {
+		float: right;
+		text-align: right;
+		margin-left: oTypographySpacingSize(4);
+		.status-label {
+			margin-right: 0;
+			margin-left: 0;
+			@include oGridRespondTo(M) {
+				margin: 0;
+			};
 		}
 	}
 }

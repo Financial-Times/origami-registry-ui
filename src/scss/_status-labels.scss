@@ -7,8 +7,9 @@
 
  	&--active,
 	&--maintained {
-		background-color: oColorsGetPaletteColor('jade-black-70');
-		color: oColorsGetTextColor(oColorsGetPaletteColor('jade-black-70'), 100);
+		$active-color: oColorsMix(jade, black, 70);
+		background-color: $active-color;
+		color: oColorsGetTextColor($active-color, 100);
 	}
 
  	&--experimental {

@@ -8,55 +8,170 @@ $o-brand: 'internal';
 @import 'o-footer-services/main';
 @import 'o-grid/main';
 @import 'o-header-services/main';
+@import 'o-layout/main';
 @import 'o-loading/main';
 @import 'o-normalise/main';
 @import 'o-message/main';
-@import 'o-overlay/main';
 @import 'o-tabs/main';
 @import 'o-typography/main';
 @import 'o-syntax-highlight/main';
 @import 'o-visual-effects/main';
 @import 'o-table/main';
 
-@import 'src/scss/colors';
-@import 'src/scss/component/main';
-@import 'src/scss/error';
-@import 'src/scss/layout/main';
-@import 'src/scss/overview/main';
+@import 'src/scss/component/codedocs';
+@import 'src/scss/component/demos';
+@import 'src/scss/overview/component-list';
+@import 'src/scss/overview/search-form';
 @import 'src/scss/status-labels';
 
-@include oFontsInclude(MetricWeb, regular);
-@include oFontsInclude(MetricWeb, semibold);
-@include oTable($opts: ('responsive-overflow', 'lines'));
+// Layout.
+@include oLayout($opts: (
+	'layouts': ('query', 'docs'),
+	'features': ('sidebar-nav', 'linked-headings', 'typography')
+));
 
-html, body {
-	height: 100%;
-}
+// Tables.
+@include oTable($opts: ('responsive-overflow', 'lines'));
 
 .o-table-container,
 .o-table {
-    margin-bottom: oTypographySpacingSize(4);
+	margin-bottom: oTypographySpacingSize(4);
 }
 
-.registry {
-	@include oTypographySans(0);
+// Header.
+@include oHeaderServices($opts: (
+	'types': ('primary-nav', 'secondary-nav', 'bleed'),
+	'logo': 'origami'
+));
 
-	.link {
-		@include oTypographyLink();
+// Footer.
+@include oFooterServicesWithLogo($logo: 'origami');
+
+// Forms.
+@include oFormsBaseFeatures();
+@include oFormsWideFeature();
+@include oFormsRadioCheckboxFeatures();
+
+.o-forms {
+	// Padding overrides can be removed when the next major of o-forms is released.
+	padding-right: 0;
+	padding-left: 0;
+}
+
+// Typography.
+.registry-link--external {
+	@include oTypographyLinkExternal();
+}
+
+.registry-link--github {
+	$color: str-slice(ie-hex-str(oColorsGetColorFor('link', 'text')), 4);
+	$hover-color: str-slice(ie-hex-str(oColorsGetColorFor('link-hover', 'text')), 4);
+	$background: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:github?source=registry-ui&tint=#{$color}&format=svg");
+	$hover-background: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:github?source=registry-ui&tint=#{$hover-color}&format=svg");
+	&:before {
+		@include oIconsBaseStyles();
+		content: '';
+		width: 1.75rem;
+		height: 1.75rem;
+		vertical-align: bottom;
+		$color: str-slice(ie-hex-str(oColorsGetColorFor('link', 'text')), 4);
+		background-image: $background;
+	}
+	&:hover {
+		&:before {
+			background-image: $hover-background;
+		}
+	}
+}
+
+// Messages.
+@include oMessage($opts: (
+	'types': ('notice', 'alert'),
+	'states': ('error', 'warning', 'warning-light', 'inform'),
+	'layout': 'inner'
+));
+
+.o-message {
+	margin-bottom: oTypographySpacingSize(4);
+}
+
+// Syntax Highlighting.
+@include oSyntaxHighlightAll();
+
+// Tabs.
+@include oTabs();
+@include oTabsButtonTabs();
+
+// Registry aside sidebar.
+.o-layout__aside-sidebar pre code {
+	white-space: normal;
+	word-break: break-all;
+}
+
+.o-layout__aside-sidebar details {
+	margin-bottom: oTypographySpacingSize(4);
+	&[open] summary {
+		@include oTypographyBold('sans');
+	}
+	summary {
+		margin-bottom: oTypographySpacingSize(2);
+	}
+}
+
+// Registry query sidebar. Filterable nav.
+[data-filterable-nav] [aria-hidden="true"]{
+	display: none;
+}
+
+// Registry Buttons.
+.registry-button {
+	width: 100%;
+}
+
+.registry-button--secondary {
+	@include oButtons(big, 'mono');
+	border-bottom: 1px solid oColorsGetPaletteColor('slate');
+}
+
+.download-button,
+.switch-button {
+	margin-bottom: oTypographySpacingSize(4);
+}
+
+.switch-button {
+	display: none;
+	margin-bottom: oTypographySpacingSize(4);
+}
+
+.core .switch-button {
+	display: block;
+}
+
+// Registry error page layout.
+.registry-error {
+	position: relative;
+	margin: auto;
+	text-align: center;
+	max-width: oTypographyMaxLineWidth($scale: 1);
+}
+
+// Registry component version switcher.
+.registry-component-version-form {
+	margin-bottom: oTypographySpacingSize(2);
+	fieldset {
+		appearance: none;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		min-width: 0;
 	}
 
-	.link-external {
-		@include oTypographyLinkExternal();
+	legend {
+		@include oNormaliseVisuallyHidden();
 	}
+}
 
-	blockquote {
-		@include oTypographyBlockquote();
-	}
-
-	.secondary-button {
-		@include oButtons(big, mono);
-		width: 100%;
-		border-bottom: 1px solid oColorsGetPaletteColor('slate');
-		text-transform: uppercase;
-	}
+// Registry title.
+.registry-title span {
+	vertical-align: middle;
 }

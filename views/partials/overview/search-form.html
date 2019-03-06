@@ -6,8 +6,8 @@
 	data-o-filter-form-browser-history="true"
 >
 	<div class="o-forms">
-		<label for="filter-search" class="o-forms__label">Search components</label>
-		<div class="o-forms__additional-info">Filter components by name or tag</div>
+		<label for="filter-search" class="o-forms__label">Search the registry</label>
+		<div class="o-forms__additional-info">Find by name or tag</div>
 		<div class="registry__search-bar registry__form-search">
 			<input id="filter-search" type="text" aria-role="search" name="search" value="{{filter.search}}" class="o-forms__text"/>
 			<input type="submit" value="Filter" class="registry__filter-button o--if-no-js"/>
@@ -17,10 +17,10 @@
 
 	<fieldset class="o-forms">
 		<label class="o-forms__label">Types</label>
-		<div class="o-forms__additional-info">Filter components by type</div>
+		<div class="o-forms__additional-info">Filter the registry by type</div>
 		<div class="o-forms__group">
 			<input id="type-module" type="checkbox" name="module" value="true" {{#if filter.module}}checked{{/if}} class="o-forms__checkbox"/>
-			<label for="type-module" class="o-forms__label">Modules</label>
+			<label for="type-module" class="o-forms__label">Components</label>
 			<input id="type-imageset" type="checkbox" name="imageset" value="true" {{#if filter.imageset}}checked{{/if}} class="o-forms__checkbox"/>
 			<label for="type-imageset" class="o-forms__label">Imagesets</label>
 			<input id="type-service" type="checkbox" name="service" value="true" {{#if filter.service}}checked{{/if}} class="o-forms__checkbox"/>
@@ -30,7 +30,7 @@
 
 	<fieldset class="o-forms">
 		<label class="o-forms__label">Status</label>
-		<div class="o-forms__additional-info">Filter components by status</div>
+		<div class="o-forms__additional-info">Filter the registry by status</div>
 		<div class="o-forms__group">
 			<input id="status-active" type="checkbox" name="active" value="true" {{#if filter.active}}checked{{/if}} class="o-forms__checkbox"/>
 			<label for="status-active" class="o-forms__label">Active</label>

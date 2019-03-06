@@ -1,28 +1,28 @@
 <div class="registry__component--demo-container">
 	{{#demos}}
 		<div class="registry__component--demo">
-			<h3 class="registry__component--demo-title registry__linked-heading" id="demo-{{slugify title}}" data-o-component="o-linked-heading">
+			<h2 id="demo-{{slugify title}}">
 				{{capitalise title}}
-			</h3>
+			</h2>
 			{{#if description}}
-				<p class="registry__component--demo-description">{{description}}</p>
+				<p>{{description}}</p>
 			{{/if}}
 
 			<div class="registry__component--demo-tabs">
-				<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs" role=tablist>
+				<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs o-layout__unstyled-element" role=tablist>
 					{{#if display.html}}
 						{{#if display.live}}
 							<li role=tab>
-								<a href="#{{slugify title}}-demo-{{@index}}">Demo</a>
+								<a href="#{{slugify title}}-demo-{{@index}}" class="o-layout__unstyled-element">Demo</a>
 							</li>
 						{{/if}}
 						<li role=tab>
-							<a href="#{{slugify title}}-html-{{@index}}">HTML</a>
+							<a href="#{{slugify title}}-html-{{@index}}" class="o-layout__unstyled-element">HTML</a>
 						</li>
 					{{/if}}
 				</ul>
 
-				<span><a class="registry__demo-button" href="{{supportingUrls.live}}" target="_blank">Open Demo in a New Tab</a></span>
+				<span><a class="demo-link o-layout__unstyled-element" href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a></span>
 			</div>
 
 			<div class="registry__component--demo-display">
@@ -32,7 +32,7 @@
 					</div>
 				{{/if}}
 				{{#if display.html}}
-					<div class="o-tabs__tabpanel" data-o-component="o-syntax-highlight" id="{{slugify title}}-html-{{@index}}">
+					<div class="o-tabs__tabpanel" id="{{slugify title}}-html-{{@index}}">
 						{{#if display.plainHTML}}
 							<button class="registry__demo-button select-html">Select Full Code Snippet</button>
 							<pre><code class='o-syntax-highlight--html'>{{{display.highlightedHTML}}}</code></pre>

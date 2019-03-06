@@ -2,6 +2,6 @@
 {{> jsdoc/nodes/generic this }}
 
 {{#if this.types.length }}
-<h2>Type{{#unlessEquals this.types.length 1}}s{{/unlessEquals}}</h2>
+<h3>Type{{#unlessEquals this.types.length 1}}s{{/unlessEquals}}</h3>
 <p>{{#each this.types}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>
 {{/if}}
