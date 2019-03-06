@@ -95,6 +95,10 @@ $o-brand: 'internal';
 	margin-bottom: oTypographySpacingSize(4);
 }
 
+.o-layout__header > .o-message {
+	margin-bottom: 0;
+}
+
 // Syntax Highlighting.
 @include oSyntaxHighlightAll();
 
