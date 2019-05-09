@@ -44,7 +44,7 @@
 
 		p {
 			@include oTypographyCaption();
-			margin: 0;
+			@include oTypographyMargin($top: 0, $bottom: 2);
 		}	
 	}
 
