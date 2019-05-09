@@ -2,26 +2,26 @@
 	<a href="/components/{{name}}@{{version}}{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" class="o-layout__unstyled-element" data-test="component-link">
 		<div class="registry-component__overview">
 			<h2 class="o-layout__unstyled-element">{{name}}</h2>
-			<span class="component-version">
+			<label title="Component version" class="component-version">
 				v{{version}}
-			</span>
-			<span class="o-labels o-labels--{{support.status}}">
+			</label>
+			<label title="Component support status" class="o-labels o-labels--{{support.status}}">
 				{{support.status}}
-			</span>
+			</label>
 			{{#support.isOrigami}}
-				<span class="registry-component-o-support"></span>
+				<label title="Component maintained by the Origami core team" class="registry-component-o-support"></label>
 			{{/support.isOrigami}}
 		</div>
 		<div class="registry-component__details">
 			<p class="o-layout__unstyled-element">{{description}}</p>
 			<div class="registry-component__details--labels">
 				{{#brands}}
-					<span class="o-labels o-labels--{{.}}">{{.}}</span>
+					<label title="Supported brand" class="o-labels o-labels--{{.}}">{{.}}</label>
 				{{/brands}}
 				{{^brands}}
 					{{#languages}}
 						{{#ifEquals 'scss' . }}
-							<span class="o-labels o-labels--master">master</span>
+							<label title="Supported brand" class="o-labels o-labels--master">master</label>
 						{{/ifEquals}}
 					{{/languages}}
 				{{/brands}}
