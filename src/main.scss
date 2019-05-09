@@ -31,8 +31,6 @@ $o-brand: 'internal';
 	'features': ('sidebar-nav', 'linked-headings', 'typography')
 ));
 
-
-
 // Tables.
 @include oTable($opts: ('responsive-overflow', 'lines'));
 

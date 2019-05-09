@@ -1,4 +1,4 @@
-@include oLabels($opts: ( 'sizes': 'small'));
+@include oLabels($opts: ( 'sizes': 'small' ));
 
 @include oLabelsAddState('active', (
 	background-color: oColorsMix('jade', 'black', 70)
@@ -31,4 +31,12 @@
 @include oLabelsAddState('whitelabel', (
 	background-color: oColorsGetPaletteColor('white'),
 	border-color: oColorsGetPaletteColor('slate-white-15')
+));
+
+@include oLabelsAddState('js', (
+	background-color: oColorsMix('white', 'lemon', 30),
+));
+
+@include oLabelsAddState('scss', (
+	background-color: oColorsMix('white', 'candy', 30),
 ));
