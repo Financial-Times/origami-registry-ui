@@ -12,16 +12,19 @@
 	h2 {
 		@include oTypographyBody();
 		@include oTypographySansBold();
-		display: inline;
+		display: block;
+		margin: 0;
 	}
 
 	p {
 		@include oTypographyCaption();
+		margin-top: 0;
 	}
 
 	a {
 		padding: oTypographySpacingSize(2) 0;
-		display: block;
+		padding: oTypographySpacingSize(2);
+		display: flex;
 		overflow: hidden;
 		color: initial;
 		text-decoration: inherit;
@@ -31,6 +34,19 @@
 		padding: oTypographySpacingSize(2) oTypographySpacingSize(2);
 		margin: 0 -#{oTypographySpacingSize(2)};
 		background-color: oColorsGetPaletteColor('slate-white-15');
+	}
+
+	.registry-component__overview {
+		flex: 0 0 160px;
+	}
+
+	.registry-component__details {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+	}
+
+	.registry-component__details--labels {
 	}
 
 	.registry-component-status {
