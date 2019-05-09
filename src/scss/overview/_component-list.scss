@@ -4,26 +4,12 @@
 }
 
 .registry-component-list-item {
-	padding: oTypographySpacingSize(2) 0;
+	border-top: 2px solid oColorsGetPaletteColor('slate-white-5');
 	list-style-type: none;
 	display: block;
-	border-top: 2px solid oColorsGetPaletteColor('slate-white-5');
-
-	h2 {
-		@include oTypographyBody();
-		@include oTypographySansBold();
-		display: block;
-		margin: 0;
-	}
-
-	p {
-		@include oTypographyCaption();
-		margin-top: 0;
-	}
 
 	a {
-		padding: oTypographySpacingSize(2) 0;
-		padding: oTypographySpacingSize(2);
+		padding: oTypographySpacingSize(3);
 		display: flex;
 		overflow: hidden;
 		color: initial;
@@ -31,34 +17,44 @@
 	}
 
 	a:hover {
-		padding: oTypographySpacingSize(2) oTypographySpacingSize(2);
-		margin: 0 -#{oTypographySpacingSize(2)};
-		background-color: oColorsGetPaletteColor('slate-white-15');
+		background-color: oColorsGetPaletteColor('slate-white-5');
 	}
 
 	.registry-component__overview {
 		flex: 0 0 160px;
-	}
+		margin-right: 8px;
 
+		h2 {
+			@include oTypographyBody();
+			@include oTypographySansBold();
+			display: block;
+			margin: 0;
+		}
+
+		.component-version {
+			display: block;
+		}
+	}
+	
 	.registry-component__details {
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: space-between;
+
+		p {
+			@include oTypographyCaption();
+			@include oTypographyMargin($top: 0, $bottom: 2);
+		}	
 	}
 
-	.registry-component__details--labels {
-	}
-
-	.registry-component-status {
-		float: right;
-		text-align: right;
-		margin-left: oTypographySpacingSize(4);
-		.status-label {
-			margin-right: 0;
-			margin-left: 0;
-			@include oGridRespondTo(M) {
-				margin: 0;
-			};
-		}
+	.registry-component-o-support {
+		background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1:origami?source=o-header-services&format=svg&width=55");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 0;
+		display: inline-block;
+		height: 20px;
+		width: 20px;
+		vertical-align: middle;
 	}
 }

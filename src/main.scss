@@ -8,6 +8,7 @@ $o-brand: 'internal';
 @import 'o-footer-services/main';
 @import 'o-grid/main';
 @import 'o-header-services/main';
+@import 'o-labels/main';
 @import 'o-layout/main';
 @import 'o-loading/main';
 @import 'o-normalise/main';
@@ -29,6 +30,8 @@ $o-brand: 'internal';
 	'layouts': ('query', 'docs'),
 	'features': ('sidebar-nav', 'linked-headings', 'typography')
 ));
+
+
 
 // Tables.
 @include oTable($opts: ('responsive-overflow', 'lines'));

@@ -2,20 +2,29 @@
 	<a href="/components/{{name}}@{{version}}{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" class="o-layout__unstyled-element" data-test="component-link">
 		<div class="registry-component__overview">
 			<h2 class="o-layout__unstyled-element">{{name}}</h2>
-			<div>
+			<span class="component-version">
 				v{{version}}
-			</div>
-			<span class="status-label status-label--{{support.status}}">
+			</span>
+			<span class="o-labels o-labels--{{support.status}}">
 				{{support.status}}
 			</span>
 		</div>
 		<div class="registry-component__details">
 			<p class="o-layout__unstyled-element">{{description}}</p>
 			<div class="registry-component__details--labels">
-				<span>Label</span>
-				<span>Label</span>
-				<span>Label</span>
-				<span>Label</span>
+				{{#support.isOrigami}}
+					<span class="registry-component-o-support"></span>
+				{{/support.isOrigami}}
+				{{#brands}}
+					<span class="o-labels o-labels--{{.}}">{{.}}</span>
+				{{/brands}}
+				{{^brands}}
+					{{#languages}}
+						{{#ifEquals 'scss' . }}
+							<span class="o-labels o-labels--master">master</span>
+						{{/ifEquals}}
+					{{/languages}}
+				{{/brands}}
 			</div>
 		</div>
 	</a>
