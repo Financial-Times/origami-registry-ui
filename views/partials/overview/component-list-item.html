@@ -25,6 +25,11 @@
 						{{/ifEquals}}
 					{{/languages}}
 				{{/brands}}
+				{{#languages}}
+					{{#ifAny . 'scss' 'js' }}
+						<label title="Language used in component" class="o-labels o-labels--{{.}}">{{.}}</label>
+					{{/ifAny}}
+				{{/languages}}
 			</div>
 		</div>
 	</a>

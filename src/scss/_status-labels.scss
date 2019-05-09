@@ -32,3 +32,11 @@
 	background-color: oColorsGetPaletteColor('white'),
 	border-color: oColorsGetPaletteColor('slate-white-15')
 ));
+
+@include oLabelsAddState('js', (
+	background-color: oColorsMix('mandarin', 'lemon', 30)
+));
+
+@include oLabelsAddState('scss', (
+	background-color: oColorsMix('candy', 'velvet', 50)
+));
