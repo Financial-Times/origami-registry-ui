@@ -8,13 +8,13 @@
 			<span class="o-labels o-labels--{{support.status}}">
 				{{support.status}}
 			</span>
+			{{#support.isOrigami}}
+				<span class="registry-component-o-support"></span>
+			{{/support.isOrigami}}
 		</div>
 		<div class="registry-component__details">
 			<p class="o-layout__unstyled-element">{{description}}</p>
 			<div class="registry-component__details--labels">
-				{{#support.isOrigami}}
-					<span class="registry-component-o-support"></span>
-				{{/support.isOrigami}}
 				{{#brands}}
 					<span class="o-labels o-labels--{{.}}">{{.}}</span>
 				{{/brands}}
@@ -25,9 +25,6 @@
 						{{/ifEquals}}
 					{{/languages}}
 				{{/brands}}
-				{{#languages}}
-					<span class="o-labels o-labels--{{.}}">{{.}}</span>
-				{{/languages}}
 			</div>
 		</div>
 	</a>
