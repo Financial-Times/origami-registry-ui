@@ -32,6 +32,7 @@
 		}
 
 		.component-version {
+			@include oTypographySize(0);
 			display: block;
 		}
 	}
@@ -43,7 +44,7 @@
 
 		p {
 			@include oTypographyCaption();
-			@include oTypographyMargin($top: 0, $bottom: 2);
+			margin: 0;
 		}	
 	}
 

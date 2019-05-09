@@ -21,7 +21,7 @@
 ));
 
 @include oLabelsAddState('master', (
-	background-color: oColorsGetPaletteColor('paper')
+	background-color: oColorsGetPaletteColor('wheat')
 ));
 
 @include oLabelsAddState('internal', (
