@@ -23,7 +23,7 @@
 	}
 
 	select {
-		option {
+		option:checked {
 			&[value="master"] {
 				background-color: oColorsGetPaletteColor('paper');
 			}
