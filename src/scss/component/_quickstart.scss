@@ -21,14 +21,6 @@
 	legend {
 		@include oNormaliseVisuallyHidden();
 	}
-
-	select {
-		option:checked {
-			&[value="master"] {
-				background-color: oColorsGetPaletteColor('paper');
-			}
-		}
-	}
 }
 
 
