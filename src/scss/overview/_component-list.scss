@@ -3,6 +3,17 @@
 	padding: 0;
 }
 
+.registry-component-o-support {
+	background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1:origami?source=o-header-services&format=svg&width=55");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 0;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	vertical-align: middle;
+}
+
 .registry-component-list-item {
 	border-top: 2px solid oColorsGetPaletteColor('slate-white-5');
 	list-style-type: none;
@@ -41,17 +52,6 @@
 		.o-labels {
 			margin-right: 8px;
 		}
-	}
-	
-	.registry-component-o-support {
-		background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1:origami?source=o-header-services&format=svg&width=55");
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: 0;
-		display: inline-block;
-		height: 20px;
-		width: 20px;
-		vertical-align: middle;
 	}
 
 	.registry-component__details {

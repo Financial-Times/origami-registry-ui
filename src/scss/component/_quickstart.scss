@@ -3,7 +3,7 @@
 	top: 12px;
 
 	.o-labels {
-		@include oTypographyMargin($bottom: 3);
+		@include oTypographyMargin($top: 2, $bottom: 3);
 	}
 }
 
