@@ -1,4 +1,7 @@
 <div class="registry__container__sticky">
+	{{#component.support.status}}
+		<label class="o-labels o-labels--{{.}}">{{.}}</label>
+	{{/component.support.status}}
 	<form action="" method="GET" class="registry-component-version-form">
 		<fieldset>
 			<legend>Switch component view</legend>
