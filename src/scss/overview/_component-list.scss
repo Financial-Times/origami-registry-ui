@@ -9,10 +9,11 @@
 	display: block;
 
 	a {
-		padding: oTypographySpacingSize(3);
-		display: flex;
-		overflow: hidden;
 		color: initial;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		padding: oTypographySpacingSize(3);
 		text-decoration: inherit;
 	}
 
@@ -21,19 +22,24 @@
 	}
 
 	.registry-component__overview {
-		flex: 0 0 160px;
-		margin-right: 8px;
+		@include oTypographyMargin($bottom: 3);
+		display: flex;
 
 		h2 {
 			@include oTypographyBody();
 			@include oTypographySansBold();
 			display: block;
-			margin: 0;
+			margin: 0 8px 0 0;
 		}
 
 		.component-version {
 			@include oTypographySize(0);
 			display: block;
+			margin-right: 8px;
+		}
+
+		.o-labels {
+			margin-right: 8px;
 		}
 	}
 	
@@ -49,15 +55,13 @@
 	}
 
 	.registry-component__details {
-		flex-grow: 1;
-
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: space-between;
 
 		p {
 			@include oTypographyCaption();
-			@include oTypographyMargin($top: 0, $bottom: 2);
+			@include oTypographyMargin($top: 0, $bottom: 3);
 		}	
 	}
 
