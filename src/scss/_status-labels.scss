@@ -40,3 +40,7 @@
 @include oLabelsAddState('scss', (
 	background-color: oColorsMix('candy', 'velvet', 50)
 ));
+
+@include oLabelsAddState('imageset', (
+	background-color: oColorsGetPaletteColor('sky')
+));
