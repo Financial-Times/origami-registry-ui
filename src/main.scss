@@ -8,6 +8,7 @@ $o-brand: 'internal';
 @import 'o-footer-services/main';
 @import 'o-grid/main';
 @import 'o-header-services/main';
+@import 'o-labels/main';
 @import 'o-layout/main';
 @import 'o-loading/main';
 @import 'o-normalise/main';
@@ -20,8 +21,11 @@ $o-brand: 'internal';
 
 @import 'src/scss/component/codedocs';
 @import 'src/scss/component/demos';
+@import 'src/scss/component/quickstart';
+
 @import 'src/scss/overview/component-list';
 @import 'src/scss/overview/search-form';
+
 @import 'src/scss/status-labels';
 
 // Layout.
@@ -61,27 +65,6 @@ $o-brand: 'internal';
 // Typography.
 .registry-link--external {
 	@include oTypographyLinkExternal();
-}
-
-.registry-link--github {
-	$color: str-slice(ie-hex-str(oColorsGetColorFor('link', 'text')), 4);
-	$hover-color: str-slice(ie-hex-str(oColorsGetColorFor('link-hover', 'text')), 4);
-	$background: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:github?source=registry-ui&tint=#{$color}&format=svg");
-	$hover-background: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:github?source=registry-ui&tint=#{$hover-color}&format=svg");
-	&:before {
-		@include oIconsBaseStyles();
-		content: '';
-		width: 1.75rem;
-		height: 1.75rem;
-		vertical-align: bottom;
-		$color: str-slice(ie-hex-str(oColorsGetColorFor('link', 'text')), 4);
-		background-image: $background;
-	}
-	&:hover {
-		&:before {
-			background-image: $hover-background;
-		}
-	}
 }
 
 // Messages.
@@ -159,23 +142,10 @@ $o-brand: 'internal';
 	max-width: oTypographyMaxLineWidth($scale: 1);
 }
 
-// Registry component version switcher.
-.registry-component-version-form {
-	margin-bottom: oTypographySpacingSize(2);
-	fieldset {
-		appearance: none;
-		border: 0;
-		padding: 0;
-		margin: 0;
-		min-width: 0;
-	}
-
-	legend {
-		@include oNormaliseVisuallyHidden();
-	}
-}
-
 // Registry title.
-.registry-title span {
-	vertical-align: middle;
+.registry-title {
+	span,
+	label {
+		vertical-align: middle;
+	}
 }

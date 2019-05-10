@@ -24,6 +24,7 @@
     "o-table": "^7.0.1",
     "o-visual-effects": "^2.0.3",
     "o-loading": "^2.2.2",
-    "o-layout": "^3.1.6"
+    "o-layout": "^3.1.6",
+    "o-labels": "^4.2.2"
   }
 }

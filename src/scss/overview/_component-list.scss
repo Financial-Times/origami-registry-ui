@@ -3,46 +3,77 @@
 	padding: 0;
 }
 
+.registry-component-o-support {
+	background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1:origami?source=registry-ui&format=svg&width=55");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 0;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	vertical-align: middle;
+}
+
 .registry-component-list-item {
-	padding: oTypographySpacingSize(2) 0;
+	border-top: 2px solid oColorsGetPaletteColor('slate-white-5');
 	list-style-type: none;
 	display: block;
-	border-top: 2px solid oColorsGetPaletteColor('slate-white-5');
-
-	h2 {
-		@include oTypographyBody();
-		@include oTypographySansBold();
-		display: inline;
-	}
-
-	p {
-		@include oTypographyCaption();
-	}
 
 	a {
-		padding: oTypographySpacingSize(2) 0;
-		display: block;
-		overflow: hidden;
 		color: initial;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		padding: oTypographySpacingSize(3);
 		text-decoration: inherit;
 	}
 
 	a:hover {
-		padding: oTypographySpacingSize(2) oTypographySpacingSize(2);
-		margin: 0 -#{oTypographySpacingSize(2)};
-		background-color: oColorsGetPaletteColor('slate-white-15');
+		background-color: oColorsGetPaletteColor('slate-white-5');
 	}
 
-	.registry-component-status {
-		float: right;
-		text-align: right;
-		margin-left: oTypographySpacingSize(4);
-		.status-label {
-			margin-right: 0;
-			margin-left: 0;
-			@include oGridRespondTo(M) {
-				margin: 0;
-			};
+	.registry-component__overview {
+		@include oTypographyMargin($bottom: 3);
+		display: flex;
+
+		h2 {
+			@include oTypographyBody();
+			@include oTypographySansBold();
+			display: block;
+			margin: 0 8px 0 0;
+		}
+
+		.component-version {
+			@include oTypographySize(0);
+			display: block;
+			margin-right: 8px;
+		}
+
+		.o-labels {
+			margin-right: 8px;
+		}
+	}
+
+	.registry-component__details {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+
+		p {
+			@include oTypographyCaption();
+			@include oTypographyMargin($top: 0, $bottom: 3);
+		}	
+	}
+
+	.registry-component__details--labels {
+		.o-labels--js,
+		.o-labels--imageset,
+		.o-labels--scss {
+			float: right;
+		}
+
+		.o-labels--js {
+			margin-left: 4px;
 		}
 	}
 }

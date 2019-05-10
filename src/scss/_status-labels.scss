@@ -1,29 +1,46 @@
-.status-label {
-	@include oTypographySansBold(-1);
-	padding: 2px 6px 4px 6px;
-	text-align: center;
-	border-radius: 5px;
-	margin: 4px;
+@include oLabels($opts: ( 'sizes': 'small' ));
 
- 	&--active,
-	&--maintained {
-		$active-color: oColorsMix(jade, black, 70);
-		background-color: $active-color;
-		color: oColorsGetTextColor($active-color, 100);
-	}
+@include oLabelsAddState('active', (
+	background-color: oColorsMix('jade', 'black', 70)
+));
 
- 	&--experimental {
-		background-color: oColorsGetPaletteColor('lemon');
-		color: oColorsGetTextColor(oColorsGetPaletteColor('lemon'), 100);
-	}
+@include oLabelsAddState('maintained', (
+	background-color: oColorsMix('jade', 'black', 70)
+));
 
- 	&--deprecated {
-		background-color: oColorsGetPaletteColor('crimson');
-		color: oColorsGetTextColor(oColorsGetPaletteColor('crimson'), 100);
-	}
+@include oLabelsAddState('experimental', (
+	background-color: oColorsGetPaletteColor('lemon')
+));
 
- 	&--dead {
-		background-color: oColorsGetPaletteColor('black');
-		color: oColorsGetTextColor(oColorsGetPaletteColor('black'));
-	}
-}
+@include oLabelsAddState('deprecated', (
+	background-color: oColorsGetPaletteColor('crimson')
+));
+
+@include oLabelsAddState('dead', (
+	background-color: oColorsGetPaletteColor('black')
+));
+
+@include oLabelsAddState('master', (
+	background-color: oColorsGetPaletteColor('wheat')
+));
+
+@include oLabelsAddState('internal', (
+	background-color: oColorsGetPaletteColor('slate-white-15')
+));
+
+@include oLabelsAddState('whitelabel', (
+	background-color: oColorsGetPaletteColor('white'),
+	border-color: oColorsGetPaletteColor('slate-white-15')
+));
+
+@include oLabelsAddState('js', (
+	background-color: oColorsMix('mandarin', 'lemon', 30)
+));
+
+@include oLabelsAddState('scss', (
+	background-color: oColorsMix('candy', 'velvet', 50)
+));
+
+@include oLabelsAddState('imageset', (
+	background-color: oColorsGetPaletteColor('sky')
+));
