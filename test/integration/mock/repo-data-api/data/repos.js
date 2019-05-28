@@ -30,6 +30,18 @@ module.exports = [
 				}
 			]
 		},
+		manifests: {
+			'origami': {
+				'browserFeatures': {
+					'required': [
+						'DOMTokenList'
+					],
+					'optional': [
+						'IntersectionObserver'
+					]
+				}
+			}
+		},
 		markdown: {
 			readme: '# o-example-active\n## test-readme\nExample content.'
 		},
