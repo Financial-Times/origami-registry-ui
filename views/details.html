@@ -14,6 +14,12 @@
     {{#ifEither dependencies.bower.length dependencies.npm.length}}
         <nav class="o-layout__navigation">
             <ol>
+                {{#if browserFeatures.required.length}}
+                    <li><a href="#required-browser-features">Required Browser Features</a></li>
+                {{/if}}
+                {{#if browserFeatures.optional.length}}
+                    <li><a href="#optional-browser-features">Optional Browser Features</a></li>
+                {{/if}}
                 {{#if dependencies.bower.length}}
                     <li><a href="#bower">Bower Dependencies</a></li>
                 {{/if}}
@@ -26,6 +32,34 @@
 	</div>
 
     <div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
+
+        {{#ifEither browserFeatures.required.length browserFeatures.optional.length}}
+            {{#if browserFeatures.required.length}}
+                <h2 id="required-browser-features">Required Browser Features</h2>
+                <p>{{ component.name }}@^{{ component.version }} requires the following browser features:</p>
+                <ul>
+                {{#each browserFeatures.required}}
+                    <li>
+                        <code>{{ . }}</code>
+                    </li>
+                {{/each}}
+                </ul>
+
+            {{/if}}
+            {{#if browserFeatures.optional.length}}
+                <h2 id="optional-browser-features">Optional Browser Features</h2>
+                <p>{{ component.name }}@^{{ component.version }} works best for browsers which support the following features, but will handle cases where they are not avalible:</p>
+                <ul>
+                {{#each browserFeatures.optional}}
+                    <li>
+                        <code>{{ . }}</code>
+                    </li>
+                {{/each}}
+                </ul>
+            {{/if}}
+            <p>We recommend <a href="https://polyfill.io/v3/">polyfill.io</a> to add support for missing features to older browsers.</p>
+        {{/ifEither}}
+
         {{#ifEither dependencies.bower.length dependencies.npm.length}}
             {{#if dependencies.npm.length}}
                 <h2 id="npm">NPM Dependencies</h2>
