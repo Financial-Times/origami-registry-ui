@@ -32,6 +32,13 @@ describe('GET /components/:componentId/details', () => {
                 assert.include(text, 'Bower Dependencies');
             });
 
+            it('includes the component\'s required browser features', () => {
+                assert.include(text, 'DOMTokenList');
+            });
+
+            it('includes the component\'s optional browser features', () => {
+                assert.include(text, 'IntersectionObserver');
+            });
         });
 
     });
