@@ -31,6 +31,7 @@
     "@financial-times/origami-service-makefile": "^6.4.0",
     "cheerio": "^1.0.0-rc.2",
     "dotenv": "^4.0.0",
+    "guestlist": "^2.1.0",
     "heroku-node-settings": "^1.1.0",
     "http-errors": "^1.6.2",
     "prismjs": "^1.11.0",
