@@ -17,7 +17,7 @@
                         <td class="o-table__code-docs-shrink">
                             {{#each types}}
                                 {{#if this.longname}}
-                                    <a class="link" href="#{{ this.name }}">{{ this.name }}</a>
+                                    <a class="link" href="#{{slugify this.name}}">{{ this.name }}</a>
                                 {{else}}
                                     {{ this.name }}
                                 {{/if}}
