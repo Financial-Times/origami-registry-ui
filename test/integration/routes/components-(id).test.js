@@ -104,6 +104,18 @@ describe('GET /components/:componentId', () => {
 
 	});
 
+	describe('when an invalid switch brand query parameter is provided', () => {
+
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-active@2.0.0?switch-brand=inte$rnal');
+		});
+
+		it('responds with a 400 status', () => {
+			return request.expect(400);
+		});
+
+	});
+
 	describe('when a switch version query parameter is provided', () => {
 
 		beforeEach(async () => {
@@ -116,6 +128,18 @@ describe('GET /components/:componentId', () => {
 
 		it('responds with a Location header pointing to correct brand', () => {
 			return request.expect('Location', '/components/o-example-active@1.1.1');
+		});
+
+	});
+
+	describe('when an invalid switch version query parameter is provided', () => {
+
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-active@2.0.0?switch-version=$');
+		});
+
+		it('responds with a 400 status', () => {
+			return request.expect(400);
 		});
 
 	});
@@ -150,6 +174,17 @@ describe('GET /components/:componentId', () => {
 			return request.expect('Location', '/components/o-example-active@2.0.0');
 		});
 
+	});
+
+	describe('when a component name includes special characters', () => {
+
+		beforeEach(async () => {
+			request = agent.get('/components/o-£');
+		});
+
+		it('responds with a 400 status', () => {
+			return request.expect(400);
+		});
 	});
 
 	describe('when the named component does not exist', () => {
