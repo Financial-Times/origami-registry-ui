@@ -16,8 +16,9 @@ describe('helpers', () => {
 	});
 
 	it('.slugify', () => {
-		const string = 'lower case';
-		assert.strictEqual(helper.slugify(string), 'lower-case');
+		assert.strictEqual(helper.slugify('lower case'), 'lower-case');
+		assert.strictEqual(helper.slugify('Some thing£-wild*'), 'some-thing-wild');
+		assert.strictEqual(helper.slugify(undefined), '');
 	});
 
 	it('.json', () => {
