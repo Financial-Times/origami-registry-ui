@@ -4,7 +4,7 @@
     {{#each this}}
         <li>
             {{#if longname}}
-                <a class="link" href="#{{longname}}">{{name}}</a>
+                <a class="link" href="#{{slugify longname}}">{{name}}</a>
             {{else}}
                 <strong>{{name}}</strong>
             {{/if}}

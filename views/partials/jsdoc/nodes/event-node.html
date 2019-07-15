@@ -1,4 +1,4 @@
-<h2 id="#{{longname}}">{{longname}}</h2>
+<h2 id="#{{slugify longname}}">{{longname}}</h2>
 
 {{#if types}}
     <h3>Type: {{#each types}}{{ this }}{{#unless @last}} | {{/unless}}{{/each}}</h3>

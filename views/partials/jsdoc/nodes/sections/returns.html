@@ -2,7 +2,7 @@
     <h3>Returns</h3>
     <ul>
         <li>
-            <a class="link" href="#{{longname}}">{{name}}</a>
+            <a class="link" href="#{{slugify longname}}">{{name}}</a>
             {{#if types}}
                 {{#each types}}{{this}}{{#unless @last}} | {{/unless}}{{/each}}
             {{/if}}
