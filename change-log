@@ -4,7 +4,7 @@ PAYLOAD='{
   "systemCode": "'"$SYSTEM_CODE"'",
   "environment": "'"$RELEASE_ENV"'",
   "notifications": {
-    "slackChannels": ["ft-changes-test"]
+    "slackChannels": ["origami-deploys"]
   },
   "user": {
     "email": "heroku-deploy-hook@ft.com"
