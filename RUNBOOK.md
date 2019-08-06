@@ -81,7 +81,7 @@ Manual
 
 ## Architecture Diagram
 
-<p><a href="https://docs.google.com/a/ft.com/drawings/d/1qKROLQvR-D5LzxxTTkJgzcr5IlLLkaRh3bEtF0AAYeA/edit?usp=sharing">Google Drawing</a></p>
+[Google Drawing](https://docs.google.com/a/ft.com/drawings/d/1qKROLQvR-D5LzxxTTkJgzcr5IlLLkaRh3bEtF0AAYeA/edit?usp=sharing)
 
 ## Architecture
 
