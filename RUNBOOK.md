@@ -2,10 +2,6 @@
 
 Get information about Origami components, services, and repositories
 
-## Code
-
-origami-registry-ui
-
 ## Service Tier
 
 Bronze
