@@ -187,6 +187,17 @@ describe('GET /components/:componentId', () => {
 		});
 	});
 
+	describe('when a component name with no version includes an encoded hash', () => {
+
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-active%23demo');
+		});
+
+		it('responds with a 404 status', () => {
+			return request.expect(404);
+		});
+	});
+
 	describe('when the named component does not exist', () => {
 
 		beforeEach(async () => {
