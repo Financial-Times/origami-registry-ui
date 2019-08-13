@@ -28,7 +28,7 @@
 			<div class="registry__component--demo-display">
 				{{#if display.live}}
 					<div class="o-tabs__tabpanel" id="{{slugify title}}-demo-{{@index}}">
-						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live" title="{{capitalise title}} Live Demo"></iframe>
+						<iframe loading="lazy" scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live" title="{{capitalise title}} Live Demo"></iframe>
 					</div>
 				{{/if}}
 				{{#if display.html}}
@@ -37,7 +37,7 @@
 							<button class="registry__demo-button select-html">Select Full Code Snippet</button>
 							<pre><code class='o-syntax-highlight--html'>{{{display.highlightedHTML}}}</code></pre>
 						{{else}}
-							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code" title="{{capitalise title}} HTML Code Snippet"></iframe>
+							<iframe loading="lazy" scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__code" title="{{capitalise title}} HTML Code Snippet"></iframe>
 						{{/if}}
 					</div>
 				{{/if}}
