@@ -3,7 +3,7 @@
 	<ul class="registry__component--image-grid o-layout__unstyled-element">
 		{{#images}}
 			<li id="{{slugify title}}" class="registry__component--image-item">
-				<img src="{{supportingUrls.w200}}" alt="{{title}}"/>
+				<img src="{{supportingUrls.w200}}" alt="{{title}}" loading="lazy" />
 				<p class="registry__component--image-title o-layout__unstyled-element">{{title}}</p>
 			</li>
 		{{/images}}
