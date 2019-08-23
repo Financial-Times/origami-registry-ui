@@ -13,8 +13,24 @@ module.exports = async function mockRepoDataApi() {
 
 	// Mount some mock routes
 	api.get('/v1/repos', (request, response) => {
-		response.send(repos);
+		let foundRepos = repos;
+		// mimic text search
+		if (request.query.q) {
+			foundRepos = foundRepos.filter(repo => repo.name.includes(request.query.q));
+		}
+		// mimic status search
+		if (request.query.status) {
+			foundRepos = foundRepos.filter(repo => repo.support.status === request.query.status);
+		}
+		// mimic type search
+		if (request.query.type) {
+			foundRepos = foundRepos.filter(repo => repo.type === request.query.type ||
+				repo.type === null && request.query.type === 'module'
+			);
+		}
+		response.send(foundRepos);
 	});
+
 	api.get('/v1/repos/:name', (request, response, next) => {
 		const repo = repos.find(repo => repo.name === request.params.name);
 		if (!repo) {

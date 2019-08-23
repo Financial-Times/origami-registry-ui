@@ -53,7 +53,7 @@ module.exports = [
 	// Maintained Origami component
 	{
 		name: 'o-example-maintained',
-		type: null,
+		type: 'module',
 		subType: null,
 		version: '1.5.0',
 		support: {
@@ -71,6 +71,52 @@ module.exports = [
 
 		// mock use only
 		_versions: ['1.5.0', '1.4.0', '1.3.0', '1.2.0', '1.1.0', '1.0.0']
+	},
+
+	// Maintained Origami imageset
+	{
+		name: 'o-example-imageset-maintained',
+		type: 'imageset',
+		subType: null,
+		version: '1.5.0',
+		support: {
+			status: 'maintained',
+			email: 'origami@example.com',
+			channel: {
+				name: '#example-channel',
+				url: 'mock-channel-url'
+			},
+			isOrigami: true
+		},
+		resources: {
+			demos: null
+		},
+
+		// mock use only
+		_versions: ['1.0.0']
+	},
+
+	// Maintained Origami service
+	{
+		name: 'o-example-service-maintained',
+		type: 'service',
+		subType: null,
+		version: '1.5.0',
+		support: {
+			status: 'maintained',
+			email: 'origami@example.com',
+			channel: {
+				name: '#example-channel',
+				url: 'mock-channel-url'
+			},
+			isOrigami: true
+		},
+		resources: {
+			demos: null
+		},
+
+		// mock use only
+		_versions: ['1.0.0']
 	},
 
 	// Deprecated Origami component
