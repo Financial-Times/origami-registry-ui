@@ -172,6 +172,10 @@ class FilterForm {
 	 */
 	getUrlEncodedFilterValues() {
 		return Object.entries(this.getFilterValues())
+			.filter(entry => {
+				const value = entry[1];
+				return Boolean(value);
+			})
 			.map(([key, value]) => {
 				return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
 			})
