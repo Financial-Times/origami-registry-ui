@@ -62,6 +62,18 @@ describe.only('GET /components.json', () => {
                 {
                     status: 'maintained',
                     expected: 4
+                },
+                {
+                    status: 'experimental',
+                    expected: 0
+                },
+                {
+                    status: 'deprecated',
+                    expected: 1
+                },
+                {
+                    status: 'dead',
+                    expected: 0
                 }
             ];
             for (const test of tests) {
