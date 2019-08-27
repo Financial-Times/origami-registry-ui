@@ -29,11 +29,11 @@ describe('GET /components', () => {
 			list = dom.window.document.querySelector('[data-test=component-list]');
 		});
 
-		it('contains a list of all components', () => {
+		it('contains a list of all active and maintained components and imagesets by default', () => {
 			assert.isNotNull(list);
 
 			const listItems = list.querySelectorAll('[data-test=component-list-item]');
-			assert.lengthEquals(listItems, 5);
+			assert.lengthEquals(listItems, 3);
 
 			let link;
 
@@ -46,12 +46,8 @@ describe('GET /components', () => {
 			assert.include(link.textContent.trim(), 'o-example-maintained');
 
 			link = listItems[2].querySelector('[data-test=component-link]');
-			assert.strictEqual(link.getAttribute('href'), '/components/o-example-deprecated@1.0.0?brand=master');
-			assert.include(link.textContent.trim(), 'o-example-deprecated');
-
-			link = listItems[3].querySelector('[data-test=component-link]');
-			assert.strictEqual(link.getAttribute('href'), '/components/n-example-active@1.2.3?brand=master');
-			assert.include(link.textContent.trim(), 'n-example-active');
+			assert.strictEqual(link.getAttribute('href'), '/components/o-example-imageset-maintained@1.5.0?brand=master');
+			assert.include(link.textContent.trim(), 'o-example-imageset-maintained');
 		});
 	});
 });
