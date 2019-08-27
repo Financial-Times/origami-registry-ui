@@ -20,11 +20,11 @@ module.exports = async function mockRepoDataApi() {
 		}
 		// mimic status search
 		if (request.query.status) {
-			foundRepos = foundRepos.filter(repo => repo.support.status === request.query.status);
+			foundRepos = foundRepos.filter(repo => request.query.status.includes(repo.support.status));
 		}
 		// mimic type search
 		if (request.query.type) {
-			foundRepos = foundRepos.filter(repo => repo.type === request.query.type ||
+			foundRepos = foundRepos.filter(repo => request.query.type.includes(repo.type) ||
 				repo.type === null && request.query.type === 'module'
 			);
 		}
