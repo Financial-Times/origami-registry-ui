@@ -28,7 +28,7 @@
     "@financial-times/health-check": "1.10.1",
     "@financial-times/origami-repo-data-client": "1.6.0",
     "@financial-times/origami-service": "4.1.0",
-    "@financial-times/origami-service-makefile": "6.4.0",
+    "@financial-times/origami-service-makefile": "7.0.0",
     "cheerio": "1.0.0-rc.3",
     "dotenv": "8.1.0",
     "guestlist": "2.1.0",
