@@ -17,7 +17,7 @@
   },
   "engines": {
     "node": "^10.8.0",
-    "npm": "^5"
+    "npm": "^6.0.0"
   },
   "main": "./lib/service.js",
   "scripts": {
