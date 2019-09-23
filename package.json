@@ -34,7 +34,7 @@
     "guestlist": "2.1.0",
     "heroku-node-settings": "1.1.0",
     "http-errors": "1.7.3",
-    "prismjs": "1.15.0",
+    "prismjs": "1.17.1",
     "request-promise-native": "1.0.7",
     "require-all": "2.2.0",
     "sassdoc-extras": "2.4.3",
