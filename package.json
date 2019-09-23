@@ -30,7 +30,7 @@
     "@financial-times/origami-service": "4.1.0",
     "@financial-times/origami-service-makefile": "6.4.0",
     "cheerio": "1.0.0-rc.3",
-    "dotenv": "4.0.0",
+    "dotenv": "8.1.0",
     "guestlist": "2.1.0",
     "heroku-node-settings": "1.1.0",
     "http-errors": "1.7.3",
