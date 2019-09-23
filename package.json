@@ -51,6 +51,6 @@
     "nyc": "11.9.0",
     "proclaim": "3.6.0",
     "sinon": "5.1.1",
-    "supertest": "3.3.0"
+    "supertest": "3.4.2"
   }
 }
