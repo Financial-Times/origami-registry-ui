@@ -45,7 +45,7 @@
     "@financial-times/grafana-tools": "1.0.1",
     "eslint": "6.4.0",
     "jsdom": "15.1.1",
-    "mocha": "6.2.0",
+    "mocha": "6.2.1",
     "mockery": "2.1.0",
     "nodemon": "1.19.2",
     "nyc": "14.1.1",
