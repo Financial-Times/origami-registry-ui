@@ -47,7 +47,7 @@
     "jsdom": "15.2.1",
     "mocha": "6.2.2",
     "mockery": "2.1.0",
-    "nodemon": "2.0.0",
+    "nodemon": "2.0.1",
     "nyc": "14.1.1",
     "proclaim": "3.6.0",
     "sinon": "7.5.0",
