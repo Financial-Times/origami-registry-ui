@@ -37,7 +37,7 @@
     "prismjs": "1.17.1",
     "request-promise-native": "1.0.8",
     "require-all": "3.0.0",
-    "sassdoc-extras": "2.5.1",
+    "sassdoc-extras": "3.0.0",
     "showdown": "1.9.1",
     "throng": "4.0.0"
   },
