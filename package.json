@@ -50,7 +50,7 @@
     "nodemon": "2.0.2",
     "nyc": "15.0.0",
     "proclaim": "3.6.0",
-    "sinon": "8.0.2",
+    "sinon": "8.0.3",
     "supertest": "4.0.2"
   }
 }
