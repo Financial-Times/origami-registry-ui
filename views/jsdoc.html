@@ -1,35 +1,50 @@
-<div class="registry__container">
-    <div class="registry__container__left">
-        {{> codedocs/codedocs-sidebar }}
-    </div>
+<div class="o-layout o-layout--query" data-o-component="o-layout">
+	<div class="o-layout__header">
+		 {{> header }}
+	</div>
 
-    <div class="registry__container__center">
-		<div class="registry__component">
-            {{> component/messages}}
+	<div class="o-layout__heading">
+		<div class="o-layout-typography">
+			{{> component/header}}
+		</div>
+		{{> component/messages}}
+	</div>
 
-            {{!-- {{ Output message for no JSDocs. }} --}}
-            {{#unless navItems }}
-                <h1>{{ component.name }} JsDocs</h1>
-                <p>It looks like JsDocs for {{ component.name }}@{{ component.version }} are missing or formatted incorrectly.<p>
-                <p>For component documentation see <a class="link"  href="/components/{{ component.name }}@{{ component.version }}/readme">the readme</a>.</p>
-            {{/unless}}
+	<div class="o-layout__query-sidebar">
+		{{> component/sidebar-nav }}
+	</div>
 
-            {{!-- {{ Output global JSDoc nodes with links to their member nodes. }} --}}
-            {{#each jsDocByTypeWithMembers }}
-                {{#each this}}
-                    {{> jsdoc/jsdoc-node }}
-                {{/each}}
-            {{/each}}
+	<div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
+			{{!-- {{ Output message for no JSDocs. }} --}}
+			{{#unless navItems }}
+				<p>It looks like JsDocs for {{ component.name }}@{{ component.version }} are missing or formatted incorrectly.<p>
+				<p>For component documentation see <a class="link"  href="/components/{{ component.name }}@{{ component.version }}/readme">the readme</a>.</p>
+			{{/unless}}
 
-            {{!-- {{ Output member nodes so they can be viewed in more detail. }} --}}
-            {{#each memberJsDocs}}
-                {{> jsdoc/jsdoc-node }}
-            {{/each}}
+			{{!-- {{ Output global JSDoc nodes with links to their member nodes. }} --}}
+			{{#each jsDocByTypeWithMembers }}
+				{{#each this}}
+					{{> jsdoc/jsdoc-node }}
+				{{/each}}
+			{{/each}}
 
-            {{!-- {{ Output default node to display before selection is made. }} --}}
-            {{#if defaultNode}}
-                {{> jsdoc/jsdoc-node defaultNode default=true }}
-            {{/if}}
-        </div>
-    </div>
+			{{!-- {{ Output member nodes so they can be viewed in more detail. }} --}}
+			{{#each memberJsDocs}}
+				{{> jsdoc/jsdoc-node }}
+			{{/each}}
+
+			{{!-- {{ Output default node to display before selection is made. }} --}}
+			{{#if defaultNode}}
+				{{> jsdoc/jsdoc-node defaultNode default=true }}
+			{{/if}}
+	</div>
+
+	<div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">
+		{{> component/quickstart-sidebar}}
+	</div>
+
+
+	<div class="o-layout__footer">
+		{{> footer}}
+	</div>
 </div>

@@ -1,35 +1,38 @@
-<div class="registry__container">
-	<div class="registry__container__left">
-		{{> component/list-sidebar}}
+<div class="o-layout o-layout--query" data-o-component="o-layout">
+	<div class="o-layout__header">
+		 {{> header }}
 	</div>
 
-	<div class="registry__container__center">
-		{{#> component/container}}
-			{{#*inline "content"}}
-				{{> component/brand-tabs}}
-
-				{{> component/header}}
-
-				{{#if demos}}
-					{{> component/type/demos}}
-				{{/if}}
-
-				{{#if images}}
-					{{> component/type/images}}
-				{{/if}}
-
-				{{#if service}}
-					{{> component/type/service}}
-				{{/if}}
-
-				{{#ifEither dependencies.bower.length dependencies.npm.length}}
-					{{> component/dependencies dependencies}}
-				{{/ifEither}}
-			{{/inline}}
-		{{/component/container}}
+	<div class="o-layout__heading">
+		<div class="o-layout-typography">
+			{{> component/header}}
+		</div>
+		{{> component/messages}}
 	</div>
 
-	<div class="registry__container__right">
+	<div class="o-layout__query-sidebar">
+		{{> component/sidebar-nav }}
+	</div>
+
+	<div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
+		{{#if demos}}
+			{{> component/type/demos}}
+		{{/if}}
+
+		{{#if images}}
+			{{> component/type/images}}
+		{{/if}}
+
+		{{#if service}}
+			{{> component/type/service}}
+		{{/if}}
+	</div>
+
+	<div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">
 		{{> component/quickstart-sidebar}}
+	</div>
+
+	<div class="o-layout__footer">
+		{{> footer}}
 	</div>
 </div>

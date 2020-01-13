@@ -13,8 +13,24 @@ module.exports = async function mockRepoDataApi() {
 
 	// Mount some mock routes
 	api.get('/v1/repos', (request, response) => {
-		response.send(repos);
+		let foundRepos = repos;
+		// mimic text search
+		if (request.query.q) {
+			foundRepos = foundRepos.filter(repo => repo.name.includes(request.query.q));
+		}
+		// mimic status search
+		if (request.query.status) {
+			foundRepos = foundRepos.filter(repo => request.query.status.includes(repo.support.status));
+		}
+		// mimic type search
+		if (request.query.type) {
+			foundRepos = foundRepos.filter(repo => request.query.type.includes(repo.type) ||
+				repo.type === null && request.query.type === 'module'
+			);
+		}
+		response.send(foundRepos);
 	});
+
 	api.get('/v1/repos/:name', (request, response, next) => {
 		const repo = repos.find(repo => repo.name === request.params.name);
 		if (!repo) {
@@ -34,6 +50,23 @@ module.exports = async function mockRepoDataApi() {
 			return next(httpError(404));
 		}
 		response.send(repo.markdown.readme);
+	});
+	api.get('/v1/repos/:name/versions/:versionId/dependencies', (request, response, next) => {
+		const repo = repos.find(repo => repo.name === request.params.name);
+		if (!repo || !repo._versions.includes(request.params.versionId) || !repo.resources || !repo.resources.dependencies) {
+			return next(httpError(404));
+		}
+		response.send(repo.resources.dependencies);
+	});
+	api.get('/v1/repos/:name/versions/:versionId/manifests/:manifestType', (request, response, next) => {
+		const repo = repos.find(repo => repo.name === request.params.name);
+		if (!repo) {
+			return next(httpError(404));
+		}
+		if (!repo || !repo.manifests || !repo.manifests[request.params.manifestType]) {
+			return response.send({});
+		}
+		response.send(repo.manifests[request.params.manifestType]);
 	});
 	api.use((error, request, response, next) => { // eslint-disable-line no-unused-vars
 		response.status(error.status).send({

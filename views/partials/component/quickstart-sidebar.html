@@ -1,11 +1,136 @@
 <div class="registry__container__sticky">
-	<a class="github-link" href="{{component.url}}">GitHub Repository</a>
+	<label class="o-forms__label">Support status</label>
+	{{#component.support}}
+		{{#status}}
+			<label class="o-labels o-labels--{{.}}" data-test="support-status" title="Support status">{{.}}</label>
+		{{/status}}
+		{{#isOrigami}}
+			<label title="Component maintained by the Origami core team" class="registry-component-o-support"></label>
+		{{/isOrigami}}
+	{{/component.support}}
+	<form action="" method="GET" class="registry-component-version-form">
+		<fieldset>
+			<legend>Switch component view</legend>
+			{{#if component.brands}}
+				<div class="o-forms">
+					<label for="select-brand" class="o-forms__label">Brand</label>
+					<select data-version-select id="select-brand" name="switch-brand" class="o-forms__select">
+					{{#component.brands}}
+						<option value="{{this}}" data-redirect="/components/{{@root.component.name}}@{{@root.component.version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals this 'master' }}?brand={{this}}{{/unlessEquals}}" {{#ifEquals this @root.currentBrand}}selected="true"{{/ifEquals}}>{{this}}</option>
+					{{/component.brands}}
+					</select>
+				</div>
+			{{/if}}
+
+			<div class="o-forms">
+				<label for="select-version" class="o-forms__label">Version</label>
+				<select data-version-select id="select-version" name="switch-version" class="o-forms__select">
+				{{#versions}}
+					<option value="{{version}}" data-redirect="/components/{{@root.component.name}}@{{version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals @root.currentBrand 'master' }}?brand={{@root.currentBrand}}{{/unlessEquals}}" {{#ifEquals version @root.component.version}}data-test="current-version" selected="true"{{/ifEquals}}>{{version}}</option>
+				{{/versions}}
+				</select>
+			</div>
+
+			<input class="switch-button registry-button registry-button--secondary" type="submit" value="Switch To Version{{#if component.brands}} &amp; Brand{{/if}}">
+
+		</fieldset>
+	</form>
+
+	{{#if component.languages}}
+		<div>
+
+		</div>
+	{{/if}}
+
+	<p>
+		<a class="registry-link registry-link--github" href="{{component.url}}">GitHub Repository</a>
+	</p>
+
+	{{#ifEquals component.type 'service'}}
+		<details>
+			<summary id="help-support">Help &amp; Support</summary>
+			{{#unless component.support.isOrigami}}
+				<p>{{ component.name }} is not supported directly by the Origami team. We make no guarantees, but will help if we can. First try contacting its maintainers at:</p>
+				<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+			{{else}}
+				<p>Check the <a class="registry-link registry-link--external" href="{{service.primaryUrl}}">{{ component.name }} documentation</a> if you haven't already. It's maintained directly by the Origami team so if you have any questions we are happy to help. &#x1F60A;</p>
+				<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+			{{/unless}}
+		</details>
+	{{/ifEquals}}
 
 	{{#ifEquals component.type 'imageset'}}
-		{{> component/quickstart/imageset}}
+		<details>
+			<summary id="use">Include images in your project</summary>
+			<p>Images from "{{@root.component.name}}" can be loaded directly using the <a class="registry-link registry-link--external" href="https://www.ft.com/__origami/service/image/v2/">Image Service</a>.</p>
+			<p>To load an image from this image set, use the following Image Service URL:</p>
+			<pre><code class="o-syntex=higlight--html">https://www.ft.com/__origami/service/image/v2/images/raw/{{@root.component.imageSetScheme}}:{image-name}?source={your-source-here}</code></pre>
+			<p>See the <a class="registry-link registry-link--external" href="https://www.ft.com/__origami/service/image/v2/">Image Service documentation</a> for more.</p>
+		</details>
+
+		<details>
+			<summary id="use">Download images</summary>
+			<p>To add images to your project we recommend using the <a class="registry-link registry-link--external" href="https://www.ft.com/__origami/service/image/v2/">Image Service</a>. However you may download the full image set using the button below. It will download the Github repository, with all the image files in a sub folder.</p>
+			<a href="{{@root.component.url}}/archive/master.zip" class="download-button o-layout__unstyled-element registry-button registry-button--secondary">Download the Imageset</a>
+		</details>
+
+		{{#if component.support.isOrigami}}
+		<details>
+			<summary id="add-update-an-image">Add/update an image</summary>
+			<p>To request a new image, or to change an existing image, please <a class="registry-link registry-link--external" href="{{component.url}}/issues">create an issue</a> on Github. For support please get in touch &#x1F60A;</p>
+			<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+		</details>
+		{{/if}}
+
+
+		<details>
+			<summary id="support-details">Support Details</summary>
+			<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+		</details>
 	{{/ifEquals}}
 
 	{{#ifEquals component.type 'module'}}
-		{{> component/quickstart/build-service component}}
+		<details>
+			<summary id="install">Install {{@root.component.name}}</summary>
+
+
+			<p>If using the <a class="registry-link registry-link--external" href="{{ft.options.origamiSite}}docs/tutorials/build-service/">Build Service</a>, add <code class="o-syntax-highlight--html">{{@root.component.name}}@^{{@root.component.version}}</code> to your
+				{{#ifBoth @root.component.hasJS @root.component.hasCSS}}
+					script and link tags.
+				{{else}}
+					{{#if @root.component.hasJS}}script tag.{{/if}}
+					{{#if @root.component.hasCSS}}link tag.{{/if}}
+				{{/ifBoth}}
+				{{#if @root.component.hasCSS}}
+					{{#unlessEquals @root.currentBrand 'master'}}
+						Ensure the correct brand is set with a query parameter <code class="o-syntax-highlight--html">&brand={{@root.currentBrand}}</code>.
+					{{/unlessEquals}}
+				{{/if}}
+			</p>
+
+			<p>
+				If running a <a class="registry-link registry-link--external" href="{{ft.options.origamiSite}}docs/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">bower install --save "{{@root.component.name}}@^{{@root.component.version}}"</code>.
+			</p>
+		</details>
+
+		<details>
+			<summary id="help-support">Help &amp; Support</summary>
+			{{#unless component.support.isOrigami}}
+				<p>{{ component.name }} is not supported directly by the Origami team. We make no guarantees, but will help if we can. First try contacting its maintainers at:</p>
+				<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+			{{else}}
+				<p>{{ component.name }} is maintained directly by the Origami team. If you have any questions about {{ component.name }} or Origami in general, we are happy to help. &#x1F60A;</p>
+				<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+			{{/unless}}
+		</details>
+
+		{{#if component.support.isOrigami}}
+		<details>
+			<summary id="feedback-issues">Feedback / Issues</summary>
+			<p>To report a bug or request features please <a class="registry-link registry-link--external" href="{{component.url}}/issues">create an issue</a> on Github. For support or general feedback please get in touch &#x1F60A;</p>
+			<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link--external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link--external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
+		</details>
+		{{/if}}
 	{{/ifEquals}}
+
 </div>

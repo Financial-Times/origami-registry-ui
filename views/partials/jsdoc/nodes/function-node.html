@@ -1,7 +1,7 @@
 {{> codedocs/nodes/sections/deprecation-warning }}
 
-<h1 id="#{{longname}}">{{> codedocs/nodes/sections/name name=longname parameters=parameters}}</h1>
-<h2>{{ capitalise scope }} {{ label }}</h2>
+<h2 id="#{{slugify longname}}">{{> codedocs/nodes/sections/name name=longname parameters=parameters}}</h2>
+<h3>{{ capitalise scope }} {{ label }}</h3>
 {{#if description}}
     {{{markdown description}}}
 {{/if}}

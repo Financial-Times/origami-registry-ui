@@ -13,15 +13,13 @@ describe('lib/code-docs/jsdoc/nodes/event', () => {
         assert.equal(node.longname, eventDoclet.longname, 'Did not add the "longname" property as expected.');
         assert.equal(node.group, 'events', 'Did not add the "group" property as expected.');
         assert.equal(node.label, 'Event', 'Did not add the "label" property as expected.');
-        assert.deepEqual(node.type, ['object'], 'Did not add the "type" property as expected.');
+        assert.deepEqual(node.types, ['object'], 'Did not add the "type" property as expected.');
         assert.deepEqual(node.examples, [], 'Did not add the "examples" property as expected.');
-        assert.deepEqual(node.properties, [
-            {
-                'name': eventDoclet.properties[0].name,
-                'type': eventDoclet.properties[0].type.names,
-                'description': eventDoclet.properties[0].description
-            }
-        ], 'Did not add the "properties" property as expected.');
+        assert.deepEqual(node.properties, [{
+            'description': 'Indicates whether the snowball is tightly packed.',
+            'name': 'detail.isPacked',
+            'types': [ 'boolean' ]
+        }], 'Did not add the "properties" property as expected.');
     });
 
     it('adds properties for a event doclet which has no type or properties defined ', () => {
@@ -29,7 +27,7 @@ describe('lib/code-docs/jsdoc/nodes/event', () => {
         assert.equal(node.longname, eventDoclet.longname, 'Did not add the "longname" property as expected.');
         assert.equal(node.group, 'events', 'Did not add the "group" property as expected.');
         assert.equal(node.label, 'Event', 'Did not add the "label" property as expected.');
-        assert.deepEqual(node.type, [], 'Did not add the "type" property as expected.');
+        assert.deepEqual(node.types, [], 'Did not add the "type" property as expected.');
         assert.deepEqual(node.examples, [], 'Did not add the "examples" property as expected.');
         assert.deepEqual(node.properties, [], 'Did not add the "properties" property as expected.');
     });

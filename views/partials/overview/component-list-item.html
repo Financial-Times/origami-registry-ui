@@ -1,0 +1,39 @@
+<li class="o-layout__unstyled-element registry-component-list-item" data-test="component-list-item">
+	<a href="/components/{{name}}@{{version}}{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" class="o-layout__unstyled-element" data-test="component-link">
+		<div class="registry-component__overview">
+			<h2 class="o-layout__unstyled-element">{{name}}</h2>
+			<label title="Component version" class="component-version">
+				v{{version}}
+			</label>
+			<label title="Component support status" class="o-labels o-labels--{{support.status}}">
+				{{support.status}}
+			</label>
+			{{#support.isOrigami}}
+				<label title="Component maintained by the Origami core team" class="registry-component-o-support"></label>
+			{{/support.isOrigami}}
+		</div>
+		<div class="registry-component__details">
+			<p class="o-layout__unstyled-element">{{description}}</p>
+			<div class="registry-component__details--labels">
+				{{#brands}}
+					<label title="Supported brand" class="o-labels o-labels--{{.}}">{{.}}</label>
+				{{/brands}}
+				{{^brands}}
+					{{#languages}}
+						{{#ifEquals 'scss' . }}
+							<label title="Supported brand" class="o-labels o-labels--master">master</label>
+						{{/ifEquals}}
+					{{/languages}}
+				{{/brands}}
+				{{#languages}}
+					{{#ifAny . 'scss' 'js' }}
+						<label title="Language used in component" class="o-labels o-labels--{{.}}">{{.}}</label>
+					{{/ifAny}}
+				{{/languages}}
+					{{#ifEquals type 'imageset'}}
+						<label title="Type" class="o-labels o-labels--{{type}}">{{type}}</label>
+					{{/ifEquals}}
+			</div>
+		</div>
+	</a>
+</li>

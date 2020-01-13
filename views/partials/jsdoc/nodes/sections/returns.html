@@ -1,10 +1,10 @@
 {{#if this}}
-    <h2>Returns</h2>
+    <h3>Returns</h3>
     <ul>
         <li>
-            <a class="link" href="#{{longname}}">{{name}}</a>
-            {{#if type}}
-                {{#each type}}{{this}}{{#unless @last}} | {{/unless}}{{/each}}
+            <a class="link" href="#{{slugify longname}}">{{name}}</a>
+            {{#if types}}
+                {{#each types}}{{this}}{{#unless @last}} | {{/unless}}{{/each}}
             {{/if}}
             {{#if description}}
                 - {{description}}
@@ -12,3 +12,4 @@
         </li>
     </ul>
 {{/if}}
+

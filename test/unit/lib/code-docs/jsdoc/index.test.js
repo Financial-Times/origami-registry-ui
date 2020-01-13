@@ -16,13 +16,49 @@ const PropertyDoclet = require('../../../mock/code-docs/jsdoc/property');
 const NamespaceDoclet = require('../../../mock/code-docs/jsdoc/namespace');
 const MixinDoclet = require('../../../mock/code-docs/jsdoc/mixin');
 const ModuleDoclet = require('../../../mock/code-docs/jsdoc/module');
+const TypeDef = require('../../../mock/code-docs/jsdoc/typedef');
 
 describe('lib/code-docs/jsdoc/index', () => {
 
-    describe('supportedDoclets', () => {
+    describe('supportedDocletKinds', () => {
         it('Returns an array of supported doclet kinds', () => {
-            assert.isTrue(Array.isArray(JsDoc.supportedDoclets()), 'Did not return an array.');
-            assert.isTrue(JsDoc.supportedDoclets().includes('class'), 'Expected at least class doclets to be supported.');
+            assert.isTrue(Array.isArray(JsDoc.supportedDocletKinds()), 'Did not return an array.');
+            assert.isTrue(JsDoc.supportedDocletKinds().includes('class'), 'Expected at least class doclets to be supported.');
+        });
+    });
+
+    describe('supportedDoclet', () => {
+        let testDoclet = {};
+        beforeEach(() => {
+            testDoclet = {
+                'kind': 'function',
+                'name': 'helloWorld',
+                'longname': 'helloWorld',
+            };
+        });
+        it('undocumented doclet returns false', () => {
+            const undocumentedDoclet = testDoclet;
+            undocumentedDoclet.undocumented = true;
+            assert.isFalse(JsDoc.supportedDoclet(undocumentedDoclet));
+        });
+        it('unsupported doclet kind returns false', () => {
+            const unsuportedKindDoclet = testDoclet;
+            unsuportedKindDoclet.kind = 'notarealkind';
+            assert.isFalse(JsDoc.supportedDoclet(unsuportedKindDoclet));
+        });
+        it('private doclet returns false', () => {
+            const privateDoclet = testDoclet;
+            privateDoclet.access = 'private';
+            assert.isFalse(JsDoc.supportedDoclet(privateDoclet));
+        });
+        it('pseudo private doclet (where the name starts with an underscore) returns false', () => {
+            const pseudoPrivateDoclet = testDoclet;
+            pseudoPrivateDoclet.name = `_${pseudoPrivateDoclet.name}`;
+            pseudoPrivateDoclet.longname = `_${pseudoPrivateDoclet.longname}`;
+            assert.isFalse(JsDoc.supportedDoclet(pseudoPrivateDoclet));
+        });
+        it('documented, supported, public doclet returns true', () => {
+            assert.isTrue(JsDoc.supportedDoclet(testDoclet));
         });
     });
 
@@ -93,51 +129,73 @@ describe('lib/code-docs/jsdoc/index', () => {
     });
 
     describe('formatDoclet', () => {
+        const testJsDoc = new JsDoc([]);
+        it('Adds custom "types" property to doclet parameters which have a typedef.', () => {
+            const functionDoclet = TypeDef.classWithTypeDefinitionParam;
+            const typedefDoclet = TypeDef.typeDefinition;
+            const node = (new JsDoc([typedefDoclet, functionDoclet])).formatDoclet(functionDoclet);
+            assert.deepEqual(node.constructor.parameters, [{
+                name: 'rootEl',
+                types: [{ name: 'HTMLElement', longname: null }], // HTMLElement is a built in type, it does not have a doclet.
+                description: 'An o-component element.',
+                default: '',
+                optional: '',
+                nullable: ''
+            },
+            {
+                name: 'opts',
+                types: [{ name: 'OComponent~opts', longname: 'OComponent~opts' }], // longname has been added to link opts type with its typedef doclet.
+                description: 'An options object.',
+                default: '',
+                optional: '',
+                nullable: ''
+            }]);
+        });
         it('Formats a class doclet', () => {
             const doclet = ClassDoclet.classDeclarationDoclet;
-            const node = JsDoc.formatDoclet(doclet);
+            const node = testJsDoc.formatDoclet(doclet);
             assert.isTrue(node instanceof ClassNode, 'Did not create a class node from a class doclet.');
         });
         it('Formats a function doclet', () => {
             const doclet = FunctionDoclet.globalFunctionDoclet;
-            const node = JsDoc.formatDoclet(doclet);
+            const node = testJsDoc.formatDoclet(doclet);
             assert.isTrue(node instanceof FunctionNode, 'Did not create a function node from a function doclet.');
         });
         it('Formats a member doclet', () => {
             const doclet = PropertyDoclet.memberDoclet;
-            const node = JsDoc.formatDoclet(doclet);
+            const node = testJsDoc.formatDoclet(doclet);
             assert.isTrue(node instanceof PropertyNode, 'Did not create a property node from a member doclet.');
         });
         it('Formats a constant doclet', () => {
             const doclet = PropertyDoclet.constantDoclet;
-            const node = JsDoc.formatDoclet(doclet);
+            const node = testJsDoc.formatDoclet(doclet);
             assert.isTrue(node instanceof PropertyNode, 'Did not create a property node from a constant doclet.');
         });
         it('Formats an event doclet', () => {
             const doclet = EventDoclet.eventDoclet;
-            const node = JsDoc.formatDoclet(doclet);
+            const node = testJsDoc.formatDoclet(doclet);
             assert.isTrue(node instanceof EventNode, 'Did not create a event node from a event doclet.');
         });
         it('Formats a namespace doclet', () => {
             const doclet = NamespaceDoclet.namespaceDoclet;
-            const node = JsDoc.formatDoclet(doclet);
+            const node = testJsDoc.formatDoclet(doclet);
             assert.isTrue(node instanceof NamespaceNode, 'Did not create a namespace node from a namespace doclet.');
         });
         it('Formats a mixin doclet', () => {
             const doclet = MixinDoclet.mixinDoclet;
-            const node = JsDoc.formatDoclet(doclet);
+            const node = testJsDoc.formatDoclet(doclet);
             assert.isTrue(node instanceof MixinNode, 'Did not create a mixin node from a mixin doclet.');
         });
         it('Formats a module doclet', () => {
             const doclet = ModuleDoclet.moduleDoclet;
-            const node = JsDoc.formatDoclet(doclet);
+            const node = testJsDoc.formatDoclet(doclet);
             assert.isTrue(node instanceof ModuleNode, 'Did not create a module node from a module doclet.');
         });
         it('Throws an error for an unsupported doclet kind', () => {
             const doclet = {
                 kind: 'somethingunknown'
             };
-            const formatDoclet = JsDoc.formatDoclet.bind(null, doclet);
+            const formatDoclet = testJsDoc.formatDoclet.bind(null, doclet);
             assert.throws(formatDoclet, null, 'Should throw an error for an unsupported doclet kind.');
         });
     });

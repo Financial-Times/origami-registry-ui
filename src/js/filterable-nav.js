@@ -12,7 +12,7 @@ function setNavVisibility(navElement, searchTerm) {
         // Check item against query.
         const itemMatches = !searchTerm || searchRegExp.test(item.textContent) ? true : false;
         // Check subnavs against query.
-        const subNavs = Array.from(item.children).filter(element => element.tagName === 'UL');
+        const subNavs = Array.from(item.children).filter(element => element.tagName === 'UL' || element.tagName === 'OL');
         const itemHasVisibleSubnav = subNavs.reduce((itemHasVisibleSubnav, subNav) => {
             const subnavVisible = setNavVisibility(subNav, searchTerm);
             return subnavVisible ? true : itemHasVisibleSubnav;

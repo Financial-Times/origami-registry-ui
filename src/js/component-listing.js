@@ -1,7 +1,5 @@
 'use strict';
 
-const repoListing = require('../../lib/repo-listing');
-
 /**
  * Represents a filterable component listing.
  */
@@ -13,107 +11,33 @@ class ComponentListing {
 	 */
 	constructor(listingElement) {
 		this.listingElement = listingElement;
-		this.components = this.getComponents();
-		this.categoryElements = this.getCategoryElements();
-		document.addEventListener('o.filterFormUpdate', this.handleFilterFormUpdateEvent.bind(this));
+		document.addEventListener('o.filterFormInitSearch', this.handleFilterFormInitSearchEvent.bind(this));
+		document.addEventListener('o.filterFormSuccess', this.handleFilterFormSuccessEvent.bind(this));
+		document.addEventListener('o.filterFormError', this.handleFilterFormErrorEvent.bind(this));
 	}
 
 	/**
-	 * Handle the filter form update event.
+	 * Handle the filter form initialise search event.
 	 */
-	handleFilterFormUpdateEvent(event) {
-		const filter = event.detail;
-		// Perform the visibility marking
-		this.components = this.components.map(component => {
-
-			component.visible = true;
-			return component;
-		});
-
-		if (filter.search !== undefined) {
-			this.components = repoListing.markVisibilityBySearchTerm(this.components, filter.search);
-		}
-
-		if (filter.module !== undefined) {
-			this.components = repoListing.markVisibilityByType(this.components, {
-				imageset: filter.imageset,
-				module: filter.module,
-				service: filter.service
-			});
-		}
-
-		if (filter.active !== undefined) {
-			this.components = repoListing.markVisibilityByStatus(this.components, {
-				active: filter.active,
-				dead: filter.dead,
-				deprecated: filter.deprecated,
-				experimental: filter.experimental,
-				maintained: filter.maintained
-			});
-		}
-
-		// Feeling lucky? Just click the first result
-		if (filter.feelingLucky) {
-			const firstVisibleComponent = this.components.find(component => component.visible);
-			if (firstVisibleComponent) {
-				const link = firstVisibleComponent.element.querySelector('a');
-				const address = (link ? link.getAttribute('href') : null);
-				if (address) {
-					document.location = address;
-					return;
-				}
-			}
-		}
-
-		// Set classes and attributes
-		for (const component of this.components) {
-			if (component.visible) {
-				component.element.removeAttribute('aria-hidden');
-				component.element.classList.remove('registry__component-listing--hidden');
-			} else {
-				component.element.setAttribute('aria-hidden', 'true');
-				component.element.classList.add('registry__component-listing--hidden');
-			}
-		}
-		for (const [categoryName, category] of Object.entries(repoListing.categorise(this.components))) {
-			if (category.visible) {
-				this.categoryElements[categoryName].removeAttribute('aria-hidden');
-				this.categoryElements[categoryName].classList.remove('registry__component-listing--hidden');
-			} else {
-				this.categoryElements[categoryName].setAttribute('aria-hidden', 'true');
-				this.categoryElements[categoryName].classList.add('registry__component-listing--hidden');
-			}
-		}
+	handleFilterFormInitSearchEvent() {
+		this.listingElement.classList.add('registry-component-list--loading');
+		this.listingElement.setAttribute('aria-busy', 'true');
 	}
 
 	/**
-	 * Get the list of components.
+	 * Handle the filter form success event.
 	 */
-	getComponents() {
-		const elements = this.listingElement.querySelectorAll('[data-o-component-name]');
-		return Array.from(elements, element => {
-			return {
-				name: element.getAttribute('data-o-component-name'),
-				keywords: JSON.parse(element.getAttribute('data-o-component-keywords')),
-				type: element.getAttribute('data-o-component-type'),
-				subType: element.getAttribute('data-o-component-sub-type') || null,
-				support: {
-					status: element.getAttribute('data-o-component-support-status')
-				},
-				element
-			};
-		});
+	handleFilterFormSuccessEvent(event) {
+		this.listingElement.innerHTML = event.detail.repos.map(repo => repo.listItemHtml).join('');
+		this.listingElement.removeAttribute('aria-busy');
 	}
 
 	/**
-	 * Get the component categories.
+	 * Handle the filter form error event.
 	 */
-	getCategoryElements() {
-		const elements = this.listingElement.querySelectorAll('[data-o-component-category]');
-		return Array.from(elements).reduce((categoryMap, element) => {
-			categoryMap[element.getAttribute('data-o-component-category')] = element;
-			return categoryMap;
-		}, {});
+	handleFilterFormErrorEvent() {
+		// TODO should we present this error message?
+		this.listingElement.removeAttribute('aria-busy');
 	}
 
 	/**

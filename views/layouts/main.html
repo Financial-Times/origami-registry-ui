@@ -6,6 +6,10 @@
 	<title>{{title}}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+	{{#if canonical}}
+		<link rel="canonical" href="{{canonical}}" />
+	{{/if}}
+
 	<link rel="icon" type="image/png" href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Aorigami?source=origami-registry-ui&width=16&height=16&format=png" sizes="16x16">
 	<link rel="icon" type="image/png" href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Aorigami?source=origami-registry-ui&width=32&height=32&format=png" sizes="32x32">
 	<link rel="icon" type="image/png" href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Aorigami?source=origami-registry-ui&width=96&height=96&format=png" sizes="96x96">
@@ -34,14 +38,9 @@
 	<link rel="stylesheet" href="{{mainCssPath}}" />
 	<script src="https://polyfill.io/v2/polyfill.min.js?features=fetch,default"></script>
 </head>
-<body class="registry">
 
-	{{> header/main }}
-
-	<main role="main">
-		{{{ body }}}
-	</main>
-
-	{{> footer}}
+<body>
+	{{{ body }}}
 </body>
+
 </html>

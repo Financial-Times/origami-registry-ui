@@ -1,11 +1,5 @@
 .registry__doclet {
     display: none;
-    h1 {
-		@include oTypographyProductHeadingLevel1();
-    }
-    h2 {
-		@include oTypographyProductHeadingLevel5();
-    }
 }
 
 .registry__doclet--default,
@@ -18,19 +12,7 @@
     display: none;
 }
 
-.o-table--code-docs {
-    tr td:first-child, tr th:first-child {
-        padding-left: 0;
-    }
-    @include oGridRespondTo($until: S) {
-        th {
-            padding-left: 0;
-        }
-    }
-    .o-table__code-docs-shrink {
-        @include oGridRespondTo(M) {
-            width: 0.1%;
-            white-space: nowrap;
-        }
-    }
+.o-table--code-docs .o-table__code-docs-shrink {
+    width: 0.1%;
+    white-space: nowrap;
 }

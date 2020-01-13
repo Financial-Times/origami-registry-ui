@@ -20,7 +20,27 @@ module.exports = [
 		},
 		resources: {
 			demos: null,
-			dependencies: null
+			dependencies: [
+				{
+					'name': 'example-dependency',
+					'version': '^1.2.3',
+					'source': 'bower',
+					'isDev': false,
+					'isOptional': false
+				}
+			]
+		},
+		manifests: {
+			'origami': {
+				'browserFeatures': {
+					'required': [
+						'DOMTokenList'
+					],
+					'optional': [
+						'IntersectionObserver'
+					]
+				}
+			}
 		},
 		markdown: {
 			readme: '# o-example-active\n## test-readme\nExample content.'
@@ -33,7 +53,7 @@ module.exports = [
 	// Maintained Origami component
 	{
 		name: 'o-example-maintained',
-		type: null,
+		type: 'module',
 		subType: null,
 		version: '1.5.0',
 		support: {
@@ -51,6 +71,52 @@ module.exports = [
 
 		// mock use only
 		_versions: ['1.5.0', '1.4.0', '1.3.0', '1.2.0', '1.1.0', '1.0.0']
+	},
+
+	// Maintained Origami imageset
+	{
+		name: 'o-example-imageset-maintained',
+		type: 'imageset',
+		subType: null,
+		version: '1.5.0',
+		support: {
+			status: 'maintained',
+			email: 'origami@example.com',
+			channel: {
+				name: '#example-channel',
+				url: 'mock-channel-url'
+			},
+			isOrigami: true
+		},
+		resources: {
+			demos: null
+		},
+
+		// mock use only
+		_versions: ['1.0.0']
+	},
+
+	// Maintained Origami service
+	{
+		name: 'o-example-service-maintained',
+		type: 'service',
+		subType: null,
+		version: '1.5.0',
+		support: {
+			status: 'maintained',
+			email: 'origami@example.com',
+			channel: {
+				name: '#example-channel',
+				url: 'mock-channel-url'
+			},
+			isOrigami: true
+		},
+		resources: {
+			demos: null
+		},
+
+		// mock use only
+		_versions: ['1.0.0']
 	},
 
 	// Deprecated Origami component
@@ -97,6 +163,39 @@ module.exports = [
 
 		// mock use only
 		_versions: ['1.2.3', '1.2.2', '1.2.1', '1.2.0', '1.1.0', '1.0.0']
+	},
+
+	// Active Origami component with demos, but no demos for the whitelabel brand
+	{
+		name: 'o-example-demos-except-whitelabel',
+		type: null,
+		subType: null,
+		version: '1.5.0',
+		support: {
+			status: 'maintained',
+			email: 'origami@example.com',
+			channel: {
+				name: '#example-channel',
+				url: 'mock-channel-url'
+			},
+			isOrigami: true
+		},
+		resources: {
+			demos: [
+				{
+					'name': 'example',
+					'title': 'example',
+					'description': 'example',
+					'brands': [
+						'master',
+						'internal'
+					]
+				}
+			]
+		},
+
+		// mock use only
+		_versions: ['1.5.0', '1.4.0', '1.3.0', '1.2.0', '1.1.0', '1.0.0']
 	}
 
 ];

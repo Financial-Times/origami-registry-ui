@@ -1,26 +1,33 @@
-<h3 class="registry__component--demo-title">Service Details</h3>
+<h3>Service Details</h3>
 
-<div class="registry__component--service-info">
-	{{#if service.systemCode}}
-		<p><span>System Code</span> — {{service.systemCode}}</p>
-	{{/if}}
+<ul class="service-details">
+{{#if service.systemCode}}
+	<li>
+		<span class="service-details__title">System Code</span>: {{service.systemCode}}
+	</li>
+{{/if}}
 
-	{{#if service.serviceTier}}
-		<p><span>Service Tier</span> — {{service.serviceTier}}</p>
-	{{/if}}
+{{#if service.serviceTier}}
+	<li>
+		<span class="service-details__title">Service Tier</span>: {{service.serviceTier}}
+	</li>
+{{/if}}
 
-	{{#if service.primaryUrl}}
-		<p><span>Url</span> — <a class="link" href="{{service.primaryUrl}}">{{service.primaryUrl}}</a></p>
-	{{/if}}
+{{#if service.primaryUrl}}
+	<li>
+		<span class="service-details__title"><abbr title="Uniform Resource Locator">URL</abbr></span>: <a class="link" href="{{service.primaryUrl}}">{{service.primaryUrl}}</a>
+	</li>
+{{/if}}
 
-	{{#if service.links}}
-		<h3 class="registry__component--demo-title">Service Links</h3>
-		<ul class="registry__component--service-links">
-			{{#service.links}}
-				<li>
-					<a class="link" href="{{url}}">{{#if description}}{{description}}{{else}}{{url}}{{/if}}</a>
-				</li>
-			{{/service.links}}
-		</ul>
-	{{/if}}
-</div>
+</ul>
+
+{{#if service.links}}
+	<h3>Service Links</h3>
+	<ul>
+		{{#service.links}}
+			<li>
+				<a href="{{url}}">{{#if description}}{{description}}{{else}}{{url}}{{/if}}</a>
+			</li>
+		{{/service.links}}
+	</ul>
+{{/if}}

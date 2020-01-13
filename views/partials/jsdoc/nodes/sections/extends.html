@@ -1,9 +1,9 @@
 {{#if this}}
-    <h2>Extends</h2>
+    <h3>Extends</h3>
     <ul>
     {{#each this}}
         <li>
-            <a class="link" href="#{{this}}">{{this}}</a>
+            <a class="link" href="#{{slugify this}}">{{this}}</a>
         </li>
     {{/each}}
     </ul>

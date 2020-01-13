@@ -1,5 +1,4 @@
 $o-normalise-is-silent: false;
-$o-table-is-silent: false;
 $o-brand: 'internal';
 
 @import 'o-colors/main';
@@ -9,48 +8,144 @@ $o-brand: 'internal';
 @import 'o-footer-services/main';
 @import 'o-grid/main';
 @import 'o-header-services/main';
+@import 'o-labels/main';
+@import 'o-layout/main';
+@import 'o-loading/main';
 @import 'o-normalise/main';
 @import 'o-message/main';
-@import 'o-overlay/main';
 @import 'o-tabs/main';
 @import 'o-typography/main';
 @import 'o-syntax-highlight/main';
 @import 'o-visual-effects/main';
 @import 'o-table/main';
 
-@import 'src/scss/colors';
-@import 'src/scss/component/main';
-@import 'src/scss/error';
-@import 'src/scss/layout/main';
-@import 'src/scss/overview/main';
+@import 'src/scss/component/codedocs';
+@import 'src/scss/component/demos';
+@import 'src/scss/component/quickstart';
+
+@import 'src/scss/overview/component-list';
+@import 'src/scss/overview/search-form';
+
 @import 'src/scss/status-labels';
 
-@include oFontsInclude(MetricWeb, regular);
-@include oFontsInclude(MetricWeb, semibold);
+// Layout.
+@include oLayout($opts: (
+	'layouts': ('query', 'docs'),
+	'features': ('sidebar-nav', 'linked-headings', 'typography')
+));
 
-html, body {
-	height: 100%;
+// Tables.
+@include oTable($opts: ('responsive-overflow', 'lines'));
+
+.o-table-container,
+.o-table {
+	margin-bottom: oTypographySpacingSize(4);
 }
 
-.registry {
-	@include oTypographySans(0);
+// Header.
+@include oHeaderServices($opts: (
+	'types': ('primary-nav', 'secondary-nav', 'bleed'),
+	'logo': 'origami'
+));
 
-	.link {
-		@include oTypographyLink();
+// Footer.
+@include oFooterServicesWithLogo($logo: 'origami');
+
+// Forms.
+@include oFormsBaseFeatures();
+@include oFormsWideFeature();
+@include oFormsRadioCheckboxFeatures();
+
+.o-forms {
+	// Padding overrides can be removed when the next major of o-forms is released.
+	padding-right: 0;
+	padding-left: 0;
+}
+
+// Typography.
+.registry-link--external {
+	@include oTypographyLinkExternal();
+}
+
+// Messages.
+@include oMessage($opts: (
+	'types': ('notice', 'alert'),
+	'states': ('error', 'warning', 'warning-light', 'inform'),
+	'layout': 'inner'
+));
+
+.o-message {
+	margin-bottom: oTypographySpacingSize(4);
+}
+
+.o-layout__header > .o-message {
+	margin-bottom: 0;
+}
+
+// Syntax Highlighting.
+@include oSyntaxHighlightAll();
+
+// Tabs.
+@include oTabs();
+@include oTabsButtonTabs();
+
+// Registry aside sidebar.
+.o-layout__aside-sidebar pre code {
+	white-space: normal;
+	word-break: break-all;
+}
+
+.o-layout__aside-sidebar details {
+	margin-bottom: oTypographySpacingSize(4);
+	&[open] summary {
+		@include oTypographyBold('sans');
 	}
-
-	.link-external {
-		@include oTypographyLinkExternal();
+	summary {
+		margin-bottom: oTypographySpacingSize(2);
 	}
+}
 
-	blockquote {
-		@include oTypographyBlockquote();
-	}
+// Registry query sidebar. Filterable nav.
+[data-filterable-nav] [aria-hidden="true"]{
+	display: none;
+}
 
-	.secondary-button {
-		@include oButtons(big, mono);
-		width: 100%;
-		border-bottom: 1px solid oColorsGetPaletteColor('slate');
-		text-transform: uppercase;
+// Registry Buttons.
+.registry-button {
+	width: 100%;
+}
+
+.registry-button--secondary {
+	@include oButtons(big, 'mono');
+	border-bottom: 1px solid oColorsGetPaletteColor('slate');
+}
+
+.download-button,
+.switch-button {
+	margin-bottom: oTypographySpacingSize(4);
+}
+
+.switch-button {
+	display: none;
+	margin-bottom: oTypographySpacingSize(4);
+}
+
+.core .switch-button {
+	display: block;
+}
+
+// Registry error page layout.
+.registry-error {
+	position: relative;
+	margin: auto;
+	text-align: center;
+	max-width: oTypographyMaxLineWidth($scale: 1);
+}
+
+// Registry title.
+.registry-title {
+	span,
+	label {
+		vertical-align: middle;
 	}
 }

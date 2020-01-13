@@ -1,17 +1,8 @@
 .registry__component--demo {
 	@include oTypographyMargin($bottom: 8);
+}
 
-	&-title {
-		@include oTypographyProductHeadingLevel4();
-		@include oTypographyMargin($bottom: 0);
-	}
-
-	&-description {
-		@include oTypographyMargin($top: 0, $bottom: 0);
-		color: oColorsGetPaletteColor('slate-white-80');
-	}
-
-	&-display {
+.registry__component--demo-display {
 		@include oTypographyMargin($top: 3);
 		@include oTypographyPadding($bottom: 2);
 		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
@@ -23,24 +14,27 @@
 			border: 0;
 			appearance: none;
 		}
-	}
 }
 
 .registry__demo-button {
 	@include oButtons($theme: 'mono');
-	text-transform: uppercase;
-
-	&.select-html {
-		position: absolute;
-		top: oTypographySpacingSize(2);
-		right: oTypographySpacingSize(2);
-		background: oColorsGetPaletteColor('white');
-	}
 }
 
-// oustide of a block because the below mixins don't accept class names.
-@include oTabs();
-@include oTabsButtonTabs();
+.core .select-html {
+	display: none;
+}
+
+.registry__demo-button.select-html {
+	position: absolute;
+	top: oTypographySpacingSize(2);
+	right: oTypographySpacingSize(2);
+	background: oColorsGetPaletteColor('white');
+}
+
+.demo-link {
+	@include oTypographyLinkCustom(oColorsGetUseCase(body, text), oColorsGetUseCase(body, text));
+	@include oTypographyLinkExternalIcon(oColorsGetColorFor(body, text));
+}
 
 .registry__component--demo-tabs {
 	@include oTypographyMargin($top: 4, $bottom: 2);
@@ -48,55 +42,47 @@
 
 	span {
 		margin-left: auto;
+		@include oGridRespondTo($until: S) {
+			display: none;
+		};
 	}
 
 	ul {
 		@include oTabsButtonTabsTheme($theme: 'mono', $selector: false);
-		text-transform: uppercase;
 	}
 }
 
-.registry__component--image {
-	&-grid {
-		display: flex;
-		justify-content: space-around;
-		flex-flow: row wrap;
-		padding: 0;
+.registry__component--image-grid {
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row wrap;
+	padding: 0;
 
-		img {
-			display: block;
-			width: 100%;
-			height: auto;
-			margin: 0;
-		}
-	}
-
-	&-item {
-		flex: 0 1 35%;
-		margin: 0 4px 24px;
-		display: flex;
-		flex-direction: column;
-	}
-
-
-	&-title {
-		@include oTypographyPadding($top: 1, $bottom: 1);
-		text-align: center;
-		margin-top: auto;
-		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0;
 	}
 }
 
-.registry__component--service {
-	&-info {
-		@include oTypographySize(1);
-		span {
-			@include oTypographyBold('sans');
-			text-transform: uppercase;
-		}
+.registry__component--image-item {
+	flex: 0 1 35%;
+	margin: 0 4px 24px;
+	display: flex;
+	flex-direction: column;
+	@include oGridRespondTo(M) {
+		flex-basis: 20%;
+	};
+}
 
-		a.link {
-			border-bottom: none;
-		}
-	}
+.registry__component--image-title {
+	@include oTypographyPadding($top: 1, $bottom: 1);
+	text-align: center;
+	margin-top: auto;
+	border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
+}
+
+.service-details__title {
+	@include oTypographyBold('sans');
 }

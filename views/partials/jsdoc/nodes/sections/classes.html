@@ -1,9 +1,9 @@
 {{#if this}}
-    <h2>Constructor Functions / Classes</h2>
+    <h3>Constructor Functions / Classes</h3>
     <ul>
     {{#each this}}
         <li>
-            <a class="link" href="#{{longname}}">{{> codedocs/nodes/sections/name name=longname parameters=parameters}}</a>
+            <a class="link" href="#{{slugify longname}}">{{> codedocs/nodes/sections/name name=longname parameters=parameters}}</a>
             {{#if description}}
                 - {{description}}
             {{/if}}

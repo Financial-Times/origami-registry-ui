@@ -1,9 +1,9 @@
 {{#if this}}
-    <h2>Fires Event{{#unlessEquals this.length 1}}s{{/unlessEquals}}</h2>
+    <h3>Fires Event{{#unlessEquals this.length 1}}s{{/unlessEquals}}</h3>
     <ul>
     {{#each this}}
         <li>
-            <a class="link" href="#{{this}}">{{this}}</a>
+            <a class="link" href="#{{slugify this}}">{{this}}</a>
         </li>
     {{/each}}
     </ul>
