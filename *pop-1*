@@ -1,0 +1,130 @@
+
+chee@petals~/Projects/Origami/registry-ui (git)
+-[master]-                                    
+» ls
+about.json         package.json
+app.json           package-lock.json
+bower_components/  Procfile
+bower.json         public/
+change-log*        README.md
+circle.yml         renovate.json
+index.js           RUNBOOK.md
+lib/               src/
+Makefile           test/
+node_modules/      views/
+origami.json
+
+chee@petals~/Projects/Origami/registry-ui (git)
+-[master]-                                    
+» make run-dev
+Note: importing environment variables from .env
+ file                                         
+[nodemon] 2.0.2
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: html,js,json
+[nodemon] starting `npm start`
+
+> origami-registry-ui@0.0.0 start /home/chee/Pr
+ojects/Origami/registry-ui                    
+> heroku-node-settings index.js
+
+Starting app with command:
+  node index.js
+Started worker 1
+warn:  event=NEXT_METRICS_DEPRECATED_OPTION_APP
+, message=The option 'app' is deprecated and no
+ longer used by next-metrics                  
+origami-registry-ui configured (graphite=true l
+ogging=true sentry=true)                      
+origami-registry-ui started (env=development po
+rt=8080)                                      
+::ffff:127.0.0.1 - - [20/Jan/2020:18:02:25 +000
+0] "GET / HTTP/1.1" 301 78 "-" "Mozilla/5.0 (Wi
+ndows NT 10.0; rv:68.0) Gecko/20100101 Firefox/
+68.0"                                         
+::ffff:127.0.0.1 - - [20/Jan/2020:18:02:25 +000
+0] "GET /main-3a1959df45d16d1cf432a24ec3ff319f6
+1192f975cd2681ae1c46c86ac7f3202.css HTTP/1.1" 2
+00 189027 "http://localhost:8080/components" "M
+ozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/201
+00101 Firefox/68.0"                           
+::ffff:127.0.0.1 - - [20/Jan/2020:18:02:26 +000
+0] "GET /components HTTP/1.1" 200 81401 "-" "Mo
+zilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/2010
+0101 Firefox/68.0"                            
+::ffff:127.0.0.1 - - [20/Jan/2020:18:02:26 +000
+0] "GET /components HTTP/1.1" 200 81401 "-" "Mo
+zilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/2010
+0101 Firefox/68.0"                            
+::ffff:127.0.0.1 - - [20/Jan/2020:18:02:30 +000
+0] "GET /components/o-colors@5.0.5?brand=master
+ HTTP/1.1" - - "http://localhost:8080/component
+s" "Mozilla/5.0 (Windows NT 10.0; rv:68.0) Geck
+o/20100101 Firefox/68.0"                      
+::ffff:127.0.0.1 - - [20/Jan/2020:18:02:32 +000
+0] "GET /components/o-colors@5.0.5/readme?brand
+=master HTTP/1.1" 200 47523 "http://localhost:8
+080/components/o-colors@5.0.5?brand=master" "Mo
+zilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/2010
+0101 Firefox/68.0"                            
+::ffff:127.0.0.1 - - [20/Jan/2020:18:02:32 +000
+0] "GET /components/o-colors@5.0.5?brand=master
+ HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 1
+0.0; rv:68.0) Gecko/20100101 Firefox/68.0"    
+[nodemon] restarting due to changes...
+[nodemon] starting `npm start`
+
+> origami-registry-ui@0.0.0 start /home/chee/Projects/Origami/registry-ui
+> heroku-node-settings index.js
+
+Starting app with command:
+  node index.js
+Started worker 1
+warn:  event=NEXT_METRICS_DEPRECATED_OPTION_APP, message=The option 'app'
+ is deprecated and no longer used by next-metrics                       
+origami-registry-ui configured (graphite=true logging=true sentry=true)
+origami-registry-ui started (env=development port=8080)
+[nodemon] restarting due to changes...
+[nodemon] starting `npm start`
+
+> origami-registry-ui@0.0.0 start /home/chee/Projects/Origami/registry-ui
+> heroku-node-settings index.js
+
+Starting app with command:
+  node index.js
+Started worker 1
+warn:  event=NEXT_METRICS_DEPRECATED_OPTION_APP, message=The option 'app'
+ is deprecated and no longer used by next-metrics                       
+origami-registry-ui configured (graphite=true logging=true sentry=true)
+origami-registry-ui started (env=development port=8080)
+[nodemon] restarting due to changes...
+[nodemon] starting `npm start`
+
+> origami-registry-ui@0.0.0 start /home/chee/Projects/Origami/registry-ui
+> heroku-node-settings index.js
+
+Starting app with command:
+  node index.js
+Started worker 1
+warn:  event=NEXT_METRICS_DEPRECATED_OPTION_APP, message=The option 'app'
+ is deprecated and no longer used by next-metrics                       
+origami-registry-ui configured (graphite=true logging=true sentry=true)
+origami-registry-ui started (env=development port=8080)
+[nodemon] restarting due to changes...
+[nodemon] starting `npm start`
+
+[0] 1:[tmux]- 2:zsh  3:git*                                                                            "petals" 18:40 20-Jan-20
+add migration guide to markdown object                                                                                         
+                                                                                                                               
+# Please enter the commit message for your changes. Lines starting                                                             
+# with '#' will be ignored, and an empty message aborts the commit.                                                            
+#                                                                                                                              
+# Date:      Mon Jan 20 18:39:43 2020 +0000                                                                                    
+#                                                                                                                              
+# On branch add-migration-guidelines-to-markdowns                                                                              
+# Changes to be committed:                                                                                                     
+#    modified:   models/version.js                                                                                             
+#                                                                                                                              
+-UUU:@**--F2  COMMIT_EDITMSG   Top (1,38)     (Default-Generic FlyC- company SP/s =^.^= ,)  -----------------------------------
+                                                                                                                              
