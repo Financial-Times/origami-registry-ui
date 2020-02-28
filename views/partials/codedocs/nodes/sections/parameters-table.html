@@ -4,17 +4,17 @@
             <table class="o-table o-table--horizontal-lines o-table--responsive-overflow o-table--code-docs" data-o-table-sortable="false" data-o-component="o-table" data-o-table-responsive="overflow">
                 <thead>
                     <tr>
-                        <th scope="col" role="columnheader" class="o-table__code-docs-shrink">parameter</th>
-                        <th scope="col" role="columnheader" class="o-table__code-docs-shrink">type</th>
-                        <th scope="col" role="columnheader" class="o-table__code-docs-shrink">default</th>
-                        <th scope="col" role="columnheader">description</th>
+                        <th scope="col" role="columnheader" class="parameter-table-header parameter-table-header--parameter ">parameter</th>
+                        <th scope="col" role="columnheader" class="parameter-table-header parameter-table-header--type ">type</th>
+                        <th scope="col" role="columnheader" class="parameter-table-header parameter-table-header--default ">default</th>
+                        <th scope="col" role="columnheader" class="parameter-table-header parameter-table-header--description ">description</th>
                     </tr>
                 </thead>
                 <tbody>
                     {{#each this}}
                     <tr>
-                        <td class="o-table__code-docs-shrink">{{name}}{{#if optional}} (optional){{/if}}</td>
-                        <td class="o-table__code-docs-shrink">
+                        <td>{{name}}{{#if optional}} (optional){{/if}}</td>
+                        <td>
                             {{#each types}}
                                 {{#if this.longname}}
                                     <a class="link" href="#{{slugify this.name}}">{{ this.name }}</a>
@@ -25,7 +25,7 @@
                             {{/each}}
 
                         </td>
-                        <td class="o-table__code-docs-shrink">{{default}}</td>
+                        <td>{{default}}</td>
                         <td>{{description}}</td>
                     </tr>
                     {{/each}}

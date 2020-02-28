@@ -12,7 +12,9 @@
     display: none;
 }
 
-.o-table--code-docs .o-table__code-docs-shrink {
-    width: 0.1%;
-    white-space: nowrap;
+// Wrap column content to fit the given width
+// where possible.
+.parameter-table-header--default,
+.parameter-table-header--description {
+    width: 40%;
 }
