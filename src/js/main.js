@@ -5,7 +5,6 @@ require('o-layout');
 require('./click-helper');
 require('./demo');
 require('./select-text');
-require('./sticky-scroll');
 
 const Versioning = require('./versioning');
 const FilterableNav = require('./filterable-nav');
