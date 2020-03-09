@@ -1,4 +1,8 @@
-version: 2
+version: 2.1
+
+orbs:
+    change-api: financial-times/change-api@0.24.0
+
 jobs:
   test:
     working_directory: ~/origami-registry-ui
@@ -24,8 +28,50 @@ jobs:
       - run:
           name: Run integration tests
           command: make test-integration
+  lint_terraform:
+    docker:
+      - image: hashicorp/terraform:light
+    steps:
+      - checkout
+      - run: terraform fmt -check=true fastly/terraform/
+  deploy_fastly_service_production:
+    docker:
+      - image: hashicorp/terraform:light
+    steps:
+      - checkout
+      - run: terraform init fastly/terraform/
+      - run: terraform import -config=fastly/terraform fastly_service_v1.app 7mnWDqaHxkKwIFASbvnV13
+      - run: terraform apply --auto-approve fastly/terraform/
 workflows:
   version: 2
   test:
     jobs:
-      - test
+      - test:
+          filters:
+            tags:
+              ignore: /^v.*/
+            branches:
+              ignore: master
+      - lint_terraform:
+          filters:
+            tags:
+              ignore: /^v.*/
+            branches:
+              ignore: master
+      - deploy_fastly_service_production:
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
+      - change-api/release-log:
+          requires:
+            - deploy_service_production
+          systemCode: 'origami-registry-ui'
+          environment: 'prod'
+          slackChannels: 'origami-deploys'
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
