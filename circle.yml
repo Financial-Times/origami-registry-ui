@@ -66,7 +66,7 @@ workflows:
               ignore: /.*/
       - change-api/release-log:
           requires:
-            - deploy_service_production
+            - deploy_fastly_service_production
           systemCode: 'origami-registry-ui'
           environment: 'prod'
           slackChannels: 'origami-deploys'
