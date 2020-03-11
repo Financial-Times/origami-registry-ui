@@ -7,3 +7,5 @@ npm-debug.log
 public/
 bower_components/
 .vscode/
+fastly/terraform/*.tfstate
+fastly/terraform/.terraform
