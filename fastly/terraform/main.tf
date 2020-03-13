@@ -84,12 +84,14 @@ resource "fastly_service_v1" "app" {
 								
 								set req.url = boltsort.sort(req.url);
 								
-								if (req.request != "HEAD" && req.request != "GET" && req.request != "FASTLYPURGE") {
-									return(pass);
-								}
-								
 								if (req.url.path == "/packages" || req.url.path ~ "/packages/*" || req.url.path == "/stats" ) {
 									error 901 "redirect to new bower service";
+								}
+
+								set req.http.Host = "origami-registry-ui-eu.herokuapp.com";
+
+								if (req.request != "HEAD" && req.request != "GET" && req.request != "FASTLYPURGE") {
+									return(pass);
 								}
 								
 								return(lookup);
