@@ -30,21 +30,6 @@ resource "fastly_service_v1" "app" {
     weight                = 100
   }
 
-  backend {
-    address               = "origami-registry-ui-us.herokuapp.com"
-    auto_loadbalance      = false
-    between_bytes_timeout = 10000
-    connect_timeout       = 1000
-    error_threshold       = 0
-    first_byte_timeout    = 15000
-    max_conn              = 200
-    name                  = "US"
-    port                  = 80
-    ssl_check_cert        = true
-    use_ssl               = false
-    weight                = 100
-  }
-
   healthcheck {
     check_interval    = 15000
     expected_response = 200
@@ -53,20 +38,6 @@ resource "fastly_service_v1" "app" {
     initial           = 4
     method            = "HEAD"
     name              = "EU Healthcheck"
-    path              = "/__health"
-    threshold         = 3
-    timeout           = 5000
-    window            = 5
-  }
-
-  healthcheck {
-    check_interval    = 15000
-    expected_response = 200
-    host              = "origami-repo-data-us.herokuapp.com"
-    http_version      = "1.1"
-    initial           = 4
-    method            = "HEAD"
-    name              = "US Healthcheck"
     path              = "/__health"
     threshold         = 3
     timeout           = 5000
@@ -113,25 +84,6 @@ resource "fastly_service_v1" "app" {
 								
 								set req.url = boltsort.sort(req.url);
 								
-								if (req.http.X-Geoip-Continent ~ "(NA|SA|OC|AS)") {
-									set req.backend = US;
-									set req.http.Host = "origami-registry-ui-us.herokuapp.com";
-								
-									if (!req.backend.healthy) {
-										set req.backend = EU;
-										set req.http.Host = "origami-registry-ui-eu.herokuapp.com";
-									}
-								
-								} else {
-									set req.backend = EU;
-									set req.http.Host = "origami-registry-ui-eu.herokuapp.com";
-								
-									if (!req.backend.healthy) {
-										set req.backend = US;
-										set req.http.Host = "origami-registry-ui-us.herokuapp.com";
-									}
-								}
-								
 								if (req.request != "HEAD" && req.request != "GET" && req.request != "FASTLYPURGE") {
 									return(pass);
 								}
@@ -142,7 +94,7 @@ resource "fastly_service_v1" "app" {
 								
 								return(lookup);
 						EOT
-    name     = "backend healthcheck failover and bower paths error"
+    name     = "bower paths"
     priority = 1
     type     = "recv"
   }

@@ -48,7 +48,6 @@ origami-team
 ## Healthchecks
 
 * registry.origami.ft.com-https
-* origami-registry-ui-us.herokuapp.com-https
 * origami-registry-ui-eu.herokuapp.com-https
 
 ## Failover Architecture Type
@@ -105,7 +104,7 @@ If no member of the Origami team is available within office hours, check the sta
 If the application is failing entirely, you'll need to check a couple of things:
 
 1. Did a deployment just happen? If so, consider rolling it back.
-2. Check the Heroku metrics page for both EU and US apps, to see what CPU and memory usage is like ([pipeline here](https://dashboard.heroku.com/pipelines/c206786a-73a4-4cbc-90dc-58db19255704))
+2. Check the Heroku metrics page for EU apps, to see what CPU and memory usage is like ([pipeline here](https://dashboard.heroku.com/pipelines/c206786a-73a4-4cbc-90dc-58db19255704))
 3. Check the CDN ([Fastly](https://manage.fastly.com/configure/services/7mnWDqaHxkKwIFASbvnV13/versions/9/domains)) is caching pages as expected.
 
 Always roll back a deploy if one happened just before the thing stopped working – this gives you the chance to debug in the relative calm of QA.
@@ -116,7 +115,7 @@ TODO
 
 ## Failover Details
 
-Our Fastly config automatically routes requests between the production EU and US Heroku applications. If one of those regions is down, Fastly will route all requests to the other region.
+No failover is in place for this because it is a bronze service.
 
 ## Data Recovery Details
 
@@ -124,7 +123,7 @@ No data is stored by this system.
 
 ## Release Details
 
-The application is deployed to QA whenever a new commit is pushed to the `master` branch of this repo on GitHub. To release to production, the QA application must be [manually promoted through the Heroku interface](https://dashboard.heroku.com/pipelines/c206786a-73a4-4cbc-90dc-58db19255704).
+The application is deployed to QA whenever a new commit is pushed to the `master` branch of this repo on GitHub. To release to production, a git tag is created and push to GitHub.
 
 ## Key Management Details
 
