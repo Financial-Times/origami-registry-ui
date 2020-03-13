@@ -96,7 +96,7 @@ You can find more information on the live site.
 
 This application is not critical outside of office hours, please contact the Origami team and we'll fix when we're in the office.
 
-If no member of the Origami team is available within office hours, check the status of healthchecks for more information or try restarting all of the dynos across the production EU and US Heroku apps ([pipeline here](https://dashboard.heroku.com/pipelines/c206786a-73a4-4cbc-90dc-58db19255704)).
+If no member of the Origami team is available within office hours, check the status of healthchecks for more information or try restarting all of the dynos across the production Heroku apps ([pipeline here](https://dashboard.heroku.com/pipelines/c206786a-73a4-4cbc-90dc-58db19255704)).
 
 
 ## Second Line Troubleshooting
