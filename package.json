@@ -16,8 +16,8 @@
     "url": "https://github.com/Financial-Times/origami-registry-ui.git"
   },
   "engines": {
-    "node": "^10.8.0",
-    "npm": "^6.0.0"
+    "node": "^12.16.1",
+    "npm": "^6.13.0"
   },
   "main": "./lib/service.js",
   "scripts": {
