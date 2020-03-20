@@ -22,7 +22,7 @@
   "main": "./lib/service.js",
   "scripts": {
     "start": "heroku-node-settings index.js",
-    "heroku-postbuild": "make clean-bower-components build"
+    "heroku-postbuild": "obt install && obt build --build-folder='./public/' --sass='./src/main.scss' --js='./src/main.js' --production"
   },
   "dependencies": {
     "@financial-times/health-check": "1.11.0",
