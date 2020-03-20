@@ -29,7 +29,6 @@
     "@financial-times/origami-repo-data-client": "1.6.0",
     "@financial-times/origami-service": "4.1.0",
     "@financial-times/origami-service-makefile": "7.0.0",
-    "bower": "^1.8.8",
     "cheerio": "1.0.0-rc.3",
     "dotenv": "8.2.0",
     "guestlist": "2.1.0",
@@ -50,7 +49,7 @@
     "mockery": "2.1.0",
     "nodemon": "2.0.2",
     "nyc": "15.0.0",
-    "origami-build-tools": "^9.0.1",
+    "origami-build-tools": "^9.0.2",
     "proclaim": "3.6.0",
     "sinon": "9.0.1",
     "supertest": "4.0.2"
