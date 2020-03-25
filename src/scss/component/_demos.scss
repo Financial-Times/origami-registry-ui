@@ -38,17 +38,17 @@
 
 .registry__component--demo-tabs {
 	@include oTypographyMargin($top: 4, $bottom: 2);
-	display: flex;
 
-	span {
-		margin-left: auto;
-		@include oGridRespondTo($until: S) {
-			display: none;
-		};
+	.demo-link {
+		float: right;
+		margin-left: oSpacingByName('s2');
 	}
 
 	ul {
 		@include oTabsButtonTabsTheme($theme: 'mono', $selector: false);
+		// Align tabs with the demo link.
+		display: inline-block;
+		vertical-align: bottom;
 	}
 }
 
