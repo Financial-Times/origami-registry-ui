@@ -30,11 +30,6 @@
 			"description": "Heroku dashboard (Production EU)"
 		},
 		{
-			"url": "https://dashboard.heroku.com/apps/origami-registry-ui-us",
-			"category": "deployment",
-			"description": "Heroku dashboard (Production US)"
-		},
-		{
 			"url": "https://dashboard.heroku.com/apps/origami-registry-ui-qa",
 			"category": "deployment",
 			"description": "Heroku dashboard (QA)"
