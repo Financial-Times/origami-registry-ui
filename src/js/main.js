@@ -2,7 +2,6 @@
 
 require('o-syntax-highlight');
 require('o-layout');
-require('./click-helper');
 require('./demo');
 require('./select-text');
 
