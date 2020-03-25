@@ -150,7 +150,6 @@ For now, restart the Heroku dynos:
 
 ```sh
 heroku restart --app origami-registry-ui-eu
-heroku restart --app origami-registry-ui-us
 ```
 
 If this doesn't help, then a temporary measure could be to add more dynos to the production applications, or switch the existing ones to higher performance dynos.
@@ -176,7 +175,6 @@ The Financial Times has published this software under the [MIT license][license]
 [healthcheck-us]: https://endpointmanager.in.ft.com/manage/TODO
 [heroku-pipeline]: https://dashboard.heroku.com/pipelines/c206786a-73a4-4cbc-90dc-58db19255704
 [heroku-production-eu]: https://dashboard.heroku.com/apps/origami-registry-ui-eu
-[heroku-production-us]: https://dashboard.heroku.com/apps/origami-registry-ui-us
 [heroku-qa]: https://dashboard.heroku.com/apps/origami-registry-ui-qa
 [heroku]: https://heroku.com/
 [license]: http://opensource.org/licenses/MIT

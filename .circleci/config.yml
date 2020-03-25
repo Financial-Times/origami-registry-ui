@@ -31,8 +31,8 @@ jobs:
       - run: npm ci
       - run: sudo ~/project/.circleci/install_heroku.sh
       - run: ~/project/.circleci/create_netrc_file.sh
-      - run: heroku pipelines:promote --app origami-registry-ui-qa --to origami-registry-ui-eu,origami-registry-ui-us
-  
+      - run: heroku pipelines:promote --app origami-registry-ui-qa --to origami-registry-ui-eu
+
   deploy_fastly_service_production:
     docker:
       - image: hashicorp/terraform:light
