@@ -8,7 +8,14 @@
 		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
 		position: relative;
 
-		.demo__code,
+		.demo__html {
+			// Add padding to demo html so overlaying controls
+			// i.e. "select full code snippet" do not visually
+			// obscure demo html
+			display: inline-block;
+			padding-right: 10rem;
+		}
+
 		.demo__live {
 			width: 100%;
 			border: 0;
