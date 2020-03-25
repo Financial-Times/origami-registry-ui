@@ -20,11 +20,11 @@
 	@include oButtons($theme: 'mono');
 }
 
-.core .select-html {
+.core .registry__demo-button--select-html {
 	display: none;
 }
 
-.registry__demo-button.select-html {
+.registry__demo-button--select-html {
 	position: absolute;
 	top: oTypographySpacingSize(2);
 	right: oTypographySpacingSize(2);
