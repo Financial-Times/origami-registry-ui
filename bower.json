@@ -25,6 +25,7 @@
     "o-visual-effects": "^2.0.3",
     "o-loading": "^2.2.2",
     "o-layout": "^3.3.3",
-    "o-labels": "^4.2.2"
+    "o-labels": "^4.2.2",
+    "o-spacing": "^2.0.1"
   }
 }
