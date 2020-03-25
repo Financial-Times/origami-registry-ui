@@ -2,10 +2,9 @@
 
 require('o-syntax-highlight');
 require('o-layout');
-require('./click-helper');
 require('./demo');
-require('./select-text');
 
+const SelectText = require('./select-text');
 const Versioning = require('./versioning');
 const FilterableNav = require('./filterable-nav');
 const ComponentListing = require('./component-listing');
@@ -17,4 +16,5 @@ document.addEventListener('o.DOMContentLoaded', () => {
 	ComponentListing.init();
 	FilterForm.init();
 	Versioning.init();
+	SelectText.init();
 });
