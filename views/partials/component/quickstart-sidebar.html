@@ -31,7 +31,7 @@
 				</select>
 			</div>
 
-			<input class="switch-button registry-button registry-button--secondary" type="submit" value="Switch To Version{{#if component.brands}} &amp; Brand{{/if}}">
+			<input class="switch-button o--if-no-js o-buttons o-buttons--secondary o-buttons--mono" type="submit" value="Switch To Version{{#if component.brands}} &amp; Brand{{/if}}">
 
 		</fieldset>
 	</form>
@@ -71,7 +71,7 @@
 		<details>
 			<summary id="use">Download images</summary>
 			<p>To add images to your project we recommend using the <a class="registry-link registry-link--external" href="https://www.ft.com/__origami/service/image/v2/">Image Service</a>. However you may download the full image set using the button below. It will download the Github repository, with all the image files in a sub folder.</p>
-			<a href="{{@root.component.url}}/archive/master.zip" class="download-button o-layout__unstyled-element registry-button registry-button--secondary">Download the Imageset</a>
+			<a href="{{@root.component.url}}/archive/master.zip" class="download-button o-layout__unstyled-element o-buttons o-buttons--secondary o-buttons--mono">Download the Imageset</a>
 		</details>
 
 		{{#if component.support.isOrigami}}

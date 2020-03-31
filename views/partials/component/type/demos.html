@@ -34,7 +34,9 @@
 				{{#if display.html}}
 					<div class="o-tabs__tabpanel" id="{{slugify title}}-html-{{@index}}">
 						{{#if display.plainHTML}}
-							<button class="registry__demo-button registry__demo-button--select-html" data-select-html>Select Full Code Snippet</button>
+							<span class="o--if-js demo-html-controls">
+								<button class="o-buttons o-buttons--secondary o-buttons--mono" data-select-html>Select Full Code Snippet</button>
+							</span>
 							<pre><code class='demo__html o-syntax-highlight--html'>{{{display.highlightedHTML}}}</code></pre>
 						{{else}}
 							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__live" title="{{capitalise title}} HTML Code Snippet"></iframe>

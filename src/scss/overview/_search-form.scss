@@ -30,7 +30,6 @@
 	}
 
 	.registry__filter-button {
-		@include oButtons(big, primary);
 		align-self: flex-end;
 	}
 }
