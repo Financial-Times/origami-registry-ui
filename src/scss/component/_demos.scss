@@ -23,15 +23,7 @@
 		}
 }
 
-.registry__demo-button {
-	@include oButtons($theme: 'mono');
-}
-
-.core .registry__demo-button--select-html {
-	display: none;
-}
-
-.registry__demo-button--select-html {
+.demo-html-controls {
 	position: absolute;
 	top: oTypographySpacingSize(2);
 	right: oTypographySpacingSize(2);

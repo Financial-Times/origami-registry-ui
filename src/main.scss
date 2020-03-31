@@ -35,6 +35,13 @@ $o-brand: 'internal';
 	'features': ('sidebar-nav', 'linked-headings', 'typography')
 ));
 
+// Buttons.
+@include oButtons($opts: (
+	'sizes': ('big'),
+	'types': ('primary', 'secondary'),
+	'themes': ('mono')
+));
+
 // Tables.
 @include oTable($opts: ('responsive-overflow', 'lines'));
 
@@ -112,27 +119,10 @@ $o-brand: 'internal';
 }
 
 // Registry Buttons.
-.registry-button {
-	width: 100%;
-}
-
-.registry-button--secondary {
-	@include oButtons(big, 'mono');
-	border-bottom: 1px solid oColorsGetPaletteColor('slate');
-}
-
 .download-button,
 .switch-button {
-	margin-bottom: oTypographySpacingSize(4);
-}
-
-.switch-button {
-	display: none;
-	margin-bottom: oTypographySpacingSize(4);
-}
-
-.core .switch-button {
 	display: block;
+	margin-bottom: oTypographySpacingSize(4);
 }
 
 // Registry error page layout.
