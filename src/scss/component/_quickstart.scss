@@ -1,11 +1,6 @@
-.registry__container__sticky {
-	position: sticky;
-	top: 12px;
-
-	.o-labels {
-		margin-top: oSpacingByName('s2');
-		margin-bottom: oSpacingByName('s3');
-	}
+.component-aside-sidebar-label {
+	margin-top: oSpacingByName('s2');
+	margin-bottom: oSpacingByName('s3');
 }
 
 // Registry component version switcher.
