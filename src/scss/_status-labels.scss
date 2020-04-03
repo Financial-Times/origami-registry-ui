@@ -9,28 +9,28 @@
 ));
 
 @include oLabelsAddState('experimental', (
-	background-color: oColorsGetPaletteColor('lemon')
+	background-color: oColorsByName('lemon')
 ));
 
 @include oLabelsAddState('deprecated', (
-	background-color: oColorsGetPaletteColor('crimson')
+	background-color: oColorsByName('crimson')
 ));
 
 @include oLabelsAddState('dead', (
-	background-color: oColorsGetPaletteColor('black')
+	background-color: oColorsByName('black')
 ));
 
 @include oLabelsAddState('master', (
-	background-color: oColorsGetPaletteColor('wheat')
+	background-color: oColorsByName('wheat')
 ));
 
 @include oLabelsAddState('internal', (
-	background-color: oColorsGetPaletteColor('slate-white-15')
+	background-color: oColorsByName('slate-white-15')
 ));
 
 @include oLabelsAddState('whitelabel', (
-	background-color: oColorsGetPaletteColor('white'),
-	border-color: oColorsGetPaletteColor('slate-white-15')
+	background-color: oColorsByName('white'),
+	border-color: oColorsByName('slate-white-15')
 ));
 
 @include oLabelsAddState('js', (
@@ -42,5 +42,5 @@
 ));
 
 @include oLabelsAddState('imageset', (
-	background-color: oColorsGetPaletteColor('sky')
+	background-color: oColorsByName('sky')
 ));

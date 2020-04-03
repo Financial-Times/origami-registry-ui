@@ -25,8 +25,8 @@
 
 
 .registry-link--github {
-	$color: str-slice(ie-hex-str(oColorsGetColorFor('link', 'text')), 4);
-	$hover-color: str-slice(ie-hex-str(oColorsGetColorFor('link-hover', 'text')), 4);
+	$color: str-slice(ie-hex-str(oColorsByUsecase('link', 'text')), 4);
+	$hover-color: str-slice(ie-hex-str(oColorsByUsecase('link-hover', 'text')), 4);
 	$background: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:github?source=registry-ui&tint=#{$color}&format=svg");
 	$hover-background: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:github?source=registry-ui&tint=#{$hover-color}&format=svg");
 	&:before {
@@ -35,7 +35,7 @@
 		width: 1.75rem;
 		height: 1.75rem;
 		vertical-align: bottom;
-		$color: str-slice(ie-hex-str(oColorsGetColorFor('link', 'text')), 4);
+		$color: str-slice(ie-hex-str(oColorsByUsecase('link', 'text')), 4);
 		background-image: $background;
 	}
 	&:hover {
