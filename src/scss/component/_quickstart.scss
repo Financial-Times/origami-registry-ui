@@ -3,13 +3,14 @@
 	top: 12px;
 
 	.o-labels {
-		@include oTypographyMargin($top: 2, $bottom: 3);
+		margin-top: oSpacingByName('s2');
+		margin-bottom: oSpacingByName('s3');
 	}
 }
 
 // Registry component version switcher.
 .registry-component-version-form {
-	margin-bottom: oTypographySpacingSize(2);
+	margin-bottom: oSpacingByName('s2');
 	fieldset {
 		appearance: none;
 		border: 0;

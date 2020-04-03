@@ -1,12 +1,12 @@
 .registry__component--demo {
-	@include oTypographyMargin($bottom: 8);
+	margin-bottom: oSpacingByName('s8');
 }
 
 .registry__component--demo-display {
-		@include oTypographyMargin($top: 3);
-		@include oTypographyPadding($bottom: 2);
-		border-bottom: 1px solid oColorsByName('slate-white-15');
 		position: relative;
+		margin-top: oSpacingByName('s8');
+		padding-bottom: oSpacingByName('s2');
+		border-bottom: 1px solid oColorsByName('slate-white-15');
 
 		.demo__html {
 			// Add padding to demo html so overlaying controls
@@ -25,18 +25,21 @@
 
 .demo-html-controls {
 	position: absolute;
-	top: oTypographySpacingSize(2);
-	right: oTypographySpacingSize(2);
+	top: oSpacingByName('s2');
+	right: oSpacingByName('s2');
 	background: oColorsByName('white');
 }
 
 .demo-link {
-	@include oTypographyLinkCustom(oColorsByUseCase(body, text), oColorsByUseCase(body, text));
-	@include oTypographyLinkExternalIcon(oColorsByUsecase(body, text));
+	@include oTypographyLink($theme: (
+		'base': oColorsByUseCase(body, text),
+		'hover': oColorsByUseCase(body, text)
+	));
 }
 
 .registry__component--demo-tabs {
-	@include oTypographyMargin($top: 4, $bottom: 2);
+	margin-top: oSpacingByName('s4');
+	margin-bottom: oSpacingByName('s2');
 
 	.demo-link {
 		float: right;
@@ -75,12 +78,16 @@
 }
 
 .registry__component--image-title {
-	@include oTypographyPadding($top: 1, $bottom: 1);
+	padding-top: oSpacingByName('s1');
+	padding-bottom: oSpacingByName('s1');
 	text-align: center;
 	margin-top: auto;
 	border-bottom: 1px solid oColorsByName('slate-white-15');
 }
 
 .service-details__title {
-	@include oTypographyBold('sans');
+	@include oTypographySans(
+		$weight: 'semibold',
+		$include-font-family: false
+	);
 }

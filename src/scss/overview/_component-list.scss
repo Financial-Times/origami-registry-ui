@@ -24,7 +24,7 @@
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
-		padding: oTypographySpacingSize(3);
+		padding: oSpacingByName('s3');
 		text-decoration: inherit;
 	}
 
@@ -33,18 +33,24 @@
 	}
 
 	.registry-component__overview {
-		@include oTypographyMargin($bottom: 3);
+		margin-bottom: oSpacingByName('s3');
 		display: flex;
 
 		h2 {
 			@include oTypographyBody();
-			@include oTypographySansBold();
+			@include oTypographySans(
+				$weight: 'semibold',
+				$include-font-family: false
+			);
 			display: block;
 			margin: 0 8px 0 0;
 		}
 
 		.component-version {
-			@include oTypographySize(0);
+			@include oTypographySans(
+				$scale: 0,
+				$include-font-family: false
+			);
 			display: block;
 			margin-right: 8px;
 		}
@@ -61,7 +67,8 @@
 
 		p {
 			@include oTypographyCaption();
-			@include oTypographyMargin($top: 0, $bottom: 3);
+			margin-top: 0;
+			margin-bottom: oSpacingByName('s3');
 		}
 	}
 
