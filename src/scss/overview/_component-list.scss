@@ -15,7 +15,7 @@
 }
 
 .registry-component-list-item {
-	border-top: 2px solid oColorsGetPaletteColor('slate-white-5');
+	border-top: 2px solid oColorsByName('slate-white-5');
 	list-style-type: none;
 	display: block;
 
@@ -29,7 +29,7 @@
 	}
 
 	a:hover {
-		background-color: oColorsGetPaletteColor('slate-white-5');
+		background-color: oColorsByName('slate-white-5');
 	}
 
 	.registry-component__overview {
@@ -62,7 +62,7 @@
 		p {
 			@include oTypographyCaption();
 			@include oTypographyMargin($top: 0, $bottom: 3);
-		}	
+		}
 	}
 
 	.registry-component__details--labels {

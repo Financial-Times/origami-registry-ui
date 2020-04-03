@@ -5,7 +5,7 @@
 .registry__component--demo-display {
 		@include oTypographyMargin($top: 3);
 		@include oTypographyPadding($bottom: 2);
-		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
+		border-bottom: 1px solid oColorsByName('slate-white-15');
 		position: relative;
 
 		.demo__html {
@@ -27,12 +27,12 @@
 	position: absolute;
 	top: oTypographySpacingSize(2);
 	right: oTypographySpacingSize(2);
-	background: oColorsGetPaletteColor('white');
+	background: oColorsByName('white');
 }
 
 .demo-link {
-	@include oTypographyLinkCustom(oColorsGetUseCase(body, text), oColorsGetUseCase(body, text));
-	@include oTypographyLinkExternalIcon(oColorsGetColorFor(body, text));
+	@include oTypographyLinkCustom(oColorsByUseCase(body, text), oColorsByUseCase(body, text));
+	@include oTypographyLinkExternalIcon(oColorsByUsecase(body, text));
 }
 
 .registry__component--demo-tabs {
@@ -79,7 +79,7 @@
 	@include oTypographyPadding($top: 1, $bottom: 1);
 	text-align: center;
 	margin-top: auto;
-	border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
+	border-bottom: 1px solid oColorsByName('slate-white-15');
 }
 
 .service-details__title {
