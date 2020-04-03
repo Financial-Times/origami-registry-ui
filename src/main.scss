@@ -1,4 +1,3 @@
-$o-normalise-is-silent: false;
 $system-code: 'origami-registry-ui';
 $o-brand: 'internal';
 
@@ -29,6 +28,9 @@ $o-brand: 'internal';
 @import 'src/scss/overview/search-form';
 
 @import 'src/scss/status-labels';
+
+// Normalise browser defaults
+@include oNormalise();
 
 // Layout.
 @include oLayout($opts: (
