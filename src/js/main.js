@@ -1,6 +1,5 @@
 'use strict';
 
-require('o-syntax-highlight');
 require('o-layout');
 require('./demo');
 
