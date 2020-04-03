@@ -1,26 +1,22 @@
-.registry__form {
+.registry__form-search {
+	position: relative;
+}
 
-	&-search {
-		position: relative;
-	}
+.registry__form-search-loading {
+	@include oLoadingContent($opts: (
+		'theme': 'dark'
+	));
+	width: 10px;
+	height: 10px;
+	border-width: 2px;
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+	display: none;
+}
 
-	&-search-loading {
-		@include oLoading();
-	}
-	&-search-loading {
-		@include oLoadingColor('dark');
-		width: 10px;
-		height: 10px;
-		border-width: 2px;
-		position: absolute;
-		right: 12px;
-		bottom: 12px;
-		display: none;
-	}
-
-	&--loading &-search-loading {
-		display: block;
-	}
+.registry__form--loading .registry__form-search-loading {
+	display: block;
 }
 
 .registry__search-bar {
