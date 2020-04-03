@@ -12,8 +12,8 @@
     "o-buttons": "^6.0.10",
     "o-colors": "^5.1.2",
     "o-grid": "^5.1.1",
+    "o-header-services": "^4.0.3",
 
-    "o-header-services": "^3.2.9",
     "o-fonts": "^3.0.4",
     "o-footer-services": "^2.0.1",
     "o-forms": "^5.3.0",
