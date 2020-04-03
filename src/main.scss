@@ -58,7 +58,10 @@ $o-brand: 'internal';
 ));
 
 // Footer.
-@include oFooterServicesWithLogo($logo: 'origami');
+@include oFooterServices($opts: (
+	'logo': 'ftlogo-v1:origami',
+	'icons': ('slack', 'github')
+));
 
 // Forms.
 @include oFormsBaseFeatures();
