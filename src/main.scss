@@ -98,8 +98,11 @@ $o-brand: 'internal';
 @include oSyntaxHighlight();
 
 // Tabs.
-@include oTabs();
-@include oTabsButtonTabs();
+@include oTabs($opts: (
+    'button-tabs': (
+		('type': 'secondary', 'theme': 'inverse'),
+	)
+));
 
 // Registry aside sidebar.
 .o-layout__aside-sidebar pre code {
