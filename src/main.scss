@@ -46,7 +46,10 @@ $o-brand: 'internal';
 ));
 
 // Tables.
-@include oTable($opts: ('responsive-overflow', 'lines'));
+@include oTable($opts: (
+	'responsive-overflow',
+	'lines'
+));
 
 .o-table-container,
 .o-table {
