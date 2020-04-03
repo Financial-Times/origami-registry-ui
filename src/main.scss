@@ -95,7 +95,7 @@ $o-brand: 'internal';
 }
 
 // Syntax Highlighting.
-@include oSyntaxHighlightAll();
+@include oSyntaxHighlight();
 
 // Tabs.
 @include oTabs();
