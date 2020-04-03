@@ -48,7 +48,7 @@ $o-brand: 'internal';
 
 .o-table-container,
 .o-table {
-	margin-bottom: oTypographySpacingSize(4);
+	margin-bottom: oSpacingByName('s4');
 }
 
 // Header.
@@ -75,8 +75,16 @@ $o-brand: 'internal';
 }
 
 // Typography.
-.registry-link--external {
-	@include oTypographyLinkExternal();
+
+// o-layout provides a basic typography wrapper class which styles
+// elements based on their semantics. Output a class so we can
+// "upgrade" an anchor tags styles to represent a link that takes
+// the user away from the registry.
+.registry-link-external {
+	@include oTypographyLink(
+		$external: true,
+		$include-base-styles: false
+	);
 }
 
 // Messages.
@@ -87,7 +95,7 @@ $o-brand: 'internal';
 ));
 
 .o-message {
-	margin-bottom: oTypographySpacingSize(4);
+	margin-bottom: oSpacingByName('s4');
 }
 
 .o-layout__header > .o-message {
@@ -111,12 +119,15 @@ $o-brand: 'internal';
 }
 
 .o-layout__aside-sidebar details {
-	margin-bottom: oTypographySpacingSize(4);
+	margin-bottom: oSpacingByName('s4');
 	&[open] summary {
-		@include oTypographyBold('sans');
+		@include oTypographySans(
+			$weight: 'semibold',
+			$include-font-family: false
+		);
 	}
 	summary {
-		margin-bottom: oTypographySpacingSize(2);
+		margin-bottom: oSpacingByName('s2');
 	}
 }
 
@@ -129,7 +140,7 @@ $o-brand: 'internal';
 .download-button,
 .switch-button {
 	display: block;
-	margin-bottom: oTypographySpacingSize(4);
+	margin-bottom: oSpacingByName('s4');
 }
 
 // Registry error page layout.
@@ -137,7 +148,7 @@ $o-brand: 'internal';
 	position: relative;
 	margin: auto;
 	text-align: center;
-	max-width: oTypographyMaxLineWidth($scale: 1);
+	max-width: oTypographyMaxLineWidth();
 }
 
 // Registry title.
