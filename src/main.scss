@@ -68,15 +68,9 @@ $o-brand: 'internal';
 ));
 
 // Forms.
-@include oFormsBaseFeatures();
-@include oFormsWideFeature();
-@include oFormsRadioCheckboxFeatures();
-
-.o-forms {
-	// Padding overrides can be removed when the next major of o-forms is released.
-	padding-right: 0;
-	padding-left: 0;
-}
+@include oForms($opts: (
+	'elements': ('text', 'checkbox')
+));
 
 // Typography.
 
