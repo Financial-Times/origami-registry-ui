@@ -44,7 +44,6 @@
 	}
 
 	ul {
-		@include oTabsButtonTabsTheme($theme: 'mono', $selector: false);
 		// Align tabs with the demo link.
 		display: inline-block;
 		vertical-align: bottom;
