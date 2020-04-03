@@ -1,8 +1,8 @@
-<div class="registry__container__sticky">
+<div class="o-layout-sticky-sidebar-container">
 	<label class="o-forms__label">Support status</label>
 	{{#component.support}}
 		{{#status}}
-			<label class="o-labels o-labels--{{.}}" data-test="support-status" title="Support status">{{.}}</label>
+			<label class="o-labels o-labels--{{.}} component-aside-sidebar-label" data-test="support-status" title="Support status">{{.}}</label>
 		{{/status}}
 		{{#isOrigami}}
 			<label title="Component maintained by the Origami core team" class="registry-component-o-support"></label>
