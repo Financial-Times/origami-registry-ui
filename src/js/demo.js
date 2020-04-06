@@ -1,4 +1,4 @@
-'use strict';
+
 
 module.exports = (function(){
 	window.addEventListener('message', (e) => {
@@ -11,7 +11,7 @@ module.exports = (function(){
 				});
 			}
 		} catch(e) {
-			return;
+
 		}
 	}, false);
 }());
