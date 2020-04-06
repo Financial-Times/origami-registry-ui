@@ -1,4 +1,4 @@
-'use strict';
+
 
 import SelectText from './select-text';
 import Versioning from './versioning';
@@ -8,9 +8,9 @@ import FilterForm from './filter-form';
 
 // Initialise components
 document.addEventListener('o.DOMContentLoaded', () => {
-    FilterableNav.init();
-    ComponentListing.init();
-    FilterForm.init();
-    Versioning.init();
-    SelectText.init();
+	FilterableNav.init();
+	ComponentListing.init();
+	FilterForm.init();
+	Versioning.init();
+	SelectText.init();
 });

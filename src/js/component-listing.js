@@ -1,4 +1,4 @@
-'use strict';
+
 
 /**
  * Represents a filterable component listing.

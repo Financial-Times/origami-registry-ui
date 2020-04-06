@@ -1,9 +1,8 @@
-'use strict';
+
 
 module.exports = {
 	init: function () {
 		const selections = document.querySelectorAll('[data-version-select]');
-		console.log({ selections });
 		selections.forEach(selection => selection.addEventListener('change', (event) => {
 			// Get a redirect location from the selected option.
 			const newLoaction = event.target.selectedOptions.item(0).getAttribute('data-redirect');

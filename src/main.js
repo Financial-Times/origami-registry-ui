@@ -1,4 +1,4 @@
-'use strict';
+
 
 import 'o-header-services';
 import 'o-message';

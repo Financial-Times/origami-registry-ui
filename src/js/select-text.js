@@ -1,4 +1,4 @@
-'use strict';
+
 
 function selectText(element) {
 	let range;
@@ -22,7 +22,7 @@ module.exports.init = function() {
 	if (buttons) {
 		buttons.forEach(button => {
 			button.addEventListener('click', (e) => {
-				e.preventDefault;
+				e.preventDefault();
 				const id = button.getAttribute('data-select-html');
 				const html = document.getElementById(id);
 				selectText(html);
