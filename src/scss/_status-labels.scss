@@ -21,7 +21,9 @@
 ));
 
 @include oLabelsAddState('master', (
-	background-color: oColorsByName('wheat')
+	// master brand "wheat" colour
+	// (not available to internal brands)
+	background-color: #f2dfce
 ));
 
 @include oLabelsAddState('internal', (
@@ -38,9 +40,13 @@
 ));
 
 @include oLabelsAddState('scss', (
-	background-color: oColorsMix('candy', 'velvet', 50)
+	// "velvet" and "candy" mix,
+	// colours not available to internal brands
+	background-color: #ac5995
 ));
 
 @include oLabelsAddState('imageset', (
-	background-color: oColorsByName('sky')
+	// master brand "sky" colour
+	// (not available to internal brands)
+	background-color: #cce6ff
 ));
