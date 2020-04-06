@@ -1,6 +1,6 @@
-<div class="registry__component--demo-container">
+<div class="registry-demo-container">
 	{{#demos}}
-		<div class="registry__component--demo">
+		<div class="registry-demo">
 			<h2 id="demo-{{slugify title}}">
 				{{capitalise title}}
 			</h2>
@@ -8,38 +8,42 @@
 				<p>{{description}}</p>
 			{{/if}}
 
-			<div class="registry__component--demo-tabs">
-				<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs o-tabs--secondary o-tabs--inverse o-layout__unstyled-element" role=tablist>
-					{{#if display.html}}
-						{{#if display.live}}
-							<li role=tab>
-								<a href="#{{slugify title}}-demo-{{@index}}" class="o-layout__unstyled-element">Demo</a>
+			<div class="registry-demo-options">
+				<div class="registry-demo-options__tabs">
+					<ul data-o-component="o-tabs" class="o-tabs o-tabs--buttontabs o-tabs--secondary o-tabs--mono o-layout__unstyled-element" role="tablist">
+						{{#if display.html}}
+							{{#if display.live}}
+								<li role="tab">
+									<a href="#{{slugify title}}-demo-{{@index}}" class="o-layout__unstyled-element">Demo</a>
+								</li>
+							{{/if}}
+							<li role="tab">
+								<a href="#{{slugify title}}-html-tabpanel-{{@index}}" class="o-layout__unstyled-element">HTML</a>
 							</li>
 						{{/if}}
-						<li role=tab>
-							<a href="#{{slugify title}}-html-{{@index}}" class="o-layout__unstyled-element">HTML</a>
-						</li>
-					{{/if}}
-				</ul>
+					</ul>
+				</div>
 
-				<a class="demo-link o-layout__unstyled-element" href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a>
+				<div class="registry-demo-options__links">
+					<a class="registry-demo-options__anchor o-layout__unstyled-element" href="{{supportingUrls.live}}" target="_blank">Open demo in a new tab</a>
+				</div>
 			</div>
 
-			<div class="registry__component--demo-display">
+			<div class="registry-demo-content">
 				{{#if display.live}}
 					<div class="o-tabs__tabpanel" id="{{slugify title}}-demo-{{@index}}">
-						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="demo__live" title="{{capitalise title}} Live Demo"></iframe>
+						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="registry-demo-content__live" title="{{capitalise title}} Live Demo"></iframe>
 					</div>
 				{{/if}}
 				{{#if display.html}}
-					<div class="o-tabs__tabpanel" id="{{slugify title}}-html-{{@index}}">
+					<div class="o-tabs__tabpanel" id="{{slugify title}}-html-tabpanel-{{@index}}">
 						{{#if display.plainHTML}}
-							<span class="o--if-js demo-html-controls">
-								<button class="o-buttons o-buttons--secondary o-buttons--mono" data-select-html>Select Full Code Snippet</button>
+							<span class="o--if-js registry-demo-content__html-controls">
+								<button class="o-buttons o-buttons--secondary o-buttons--mono" data-select-html="{{slugify title}}-html-code-{{@index}}">Select Full Code Snippet</button>
 							</span>
-							<pre><code class='demo__html o-syntax-highlight--html'>{{{display.highlightedHTML}}}</code></pre>
+							<pre><code id="{{slugify title}}-html-code-{{@index}}" class='registry-demo-content__html-code o-syntax-highlight--html'>{{{display.highlightedHTML}}}</code></pre>
 						{{else}}
-							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="demo__live" title="{{capitalise title}} HTML Code Snippet"></iframe>
+							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="registry-demo-content__live" title="{{capitalise title}} HTML Code Snippet"></iframe>
 						{{/if}}
 					</div>
 				{{/if}}

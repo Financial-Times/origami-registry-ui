@@ -1,46 +1,77 @@
 <div class="o-layout-sticky-sidebar-container">
-	<label class="o-forms__label">Support status</label>
+	{{! fake form field, so we can match the title style }}
 	{{#component.support}}
-		{{#status}}
-			<label class="o-labels o-labels--{{.}} component-aside-sidebar-label" data-test="support-status" title="Support status">{{.}}</label>
-		{{/status}}
-		{{#isOrigami}}
-			<label title="Component maintained by the Origami core team" class="registry-component-o-support"></label>
-		{{/isOrigami}}
+	<div class="o-forms-field">
+		<span class="o-forms-title">
+			<span class="o-forms-title__main">Support Status</span>
+		</span>
+		<div class="o-forms-input">
+			{{#status}}
+				<span data-test="support-status"
+				title="{{@root.component.name}} support status: {{.}}"
+				aria-label="{{@root.component.name}} support status: {{.}}"
+				class="o-labels o-labels--{{.}} component-aside-sidebar-label">
+				{{.}}
+				</span>
+			{{/status}}
+			{{#isOrigami}}
+				<span
+					title="{{@root.component.name}} is maintained by the core Origami team"
+					aria-label="{{@root.component.name}} is maintained by the core Origami team"
+					class="registry-component-o-support">
+				</span>
+			{{/isOrigami}}
+		</div>
+	</div>
 	{{/component.support}}
 	<form action="" method="GET" class="registry-component-version-form">
+		{{! component brand / version selection }}
 		<fieldset>
 			<legend>Switch component view</legend>
+			{{! component brand options }}
 			{{#if component.brands}}
-				<div class="o-forms">
-					<label for="select-brand" class="o-forms__label">Brand</label>
-					<select data-version-select id="select-brand" name="switch-brand" class="o-forms__select">
+			<label class="o-forms-field">
+				<span class="o-forms-title">
+					<span class="o-forms-title__main">Brand</span>
+				</span>
+
+				<span class="o-forms-input o-forms-input--select">
+					<select data-version-select>
 					{{#component.brands}}
-						<option value="{{this}}" data-redirect="/components/{{@root.component.name}}@{{@root.component.version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals this 'master' }}?brand={{this}}{{/unlessEquals}}" {{#ifEquals this @root.currentBrand}}selected="true"{{/ifEquals}}>{{this}}</option>
+						<option
+							value="{{this}}"
+							data-redirect="/components/{{@root.component.name}}@{{@root.component.version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals this 'master' }}?brand={{this}}{{/unlessEquals}}"
+							{{#ifEquals this @root.currentBrand}}selected="true"{{/ifEquals}}>
+							{{this}}
+						</option>
 					{{/component.brands}}
 					</select>
-				</div>
+				</span>
+			</label>
 			{{/if}}
+			{{! component version options }}
+			<label class="o-forms-field">
+				<span class="o-forms-title">
+					<span class="o-forms-title__main">Version</span>
+				</span>
 
-			<div class="o-forms">
-				<label for="select-version" class="o-forms__label">Version</label>
-				<select data-version-select id="select-version" name="switch-version" class="o-forms__select">
-				{{#versions}}
-					<option value="{{version}}" data-redirect="/components/{{@root.component.name}}@{{version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals @root.currentBrand 'master' }}?brand={{@root.currentBrand}}{{/unlessEquals}}" {{#ifEquals version @root.component.version}}data-test="current-version" selected="true"{{/ifEquals}}>{{version}}</option>
-				{{/versions}}
-				</select>
-			</div>
-
-			<input class="switch-button o--if-no-js o-buttons o-buttons--secondary o-buttons--mono" type="submit" value="Switch To Version{{#if component.brands}} &amp; Brand{{/if}}">
-
+				<span class="o-forms-input o-forms-input--select">
+					<select data-version-select>
+					{{#versions}}
+						<option
+							value="{{version}}"
+							data-redirect="/components/{{@root.component.name}}@{{version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals @root.currentBrand 'master' }}?brand={{@root.currentBrand}}{{/unlessEquals}}"
+							{{#ifEquals version @root.component.version}}data-test="current-version" selected="true"{{/ifEquals}}>
+							{{version}}
+						</option>
+					{{/versions}}
+					</select>
+				</span>
+			</label>
+			{{! core experience submit button }}
+			<input class="switch-button o--if-no-js o-buttons o-buttons--big o-buttons--secondary o-buttons--mono" type="submit" value="Switch To Version{{#if component.brands}} &amp; Brand{{/if}}">
 		</fieldset>
 	</form>
-
-	{{#if component.languages}}
-		<div>
-
-		</div>
-	{{/if}}
 
 	<p>
 		<a class="registry-link registry-link--github" href="{{component.url}}">GitHub Repository</a>

@@ -3,19 +3,19 @@
 <ul class="service-details">
 {{#if service.systemCode}}
 	<li>
-		<span class="service-details__title">System Code</span>: {{service.systemCode}}
+		<span class="registry-demo-services-detail-title">System Code</span>: {{service.systemCode}}
 	</li>
 {{/if}}
 
 {{#if service.serviceTier}}
 	<li>
-		<span class="service-details__title">Service Tier</span>: {{service.serviceTier}}
+		<span class="registry-demo-services-detail-title">Service Tier</span>: {{service.serviceTier}}
 	</li>
 {{/if}}
 
 {{#if service.primaryUrl}}
 	<li>
-		<span class="service-details__title"><abbr title="Uniform Resource Locator">URL</abbr></span>: <a class="link" href="{{service.primaryUrl}}">{{service.primaryUrl}}</a>
+		<span class="registry-demo-services-detail-title"><abbr title="Uniform Resource Locator">URL</abbr></span>: <a class="link" href="{{service.primaryUrl}}">{{service.primaryUrl}}</a>
 	</li>
 {{/if}}
 

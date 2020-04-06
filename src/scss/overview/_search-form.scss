@@ -6,6 +6,13 @@
 	@include oLoadingContent($opts: (
 		'theme': 'dark'
 	));
+}
+
+// registry loading class is defined twice intentionally.
+// o-loading mixins create a new selector
+// after the one they are used in, to output
+// rules after keyframes
+.registry__form-search-loading {
 	width: 10px;
 	height: 10px;
 	border-width: 2px;
@@ -19,13 +26,8 @@
 	display: block;
 }
 
-.registry__search-bar {
-	.core & #filter-search {
-		margin-top: 12px;
-		margin-right: 20px;
-	}
-
-	.registry__filter-button {
-		align-self: flex-end;
-	}
+// The registry search suffix is only used for the core experience
+// So the suffix margin is not needed for the enhanced experience
+.enhanced .registry__form .o-forms-input--suffix input {
+	margin-right: 0;
 }
