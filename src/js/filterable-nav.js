@@ -76,4 +76,4 @@ class FilterableNav {
 	}
 }
 
-module.exports = FilterableNav;
+export default FilterableNav;

@@ -211,4 +211,4 @@ class FilterForm {
 }
 
 // Exports
-module.exports = FilterForm;
+export default FilterForm;
