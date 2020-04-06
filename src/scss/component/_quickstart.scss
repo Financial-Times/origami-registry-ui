@@ -26,7 +26,7 @@
 	$background: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:github?source=registry-ui&tint=#{$color}&format=svg");
 	$hover-background: url("https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:github?source=registry-ui&tint=#{$hover-color}&format=svg");
 	&:before {
-		@include oIconsBaseStyles();
+		@include oIconsContentBaseStyles();
 		content: '';
 		width: 1.75rem;
 		height: 1.75rem;
