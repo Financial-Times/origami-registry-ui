@@ -1,60 +1,48 @@
-{{#if navItems}}
 <nav class="o-layout__navigation">
+	{{! Filter demo/imageset/codedocs input }}
+	<form class="o--if-js registry__form o-forms registry__form--nav" action="{{requestUrl}}" method="get" id="filter-form">
+			<label class="o-forms-field">
+				<span class="o-forms-title">
+					<span class="o-forms-title__main">
+						Filter {{@root.heading}}
+					</span>
+				</span>
 
-	<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" id="filter-form">
-		<div class="o-forms">
-			<label for="filter-search" class="o-forms__label">
-				Filter {{@root.heading}}
+				<span class="o-forms-input o-forms-input--text">
+					<input type="search" name="search" value="" autocomplete="off"/>
+				</span>
 			</label>
-			<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
-		</div>
 	</form>
 
 	<ol data-filterable-nav="filter-form">
-		{{#each navItems}}
-			<li>
-				{{#if link}}
-					<a href="{{ link }}">{{title}}</a>
-				{{else}}
-					<span>{{title}}</span>
-				{{/if}}
-				{{#if items}}
-					<ol>
-					{{#each items}}
-						<li>
-						{{#if link}}
-							<a href="{{ link }}">{{title}}</a>
-						{{else}}
-							<span>{{title}}</span>
-						{{/if}}
-						</li>
-					{{/each}}
-					</ol>
-				{{/if}}
-			</li>
-		{{/each}}
+	{{! list nav items }}
+	{{#each navItems}}
+		<li>
+			{{#if link}}
+				<a href="{{ link }}">{{title}}</a>
+			{{else}}
+				<span>{{title}}</span>
+			{{/if}}
+			{{#if items}}
+				<ol>
+				{{#each items}}
+					<li>
+					{{#if link}}
+						<a href="{{ link }}">{{title}}</a>
+					{{else}}
+						<span>{{title}}</span>
+					{{/if}}
+					</li>
+				{{/each}}
+				</ol>
+			{{/if}}
+		</li>
+	{{/each}}
+	{{! list images from an imageset in the nav }}
+	{{#each images}}
+		<li>
+			<a href="#{{slugify title}}">{{title}}</a>
+		</li>
+	{{/each}}
 	</ol>
 </nav>
-{{/if}}
-
-{{#if images}}
-<nav class="o-layout__navigation">
-
-	<form class="o--if-js registry__form registry__form--nav" action="{{requestUrl}}" method="get" id="filter-form">
-		<div class="o-forms">
-			<label for="filter-search" class="o-forms__label">
-				Find An Image
-			</label>
-			<input id="filter-search" type="search" name="search" value="" autocomplete="off" class="o-forms__text"/>
-		</div>
-	</form>
-
-	<ol data-filterable-nav="filter-form">
-		{{#each images}}
-			<li>
-				<a href="#{{slugify title}}">{{title}}</a>
-			</li>
-		{{/each}}
-	</ol>
-</nav>
-{{/if}}

@@ -59,7 +59,7 @@ $o-brand: 'internal';
 // Header.
 @include oHeaderServices($opts: (
 	'types': ('primary-nav', 'secondary-nav', 'bleed'),
-	'logo': 'origami'
+	'logo': 'ftlogo-v1:origami'
 ));
 
 // Footer.
@@ -70,7 +70,8 @@ $o-brand: 'internal';
 
 // Forms.
 @include oForms($opts: (
-	'elements': ('text', 'checkbox')
+	'elements': ('text', 'checkbox', 'select'),
+	'features': ('suffix'),
 ));
 
 // Typography.
@@ -107,7 +108,7 @@ $o-brand: 'internal';
 // Tabs.
 @include oTabs($opts: (
     'button-tabs': (
-		('type': 'secondary', 'theme': 'inverse'),
+		('type': 'secondary', 'theme': 'mono'),
 	)
 ));
 
@@ -139,6 +140,7 @@ $o-brand: 'internal';
 .download-button,
 .switch-button {
 	display: block;
+	width: 100%;
 	margin-bottom: oSpacingByName('s4');
 }
 
