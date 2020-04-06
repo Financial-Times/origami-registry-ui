@@ -32,8 +32,8 @@
 
 .demo-link {
 	@include oTypographyLink($theme: (
-		'base': oColorsByUseCase(body, text),
-		'hover': oColorsByUseCase(body, text)
+		'base': oColorsByUsecase(body, text),
+		'hover': oColorsByUsecase(body, text)
 	));
 }
 
