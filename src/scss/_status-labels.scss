@@ -44,19 +44,16 @@
 ));
 
 @include oLabelsAddState('js', (
-	// This is creating a JS-link yellow colour
-	// using a mix of mandarin and the master
-	// lemon colour. Lemon is not available to
-	// internal brands but we don't really care
-	// about them staying in sync for this usecase.
-	// In-fact, we could replace this with a custom
+	// This is creating a JS-like yellow colour
+	// using a mix of mandarin and lemon.
+	// We could replace this with a custom
 	// colour outside the palette, of the actual
-	// JS logo yellow (personal preference)..
+	// JS logo yellow (personal preference)...
 	background-color: oColorsMix('mandarin', 'lemon', 30)
 ));
 
 @include oLabelsAddState('scss', (
-	// This is creating a Sass-link pink
+	// This is creating a Sass-like pink
 	// using a mix of master brand colours
 	// "velvet" and "candy". They are not
 	// available to internal brands but we
