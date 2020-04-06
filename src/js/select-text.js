@@ -17,16 +17,18 @@ function selectText(element) {
 	}
 }
 
-module.exports.init = function() {
-	const buttons = document.querySelectorAll('[data-select-html]');
-	if (buttons) {
-		buttons.forEach(button => {
-			button.addEventListener('click', (e) => {
-				e.preventDefault();
-				const id = button.getAttribute('data-select-html');
-				const html = document.getElementById(id);
-				selectText(html);
+export default {
+	init: function() {
+		const buttons = document.querySelectorAll('[data-select-html]');
+		if (buttons) {
+			buttons.forEach(button => {
+				button.addEventListener('click', (e) => {
+					e.preventDefault();
+					const id = button.getAttribute('data-select-html');
+					const html = document.getElementById(id);
+					selectText(html);
+				});
 			});
-		});
+		}
 	}
-};
+}

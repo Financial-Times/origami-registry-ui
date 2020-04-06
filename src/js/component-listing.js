@@ -68,4 +68,4 @@ class ComponentListing {
 }
 
 // Exports
-module.exports = ComponentListing;
+export default ComponentListing;

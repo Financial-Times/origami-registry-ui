@@ -1,6 +1,6 @@
 
 
-module.exports = (function(){
+export default (function(){
 	window.addEventListener('message', (e) => {
 		try {
 			const data = JSON.parse(e.data);
