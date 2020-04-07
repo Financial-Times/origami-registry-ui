@@ -1,6 +1,6 @@
-'use strict';
 
-module.exports = {
+
+export default {
 	init: function () {
 		const selections = document.querySelectorAll('[data-version-select]');
 		selections.forEach(selection => selection.addEventListener('change', (event) => {

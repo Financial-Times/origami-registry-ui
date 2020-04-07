@@ -1,14 +1,44 @@
-.registry__component--demo {
-	@include oTypographyMargin($bottom: 8);
+// Styles for each demo on a component page.
+.registry-demo {
+	margin-bottom: oSpacingByName('s8');
 }
 
-.registry__component--demo-display {
-		@include oTypographyMargin($top: 3);
-		@include oTypographyPadding($bottom: 2);
-		border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
-		position: relative;
+// Styles for demo options
+// (demo/html tab buttons, open in new page)
+.registry-demo-options {
+	margin-top: oSpacingByName('s4');
+	margin-bottom: oSpacingByName('s3');
+}
 
-		.demo__html {
+.registry-demo-options__tabs {
+	display: inline-block;
+
+	> .o-tabs ul {
+		// Align tabs with the demo link.
+		display: inline-block;
+		vertical-align: bottom;
+	}
+}
+
+.registry-demo-options__links {
+	float: right;
+	margin-left: oSpacingByName('s2');
+}
+
+.registry-demo-options__anchor {
+	@include oTypographyLink($theme: (
+		'base': oColorsByUsecase(body, text),
+		'hover': oColorsByUsecase(body, text)
+	), $external: true);
+}
+
+// Styles for demo content (html / iframe previews)
+.registry-demo-content {
+		position: relative;
+		padding-bottom: oSpacingByName('s2');
+		border-bottom: 1px solid oColorsByName('slate-white-15');
+
+		.registry-demo-content__html-code {
 			// Add padding to demo html so overlaying controls
 			// i.e. "select full code snippet" do not visually
 			// obscure demo html
@@ -16,50 +46,23 @@
 			padding-right: 10rem;
 		}
 
-		.demo__live {
+		.registry-demo-content__live {
 			width: 100%;
 			border: 0;
 			appearance: none;
 		}
 }
 
-.registry__demo-button {
-	@include oButtons($theme: 'mono');
-}
-
-.core .registry__demo-button--select-html {
-	display: none;
-}
-
-.registry__demo-button--select-html {
+// Styles for demo html controls (e.g copy to clipboard)
+.registry-demo-content__html-controls {
 	position: absolute;
-	top: oTypographySpacingSize(2);
-	right: oTypographySpacingSize(2);
-	background: oColorsGetPaletteColor('white');
+	top: oSpacingByName('s2');
+	right: oSpacingByName('s2');
+	background: oColorsByName('white');
 }
 
-.demo-link {
-	@include oTypographyLinkCustom(oColorsGetUseCase(body, text), oColorsGetUseCase(body, text));
-	@include oTypographyLinkExternalIcon(oColorsGetColorFor(body, text));
-}
-
-.registry__component--demo-tabs {
-	@include oTypographyMargin($top: 4, $bottom: 2);
-
-	.demo-link {
-		float: right;
-		margin-left: oSpacingByName('s2');
-	}
-
-	ul {
-		@include oTabsButtonTabsTheme($theme: 'mono', $selector: false);
-		// Align tabs with the demo link.
-		display: inline-block;
-		vertical-align: bottom;
-	}
-}
-
-.registry__component--image-grid {
+// Styles to layout images for imagesets
+.registry-demo-image-grid {
 	display: flex;
 	justify-content: space-around;
 	flex-flow: row wrap;
@@ -73,7 +76,7 @@
 	}
 }
 
-.registry__component--image-item {
+.registry-demo-image-grid__item {
 	flex: 0 1 35%;
 	margin: 0 4px 24px;
 	display: flex;
@@ -83,13 +86,18 @@
 	};
 }
 
-.registry__component--image-title {
-	@include oTypographyPadding($top: 1, $bottom: 1);
+.registry-demo-image-grid__item__title {
+	padding-top: oSpacingByName('s1');
+	padding-bottom: oSpacingByName('s1');
 	text-align: center;
 	margin-top: auto;
-	border-bottom: 1px solid oColorsGetPaletteColor('slate-white-15');
+	border-bottom: 1px solid oColorsByName('slate-white-15');
 }
 
-.service-details__title {
-	@include oTypographyBold('sans');
+// Styles for services demo pages
+.registry-demo-services-detail-title {
+	@include oTypographySans(
+		$weight: 'semibold',
+		$include-font-family: false
+	);
 }

@@ -1,36 +1,34 @@
-.registry__form {
-
-	&-search {
-		position: relative;
-	}
-
-	&-search-loading {
-		@include oLoading();
-	}
-	&-search-loading {
-		@include oLoadingColor('dark');
-		width: 10px;
-		height: 10px;
-		border-width: 2px;
-		position: absolute;
-		right: 12px;
-		bottom: 12px;
-		display: none;
-	}
-
-	&--loading &-search-loading {
-		display: block;
-	}
+.registry__form-search {
+	position: relative;
 }
 
-.registry__search-bar {
-	.core & #filter-search {
-		margin-top: 12px;
-		margin-right: 20px;
-	}
+.registry__form-search-loading {
+	@include oLoadingContent($opts: (
+		'theme': 'dark'
+	));
+}
 
-	.registry__filter-button {
-		@include oButtons(big, primary);
-		align-self: flex-end;
-	}
+// `.registry__form-search-loading` is declared twice intentionally.
+// `oLoadingContent` outputs css at the root using `@at-root`
+// and creates a new rule set. So custom styles that follow
+// `oLoadingContent` do not come after the mixin output.
+// https://github.com/Financial-Times/o-loading/blob/082a9c5e35f1fa61b3adce755b1df5193b72e0c8/src/scss/_mixins.scss#L79
+.registry__form-search-loading {
+	width: 10px;
+	height: 10px;
+	border-width: 2px;
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+	display: none;
+}
+
+.registry__form--loading .registry__form-search-loading {
+	display: block;
+}
+
+// The registry search suffix is only used for the core experience
+// So the suffix margin is not needed for the enhanced experience
+.enhanced .registry__form .o-forms-input--suffix input {
+	margin-right: 0;
 }
