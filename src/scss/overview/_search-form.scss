@@ -8,10 +8,11 @@
 	));
 }
 
-// registry loading class is defined twice intentionally.
-// o-loading mixins create a new selector
-// after the one they are used in, to output
-// rules after keyframes
+// `.registry__form-search-loading` is declared twice intentionally.
+// `oLoadingContent` outputs css at the root using `@at-root`
+// and creates a new rule set. So custom styles that follow
+// `oLoadingContent` do not come after the mixin output.
+// https://github.com/Financial-Times/o-loading/blob/082a9c5e35f1fa61b3adce755b1df5193b72e0c8/src/scss/_mixins.scss#L79
 .registry__form-search-loading {
 	width: 10px;
 	height: 10px;
