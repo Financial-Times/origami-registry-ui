@@ -22,8 +22,8 @@
   "main": "./lib/service.js",
   "scripts": {
     "start": "heroku-node-settings index.js",
-    "build:css": "npx sass src/main.scss --load-path=bower_components --load-path=. | npx postcss > public/main.css",
-    "build:js": "npx oax ./src/main.js --for-bower | npx swc -f - -C minify > public/main.js",
+    "build:css": "mkdir -p public && npx sass src/main.scss --load-path=bower_components --load-path=. | npx postcss > public/main.css",
+    "build:js": "mkdir -p public && npx oax ./src/main.js --for-bower | npx swc -f - -C minify > public/main.js",
     "build": "npm-run-all --parallel build:js build:css",
     "watch:css": "nodemon --watch src -e scss -x 'npm run build:css'",
     "watch:js": "nodemon --watch src -e js -x 'npm run build:js'",
