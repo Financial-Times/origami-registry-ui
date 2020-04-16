@@ -1,4 +1,4 @@
-'use strict';
+
 
 /**
  * Represents a filterable component listing.
@@ -68,4 +68,4 @@ class ComponentListing {
 }
 
 // Exports
-module.exports = ComponentListing;
+export default ComponentListing;

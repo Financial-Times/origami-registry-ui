@@ -1,6 +1,7 @@
-$o-normalise-is-silent: false;
+$system-code: 'origami-registry-ui';
 $o-brand: 'internal';
 
+@import 'o-icons/main';
 @import 'o-colors/main';
 @import 'o-buttons/main';
 @import 'o-fonts/main';
@@ -17,7 +18,6 @@ $o-brand: 'internal';
 @import 'o-typography/main';
 @import 'o-spacing/main';
 @import 'o-syntax-highlight/main';
-@import 'o-visual-effects/main';
 @import 'o-table/main';
 
 @import 'src/scss/component/codedocs';
@@ -29,43 +29,62 @@ $o-brand: 'internal';
 
 @import 'src/scss/status-labels';
 
+// Normalise browser defaults
+@include oNormalise();
+
 // Layout.
 @include oLayout($opts: (
 	'layouts': ('query', 'docs'),
 	'features': ('sidebar-nav', 'linked-headings', 'typography')
 ));
 
+// Buttons.
+@include oButtons($opts: (
+	'sizes': ('big'),
+	'types': ('primary', 'secondary'),
+	'themes': ('mono')
+));
+
 // Tables.
-@include oTable($opts: ('responsive-overflow', 'lines'));
+@include oTable($opts: (
+	'responsive-overflow',
+	'lines'
+));
 
 .o-table-container,
 .o-table {
-	margin-bottom: oTypographySpacingSize(4);
+	margin-bottom: oSpacingByName('s4');
 }
 
 // Header.
 @include oHeaderServices($opts: (
 	'types': ('primary-nav', 'secondary-nav', 'bleed'),
-	'logo': 'origami'
+	'logo': 'ftlogo-v1:origami'
 ));
 
 // Footer.
-@include oFooterServicesWithLogo($logo: 'origami');
+@include oFooterServices($opts: (
+	'logo': 'ftlogo-v1:origami',
+	'icons': ('slack', 'github')
+));
 
 // Forms.
-@include oFormsBaseFeatures();
-@include oFormsWideFeature();
-@include oFormsRadioCheckboxFeatures();
-
-.o-forms {
-	// Padding overrides can be removed when the next major of o-forms is released.
-	padding-right: 0;
-	padding-left: 0;
-}
+@include oForms($opts: (
+	'elements': ('text', 'checkbox', 'select'),
+	'features': ('suffix'),
+));
 
 // Typography.
-.registry-link--external {
-	@include oTypographyLinkExternal();
+
+// o-layout provides a basic typography wrapper class which styles
+// elements based on their semantics. Output a class so we can
+// "upgrade" an anchor tags styles to represent a link that takes
+// the user away from the registry.
+.registry-link-external {
+	@include oTypographyLink(
+		$external: true,
+		$include-base-styles: false
+	);
 }
 
 // Messages.
@@ -76,7 +95,7 @@ $o-brand: 'internal';
 ));
 
 .o-message {
-	margin-bottom: oTypographySpacingSize(4);
+	margin-bottom: oSpacingByName('s4');
 }
 
 .o-layout__header > .o-message {
@@ -84,11 +103,14 @@ $o-brand: 'internal';
 }
 
 // Syntax Highlighting.
-@include oSyntaxHighlightAll();
+@include oSyntaxHighlight();
 
 // Tabs.
-@include oTabs();
-@include oTabsButtonTabs();
+@include oTabs($opts: (
+    'button-tabs': (
+		('type': 'secondary', 'theme': 'mono'),
+	)
+));
 
 // Registry aside sidebar.
 .o-layout__aside-sidebar pre code {
@@ -97,12 +119,15 @@ $o-brand: 'internal';
 }
 
 .o-layout__aside-sidebar details {
-	margin-bottom: oTypographySpacingSize(4);
+	margin-bottom: oSpacingByName('s4');
 	&[open] summary {
-		@include oTypographyBold('sans');
+		@include oTypographySans(
+			$weight: 'semibold',
+			$include-font-family: false
+		);
 	}
 	summary {
-		margin-bottom: oTypographySpacingSize(2);
+		margin-bottom: oSpacingByName('s2');
 	}
 }
 
@@ -112,27 +137,11 @@ $o-brand: 'internal';
 }
 
 // Registry Buttons.
-.registry-button {
-	width: 100%;
-}
-
-.registry-button--secondary {
-	@include oButtons(big, 'mono');
-	border-bottom: 1px solid oColorsGetPaletteColor('slate');
-}
-
 .download-button,
 .switch-button {
-	margin-bottom: oTypographySpacingSize(4);
-}
-
-.switch-button {
-	display: none;
-	margin-bottom: oTypographySpacingSize(4);
-}
-
-.core .switch-button {
 	display: block;
+	width: 100%;
+	margin-bottom: oSpacingByName('s4');
 }
 
 // Registry error page layout.
@@ -140,7 +149,7 @@ $o-brand: 'internal';
 	position: relative;
 	margin: auto;
 	text-align: center;
-	max-width: oTypographyMaxLineWidth($scale: 1);
+	max-width: oTypographyMaxLineWidth();
 }
 
 // Registry title.

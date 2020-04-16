@@ -9,38 +9,63 @@
 ));
 
 @include oLabelsAddState('experimental', (
-	background-color: oColorsGetPaletteColor('lemon')
+	background-color: oColorsByName('lemon')
 ));
 
 @include oLabelsAddState('deprecated', (
-	background-color: oColorsGetPaletteColor('crimson')
+	background-color: oColorsByName('crimson')
 ));
 
 @include oLabelsAddState('dead', (
-	background-color: oColorsGetPaletteColor('black')
+	background-color: oColorsByName('black')
 ));
 
 @include oLabelsAddState('master', (
-	background-color: oColorsGetPaletteColor('wheat')
+	// Master brand "wheat" colour.
+	// Not available to internal brands. We
+	// could add it to the internal brand
+	// palette but then have to communicate
+	// well that it should not actually be used
+	// except for in very rare circumstance
+	// like here. It seemed better to use the
+	// hex and avoid user confusion (until
+	// other internal projects from other teams
+	// have a use for wheat).
+	background-color: #f2dfce
 ));
 
 @include oLabelsAddState('internal', (
-	background-color: oColorsGetPaletteColor('slate-white-15')
+	background-color: oColorsByName('slate-white-15')
 ));
 
 @include oLabelsAddState('whitelabel', (
-	background-color: oColorsGetPaletteColor('white'),
-	border-color: oColorsGetPaletteColor('slate-white-15')
+	background-color: oColorsByName('white'),
+	border-color: oColorsByName('slate-white-15')
 ));
 
 @include oLabelsAddState('js', (
+	// This is creating a JS-like yellow colour
+	// using a mix of mandarin and lemon.
+	// We could replace this with a custom
+	// colour outside the palette, of the actual
+	// JS logo yellow (personal preference)...
 	background-color: oColorsMix('mandarin', 'lemon', 30)
 ));
 
 @include oLabelsAddState('scss', (
-	background-color: oColorsMix('candy', 'velvet', 50)
+	// This is creating a Sass-like pink
+	// using a mix of master brand colours
+	// "velvet" and "candy". They are not
+	// available to internal brands but we
+	// don't really care about them staying
+	// in sync for this usecase. In-fact,
+	// we could replace this with a custom
+	// colour outside the palette, of the
+	// actual Sass logo pink (personal
+	// preference).
+	background-color: #ac5995
 ));
 
 @include oLabelsAddState('imageset', (
-	background-color: oColorsGetPaletteColor('sky')
+	background-color: oColorsMix('white', 'oxford', 80)
 ));

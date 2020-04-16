@@ -1,4 +1,4 @@
-'use strict';
+
 
 // Simple debounce function for throttling input
 function debounce(fn, delay) {
@@ -69,7 +69,7 @@ class FilterForm {
 	 */
 	handleFormChangeEventImmediate(event) {
 		const queryString = this.getUrlEncodedFilterValues();
-		const feelingLucky = (event && event.type === 'submit');
+		const feelingLucky = event && event.type === 'submit';
 
 		// If the filters haven't changed, exit early. Otherwise
 		// set the last filter to the new value
@@ -101,7 +101,8 @@ class FilterForm {
 			})
 			.then(repos => {
 				if (feelingLucky && repos.length) {
-					return document.location = `/components/${repos[0].name}@${repos[0].version}`;
+					document.location = `/components/${repos[0].name}@${repos[0].version}`;
+					return;
 				}
 				this.formElement.classList.remove(loadingClass);
 				document.dispatchEvent(new CustomEvent('o.filterFormSuccess', {
@@ -210,4 +211,4 @@ class FilterForm {
 }
 
 // Exports
-module.exports = FilterForm;
+export default FilterForm;

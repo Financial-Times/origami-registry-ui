@@ -1,47 +1,95 @@
 <form
 	action="/components"
 	method="get"
-	class="registry__form registry__container__sticky"
+	class="registry__form o-layout-sticky-sidebar-container"
 	data-o-component="o-filter-form"
 	data-o-filter-form-browser-history="true"
 >
-	<div class="o-forms">
-		<label for="filter-search" class="o-forms__label">Search the registry</label>
-		<div class="o-forms__additional-info">Find by name or tag</div>
-		<div class="registry__search-bar registry__form-search">
-			<input id="filter-search" type="text" aria-role="search" name="search" value="{{filter.search}}" class="o-forms__text"/>
-			<input type="submit" value="Filter" class="registry__filter-button o--if-no-js"/>
+	{{! Registry search input }}
+	<label class="o-forms-field">
+		<span class="o-forms-title">
+			<span class="o-forms-title__main">
+				Search The Registry
+			</span>
+			<span class="o-forms-title__prompt">
+				Find by name or tag
+			</span>
+		</span>
+
+		<span class="o-forms-input o-forms-input--text o-forms-input--suffix">
+			<input type="search" name="search" value="{{filter.search}}" value="" autocomplete="off"/>
+			{{! suffix for core experience: submit button }}
+			<button type="submit" class="o--if-no-js o-buttons o-buttons--primary o-buttons--big">Search</button>
+			{{! suffix for enhanced experience: loading spinner }}
 			<span class="registry__form-search-loading"></span>
-		</div>
+		</span>
+	</label>
+
+	{{! Registry types input }}
+	<div class="o-forms-field"
+		role="group"
+		aria-labelledby="type-filter-title-main"
+		aria-describedby="type-filter-title-prompt">
+		<span class="o-forms-title">
+			<span class="o-forms-title__main" id="type-filter-title-main">
+				Types
+			</span>
+			<span class="o-forms-title__prompt" id="type-filter-title-prompt">
+				Filter the registry by type
+			</span>
+		</span>
+
+		<span class="o-forms-input o-forms-input--checkbox">
+			<label>
+				<input id="type-module" type="checkbox" name="module" value="true" {{#if filter.module}}checked{{/if}} />
+				<label for="type-module" class="o-forms-input__label">Components</label>
+			</label>
+			<label>
+				<input id="type-imageset" type="checkbox" name="imageset" value="true" {{#if filter.imageset}}checked{{/if}} />
+				<label for="type-imageset" class="o-forms-input__label">Imagesets</label>
+			</label>
+			<label>
+				<input id="type-service" type="checkbox" name="service" value="true" {{#if filter.service}}checked{{/if}} />
+				<label for="type-service" class="o-forms-input__label">Services</label>
+			</label>
+		</span>
 	</div>
 
-	<fieldset class="o-forms">
-		<label class="o-forms__label">Types</label>
-		<div class="o-forms__additional-info">Filter the registry by type</div>
-		<div class="o-forms__group">
-			<input id="type-module" type="checkbox" name="module" value="true" {{#if filter.module}}checked{{/if}} class="o-forms__checkbox"/>
-			<label for="type-module" class="o-forms__label">Components</label>
-			<input id="type-imageset" type="checkbox" name="imageset" value="true" {{#if filter.imageset}}checked{{/if}} class="o-forms__checkbox"/>
-			<label for="type-imageset" class="o-forms__label">Imagesets</label>
-			<input id="type-service" type="checkbox" name="service" value="true" {{#if filter.service}}checked{{/if}} class="o-forms__checkbox"/>
-			<label for="type-service" class="o-forms__label">Services</label>
-		</div>
-	</fieldset>
+	{{! Registry status input }}
+	<div class="o-forms-field"
+		role="group"
+		aria-labelledby="status-filter-title-main"
+		aria-describedby="status-filter-title-prompt">
+		<span class="o-forms-title">
+			<span class="o-forms-title__main" id="status-filter-title-main">
+				Status
+			</span>
+			<span class="o-forms-title__prompt" id="status-filter-title-prompt">
+				Filter the registry by status
+			</span>
+		</span>
 
-	<fieldset class="o-forms">
-		<label class="o-forms__label">Status</label>
-		<div class="o-forms__additional-info">Filter the registry by status</div>
-		<div class="o-forms__group">
-			<input id="status-active" type="checkbox" name="active" value="true" {{#if filter.active}}checked{{/if}} class="o-forms__checkbox"/>
-			<label for="status-active" class="o-forms__label">Active</label>
-			<input id="status-maintained" type="checkbox" name="maintained" value="true" {{#if filter.maintained}}checked{{/if}} class="o-forms__checkbox"/>
-			<label for="status-maintained" class="o-forms__label">Maintained</label>
-			<input id="status-experimental" type="checkbox" name="experimental" value="true" {{#if filter.experimental}}checked{{/if}} class="o-forms__checkbox"/>
-			<label for="status-experimental" class="o-forms__label">Experimental</label>
-			<input id="status-deprecated" type="checkbox" name="deprecated" value="true" {{#if filter.deprecated}}checked{{/if}} class="o-forms__checkbox"/>
-			<label for="status-deprecated" class="o-forms__label">Deprecated</label>
-			<input id="status-dead" type="checkbox" name="dead" value="true" {{#if filter.dead}}checked{{/if}} class="o-forms__checkbox"/>
-			<label for="status-dead" class="o-forms__label">Dead</label>
-		</div>
-	</fieldset>
+		<span class="o-forms-input o-forms-input--checkbox">
+			<label>
+				<input id="status-active" type="checkbox" name="active" value="true" {{#if filter.active}}checked{{/if}} />
+				<label for="status-active" class="o-forms-input__label">Active</label>
+			</label>
+			<label>
+				<input id="status-maintained" type="checkbox" name="maintained" value="true" {{#if filter.maintained}}checked{{/if}} />
+				<label for="status-maintained" class="o-forms-input__label">Maintained</label>
+			</label>
+			<label>
+				<input id="status-experimental" type="checkbox" name="experimental" value="true" {{#if filter.experimental}}checked{{/if}} />
+				<label for="status-experimental" class="o-forms-input__label">Experimental</label>
+			</label>
+			<label>
+				<input id="status-deprecated" type="checkbox" name="deprecated" value="true" {{#if filter.deprecated}}checked{{/if}} />
+				<label for="status-deprecated" class="o-forms-input__label">Deprecated</label>
+			</label>
+			<label>
+				<input id="status-dead" type="checkbox" name="dead" value="true" {{#if filter.dead}}checked{{/if}} />
+				<label for="status-dead" class="o-forms-input__label">Dead</label>
+			</label>
+		</span>
+	</div>
 </form>
