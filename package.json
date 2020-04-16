@@ -31,10 +31,10 @@
     "heroku-postbuild": "bower install && npm run build"
   },
   "dependencies": {
-    "@financial-times/health-check": "1.11.0",
-    "@financial-times/origami-repo-data-client": "1.6.1",
+    "@financial-times/health-check": "1.11.3",
+    "@financial-times/origami-repo-data-client": "1.6.2",
     "@financial-times/origami-service": "4.1.1",
-    "@financial-times/origami-service-makefile": "7.0.2",
+    "@financial-times/origami-service-makefile": "7.0.3",
     "cheerio": "1.0.0-rc.3",
     "dotenv": "8.2.0",
     "guestlist": "2.1.0",
