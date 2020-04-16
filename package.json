@@ -28,7 +28,7 @@
     "watch:css": "nodemon --watch src -e scss -x 'npm run build:css'",
     "watch:js": "nodemon --watch src -e js -x 'npm run build:js'",
     "watch": "npm-run-all --parallel watch:js watch:css",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "bower install && npm run build"
   },
   "dependencies": {
     "@financial-times/health-check": "1.11.0",
