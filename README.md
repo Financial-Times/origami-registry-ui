@@ -39,7 +39,13 @@ In order to bundle the JS and CSS that the application will be using locally, we
 npm run build
 ```
 
-Run the application in development mode with:
+To bundle the JS and CSS for development whenever changes are made run:
+
+```sh
+npm run watch
+```
+
+Then run the application in development mode with:
 
 ```sh
 make run-dev
