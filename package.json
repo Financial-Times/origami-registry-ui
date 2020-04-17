@@ -22,13 +22,19 @@
   "main": "./lib/service.js",
   "scripts": {
     "start": "heroku-node-settings index.js",
-    "heroku-postbuild": "make clean-bower-components build"
+    "build:css": "mkdir -p public && sass src/main.scss --load-path=bower_components --load-path=. | postcss > public/main.css",
+    "build:js": "mkdir -p public && oax ./src/main.js --for-bower | swc -f - -C minify > public/main.js",
+    "build": "npm-run-all --parallel build:js build:css",
+    "watch:css": "nodemon --watch src -e scss -x 'npm run build:css'",
+    "watch:js": "nodemon --watch src -e js -x 'npm run build:js'",
+    "watch": "npm-run-all --parallel watch:js watch:css",
+    "heroku-postbuild": "bower install && npm run build"
   },
   "dependencies": {
-    "@financial-times/health-check": "1.11.0",
-    "@financial-times/origami-repo-data-client": "1.6.1",
-    "@financial-times/origami-service": "4.1.1",
-    "@financial-times/origami-service-makefile": "7.0.2",
+    "@financial-times/health-check": "1.11.3",
+    "@financial-times/origami-repo-data-client": "1.6.2",
+    "@financial-times/origami-service": "4.1.2",
+    "@financial-times/origami-service-makefile": "7.0.3",
     "cheerio": "1.0.0-rc.3",
     "dotenv": "8.2.0",
     "guestlist": "2.1.0",
@@ -42,17 +48,27 @@
     "throng": "4.0.0"
   },
   "devDependencies": {
-    "@financial-times/grafana-tools": "1.0.1",
+    "@financial-times/grafana-tools": "1.0.6",
+    "@financial-times/sass": "^1.30.15",
+    "@swc/cli": "^0.1.24",
+    "@swc/core": "^1.1.39",
+    "autoprefixer": "^9.7.6",
+    "bower": "^1.8.8",
+    "cssnano": "^4.1.10",
     "eslint": "6.8.0",
+    "eslint-config-origami-component": "^2.0.1",
     "jsdom": "16.2.2",
     "mocha": "7.1.1",
     "mockery": "2.1.0",
-    "nodemon": "2.0.2",
+    "nodemon": "2.0.3",
+    "npm-run-all": "^4.1.5",
     "nyc": "15.0.1",
-    "origami-build-tools": "9.0.5",
+    "oax": "^0.5.31",
+    "postcss": "^7.0.27",
+    "postcss-cli": "^7.1.0",
     "proclaim": "3.6.0",
-    "sinon": "9.0.1",
-    "supertest": "4.0.2",
-    "eslint-config-origami-component": "^2.0.1"
+    "sass": "^1.26.3",
+    "sinon": "9.0.2",
+    "supertest": "4.0.2"
   }
 }
