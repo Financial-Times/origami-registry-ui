@@ -21,6 +21,6 @@ jobs:
         name: Create new change log
         with:
           change-api-key: ${{ secrets.CHANGE_API_KEY }}
-          system-code: "origami-navigation-service"
+          system-code: "origami-registry-ui"
           environment: test
           slack-channels: "ft-changes,origami-deploys"
