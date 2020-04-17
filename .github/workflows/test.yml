@@ -1,0 +1,23 @@
+name: Test
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: 'Terraform Format'
+        uses: hashicorp/terraform-github-actions@v0.8.0
+        with:
+          tf_actions_version: 'latest'
+          tf_actions_subcommand: 'fmt'
+          tf_actions_working_dir: 'fastly/terraform/'
+          tf_actions_comment: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm ci
+    - run: make verify
+    - run: make test-unit-coverage
+    - run: make test-integration
