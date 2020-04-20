@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - '*'
+      - '*/*'
       - '!master'
 env:
   terraform_version: 'latest'
