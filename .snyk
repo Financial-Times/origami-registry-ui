@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:mem:20180117':
@@ -12,4 +12,26 @@ ignore:
           We do not use sassdoc-extras Markdown features and trust our SassDoc
           input.
         expires: 2020-01-01T16:54:13.300Z
-patch: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - '@financial-times/health-check > lodash':
+        patched: '2020-05-01T17:29:53.799Z'
+    - '@financial-times/origami-repo-data-client > lodash':
+        patched: '2020-05-01T17:29:53.799Z'
+    - '@financial-times/origami-service > lodash':
+        patched: '2020-05-01T17:29:53.799Z'
+    - cheerio > lodash:
+        patched: '2020-05-01T17:29:53.799Z'
+    - request-promise-native > request-promise-core > lodash:
+        patched: '2020-05-01T17:29:53.799Z'
+    - '@financial-times/origami-service > @financial-times/express-web-service > lodash':
+        patched: '2020-05-01T17:29:53.799Z'
+    - '@financial-times/origami-service > next-metrics > lodash':
+        patched: '2020-05-01T17:29:53.799Z'
+    - '@financial-times/health-check > request-promise-native > request-promise-core > lodash':
+        patched: '2020-05-01T17:29:53.799Z'
+    - '@financial-times/origami-repo-data-client > request-promise-native > request-promise-core > lodash':
+        patched: '2020-05-01T17:29:53.799Z'
+    - '@financial-times/origami-service > request-promise-native > request-promise-core > lodash':
+        patched: '2020-05-01T17:29:53.799Z'
