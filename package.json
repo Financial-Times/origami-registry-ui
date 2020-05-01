@@ -28,7 +28,9 @@
     "watch:css": "nodemon --watch src -e scss -x 'npm run build:css'",
     "watch:js": "nodemon --watch src -e js -x 'npm run build:js'",
     "watch": "npm-run-all --parallel watch:js watch:css",
-    "heroku-postbuild": "bower install && npm run build"
+    "heroku-postbuild": "bower install && npm run build",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@financial-times/health-check": "1.11.3",
@@ -45,7 +47,8 @@
     "require-all": "3.0.0",
     "sassdoc-extras": "3.0.0",
     "showdown": "1.9.1",
-    "throng": "4.0.0"
+    "throng": "4.0.0",
+    "snyk": "^1.316.2"
   },
   "devDependencies": {
     "@financial-times/grafana-tools": "1.0.6",
@@ -70,5 +73,6 @@
     "sass": "^1.26.5",
     "sinon": "9.0.2",
     "supertest": "4.0.2"
-  }
+  },
+  "snyk": true
 }
