@@ -48,7 +48,7 @@
     "sassdoc-extras": "3.0.0",
     "showdown": "1.9.1",
     "throng": "4.0.0",
-    "snyk": "^1.319.0"
+    "snyk": "^1.320.2"
   },
   "devDependencies": {
     "@financial-times/grafana-tools": "1.0.6",
