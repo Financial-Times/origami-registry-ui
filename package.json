@@ -74,5 +74,10 @@
     "sinon": "9.0.2",
     "supertest": "4.0.2"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "ie >= 11"
+  ],
   "snyk": true
 }
