@@ -54,7 +54,7 @@
     "@financial-times/grafana-tools": "2.0.0",
     "@financial-times/sass": "^1.32.0",
     "@swc/cli": "^0.1.24",
-    "@swc/core": "^1.2.2",
+    "@swc/core": "^1.2.3",
     "autoprefixer": "^9.8.0",
     "bower": "^1.8.8",
     "cssnano": "^4.1.10",
