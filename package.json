@@ -41,7 +41,7 @@
     "dotenv": "8.2.0",
     "guestlist": "2.2.0",
     "heroku-node-settings": "1.1.0",
-    "http-errors": "1.7.3",
+    "http-errors": "1.8.0",
     "prismjs": "1.20.0",
     "request-promise-native": "1.0.8",
     "require-all": "3.0.0",
