@@ -78,15 +78,13 @@ PartiallyAutomated
 
 Manual
 
-## Architecture Diagram
-
-[Google Drawing](https://docs.google.com/a/ft.com/drawings/d/1qKROLQvR-D5LzxxTTkJgzcr5IlLLkaRh3bEtF0AAYeA/edit?usp=sharing)
-
 ## Architecture
 
 This is a Node.js application, and mostly exists as a presentation layer over the top of the APIs for Origami Repo Data and Origami Codedocs.
 
 Most of the logic for the service is in the routes, and the most complex parts of the app relate to transforming data from the APIs into something that's useable by the view layer.
+
+[Google Drawing](https://docs.google.com/a/ft.com/drawings/d/1qKROLQvR-D5LzxxTTkJgzcr5IlLLkaRh3bEtF0AAYeA/edit?usp=sharing)
 
 ## More Information
 
