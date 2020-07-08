@@ -33,7 +33,7 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "@financial-times/health-check": "2.1.1",
+    "@financial-times/health-check": "2.1.2",
     "@financial-times/origami-repo-data-client": "1.6.3",
     "@financial-times/origami-service": "5.0.0",
     "@financial-times/origami-service-makefile": "7.0.3",
