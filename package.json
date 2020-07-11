@@ -55,7 +55,7 @@
     "@financial-times/sass": "^1.32.2",
     "@swc/cli": "^0.1.26",
     "@swc/core": "^1.2.7",
-    "autoprefixer": "^9.8.4",
+    "autoprefixer": "^9.8.5",
     "bower": "^1.8.8",
     "cssnano": "^4.1.10",
     "eslint": "7.4.0",
