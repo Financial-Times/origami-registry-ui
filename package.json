@@ -71,7 +71,7 @@
     "postcss-cli": "^7.1.1",
     "proclaim": "3.6.0",
     "sass": "^1.26.10",
-    "sinon": "9.0.2",
+    "sinon": "9.0.3",
     "supertest": "4.0.2"
   },
   "browserslist": [
