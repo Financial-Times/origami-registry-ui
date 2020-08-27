@@ -3,7 +3,6 @@
 
 Get information about Origami components, services, and repositories.
 
-[![Build status](https://img.shields.io/circleci/project/Financial-Times/origami-registry-ui.svg)][ci]
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)][license]
 
 
@@ -122,12 +121,12 @@ The code will also need to pass linting on CI, you can run the linter locally wi
 make verify
 ```
 
-We run the tests and linter on CI, you can view [results on CircleCI][ci]. `make test` and `make lint` must pass before we merge a pull request.
+We run the tests and linter on CI, you can view [results on CI][ci]. `make test` and `make lint` must pass before we merge a pull request.
 
 
 ## Deployment
 
-The production ([EU][heroku-production-eu]/[US][heroku-production-us]) and [QA][heroku-qa] applications run on [Heroku]. We deploy continuously to QA via [CircleCI][ci], you should never need to deploy to QA manually. We use a [Heroku pipeline][heroku-pipeline] to promote QA deployments to production.
+The production ([EU][heroku-production-eu]/[US][heroku-production-us]) and [QA][heroku-qa] applications run on [Heroku]. We deploy continuously to QA via [CI][ci], you should never need to deploy to QA manually. We use a [Heroku pipeline][heroku-pipeline] to promote QA deployments to production.
 
 You can promote either through the Heroku interface, or by running the following command locally:
 
@@ -175,7 +174,6 @@ The Financial Times has published this software under the [MIT license][license]
 
 
 
-[ci]: https://circleci.com/gh/Financial-Times/origami-registry-ui
 [grafana]: http://grafana.ft.com/dashboard/db/origami-registry-ui
 [healthcheck-eu]: https://endpointmanager.in.ft.com/manage/TODO
 [healthcheck-us]: https://endpointmanager.in.ft.com/manage/TODO
