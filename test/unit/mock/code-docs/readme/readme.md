@@ -1,4 +1,4 @@
-# o-test-component [![CircleCI](https://circleci.com/gh/Financial-Times/o-test-component.png?style=shield&circle-token=8d39afee1e3c3b1f586770034db9673b791cb4f8)](https://circleci.com/gh/Financial-Times/o-test-component)
+# o-test-component
 
 FT-branded styles for test elements.
 
