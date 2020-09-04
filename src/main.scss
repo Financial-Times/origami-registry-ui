@@ -19,6 +19,7 @@ $o-brand: 'internal';
 @import 'o-spacing/main';
 @import 'o-syntax-highlight/main';
 @import 'o-table/main';
+@import 'o-cookie-message/main';
 
 @import 'src/scss/component/codedocs';
 @import 'src/scss/component/demos';
@@ -55,6 +56,9 @@ $o-brand: 'internal';
 .o-table {
 	margin-bottom: oSpacingByName('s4');
 }
+
+// Cookie Banner.
+@include oCookieMessage();
 
 // Header.
 @include oHeaderServices($opts: (
