@@ -1,10 +1,10 @@
 
 
-import SelectText from './select-text';
-import Versioning from './versioning';
-import FilterableNav from './filterable-nav';
-import ComponentListing from './component-listing';
-import FilterForm from './filter-form';
+import SelectText from './select-text.js';
+import Versioning from './versioning.js';
+import FilterableNav from './filterable-nav.js';
+import ComponentListing from './component-listing.js';
+import FilterForm from './filter-form.js';
 
 // Initialise components
 document.addEventListener('o.DOMContentLoaded', () => {
