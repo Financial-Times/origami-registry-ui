@@ -72,7 +72,7 @@
     "proclaim": "3.6.0",
     "sass": "^1.26.11",
     "sinon": "9.1.0",
-    "supertest": "4.0.2"
+    "supertest": "5.0.0"
   },
   "browserslist": [
     "> 1%",
