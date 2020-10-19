@@ -47,15 +47,15 @@
     "require-all": "3.0.0",
     "sassdoc-extras": "3.0.0",
     "showdown": "1.9.1",
-    "throng": "5.0.0",
-    "snyk": "^1.400.0"
+    "snyk": "^1.400.0",
+    "throng": "5.0.0"
   },
   "devDependencies": {
     "@financial-times/grafana-tools": "2.0.0",
     "@financial-times/sass": "^1.32.2",
     "@swc/cli": "^0.1.27",
     "@swc/core": "^1.2.36",
-    "autoprefixer": "^10.0.0",
+    "autoprefixer": "^10.0.1",
     "bower": "^1.8.8",
     "cssnano": "^4.1.10",
     "eslint": "^7.11.0",
