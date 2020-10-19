@@ -27,7 +27,7 @@
     "o-forms": "^8.3.2",
     "o-spacing": "^2.0.1",
     "o-icons": "^6.0.3",
-    "o-tracking": "v3",
+    "o-tracking": "^3",
     "o-cookie-message": "^5.0.6"
   }
 }
