@@ -49,6 +49,51 @@ module.exports = [
 		// mock use only
 		_versions: ['2.0.0', '1.1.1', '1.1.0', '1.0.1', '1.0.0']
 	},
+	// Active Origami component with no readme
+	{
+		name: 'o-example-no-readme',
+		type: 'module',
+		subType: 'primitives',
+		version: '2.0.0',
+		support: {
+			status: 'active',
+			email: 'origami@example.com',
+			channel: {
+				name: '#example-channel',
+				url: 'mock-channel-url'
+			},
+			isOrigami: true
+		},
+		resources: {
+			demos: null,
+			dependencies: [
+				{
+					'name': 'example-dependency',
+					'version': '^1.2.3',
+					'source': 'bower',
+					'isDev': false,
+					'isOptional': false
+				}
+			]
+		},
+		manifests: {
+			'origami': {
+				'browserFeatures': {
+					'required': [
+						'DOMTokenList'
+					],
+					'optional': [
+						'IntersectionObserver'
+					]
+				}
+			}
+		},
+		markdown: {
+		},
+
+		// mock use only
+		_versions: ['2.0.0', '1.1.1', '1.1.0', '1.0.1', '1.0.0']
+	},
 
 	// Maintained Origami component
 	{

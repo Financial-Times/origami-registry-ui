@@ -21,7 +21,7 @@ describe('GET /components.json', () => {
         it('contains a list of all components', async () => {
             const request = agent.get('/components.json');
             const json = (await request.then()).body;
-            assert.equal(json.length, 7, 'Expected 7 components.');
+            assert.equal(json.length, 8, 'Expected 8 components.');
         });
 
         it('filters by search query parameter', async () => {
@@ -35,7 +35,7 @@ describe('GET /components.json', () => {
             const tests = [
                 {
                     type: 'module',
-                    expected: 5
+                    expected: 6
                 },
                 {
                     type: 'service',
@@ -57,7 +57,7 @@ describe('GET /components.json', () => {
             const tests = [
                 {
                     status: 'active',
-                    expected: 2
+                    expected: 3
                 },
                 {
                     status: 'maintained',
@@ -86,7 +86,7 @@ describe('GET /components.json', () => {
         it('filters with combined search, status, and type query parameters', async () => {
             const request = agent.get('/components.json?search=o-example&maintained=true&module=true');
             const json = (await request.then()).body;
-            assert.equal(json.length, 2, 'Expected to find 1 component(s) for a combined filter.');
+            assert.equal(json.length, 2, 'Expected to find 2 component(s) for a combined filter.');
         });
     });
 });
