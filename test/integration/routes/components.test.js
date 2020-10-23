@@ -33,7 +33,7 @@ describe('GET /components', () => {
 			assert.isNotNull(list);
 
 			const listItems = list.querySelectorAll('[data-test=component-list-item]');
-			assert.lengthEquals(listItems, 3);
+			assert.lengthEquals(listItems, 4);
 
 			let link;
 
@@ -42,10 +42,14 @@ describe('GET /components', () => {
 			assert.include(link.textContent.trim(), 'o-example-active');
 
 			link = listItems[1].querySelector('[data-test=component-link]');
+			assert.strictEqual(link.getAttribute('href'), '/components/o-example-no-readme@2.0.0?brand=master');
+			assert.include(link.textContent.trim(), 'o-example-no-readme');
+
+			link = listItems[2].querySelector('[data-test=component-link]');
 			assert.strictEqual(link.getAttribute('href'), '/components/o-example-maintained@1.5.0?brand=master');
 			assert.include(link.textContent.trim(), 'o-example-maintained');
 
-			link = listItems[2].querySelector('[data-test=component-link]');
+			link = listItems[3].querySelector('[data-test=component-link]');
 			assert.strictEqual(link.getAttribute('href'), '/components/o-example-imageset-maintained@1.5.0?brand=master');
 			assert.include(link.textContent.trim(), 'o-example-imageset-maintained');
 		});
