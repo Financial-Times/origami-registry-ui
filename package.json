@@ -17,18 +17,18 @@
   },
   "engines": {
     "node": "^12.16.1",
-    "npm": "^6.13.0"
+    "npm": "^7"
   },
   "main": "./lib/service.js",
   "scripts": {
     "start": "heroku-node-settings index.js",
-    "build:css": "mkdir -p public && sass src/main.scss  --style=compressed --load-path=bower_components --load-path=. | postcss --use autoprefixer --output public/main.css --map",
-    "build:js": "mkdir -p public && oax ./src/main.js --for-bower | swc -f - -C minify > public/main.js",
+    "build:css": "mkdir -p public && sass src/main.scss  --style=compressed --load-path=node_modules --load-path=. | postcss --use autoprefixer --output public/main.css --map",
+    "build:js": "mkdir -p public && oax ./src/main.js | swc -f - -C minify > public/main.js",
     "build": "npm-run-all --parallel build:js build:css",
     "watch:css": "nodemon --watch src -e scss -x 'npm run build:css'",
     "watch:js": "nodemon --watch src -e js -x 'npm run build:js'",
     "watch": "npm-run-all --parallel watch:js watch:css",
-    "heroku-postbuild": "bower install && npm run build",
+    "heroku-postbuild": "npm run build",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect"
   },
@@ -56,7 +56,6 @@
     "@swc/cli": "^0.1.27",
     "@swc/core": "^1.2.36",
     "autoprefixer": "^10.0.1",
-    "bower": "^1.8.8",
     "cssnano": "^4.1.10",
     "eslint": "^7.12.1",
     "eslint-config-origami-component": "^2.1.0",
@@ -73,6 +72,29 @@
     "sass": "^1.27.0",
     "sinon": "9.2.0",
     "supertest": "5.0.0"
+  },
+  "peerDependencies": {
+    "@financial-times/o-autoinit": "^100.0.0-10",
+    "@financial-times/o-buttons": "^100.0.0-10",
+    "@financial-times/o-colors": "^100.0.0-10",
+    "@financial-times/o-cookie-message": "^100.0.0-10",
+    "@financial-times/o-fonts": "^100.0.0-10",
+    "@financial-times/o-footer-services": "^100.0.0-10",
+    "@financial-times/o-forms": "^100.0.0-10",
+    "@financial-times/o-grid": "^100.0.0-10",
+    "@financial-times/o-header-services": "^100.0.0-10",
+    "@financial-times/o-icons": "^100.0.0-10",
+    "@financial-times/o-labels": "^100.0.0-10",
+    "@financial-times/o-layout": "^100.0.0-10",
+    "@financial-times/o-loading": "^100.0.0-10",
+    "@financial-times/o-message": "^100.0.0-10",
+    "@financial-times/o-normalise": "^100.0.0-10",
+    "@financial-times/o-spacing": "^100.0.0-10",
+    "@financial-times/o-syntax-highlight": "^100.0.0-10",
+    "@financial-times/o-table": "^100.0.0-10",
+    "@financial-times/o-tabs": "^100.0.0-10",
+    "@financial-times/o-tracking": "^100.0.0-10",
+    "@financial-times/o-typography": "^100.0.0-10"
   },
   "browserslist": [
     "> 1%",

@@ -17,7 +17,9 @@ jobs:
     - uses: actions/setup-node@v2.1.2
       with:
         node-version: 12.x
-    - run: npm ci
+        registry-url: 'https://origami-npm-registry-prototype.herokuapp.com'
+    - run: npm install --global npm@7
+    - run: npm i
     - run: make verify
     - run: make test-unit-coverage
     - run: make test-integration
