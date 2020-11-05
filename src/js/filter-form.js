@@ -69,17 +69,16 @@ class FilterForm {
 	 */
 	handleFormChangeEventImmediate(event) {
 		const queryString = this.getUrlEncodedFilterValues();
-		const feelingLucky = event && event.type === 'submit';
 
 		// If the filters haven't changed, exit early. Otherwise
 		// set the last filter to the new value
-		if (this.lastFilter === queryString && !feelingLucky) {
+		if (this.lastFilter === queryString) {
 			return;
 		}
 		this.lastFilter = queryString;
 
 		// Perform the search
-		return this.searchForRepos(feelingLucky).then(() => {
+		return this.searchForRepos().then(() => {
 			if (this.alterBrowserHistory) {
 				window.history.pushState({
 					oFilterFormFilters: this.getFilterValues()
@@ -91,7 +90,7 @@ class FilterForm {
 	/**
 	 * Search for repositories based on a set of filters
 	 */
-	searchForRepos(feelingLucky) {
+	searchForRepos() {
 		const loadingClass = 'registry__form--loading';
 		this.formElement.classList.add(loadingClass);
 		document.dispatchEvent(new CustomEvent('o.filterFormInitSearch'));
@@ -100,10 +99,6 @@ class FilterForm {
 				return response.json();
 			})
 			.then(repos => {
-				if (feelingLucky && repos.length) {
-					document.location = `/components/${repos[0].name}@${repos[0].version}`;
-					return;
-				}
 				this.formElement.classList.remove(loadingClass);
 				document.dispatchEvent(new CustomEvent('o.filterFormSuccess', {
 					detail: {
