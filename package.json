@@ -70,7 +70,7 @@
     "postcss": "^8.1.13",
     "postcss-cli": "^8.3.0",
     "proclaim": "3.6.0",
-    "sass": "^1.29.0",
+    "sass": "^1.30.0",
     "sinon": "9.2.1",
     "supertest": "6.0.1"
   },
