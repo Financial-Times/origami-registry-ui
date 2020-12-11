@@ -143,7 +143,7 @@ class FilterForm {
 			if (name) {
 				if (type === 'checkbox') {
 					input.checked = filter[name];
-				} else if (type === 'radio' && input.getAttribute('value' === filter[name])) {
+				} else if (type === 'radio' && input.getAttribute('value') === filter[name]) {
 					input.checked = true;
 				} else {
 					input.value = filter[name];
