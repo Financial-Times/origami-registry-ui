@@ -1,3 +1,5 @@
+
+
 // Simple debounce function for throttling input
 function debounce(fn, delay) {
 	let timer = null;
@@ -139,12 +141,9 @@ class FilterForm {
 	setFilterValues(filter) {
 		this.inputs.forEach(input => {
 			const name = input.getAttribute('name');
-			const type = input.getAttribute('type');
 			if (name) {
-				if (type === 'checkbox') {
+				if (input.getAttribute('type') === 'checkbox') {
 					input.checked = filter[name];
-				} else if (type === 'radio' && input.getAttribute('value' === filter[name])) {
-					input.checked = true;
 				} else {
 					input.value = filter[name];
 				}
@@ -158,14 +157,9 @@ class FilterForm {
 	getFilterValues() {
 		return this.inputs.reduce((values, input) => {
 			const name = input.getAttribute('name');
-			const type = input.getAttribute('type');
 			if (name) {
-				if (type === 'checkbox') {
+				if (input.getAttribute('type') === 'checkbox') {
 					values[name] = input.checked ? 'true' : '';
-				} else if (type === 'radio') {
-					if (input.checked) {
-						values[name] = input.value;
-					}
 				} else {
 					values[name] = input.value;
 				}

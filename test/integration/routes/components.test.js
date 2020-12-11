@@ -29,11 +29,11 @@ describe('GET /components', () => {
 			list = dom.window.document.querySelector('[data-test=component-list]');
 		});
 
-		it('contains a list of all active and maintained projects by default', () => {
+		it('contains a list of all active and maintained components, imagesets, and services by default', () => {
 			assert.isNotNull(list);
 
 			const listItems = list.querySelectorAll('[data-test=component-list-item]');
-			assert.lengthEquals(listItems, 7);
+			assert.lengthEquals(listItems, 5);
 
 			const listItemText = Array.from(listItems).map(i => i.textContent).join('');
 
