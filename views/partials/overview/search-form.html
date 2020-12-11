@@ -35,23 +35,40 @@
 				Types
 			</span>
 			<span class="o-forms-title__prompt" id="type-filter-title-prompt">
-				Filter the registry by type
+			    Filter the registry by type
 			</span>
 		</span>
+		<span class="o-forms-input o-forms-input--radio-round">
 
-		<span class="o-forms-input o-forms-input--checkbox">
-			<label>
-				<input id="type-module" type="checkbox" name="module" value="true" {{#if filter.module}}checked{{/if}} />
-				<label for="type-module" class="o-forms-input__label">Components</label>
+				<label>
+				<input id="type-all" type="radio" name="type" value="" {{#unless filter.type}}checked{{/unless}} />
+				<label for="type-all" class="o-forms-input__label">All</label>
 			</label>
 			<label>
-				<input id="type-imageset" type="checkbox" name="imageset" value="true" {{#if filter.imageset}}checked{{/if}} />
+				<input id="type-component" type="radio" name="type" value="component" {{#ifEquals filter.type "component"}}checked{{/ifEquals}} />
+				<label for="type-component" class="o-forms-input__label">Components</label>
+			</label>
+			<label>
+				<input id="type-service" type="radio" name="type" value="service" {{#ifEquals filter.type "service"}}checked{{/ifEquals}} />
+				<label for="type-service" class="o-forms-input__label">Services</label>
+			</label>
+			<label>
+				<input id="type-imageset" type="radio" name="type" value="imageset" {{#ifEquals filter.type "imageset"}}checked{{/ifEquals}} />
 				<label for="type-imageset" class="o-forms-input__label">Imagesets</label>
 			</label>
 			<label>
-				<input id="type-service" type="checkbox" name="service" value="true" {{#if filter.service}}checked{{/if}} />
-				<label for="type-service" class="o-forms-input__label">Services</label>
+				<input id="type-cli" type="radio" name="type" value="cli" {{#ifEquals filter.type "cli"}}checked{{/ifEquals}} />
+				<label for="type-cli" class="o-forms-input__label">Command-line tools</label>
 			</label>
+			<label>
+				<input id="type-library" type="radio" name="type" value="library" {{#ifEquals filter.type "library"}}checked{{/ifEquals}} />
+				<label for="type-library" class="o-forms-input__label">Libraries</label>
+			</label>
+			<label>
+				<input id="type-website" type="radio" name="type" value="website" {{#ifEquals filter.type "website"}}checked{{/ifEquals}} />
+				<label for="type-website" class="o-forms-input__label">Websites</label>
+			</label>
+
 		</span>
 	</div>
 
