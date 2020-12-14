@@ -68,7 +68,7 @@
     "nyc": "15.1.0",
     "oax": "^0.5.32",
     "postcss": "^8.2.1",
-    "postcss-cli": "^8.3.0",
+    "postcss-cli": "^8.3.1",
     "proclaim": "3.6.0",
     "sass": "^1.30.0",
     "sinon": "9.2.1",
