@@ -3,7 +3,7 @@
 	{{#component.support}}
 	<div class="o-forms-field">
 		<span class="o-forms-title">
-			<span class="o-forms-title__main">Support Status</span>
+			<span class="o-forms-title__main">Status</span>
 		</span>
 		<div class="o-forms-input">
 			{{#status}}
@@ -14,6 +14,14 @@
 				{{.}}
 				</span>
 			{{/status}}
+			{{#@root.component.origamiVersion}}
+				<span data-test="origami-version"
+					title="{{@root.component.name}} implements Origami specification version {{.}}"
+					aria-label="{{@root.component.name}} implements Origami specification version {{.}}"
+					class="o-labels component-aside-sidebar-label">
+					Origami v{{.}}
+				</span>
+			{{/@root.component.origamiVersion}}
 			{{#isOrigami}}
 				<span
 					title="{{@root.component.name}} is maintained by the core Origami team"
