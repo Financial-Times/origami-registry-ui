@@ -256,6 +256,60 @@ describe('GET /components/:componentId', () => {
 
 	});
 
+	describe('when it is a v1 component', () => {
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-active@2.0.0');
+		});
+
+		it('responds with a 200 status', () => {
+			return request.expect(200);
+		});
+
+		it('responds with HTML', () => {
+			return request.expect('Content-Type', /text\/html/);
+		});
+
+		describe('HTML response', () => {
+			let html;
+
+			beforeEach(async () => {
+				html = (await request.then()).text;
+			});
+
+			it('instructs the user in bower install', () => {
+				assert.include(html, 'bower install --save "o-example-active');
+			});
+
+		});
+	});
+
+		describe('when it is a v2 component', () => {
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-v2@2.0.0');
+		});
+
+		it('responds with a 200 status', () => {
+			return request.expect(200);
+		});
+
+		it('responds with HTML', () => {
+			return request.expect('Content-Type', /text\/html/);
+		});
+
+		describe('HTML response', () => {
+			let html;
+
+			beforeEach(async () => {
+				html = (await request.then()).text;
+			});
+
+			it('instructs the user in npm install', () => {
+				assert.include(html, 'npm install "o-example-v2');
+			});
+
+		});
+	});
+
 	describe('when the named component has no demos for the brand', () => {
 
 		beforeEach(async () => {
