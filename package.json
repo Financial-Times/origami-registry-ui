@@ -54,7 +54,7 @@
     "@financial-times/grafana-tools": "2.0.1",
     "@financial-times/sass": "^1.32.3",
     "@swc/cli": "^0.1.32",
-    "@swc/core": "^1.2.45",
+    "@swc/core": "^1.2.46",
     "autoprefixer": "^10.2.3",
     "bower": "^1.8.12",
     "cssnano": "^4.1.10",
@@ -71,7 +71,7 @@
     "postcss-cli": "^8.3.1",
     "proclaim": "3.6.0",
     "sass": "^1.32.5",
-    "sinon": "9.2.3",
+    "sinon": "9.2.4",
     "supertest": "6.1.1"
   },
   "browserslist": [
