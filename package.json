@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@financial-times/grafana-tools": "2.0.1",
-    "@financial-times/sass": "^1.32.3",
+    "@financial-times/sass": "^1.32.4",
     "@swc/cli": "^0.1.32",
     "@swc/core": "^1.2.46",
     "autoprefixer": "^10.2.3",
@@ -72,7 +72,7 @@
     "proclaim": "3.6.0",
     "sass": "^1.32.5",
     "sinon": "9.2.4",
-    "supertest": "6.1.1"
+    "supertest": "6.1.2"
   },
   "browserslist": [
     "> 1%",
