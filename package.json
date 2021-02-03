@@ -59,7 +59,7 @@
     "bower": "^1.8.12",
     "cssnano": "^4.1.10",
     "eslint": "^7.19.0",
-    "eslint-config-origami-component": "^2.1.0",
+    "eslint-config-origami-component": "^2.1.1",
     "jsdom": "16.4.0",
     "mocha": "8.2.1",
     "mockery": "2.1.0",
