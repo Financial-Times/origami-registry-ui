@@ -53,7 +53,7 @@
   "devDependencies": {
     "@financial-times/grafana-tools": "2.0.1",
     "@financial-times/sass": "^1.32.4",
-    "@swc/cli": "^0.1.34",
+    "@swc/cli": "^0.1.35",
     "@swc/core": "^1.2.49",
     "autoprefixer": "^10.2.4",
     "bower": "^1.8.12",
