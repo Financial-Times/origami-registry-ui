@@ -47,7 +47,7 @@
     "require-all": "3.0.0",
     "sassdoc-extras": "3.0.0",
     "showdown": "1.9.1",
-    "snyk": "^1.465.0",
+    "snyk": "^1.518.0",
     "throng": "5.0.0"
   },
   "devDependencies": {
