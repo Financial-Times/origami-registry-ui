@@ -3,7 +3,7 @@
 
 const assert = require('proclaim');
 
-describe.only('GET /components.json', () => {
+describe('GET /components.json', () => {
 
 	 it('responds with a 200 status', async () => {
 		  const request = agent.get('/components.json');
