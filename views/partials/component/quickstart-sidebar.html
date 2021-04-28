@@ -128,7 +128,7 @@
 		</details>
 	{{/ifEquals}}
 
-	{{#ifEquals component.type 'module'}}
+	{{#if component.isComponent }}
 		<details>
 			<summary id="install">Install {{@root.component.name}}</summary>
 
@@ -177,6 +177,6 @@
 			<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link-external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link-external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
 		</details>
 		{{/if}}
-	{{/ifEquals}}
+	{{/if}}
 
 </div>
