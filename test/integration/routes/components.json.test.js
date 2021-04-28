@@ -3,7 +3,7 @@
 
 const assert = require('proclaim');
 
-describe('GET /components.json', () => {
+describe.only('GET /components.json', () => {
 
 	 it('responds with a 200 status', async () => {
 		  const request = agent.get('/components.json');
@@ -35,7 +35,7 @@ describe('GET /components.json', () => {
 				const tests = [
 					 {
 						  type: 'module',
-						  expected: 7
+						  expected: 4
 					 },
 					 {
 						  type: 'service',
@@ -86,7 +86,7 @@ describe('GET /components.json', () => {
 		  it('filters with combined search, status, and type query parameters', async () => {
 				const request = agent.get('/components.json?search=o-example&maintained=true&type=component');
 				const json = (await request.then()).body;
-				assert.equal(json.length, 2, 'Expected to find 2 component(s) for a combined filter.');
+				assert.equal(json.length, 1, 'Expected to find 1 component for a combined filter.');
 		  });
 	 });
 });
