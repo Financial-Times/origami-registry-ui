@@ -54,8 +54,8 @@ module.exports = [
 	{
 		name: 'o-example-v2',
 		type: 'module',
-		subType: 'primitives',
-		origamiVersion: 2.0,
+		subType: null,
+		origamiVersion: '2.0',
 		version: '2.0.0',
 		support: {
 			status: 'active',
