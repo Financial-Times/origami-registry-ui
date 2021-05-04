@@ -58,7 +58,7 @@
     "autoprefixer": "^10.2.5",
     "bower": "^1.8.12",
     "cssnano": "^5.0.1",
-    "eslint": "^7.24.0",
+    "eslint": "^7.25.0",
     "eslint-config-origami-component": "^2.1.1",
     "jsdom": "16.5.3",
     "mocha": "8.3.2",
