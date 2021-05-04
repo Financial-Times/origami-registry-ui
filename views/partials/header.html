@@ -47,7 +47,8 @@
 			<ul class="o-header-services__secondary-nav-list o-header-services__secondary-nav-list--children" aria-label="Child sections">
 				<li>
 					<a href="/components/{{ component.name }}@{{ component.version }}{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" {{#ifEquals nav 'index'}}aria-current="true"{{/ifEquals}}>
-						{{#ifEquals component.type 'module'}}Demos{{else}}Info{{/ifEquals}}
+						{{! component.isComponent is confusing, "component" could be any Origami project type, for example a library "lib" }}
+						{{#if component.isComponent}}Demos{{else}}Info{{/if}}
 					</a>
 				</li>
 				<li>
