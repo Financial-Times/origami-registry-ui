@@ -57,7 +57,7 @@
     "@swc/core": "^1.2.54",
     "autoprefixer": "^10.2.5",
     "bower": "^1.8.12",
-    "cssnano": "^5.0.1",
+    "cssnano": "^5.0.2",
     "eslint": "^7.25.0",
     "eslint-config-origami-component": "^2.1.1",
     "jsdom": "16.5.3",
@@ -70,7 +70,7 @@
     "postcss": "^8.2.13",
     "postcss-cli": "^8.3.1",
     "proclaim": "3.6.0",
-    "sass": "^1.32.11",
+    "sass": "^1.32.12",
     "sinon": "10.0.1",
     "supertest": "6.1.3"
   },
