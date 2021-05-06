@@ -66,7 +66,7 @@ describe('GET /components/:componentId', () => {
 			return request.expect(307);
 		});
 
-		it('responds with a Location header pointing to the latest version page', () => {
+		it('responds with a Location header pointing to the latest stable version page', () => {
 			return request.expect('Location', '/components/o-example-active@2.0.0');
 		});
 
@@ -82,7 +82,7 @@ describe('GET /components/:componentId', () => {
 			return request.expect(307);
 		});
 
-		it('responds with a Location header pointing to the latest version page', () => {
+		it('responds with a Location header pointing to the latest stable version page', () => {
 			return request.expect('Location', '/components/o-example-active@2.0.0');
 		});
 

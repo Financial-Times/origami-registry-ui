@@ -48,7 +48,7 @@ module.exports = [
 		},
 
 		// mock use only
-		_versions: ['2.0.0', '1.1.1', '1.1.0', '1.0.1', '1.0.0']
+		_versions: ['2.1.0-beta.0', '2.0.0', '1.1.1', '1.1.0', '1.0.1', '1.0.0']
 	},
 	// v2 Origami component
 	{
