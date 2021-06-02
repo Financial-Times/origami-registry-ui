@@ -283,7 +283,7 @@ describe('GET /components/:componentId', () => {
 		});
 	});
 
-		describe('when it is a v2 component', () => {
+	describe('when it is not a v1 component', () => {
 		beforeEach(async () => {
 			request = agent.get('/components/o-example-v2@2.0.0');
 		});
@@ -304,7 +304,7 @@ describe('GET /components/:componentId', () => {
 			});
 
 			it('instructs the user in npm install', () => {
-				assert.include(html, 'npm install "o-example-v2');
+				assert.include(html, 'npm install --save-peer "o-example-v2');
 			});
 
 		});
