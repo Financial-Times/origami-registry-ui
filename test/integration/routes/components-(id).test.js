@@ -304,7 +304,7 @@ describe('GET /components/:componentId', () => {
 			});
 
 			it('instructs the user in npm install', () => {
-				assert.include(html, 'npm install --save-peer "o-example-v2');
+				assert.include(html, 'npm install --save-peer "@financial-times/o-example-v2');
 			});
 
 		});
