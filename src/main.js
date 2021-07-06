@@ -1,15 +1,15 @@
 
-import 'o-header-services';
-import 'o-message';
-import 'o-syntax-highlight';
-import 'o-tabs';
-import 'o-table';
-import 'o-layout';
+import '@financial-times/o-header-services';
+import '@financial-times/o-message';
+import '@financial-times/o-syntax-highlight';
+import '@financial-times/o-tabs';
+import '@financial-times/o-table';
+import '@financial-times/o-layout';
 import './js/demo.js';
 import './js/main.js';
-import 'o-autoinit';
-import oTracking from 'o-tracking';
-import CookieMessage from 'o-cookie-message';
+import '@financial-times/o-autoinit';
+import oTracking from '@financial-times/o-tracking';
+import CookieMessage from '@financial-times/o-cookie-message';
 
 const cookieMessage = new CookieMessage();
 

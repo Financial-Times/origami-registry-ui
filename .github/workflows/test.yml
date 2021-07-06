@@ -17,7 +17,9 @@ jobs:
     - uses: actions/setup-node@v2.1.5
       with:
         node-version: 12.x
+    - run: npm install --global npm@7.11.2
     - run: npm ci
+    - run: npm run build
     - run: make verify
     - run: make test-unit-coverage
     - run: make test-integration
