@@ -14,14 +14,14 @@
 				{{.}}
 				</span>
 			{{/status}}
-			{{#@root.component.origamiVersion}}
+			{{#ifEquals @root.component.origamiVersion '1'}}
 				<span data-test="origami-version"
-					title="{{@root.component.name}} implements Origami specification version {{.}}"
-					aria-label="{{@root.component.name}} implements Origami specification version {{.}}"
+					title="{{@root.component.name}} follows v{{@root.component.origamiVersion}} of the Origami specification, and is installable via Bower."
+					aria-label="{{@root.component.name}} follows v{{@root.component.origamiVersion}} of the Origami specification, and is installable via Bower."
 					class="o-labels component-aside-sidebar-label">
-					Origami v{{.}}
+					Origami v{{@root.component.origamiVersion}} (Bower)
 				</span>
-			{{/@root.component.origamiVersion}}
+			{{/ifEquals}}
 			{{#isOrigami}}
 				<span
 					title="{{@root.component.name}} is maintained by the core Origami team"
@@ -149,11 +149,11 @@
 
 			{{#ifEquals @root.component.origamiVersion 1}}
 			<p>
-				If running a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}docs/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">bower install --save "{{@root.component.name}}@^{{@root.component.version}}"</code>.
+				If using the Bower package manager for a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}docs/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">bower install --save "{{@root.component.name}}@^{{@root.component.version}}"</code>.
 			</p>
 			{{else}}
 			<p>
-				If running a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}docs/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">npm install "{{@root.component.name}}@^{{@root.component.version}}"</code>.
+				If using the npm package manager for a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}docs/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">npm install --save-peer "@financial-times/{{@root.component.name}}@^{{@root.component.version}}"</code>.
 			</p>
 			{{/ifEquals}}
 		</details>
