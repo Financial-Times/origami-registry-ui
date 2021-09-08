@@ -48,6 +48,7 @@ describe('lib/service', () => {
 			options = {
 				environment: 'test',
 				port: 1234,
+				repoDataApiUrl: 'mock-repo-data-url',
 				repoDataApiKey: 'mock-repo-data-api-key',
 				repoDataApiSecret: 'mock-repo-data-api-secret'
 			};
@@ -118,6 +119,7 @@ describe('lib/service', () => {
 			assert.calledOnce(RepoDataClient);
 			assert.calledWithNew(RepoDataClient);
 			assert.calledWithExactly(RepoDataClient, {
+				apiUrl: 'mock-repo-data-url',
 				apiKey: 'mock-repo-data-api-key',
 				apiSecret: 'mock-repo-data-api-secret'
 			});
