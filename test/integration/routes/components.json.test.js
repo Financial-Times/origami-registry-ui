@@ -21,7 +21,7 @@ describe('GET /components.json', () => {
 		  it('contains a list of all components', async () => {
 				const request = agent.get('/components.json');
 				const json = (await request.then()).body;
-				assert.equal(json.length, 9, 'Expected 9 components.');
+				assert.equal(json.length, 8, 'Expected 8 components.');
 		  });
 
 		  it('filters by search query parameter', async () => {
@@ -57,7 +57,7 @@ describe('GET /components.json', () => {
 					 },
 					 {
 						  status: 'maintained',
-						  expected: 4
+						  expected: 3
 					 },
 					 {
 						  status: 'experimental',

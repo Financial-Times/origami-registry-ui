@@ -33,7 +33,7 @@ describe('GET /components', () => {
 			assert.isNotNull(list);
 
 			const listItems = list.querySelectorAll('[data-test=component-list-item]');
-			assert.lengthEquals(listItems, 8);
+			assert.lengthEquals(listItems, 7);
 
 			const listItemText = Array.from(listItems).map(i => i.textContent).join('');
 
