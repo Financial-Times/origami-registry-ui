@@ -40,7 +40,6 @@ describe('GET /components', () => {
 			assert.include(listItemText, 'o-example-active', 'Did not find a "o-example-active" element in document.');
 			assert.include(listItemText, 'o-example-no-readme', 'Did not find a "o-example-no-readme" element in document.');
 			assert.include(listItemText, 'o-example-maintained', 'Did not find a "o-example-maintained" element in document.');
-			assert.include(listItemText, 'o-example-imageset-maintained', 'Did not find a "o-example-imageset-maintained" element in document.');
 			assert.include(listItemText, 'o-example-service-maintained', 'Did not find a "o-example-service-maintained" element in document.');
 		});
 	});

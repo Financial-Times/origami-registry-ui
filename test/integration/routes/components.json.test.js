@@ -31,7 +31,7 @@ describe('GET /components.json', () => {
 				assert.equal(json.length, 1, `Expected to find 1 component for a "${search}" search.`);
 		  });
 
-		  it('filters by type "module", "service", "imageset" query parameter', async () => {
+		  it('filters by type "module", "service" query parameter', async () => {
 				const tests = [
 					 {
 						  type: 'module',
@@ -39,10 +39,6 @@ describe('GET /components.json', () => {
 					 },
 					 {
 						  type: 'service',
-						  expected: 1
-					 },
-					 {
-						  type: 'imageset',
 						  expected: 1
 					 }
 				];
