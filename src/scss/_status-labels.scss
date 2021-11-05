@@ -65,7 +65,3 @@
 	// preference).
 	background-color: #ac5995
 ));
-
-@include oLabelsAddState('imageset', (
-	background-color: oColorsMix('white', 'oxford', 80)
-));

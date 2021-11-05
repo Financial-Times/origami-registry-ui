@@ -98,36 +98,6 @@
 		</details>
 	{{/ifEquals}}
 
-	{{#ifEquals component.type 'imageset'}}
-		<details>
-			<summary id="use">Include images in your project</summary>
-			<p>Images from "{{@root.component.name}}" can be loaded directly using the <a class="registry-link registry-link-external" href="https://www.ft.com/__origami/service/image/v2/">Image Service</a>.</p>
-			<p>To load an image from this image set, use the following Image Service URL:</p>
-			<pre><code class="o-syntax-higlight--html">https://www.ft.com/__origami/service/image/v2/images/raw/{{@root.component.imageSetScheme}}:{image-name}?source={your-source-here}</code></pre>
-			<p>See the <a class="registry-link registry-link-external" href="https://www.ft.com/__origami/service/image/v2/">Image Service documentation</a> for more.</p>
-		</details>
-
-		<details>
-			<summary id="use">Download images</summary>
-			<p>To add images to your project we recommend using the <a class="registry-link registry-link-external" href="https://www.ft.com/__origami/service/image/v2/">Image Service</a>. However you may download the full image set using the button below. It will download the Github repository, with all the image files in a sub folder.</p>
-			<a href="{{@root.component.url}}/archive/core.zip" class="download-button o-layout__unstyled-element o-buttons o-buttons--secondary o-buttons--mono">Download the Imageset</a>
-		</details>
-
-		{{#if component.support.isOrigami}}
-		<details>
-			<summary id="add-update-an-image">Add/update an image</summary>
-			<p>To request a new image, or to change an existing image, please <a class="registry-link registry-link-external" href="{{component.url}}/issues">create an issue</a> on Github. For support please get in touch &#x1F60A;</p>
-			<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link-external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link-external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
-		</details>
-		{{/if}}
-
-
-		<details>
-			<summary id="support-details">Support Details</summary>
-			<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link-external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link-external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
-		</details>
-	{{/ifEquals}}
-
 	{{#if component.isComponent }}
 		<details>
 			<summary id="install">Install {{@root.component.name}}</summary>
