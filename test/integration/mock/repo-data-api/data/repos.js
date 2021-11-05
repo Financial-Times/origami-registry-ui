@@ -287,7 +287,7 @@ module.exports = [
 					'title': 'example',
 					'description': 'example',
 					'brands': [
-						'master',
+						'core',
 						'internal'
 					]
 				}

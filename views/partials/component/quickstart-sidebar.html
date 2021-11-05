@@ -48,7 +48,7 @@
 					{{#component.brands}}
 						<option
 							value="{{this}}"
-							data-redirect="/components/{{@root.component.name}}@{{@root.component.version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals this 'master' }}?brand={{this}}{{/unlessEquals}}"
+							data-redirect="/components/{{@root.component.name}}@{{@root.component.version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals this 'core' }}?brand={{this}}{{/unlessEquals}}"
 							{{#ifEquals this @root.currentBrand}}selected="true"{{/ifEquals}}>
 							{{this}}
 						</option>
@@ -68,7 +68,7 @@
 					{{#versions}}
 						<option
 							value="{{version}}"
-							data-redirect="/components/{{@root.component.name}}@{{version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals @root.currentBrand 'master' }}?brand={{@root.currentBrand}}{{/unlessEquals}}"
+							data-redirect="/components/{{@root.component.name}}@{{version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals @root.currentBrand 'core' }}?brand={{@root.currentBrand}}{{/unlessEquals}}"
 							{{#ifEquals version @root.component.version}}data-test="current-version" selected="true"{{/ifEquals}}>
 							{{version}}
 						</option>
@@ -110,7 +110,7 @@
 		<details>
 			<summary id="use">Download images</summary>
 			<p>To add images to your project we recommend using the <a class="registry-link registry-link-external" href="https://www.ft.com/__origami/service/image/v2/">Image Service</a>. However you may download the full image set using the button below. It will download the Github repository, with all the image files in a sub folder.</p>
-			<a href="{{@root.component.url}}/archive/master.zip" class="download-button o-layout__unstyled-element o-buttons o-buttons--secondary o-buttons--mono">Download the Imageset</a>
+			<a href="{{@root.component.url}}/archive/core.zip" class="download-button o-layout__unstyled-element o-buttons o-buttons--secondary o-buttons--mono">Download the Imageset</a>
 		</details>
 
 		{{#if component.support.isOrigami}}
@@ -141,7 +141,7 @@
 					{{#if @root.component.hasCSS}}link tag.{{/if}}
 				{{/ifBoth}}
 				{{#if @root.component.hasCSS}}
-					{{#unlessEquals @root.currentBrand 'master'}}
+					{{#unlessEquals @root.currentBrand 'core'}}
 						Ensure the correct brand is set with a query parameter <code class="o-syntax-highlight--html">&brand={{@root.currentBrand}}</code>.
 					{{/unlessEquals}}
 				{{/if}}
