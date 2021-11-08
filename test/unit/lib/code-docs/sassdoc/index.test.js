@@ -12,7 +12,7 @@ const VariableDoclet = require('../../../mock/code-docs/sassdoc/variable');
 describe('lib/code-docs/sassdoc/index', () => {
 
     it('has a groupNameAliases property which maps a group name of "undefined" to the component name', () => {
-        const testSassDoc = new SassDoc('o-test-component', 'master', []);
+        const testSassDoc = new SassDoc('o-test-component', 'core', []);
         assert.deepEqual(testSassDoc.groupNameAliases, {
             'undefined': 'o-test-component',
         });
@@ -26,7 +26,7 @@ describe('lib/code-docs/sassdoc/index', () => {
     });
 
     describe('getNodesByKind', () => {
-        const testSassDoc = new SassDoc('o-test-component', 'master', [
+        const testSassDoc = new SassDoc('o-test-component', 'core', [
             MixinDoclet.simpleDoclet,
             MixinDoclet.comprehensiveDoclet,
             FunctionDoclet.simpleDoclet,
@@ -74,7 +74,7 @@ describe('lib/code-docs/sassdoc/index', () => {
 
     describe('getNodes', () => {
         const componentName = 'o-example';
-        const brand = 'master';
+        const brand = 'core';
         let doclet = {};
 
         beforeEach(() => {

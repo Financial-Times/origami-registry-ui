@@ -445,7 +445,7 @@
         ],
         "brand": {
             "supported": [
-                "master"
+                "core"
             ],
             "description": ""
         },
@@ -497,7 +497,7 @@
         "output": "Modifiying, cosmetic styles to make a test component fit the marketing look.",
         "brand": {
             "supported": [
-                "master"
+                "core"
             ],
             "description": ""
         },
@@ -529,7 +529,7 @@
         "brand": {
             "supported": [
                 "internal",
-                "master"
+                "core"
             ],
             "description": ""
         },
