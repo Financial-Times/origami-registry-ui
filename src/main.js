@@ -11,16 +11,18 @@ import '@financial-times/o-autoinit';
 import oTracking from '@financial-times/o-tracking';
 import CookieMessage from '@financial-times/o-cookie-message';
 
-const cookieMessage = new CookieMessage();
 
-const hasConsentedToCookies = cookieMessage.shouldShowCookieMessage() === false;
-if (hasConsentedToCookies) {
-	turnOnTracking();
-} else {
-	document.body.addEventListener('oCookieMessage.act', () => {
+document.addEventListener('o.DOMContentLoaded', () => {
+	const cookieMessage = new CookieMessage();
+	const hasConsentedToCookies = cookieMessage.shouldShowCookieMessage() === false;
+	if (hasConsentedToCookies) {
 		turnOnTracking();
-	});
-}
+	} else {
+		document.body.addEventListener('oCookieMessage.act', () => {
+			turnOnTracking();
+		});
+	}
+});
 
 function turnOnTracking() {
 	oTracking.init({
