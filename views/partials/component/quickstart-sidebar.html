@@ -109,7 +109,7 @@
 			<summary id="install">Install {{@root.component.name}}</summary>
 
 
-			<p>If using the <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}docs/tutorials/build-service/">Build Service</a>, add <code class="o-syntax-highlight--html">{{@root.component.name}}@^{{@root.component.version}}</code> to your
+			<p>If using the <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}documentation/tutorials/build-service/">Build Service</a>, add <code class="o-syntax-highlight--html">{{@root.component.name}}@^{{@root.component.version}}</code> to your
 				{{#ifBoth @root.component.hasJS @root.component.hasCSS}}
 					script and link tags.
 				{{else}}
@@ -125,11 +125,11 @@
 
 			{{#ifEquals @root.component.origamiVersion 1}}
 			<p>
-				If using the Bower package manager for a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}docs/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">bower install --save "{{@root.component.name}}@^{{@root.component.version}}"</code>.
+				If using the Bower package manager for a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}documentation/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">bower install --save "{{@root.component.name}}@^{{@root.component.version}}"</code>.
 			</p>
 			{{else}}
 			<p>
-				If using the npm package manager for a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}docs/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">npm install --save-peer "@financial-times/{{@root.component.name}}@^{{@root.component.version}}"</code>.
+				If using the npm package manager for a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}documentation/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">npm install --save-peer "@financial-times/{{@root.component.name}}@^{{@root.component.version}}"</code>.
 			</p>
 			{{/ifEquals}}
 		</details>
