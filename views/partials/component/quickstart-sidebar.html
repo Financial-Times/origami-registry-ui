@@ -87,7 +87,11 @@
 		</p>
 	{{else}}
 		<p>
-			<a class="registry-link registry-link--github" href="https://github.com/Financial-Times/origami/tree/{{ @root.component.name }}-v{{ @root.component.version }}/components/{{ @root.component.name }}">GitHub: {{ @root.component.name }}@{{ @root.component.version }}</a>
+			{{#ifEquals @root.component.type 'library'}}
+				<a class="registry-link registry-link--github" href="https://github.com/Financial-Times/origami/tree/{{ @root.component.name }}-v{{ @root.component.version }}/libraries/{{ @root.component.name }}">GitHub: {{ @root.component.name }}@{{ @root.component.version }}</a>
+			{{else}}
+				<a class="registry-link registry-link--github" href="https://github.com/Financial-Times/origami/tree/{{ @root.component.name }}-v{{ @root.component.version }}/components/{{ @root.component.name }}">GitHub: {{ @root.component.name }}@{{ @root.component.version }}</a>
+			{{/ifEquals}}
 		</p>
 	{{/ifEquals}}
 
