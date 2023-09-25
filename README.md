@@ -21,7 +21,7 @@ Get information about Origami components, services, and repositories.
 
 ## Requirements
 
-Running Origami Registry UI requires [Node.js] 10.x and [npm].
+Running Origami Registry UI requires [Node.js] and [npm].
 
 
 ## Running Locally
