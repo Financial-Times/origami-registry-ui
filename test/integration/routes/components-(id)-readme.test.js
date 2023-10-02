@@ -144,4 +144,32 @@ describe('GET /components/:componentId/readme', () => {
 
     });
 
+    describe('when the named component version exists as an "O3" component, which the registry does not support', () => {
+
+		beforeEach(async () => {
+			request = agent.get('/components/o3-example-active@2.0.0/readme');
+		});
+
+		it('responds with a 404 status', () => {
+			return request.expect(404);
+		});
+
+		it('responds with HTML', () => {
+			return request.expect('Content-Type', /text\/html/);
+		});
+
+		describe('HTML response', () => {
+			let html;
+
+			beforeEach(async () => {
+				html = (await request.then()).text;
+			});
+
+			it('contains the error details', () => {
+				assert.match(html, /not found/i);
+			});
+
+		});
+
+	});
 });

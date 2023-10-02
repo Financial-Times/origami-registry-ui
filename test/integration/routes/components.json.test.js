@@ -18,7 +18,7 @@ describe('GET /components.json', () => {
 	 // Assertions here are based on data in `../mock/repo-data-api/data`
 	 describe('JSON response', () => {
 
-		  it('contains a list of all components', async () => {
+		  it('contains a list of all components with supported origamiVersion', async () => {
 				const request = agent.get('/components.json');
 				const json = (await request.then()).body;
 				assert.equal(json.length, 8, 'Expected 8 components.');
