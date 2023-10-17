@@ -65,7 +65,7 @@
     "request-promise-native": "1.0.9",
     "require-all": "3.0.0",
     "sassdoc-extras": "3.0.0",
-    "semver": "^7.3.5",
+    "semver": "^7.5.2",
     "showdown": "1.9.1",
     "snyk": "^1.685.0",
     "throng": "5.0.0"
