@@ -54,7 +54,7 @@
     "@financial-times/o-tabs": "^6.0.0",
     "@financial-times/o-tracking": "^4.1.0",
     "@financial-times/o-typography": "^7.0.1",
-    "@financial-times/origami-repo-data-client": "1.7.0",
+    "@financial-times/origami-repo-data-client": "1.7.1",
     "@financial-times/origami-service": "6.0.0",
     "@financial-times/origami-service-makefile": "7.0.3",
     "cheerio": "1.0.0-rc.3",
