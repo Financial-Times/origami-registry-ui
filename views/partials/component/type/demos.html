@@ -32,7 +32,7 @@
 			<div class="registry-demo-content">
 				{{#if display.live}}
 					<div class="o-tabs__tabpanel" id="{{slugify title}}-demo-{{@index}}">
-						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="registry-demo-content__live" title="{{capitalise title}} Live Demo"></iframe>
+						<iframe height="500" loading="lazy" scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="registry-demo-content__live" title="{{capitalise title}} Live Demo"></iframe>
 					</div>
 				{{/if}}
 				{{#if display.html}}
@@ -43,7 +43,7 @@
 							</span>
 							<pre><code id="{{slugify title}}-html-code-{{@index}}" class='registry-demo-content__html-code o-syntax-highlight--html'>{{{display.highlightedHTML}}}</code></pre>
 						{{else}}
-							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="registry-demo-content__live" title="{{capitalise title}} HTML Code Snippet"></iframe>
+							<iframe height="500" loading="lazy" scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="registry-demo-content__live" title="{{capitalise title}} HTML Code Snippet"></iframe>
 						{{/if}}
 					</div>
 				{{/if}}
