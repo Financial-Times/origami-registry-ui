@@ -46,9 +46,9 @@ describe('lib/code-docs/sassdoc/nodes/base', () => {
         },
         'brand': {
             'supported': [
-                'master'
+                'core'
             ],
-            'description': 'Only master brand supported in this example'
+            'description': 'Only core brand supported in this example'
         },
         'link': [
             {
@@ -116,8 +116,8 @@ describe('lib/code-docs/sassdoc/nodes/base', () => {
             name: 'helpers'
         }, 'Did not add expected group property.');
         assert.deepEqual(node.brand, {
-            description: 'Only master brand supported in this example',
-            supported: ['master']
+            description: 'Only core brand supported in this example',
+            supported: ['core']
         }, 'Did not add expected brand property.');
         assert.equal(node.deprecated, 'This function has been replaced. Please contact Origami with any questions.', 'Did not add expected deprecated property.');
         assert.deepEqual(node.links, [

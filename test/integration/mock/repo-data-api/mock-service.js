@@ -28,6 +28,10 @@ module.exports = async function mockRepoDataApi() {
 				repo.type === null && request.query.type === 'module'
 			);
 		}
+		// mimic origamiVersion search
+		if (request.query.origamiVersion) {
+			foundRepos = foundRepos.filter(repo => request.query.origamiVersion.includes(repo.origamiVersion));
+		}
 		response.send(foundRepos);
 	});
 

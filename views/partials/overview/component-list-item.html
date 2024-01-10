@@ -21,7 +21,7 @@
 				{{^brands}}
 					{{#languages}}
 						{{#ifEquals 'scss' . }}
-							<label title="Supported brand" class="o-labels o-labels--master">master</label>
+							<label title="Supported brand" class="o-labels o-labels--core">core</label>
 						{{/ifEquals}}
 					{{/languages}}
 				{{/brands}}
@@ -30,9 +30,6 @@
 						<label title="Language used in component" class="o-labels o-labels--{{.}}">{{.}}</label>
 					{{/ifAny}}
 				{{/languages}}
-					{{#ifEquals type 'imageset'}}
-						<label title="Type" class="o-labels o-labels--{{type}}">{{type}}</label>
-					{{/ifEquals}}
 			</div>
 		</div>
 	</a>

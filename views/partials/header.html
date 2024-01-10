@@ -18,13 +18,13 @@
 				<a href="{{ft.options.origamiSite}}">Home</a>
 			</li>
 			<li>
-				<a href="{{ft.options.origamiSite}}docs/">Docs</a>
-			</li>
-			<li>
-				<a href="{{ft.options.origamiSite}}spec/v1/">Specs</a>
+				<a href="{{ft.options.origamiSite}}docs/">Documentation</a>
 			</li>
 			<li>
 				<a aria-current="true" href="/components{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}">Registry</a>
+			</li>
+			<li>
+				<a href="https://origami.ft.com/storybook/">Storybook</a>
 			</li>
 			<li>
 				<a href="{{ft.options.origamiSite}}blog/">Blog</a>
@@ -47,7 +47,8 @@
 			<ul class="o-header-services__secondary-nav-list o-header-services__secondary-nav-list--children" aria-label="Child sections">
 				<li>
 					<a href="/components/{{ component.name }}@{{ component.version }}{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" {{#ifEquals nav 'index'}}aria-current="true"{{/ifEquals}}>
-						{{#ifEquals component.type 'module'}}Demos{{else}}Info{{/ifEquals}}
+						{{! component.isComponent is confusing, "component" could be any Origami project type, for example a library "lib" }}
+						{{#if component.isComponent}}Demos{{else}}Info{{/if}}
 					</a>
 				</li>
 				<li>
@@ -69,11 +70,13 @@
 						</a>
 					</li>
 				{{/if}}
+				{{#if component.showRequiredPolyfills}}
 				<li>
-					<a href="/components/{{ component.name }}@{{ component.version }}/details{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" {{#ifEquals nav 'details'}}aria-current="true"{{/ifEquals}}>
-						Details
+					<a href="/components/{{ component.name }}@{{ component.version }}/polyfills{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" {{#ifEquals nav 'polyfills'}}aria-current="true"{{/ifEquals}}>
+						Required Polyfills
 					</a>
 				</li>
+				{{/if}}
 			</ul>
 		</div>
 		<button class="o-header-services__scroll-button o-header-services__scroll-button--left" title="scroll left" aria-hidden="true" disabled></button>

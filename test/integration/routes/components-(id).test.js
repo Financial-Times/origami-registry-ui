@@ -66,7 +66,7 @@ describe('GET /components/:componentId', () => {
 			return request.expect(307);
 		});
 
-		it('responds with a Location header pointing to the latest version page', () => {
+		it('responds with a Location header pointing to the latest stable version page', () => {
 			return request.expect('Location', '/components/o-example-active@2.0.0');
 		});
 
@@ -82,7 +82,7 @@ describe('GET /components/:componentId', () => {
 			return request.expect(307);
 		});
 
-		it('responds with a Location header pointing to the latest version page', () => {
+		it('responds with a Location header pointing to the latest stable version page', () => {
 			return request.expect('Location', '/components/o-example-active@2.0.0');
 		});
 
@@ -256,6 +256,60 @@ describe('GET /components/:componentId', () => {
 
 	});
 
+	describe('when it is a v1 component', () => {
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-active@2.0.0');
+		});
+
+		it('responds with a 200 status', () => {
+			return request.expect(200);
+		});
+
+		it('responds with HTML', () => {
+			return request.expect('Content-Type', /text\/html/);
+		});
+
+		describe('HTML response', () => {
+			let html;
+
+			beforeEach(async () => {
+				html = (await request.then()).text;
+			});
+
+			it('instructs the user in bower install', () => {
+				assert.include(html, 'bower install --save "o-example-active');
+			});
+
+		});
+	});
+
+	describe('when it is not a v1 component', () => {
+		beforeEach(async () => {
+			request = agent.get('/components/o-example-v2@2.0.0');
+		});
+
+		it('responds with a 200 status', () => {
+			return request.expect(200);
+		});
+
+		it('responds with HTML', () => {
+			return request.expect('Content-Type', /text\/html/);
+		});
+
+		describe('HTML response', () => {
+			let html;
+
+			beforeEach(async () => {
+				html = (await request.then()).text;
+			});
+
+			it('instructs the user in npm install', () => {
+				assert.include(html, 'npm install --save-peer "@financial-times/o-example-v2');
+			});
+
+		});
+	});
+
 	describe('when the named component has no demos for the brand', () => {
 
 		beforeEach(async () => {
@@ -279,6 +333,35 @@ describe('GET /components/:componentId', () => {
 
 			it('contains the component status', () => {
 				assert.include(html, 'data-test="support-status"');
+			});
+
+		});
+
+	});
+
+	describe('when the named component version exists as an "O3" component, which the registry does not support', () => {
+
+		beforeEach(async () => {
+			request = agent.get('/components/o3-example-active@2.0.0');
+		});
+
+		it('responds with a 404 status', () => {
+			return request.expect(404);
+		});
+
+		it('responds with HTML', () => {
+			return request.expect('Content-Type', /text\/html/);
+		});
+
+		describe('HTML response', () => {
+			let html;
+
+			beforeEach(async () => {
+				html = (await request.then()).text;
+			});
+
+			it('contains the error details', () => {
+				assert.match(html, /not found/i);
 			});
 
 		});

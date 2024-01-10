@@ -61,39 +61,6 @@
 	background: oColorsByName('white');
 }
 
-// Styles to layout images for imagesets
-.registry-demo-image-grid {
-	display: flex;
-	justify-content: space-around;
-	flex-flow: row wrap;
-	padding: 0;
-
-	img {
-		display: block;
-		width: 100%;
-		height: auto;
-		margin: 0;
-	}
-}
-
-.registry-demo-image-grid__item {
-	flex: 0 1 35%;
-	margin: 0 4px 24px;
-	display: flex;
-	flex-direction: column;
-	@include oGridRespondTo(M) {
-		flex-basis: 20%;
-	};
-}
-
-.registry-demo-image-grid__item__title {
-	padding-top: oSpacingByName('s1');
-	padding-bottom: oSpacingByName('s1');
-	text-align: center;
-	margin-top: auto;
-	border-bottom: 1px solid oColorsByName('slate-white-15');
-}
-
 // Styles for services demo pages
 .registry-demo-services-detail-title {
 	@include oTypographySans(

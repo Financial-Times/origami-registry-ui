@@ -21,7 +21,7 @@ resource "fastly_service_v1" "app" {
     between_bytes_timeout = 10000
     connect_timeout       = 1000
     error_threshold       = 0
-    first_byte_timeout    = 15000
+    first_byte_timeout    = 30000
     max_conn              = 200
     name                  = "EU"
     port                  = 80

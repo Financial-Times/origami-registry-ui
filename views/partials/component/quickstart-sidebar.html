@@ -3,7 +3,7 @@
 	{{#component.support}}
 	<div class="o-forms-field">
 		<span class="o-forms-title">
-			<span class="o-forms-title__main">Support Status</span>
+			<span class="o-forms-title__main">Status</span>
 		</span>
 		<div class="o-forms-input">
 			{{#status}}
@@ -14,6 +14,14 @@
 				{{.}}
 				</span>
 			{{/status}}
+			{{#ifEquals @root.component.origamiVersion '1'}}
+				<span data-test="origami-version"
+					title="{{@root.component.name}} follows v{{@root.component.origamiVersion}} of the Origami specification, and is installable via Bower."
+					aria-label="{{@root.component.name}} follows v{{@root.component.origamiVersion}} of the Origami specification, and is installable via Bower."
+					class="o-labels component-aside-sidebar-label">
+					Origami v{{@root.component.origamiVersion}} (Bower)
+				</span>
+			{{/ifEquals}}
 			{{#isOrigami}}
 				<span
 					title="{{@root.component.name}} is maintained by the core Origami team"
@@ -40,7 +48,7 @@
 					{{#component.brands}}
 						<option
 							value="{{this}}"
-							data-redirect="/components/{{@root.component.name}}@{{@root.component.version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals this 'master' }}?brand={{this}}{{/unlessEquals}}"
+							data-redirect="/components/{{@root.component.name}}@{{@root.component.version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals this 'core' }}?brand={{this}}{{/unlessEquals}}"
 							{{#ifEquals this @root.currentBrand}}selected="true"{{/ifEquals}}>
 							{{this}}
 						</option>
@@ -60,7 +68,7 @@
 					{{#versions}}
 						<option
 							value="{{version}}"
-							data-redirect="/components/{{@root.component.name}}@{{version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals @root.currentBrand 'master' }}?brand={{@root.currentBrand}}{{/unlessEquals}}"
+							data-redirect="/components/{{@root.component.name}}@{{version}}/{{#ifAny @root.nav 'sassdoc' 'jsdoc' 'readme'}}{{@root.nav}}/{{/ifAny}}{{#unlessEquals @root.currentBrand 'core' }}?brand={{@root.currentBrand}}{{/unlessEquals}}"
 							{{#ifEquals version @root.component.version}}data-test="current-version" selected="true"{{/ifEquals}}>
 							{{version}}
 						</option>
@@ -73,9 +81,19 @@
 		</fieldset>
 	</form>
 
-	<p>
-		<a class="registry-link registry-link--github" href="{{component.url}}">GitHub Repository</a>
-	</p>
+	{{#ifEquals @root.component.origamiVersion '1'}}
+		<p>
+			<a class="registry-link registry-link--github" href="{{@root.component.url}}">GitHub: {{ @root.component.name }}</a>
+		</p>
+	{{else}}
+		<p>
+			{{#ifEquals @root.component.type 'library'}}
+				<a class="registry-link registry-link--github" href="https://github.com/Financial-Times/origami/tree/{{ @root.component.name }}-v{{ @root.component.version }}/libraries/{{ @root.component.name }}">GitHub: {{ @root.component.name }}@{{ @root.component.version }}</a>
+			{{else}}
+				<a class="registry-link registry-link--github" href="https://github.com/Financial-Times/origami/tree/{{ @root.component.name }}-v{{ @root.component.version }}/components/{{ @root.component.name }}">GitHub: {{ @root.component.name }}@{{ @root.component.version }}</a>
+			{{/ifEquals}}
+		</p>
+	{{/ifEquals}}
 
 	{{#ifEquals component.type 'service'}}
 		<details>
@@ -90,42 +108,12 @@
 		</details>
 	{{/ifEquals}}
 
-	{{#ifEquals component.type 'imageset'}}
-		<details>
-			<summary id="use">Include images in your project</summary>
-			<p>Images from "{{@root.component.name}}" can be loaded directly using the <a class="registry-link registry-link-external" href="https://www.ft.com/__origami/service/image/v2/">Image Service</a>.</p>
-			<p>To load an image from this image set, use the following Image Service URL:</p>
-			<pre><code class="o-syntex=higlight--html">https://www.ft.com/__origami/service/image/v2/images/raw/{{@root.component.imageSetScheme}}:{image-name}?source={your-source-here}</code></pre>
-			<p>See the <a class="registry-link registry-link-external" href="https://www.ft.com/__origami/service/image/v2/">Image Service documentation</a> for more.</p>
-		</details>
-
-		<details>
-			<summary id="use">Download images</summary>
-			<p>To add images to your project we recommend using the <a class="registry-link registry-link-external" href="https://www.ft.com/__origami/service/image/v2/">Image Service</a>. However you may download the full image set using the button below. It will download the Github repository, with all the image files in a sub folder.</p>
-			<a href="{{@root.component.url}}/archive/master.zip" class="download-button o-layout__unstyled-element o-buttons o-buttons--secondary o-buttons--mono">Download the Imageset</a>
-		</details>
-
-		{{#if component.support.isOrigami}}
-		<details>
-			<summary id="add-update-an-image">Add/update an image</summary>
-			<p>To request a new image, or to change an existing image, please <a class="registry-link registry-link-external" href="{{component.url}}/issues">create an issue</a> on Github. For support please get in touch &#x1F60A;</p>
-			<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link-external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link-external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
-		</details>
-		{{/if}}
-
-
-		<details>
-			<summary id="support-details">Support Details</summary>
-			<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link-external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link-external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
-		</details>
-	{{/ifEquals}}
-
-	{{#ifEquals component.type 'module'}}
+	{{#if component.isComponent }}
 		<details>
 			<summary id="install">Install {{@root.component.name}}</summary>
 
 
-			<p>If using the <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}docs/tutorials/build-service/">Build Service</a>, add <code class="o-syntax-highlight--html">{{@root.component.name}}@^{{@root.component.version}}</code> to your
+			<p>If using the <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}documentation/tutorials/build-service/">Build Service</a>, add <code class="o-syntax-highlight--html">{{@root.component.name}}@^{{@root.component.version}}</code> to your
 				{{#ifBoth @root.component.hasJS @root.component.hasCSS}}
 					script and link tags.
 				{{else}}
@@ -133,16 +121,23 @@
 					{{#if @root.component.hasCSS}}link tag.{{/if}}
 				{{/ifBoth}}
 				{{#if @root.component.hasCSS}}
-					{{#unlessEquals @root.currentBrand 'master'}}
+					{{#unlessEquals @root.currentBrand 'core'}}
 						Ensure the correct brand is set with a query parameter <code class="o-syntax-highlight--html">&brand={{@root.currentBrand}}</code>.
 					{{/unlessEquals}}
 				{{/if}}
 			</p>
 
+			{{#ifEquals @root.component.origamiVersion "1"}}
 			<p>
-				If running a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}docs/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">bower install --save "{{@root.component.name}}@^{{@root.component.version}}"</code>.
+				If using the Bower package manager for a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}documentation/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">bower install --save "{{@root.component.name}}@^{{@root.component.version}}"</code>.
 			</p>
+			{{else}}
+			<p>
+				If using the npm package manager for a <a class="registry-link registry-link-external" href="{{ft.options.origamiSite}}documentation/tutorials/manual-build/">Manual Build</a>, run <code class="o-syntax-highlight--bash">npm install --save-peer "@financial-times/{{@root.component.name}}@^{{@root.component.version}}"</code>.
+			</p>
+			{{/ifEquals}}
 		</details>
+
 
 		<details>
 			<summary id="help-support">Help &amp; Support</summary>
@@ -162,6 +157,6 @@
 			<p>{{#if component.support.channel}}Slack:&nbsp;<a class="registry-link registry-link-external" href="{{component.support.channel.url}}">{{component.support.channel.name}}</a>{{/if}}<br>Email:&nbsp;<a class="registry-link registry-link-external" href="mailto:{{component.support.email}}?subject={{component.name}}">{{component.support.email}}</a></p>
 		</details>
 		{{/if}}
-	{{/ifEquals}}
+	{{/if}}
 
 </div>

@@ -3,17 +3,17 @@
 
 const assert = require('proclaim');
 
-describe('GET /components/:componentId/details', () => {
+describe('GET /components/:componentId/polyfills', () => {
     let request;
 
     describe('when a component name and version is provided', () => {
 
         beforeEach(async () => {
-            request = agent.get('/components/o-example-active@2.0.0/details');
+            request = agent.get('/components/o-example-active@2.0.0/polyfills');
         });
 
-        it('responds with a 410 status', () => {
-            return request.expect(410);
+        it('responds with a 200 status', () => {
+            return request.expect(200);
         });
 
         it('responds with HTML', () => {
@@ -28,10 +28,12 @@ describe('GET /components/:componentId/details', () => {
                 text = (await request.then()).text;
             });
 
-            it('directs the reader to the newer polyfills page or Github for a list of dependencies', () => {
-                assert.include(text, 'replaced');
-                assert.include(text, 'Github');
-                assert.include(text, 'polyfills');
+            it('includes the component\'s required browser features', () => {
+                assert.include(text, 'DOMTokenList');
+            });
+
+            it('includes the component\'s optional browser features', () => {
+                assert.include(text, 'IntersectionObserver');
             });
         });
 
@@ -40,7 +42,7 @@ describe('GET /components/:componentId/details', () => {
     describe('when only a component name is provided', () => {
 
         beforeEach(async () => {
-            request = agent.get('/components/o-example-active/details');
+            request = agent.get('/components/o-example-active/polyfills');
         });
 
         it('responds with a 307 status', () => {
@@ -48,7 +50,7 @@ describe('GET /components/:componentId/details', () => {
         });
 
         it('responds with a Location header pointing to the latest version page', () => {
-            return request.expect('Location', '/components/o-example-active@2.0.0/details');
+            return request.expect('Location', '/components/o-example-active@2.0.0/polyfills');
         });
 
     });
@@ -56,7 +58,7 @@ describe('GET /components/:componentId/details', () => {
     describe('when a component name and a "latest" version identifier is provided', () => {
 
         beforeEach(async () => {
-            request = agent.get('/components/o-example-active@latest/details');
+            request = agent.get('/components/o-example-active@latest/polyfills');
         });
 
         it('responds with a 307 status', () => {
@@ -64,7 +66,7 @@ describe('GET /components/:componentId/details', () => {
         });
 
         it('responds with a Location header pointing to the latest version page', () => {
-            return request.expect('Location', '/components/o-example-active@2.0.0/details');
+            return request.expect('Location', '/components/o-example-active@2.0.0/polyfills');
         });
 
     });
@@ -72,7 +74,7 @@ describe('GET /components/:componentId/details', () => {
     describe('when the named component does not exist', () => {
 
         beforeEach(async () => {
-            request = agent.get('/components/o-not-a-component/details');
+            request = agent.get('/components/o-not-a-component/polyfills');
         });
 
         it('responds with a 404 status', () => {
@@ -88,7 +90,7 @@ describe('GET /components/:componentId/details', () => {
     describe('when the named component version does not exist', () => {
 
         beforeEach(async () => {
-            request = agent.get('/components/o-example-active@123.456.789/details');
+            request = agent.get('/components/o-example-active@123.456.789/polyfills');
         });
 
         it('responds with a 404 status', () => {
@@ -100,35 +102,5 @@ describe('GET /components/:componentId/details', () => {
         });
 
     });
-
-
-	describe('when the named component version exists as an "O3" component, which the registry does not support', () => {
-
-		beforeEach(async () => {
-			request = agent.get('/components/o3-example-active@2.0.0/details');
-		});
-
-		it('responds with a 404 status', () => {
-			return request.expect(404);
-		});
-
-		it('responds with HTML', () => {
-			return request.expect('Content-Type', /text\/html/);
-		});
-
-		describe('HTML response', () => {
-			let html;
-
-			beforeEach(async () => {
-				html = (await request.then()).text;
-			});
-
-			it('contains the error details', () => {
-				assert.match(html, /not found/i);
-			});
-
-		});
-
-	});
 
 });

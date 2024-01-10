@@ -21,7 +21,7 @@ Get information about Origami components, services, and repositories.
 
 ## Requirements
 
-Running Origami Registry UI requires [Node.js] 10.x and [npm].
+Running Origami Registry UI requires [Node.js] and [npm].
 
 
 ## Running Locally
@@ -61,6 +61,7 @@ We configure Origami Registry UI using environment variables. In development, co
 
   * `NODE_ENV`: The environment to run the application in. One of `production`, `development` (default), or `test` (for use in automated tests).
   * `PORT`: The port to run the application on.
+  * `REPO_DATA_API_URL`: The [Repo Data](repo-data) URL to use, this is useful for pointing at staging or development environments. Defaults to `'https://origami-repo-data.ft.com'`
   * `REPO_DATA_API_KEY`: The [Repo Data](repo-data) API key to use when authenticating with that service.
   * `REPO_DATA_API_SECRET`: The [Repo Data](repo-data) API secret to use when authenticating with that service.
   * `CODEDOCS_ENDPOINT`: The [Origami Codedocs](origami-codedocs) endpoint.
