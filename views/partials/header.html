@@ -1,89 +1,113 @@
 <header class="o-header-services" data-o-component="o-header-services">
-	<div class="o-header-services__top">
-			<div class="o-header-services__hamburger">
-				<a class="o-header-services__hamburger-icon" href="{{ft.options.origamiSite}}" role="button">
-					<span class="o-header-services__visually-hidden">Open primary navigation</span>
-				</a>
-			</div>
-		<a href="https://origami.ft.com/" class="o-header-services__logo"><span class="o-header-services__visually-hidden">To homepage</span></a>
-		<div class="o-header-services__title">
-			<a class="o-header-services__product-name" href="{{ft.options.origamiSite}}">Origami</a>
-			<span class="o-header-services__product-tagline">Frontend Components &amp; Services</span>
-		</div>
-	</div>
+    <div class="o-header-services__top">
+        <div class="o-header-services__hamburger">
+            <a class="o-header-services__hamburger-icon" href="{{ft.options.origamiSite}}" role="button">
+                <span class="o-header-services__visually-hidden">Open primary navigation</span>
+            </a>
+        </div>
+        <a href="https://origami.ft.com/" class="o-header-services__logo"><span
+                class="o-header-services__visually-hidden">To homepage</span></a>
+        <div class="o-header-services__title">
+            <a class="o-header-services__product-name" href="{{ft.options.origamiSite}}">Origami</a>
+            <span class="o-header-services__product-tagline">Frontend Components &amp; Services</span>
+        </div>
+    </div>
 
-	<nav class="o-header-services__primary-nav" aria-label="primary">
-		<ul class="o-header-services__primary-nav-list">
-			<li>
-				<a href="{{ft.options.origamiSite}}">Home</a>
-			</li>
-			<li>
-				<a href="{{ft.options.origamiSite}}docs/">Documentation</a>
-			</li>
-			<li>
-				<a aria-current="true" href="/components{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}">Registry</a>
-			</li>
-			<li>
-				<a href="https://origami.ft.com/storybook/">Storybook</a>
-			</li>
-			<li>
-				<a href="{{ft.options.origamiSite}}blog/">Blog</a>
-			</li>
-		</ul>
-	</nav>
+    <nav class="o-header-services__primary-nav" aria-label="primary">
+        <ul class="o-header-services__primary-nav-list">
+            <li>
+                <a href="{{ft.options.origamiSite}}">Home</a>
+            </li>
+            <li>
+                <a href="{{ft.options.origamiSite}}docs/">Documentation</a>
+            </li>
+            <li>
+                <a aria-current="true" href="/components{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}">Registry</a>
+            </li>
+            <li>
+                <a href="https://origami.ft.com/storybook/">Storybook</a>
+            </li>
+            <li>
+                <a href="{{ft.options.origamiSite}}blog/">Blog</a>
+            </li>
+        </ul>
+    </nav>
 
-	{{#if component}}
+    {{#if component}}
 
-	<nav class="o-header-services__secondary-nav" aria-label="secondary" data-o-header-services-nav="">
-		<div class="o-header-services__secondary-nav-content" data-o-header-services-nav-list="">
-			<ol class="o-header-services__secondary-nav-list o-header-services__secondary-nav-list--ancestors" aria-label="Ancestor sections">
-				<li>
-					<a href="/components/{{ component.name }}@{{ component.version }}{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" {{#unless nav}}aria-current="true"{{/unless}}>
-						{{ component.name }}@{{ component.version }}
-					</a>
-				</li>
-			</ol>
+    <nav class="o-header-services__secondary-nav" aria-label="secondary" data-o-header-services-nav="">
+        <div class="o-header-services__secondary-nav-content" data-o-header-services-nav-list="">
+            <ol class="o-header-services__secondary-nav-list o-header-services__secondary-nav-list--ancestors"
+                aria-label="Ancestor sections">
+                <li>
+                    <a href="/components/{{ component.name }}@{{ component.version }}{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}"
+                       {{#unless nav}}aria-current="true" {{/unless}}>
+                    {{ component.name }}@{{ component.version }}
+                    </a>
+                </li>
+            </ol>
 
-			<ul class="o-header-services__secondary-nav-list o-header-services__secondary-nav-list--children" aria-label="Child sections">
-				<li>
-					<a href="/components/{{ component.name }}@{{ component.version }}{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" {{#ifEquals nav 'index'}}aria-current="true"{{/ifEquals}}>
-						{{! component.isComponent is confusing, "component" could be any Origami project type, for example a library "lib" }}
-						{{#if component.isComponent}}Demos{{else}}Info{{/if}}
-					</a>
-				</li>
-				<li>
-					<a href="/components/{{ component.name }}@{{ component.version }}/readme{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" {{#ifEquals nav 'readme'}}aria-current="true"{{/ifEquals}}>
-						Readme
-					</a>
-				</li>
-				{{#if component.showSassDoc}}
-					<li>
-						<a href="/components/{{ component.name }}@{{ component.version }}/sassdoc{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" {{#ifEquals nav 'sassdoc'}}aria-current="true"{{/ifEquals}}>
-							SassDoc
-						</a>
-					</li>
-				{{/if}}
-				{{#if component.showJSDoc}}
-					<li>
-						<a href="/components/{{ component.name }}@{{ component.version }}/jsdoc{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" {{#ifEquals nav 'jsdoc'}}aria-current="true"{{/ifEquals}}>
-							JSDoc
-						</a>
-					</li>
-				{{/if}}
-				{{#if component.showRequiredPolyfills}}
-				<li>
-					<a href="/components/{{ component.name }}@{{ component.version }}/polyfills{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}" {{#ifEquals nav 'polyfills'}}aria-current="true"{{/ifEquals}}>
-						Required Polyfills
-					</a>
-				</li>
-				{{/if}}
-			</ul>
-		</div>
-		<button class="o-header-services__scroll-button o-header-services__scroll-button--left" title="scroll left" aria-hidden="true" disabled></button>
-		<button class="o-header-services__scroll-button o-header-services__scroll-button--right" title="scroll right" aria-hidden="true" disabled></button>
-	</nav>
-	{{/if}}
+            <ul class="o-header-services__secondary-nav-list o-header-services__secondary-nav-list--children"
+                aria-label="Child sections">
+                <li>
+                    <a href="/components/{{ component.name }}@{{ component.version }}{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}"
+                       {{#ifEquals nav 'index'}}aria-current="true"{{/ifEquals}}>
+                    {{! component.isComponent is confusing, "component" could be any Origami project type, for example a
+                    library "lib" }}
+                    {{#if component.isComponent}}Demos{{else}}Info{{/if}}
+                    </a>
+                </li>
+                <li>
+                    <a href="/components/{{ component.name }}@{{ component.version }}/readme{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}"
+                       {{#ifEquals nav 'readme'}}aria-current="true"{{/ifEquals}}>
+                    Readme
+                    </a>
+                </li>
+                {{#if component.showSassDoc}}
+                <li>
+                    <a href="/components/{{ component.name }}@{{ component.version }}/sassdoc{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}"
+                       {{#ifEquals nav 'sassdoc'}}aria-current="true"{{/ifEquals}}>
+                    SassDoc
+                    </a>
+                </li>
+                {{/if}}
+                {{#if component.showJSDoc}}
+                <li>
+                    <a href="/components/{{ component.name }}@{{ component.version }}/jsdoc{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}"
+                       {{#ifEquals nav 'jsdoc'}}aria-current="true"{{/ifEquals}}>
+                    JSDoc
+                    </a>
+                </li>
+                {{/if}}
+                {{#if component.showRequiredPolyfills}}
+                <li>
+                    <a href="/components/{{ component.name }}@{{ component.version }}/polyfills{{#if @root.currentBrand}}?brand={{@root.currentBrand}}{{/if}}"
+                       {{#ifEquals nav 'polyfills'}}aria-current="true"{{/ifEquals}}>
+                    Required Polyfills
+                    </a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+        <button class="o-header-services__scroll-button o-header-services__scroll-button--left" title="scroll left"
+                aria-hidden="true" disabled></button>
+        <button class="o-header-services__scroll-button o-header-services__scroll-button--right" title="scroll right"
+                aria-hidden="true" disabled></button>
+    </nav>
+    {{/if}}
 
 </header>
 
-
+<div id="decomission-warning" class="o-message o-message--notice o-message--warning" data-o-component="o-message"
+     data-o-message-close="false">
+    <div class="o-message__container">
+        <div class="o-message__content">
+            <p class="o-message__content-main">
+                <span class="o-message__content-highlight">The Origami Registry is being decommissioned</span>
+                <span>by the end of March 2024 and replaced with <a href="storybook/">Storybook</a>. For more information please read our <a
+                        href="https://origami.ft.com/blog/2024/02/12/newsletter/#goodbye-registry">blog post</a>.</span>
+            </p>
+            <p class="o-message__content-additional">Please share any feedback in our #origami-chat Slack channel.</p>
+        </div>
+    </div>
+</div>
