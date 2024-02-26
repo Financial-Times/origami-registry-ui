@@ -1,0 +1,67 @@
+<div class="o-layout o-layout--query" data-o-component="o-layout">
+	<div class="o-layout__header">
+		 {{> header }}
+	</div>
+
+	<div class="o-layout__heading">
+		<div class="o-layout-typography">
+			{{> component/header}}
+		</div>
+        {{> component/messages}}
+	</div>
+
+	<div class="o-layout__query-sidebar">
+    {{#ifEither browserFeatures.required.length browserFeatures.optional.length}}
+        <nav class="o-layout__navigation">
+            <ol>
+                {{#if browserFeatures.required.length}}
+                    <li><a href="#required-browser-features">Required Browser Features</a></li>
+                {{/if}}
+                {{#if browserFeatures.optional.length}}
+                    <li><a href="#optional-browser-features">Optional Browser Features</a></li>
+                {{/if}}
+            </ol>
+        </nav>
+    {{/ifEither}}
+	</div>
+
+    <div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
+
+        {{#ifEither browserFeatures.required.length browserFeatures.optional.length}}
+            {{#if browserFeatures.required.length}}
+                <h2 id="required-browser-features">Required Browser Features</h2>
+                <p>{{ component.name }}@^{{ component.version }} requires the following browser features:</p>
+                <ul>
+                {{#each browserFeatures.required}}
+                    <li>
+                        <code>{{ . }}</code>
+                    </li>
+                {{/each}}
+                </ul>
+
+            {{/if}}
+            {{#if browserFeatures.optional.length}}
+                <h2 id="optional-browser-features">Optional Browser Features</h2>
+                <p>{{ component.name }}@^{{ component.version }} works best for browsers which support the following features, but will handle cases where they are not avalible:</p>
+                <ul>
+                {{#each browserFeatures.optional}}
+                    <li>
+                        <code>{{ . }}</code>
+                    </li>
+                {{/each}}
+                </ul>
+            {{/if}}
+            <p>We recommend <a href="https://polyfill.io/v3/">polyfill.io</a> to add support for missing features to older browsers.</p>
+        {{else}}
+                <p>{{ component.name }}@^{{ component.version }} should not require any <a href="https://origami.ft.com/docs/components/compatibility/#polyfill-service">JavaScript polyfills</a> to support <a href="https://docs.google.com/document/d/1z6kecy_o9qHYIznTmqQ-IJqre72jhfd0nVa4JMsS7Q4/edit">browsers which the FT support</a>.</p>
+        {{/ifEither}}
+    </div>
+
+	<div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">
+		{{> component/quickstart-sidebar}}
+	</div>
+
+	<div class="o-layout__footer">
+		{{> footer}}
+	</div>
+</div>
