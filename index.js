@@ -10,6 +10,7 @@ const options = {
 	log: console,
 	name: 'Origami Registry',
 	origamiSite: 'https://origami.ft.com/',
+	repoDataApiUrl: process.env.REPO_DATA_API_URL || 'https://origami-repo-data.ft.com',
 	repoDataApiKey: process.env.REPO_DATA_API_KEY,
 	codedocsApiKey: process.env.CODEDOCS_API_KEY,
 	codedocsEndpoint: process.env.CODEDOCS_ENDPOINT,

@@ -1,3 +1,9 @@
+{{#ifEquals @root.component.origamiVersion '1'}}
 <a class="link-external" href="https://github.com/Financial-Times/{{ @root.component.name }}/tree/v{{ @root.component.version }}/{{#if file}}{{ file.path }}/{{ file.name }}#L{{ file.lineno }}{{/if}}">
     "{{ name }}" {{ kind }} on Github
 </a>
+{{else}}
+<a class="link-external" href="https://github.com/Financial-Times/origami/tree/{{ @root.component.name }}-v{{ @root.component.version }}/components/{{ @root.component.name }}/{{#if file}}{{ file.path }}/{{ file.name }}#L{{ file.lineno }}{{/if}}">
+    "{{ name }}" {{ kind }} on Github
+</a>
+{{/ifEquals}}

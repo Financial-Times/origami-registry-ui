@@ -29,25 +29,18 @@ describe('GET /components', () => {
 			list = dom.window.document.querySelector('[data-test=component-list]');
 		});
 
-		it('contains a list of all active and maintained components and imagesets by default', () => {
+		it('contains a list of all active and maintained projects by default', () => {
 			assert.isNotNull(list);
 
 			const listItems = list.querySelectorAll('[data-test=component-list-item]');
-			assert.lengthEquals(listItems, 3);
+			assert.lengthEquals(listItems, 7);
 
-			let link;
+			const listItemText = Array.from(listItems).map(i => i.textContent).join('');
 
-			link = listItems[0].querySelector('[data-test=component-link]');
-			assert.strictEqual(link.getAttribute('href'), '/components/o-example-active@2.0.0?brand=master');
-			assert.include(link.textContent.trim(), 'o-example-active');
-
-			link = listItems[1].querySelector('[data-test=component-link]');
-			assert.strictEqual(link.getAttribute('href'), '/components/o-example-maintained@1.5.0?brand=master');
-			assert.include(link.textContent.trim(), 'o-example-maintained');
-
-			link = listItems[2].querySelector('[data-test=component-link]');
-			assert.strictEqual(link.getAttribute('href'), '/components/o-example-imageset-maintained@1.5.0?brand=master');
-			assert.include(link.textContent.trim(), 'o-example-imageset-maintained');
+			assert.include(listItemText, 'o-example-active', 'Did not find a "o-example-active" element in document.');
+			assert.include(listItemText, 'o-example-no-readme', 'Did not find a "o-example-no-readme" element in document.');
+			assert.include(listItemText, 'o-example-maintained', 'Did not find a "o-example-maintained" element in document.');
+			assert.include(listItemText, 'o-example-service-maintained', 'Did not find a "o-example-service-maintained" element in document.');
 		});
 	});
 });

@@ -10,7 +10,7 @@ const VariableDoclet = require('../../../mock/code-docs/sassdoc/variable');
 
 describe('lib/code-docs/sassdoc/nav', () => {
     describe('createNavigation', () => {
-        const testSassDoc = new SassDoc('o-test-component', 'master', [
+        const testSassDoc = new SassDoc('o-test-component', 'core', [
             FunctionDoclet.simpleDoclet,
             FunctionDoclet.comprehensiveDoclet,
             VariableDoclet.simpleDoclet,
