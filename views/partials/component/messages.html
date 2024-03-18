@@ -86,7 +86,7 @@
 					{{#ifEquals versions.0.version component.version}}
 						<p class="o-message__content-main">
 							<span class="o-message__content-highlight">
-								{{component.name}} hasn't been branded yet, it only supports the master brand.
+								{{component.name}} hasn't been branded yet, it only supports the core brand.
 							</span>
 							<span class="o-message__content-detail">
 								If you would like to discuss having it branded <a class="o-message__actions__secondary o-layout__unstyled-element" href="#support"> please get in touch with the Origami team</a>.
@@ -98,7 +98,7 @@
 								This version of {{component.name}} hasn't been branded yet.
 							</span>
 							<span class="o-message__content-detail">
-								Please check the latest version, <a class="o-message__actions__secondary o-layout__unstyled-element" href="{{component.name}}@{{versions.0.version}}">{{versions.0.version}}</a>, as branding is a relatively new addition to our components.
+								Please check the latest version, <a class="o-message__actions__secondary o-layout__unstyled-element" href="/components/{{ component.name }}@{{versions.0.version}}">{{versions.0.version}}</a>, as branding is a relatively new addition to our components.
 							</span>
 						</p>
 					{{/ifEquals}}
@@ -107,3 +107,22 @@
 		</div>
 	{{/if}}
 {{/ifAny}}
+
+{{#if message }}
+	<div class="o-message o-message--{{message.type}} o-message--inner o-message--{{message.state}}" data-o-component="o-message" data-close="false">
+		<div class="o-message__container">
+			<div class="o-message__content">
+				<p class="o-message__content-main">
+					<span class="o-message__content-highlight">
+						{{ message.content }}
+					</span>
+					{{#if message.detail }}
+					<span class="o-message__content-detail">
+						{{message.detail}}
+					</span>
+					{{/if}}
+				</p>
+			</div>
+		</div>
+	</div>
+{{/if}}

@@ -32,19 +32,12 @@
 			<div class="registry-demo-content">
 				{{#if display.live}}
 					<div class="o-tabs__tabpanel" id="{{slugify title}}-demo-{{@index}}">
-						<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="registry-demo-content__live" title="{{capitalise title}} Live Demo"></iframe>
+						<iframe loading="lazy" scrolling="yes" allowTransparency="true" src="{{supportingUrls.live}}" class="registry-demo-content__live" title="{{capitalise title}} Live Demo"></iframe>
 					</div>
 				{{/if}}
 				{{#if display.html}}
 					<div class="o-tabs__tabpanel" id="{{slugify title}}-html-tabpanel-{{@index}}">
-						{{#if display.plainHTML}}
-							<span class="o--if-js registry-demo-content__html-controls">
-								<button class="o-buttons o-buttons--secondary o-buttons--mono" data-select-html="{{slugify title}}-html-code-{{@index}}">Select Full Code Snippet</button>
-							</span>
-							<pre><code id="{{slugify title}}-html-code-{{@index}}" class='registry-demo-content__html-code o-syntax-highlight--html'>{{{display.highlightedHTML}}}</code></pre>
-						{{else}}
-							<iframe scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="registry-demo-content__live" title="{{capitalise title}} HTML Code Snippet"></iframe>
-						{{/if}}
+						<iframe loading="lazy" scrolling="yes" allowTransparency="true" src="{{supportingUrls.html}}" class="registry-demo-content__live" title="{{capitalise title}} HTML Code Snippet"></iframe>
 					</div>
 				{{/if}}
 			</div>

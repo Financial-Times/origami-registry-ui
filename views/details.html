@@ -1,126 +1,65 @@
 <div class="o-layout o-layout--query" data-o-component="o-layout">
-	<div class="o-layout__header">
-		 {{> header }}
-	</div>
-
-	<div class="o-layout__heading">
-		<div class="o-layout-typography">
-			{{> component/header}}
-		</div>
-        {{> component/messages}}
-	</div>
-
-	<div class="o-layout__query-sidebar">
-    {{#ifEither dependencies.bower.length dependencies.npm.length}}
-        <nav class="o-layout__navigation">
-            <ol>
-                {{#if browserFeatures.required.length}}
-                    <li><a href="#required-browser-features">Required Browser Features</a></li>
-                {{/if}}
-                {{#if browserFeatures.optional.length}}
-                    <li><a href="#optional-browser-features">Optional Browser Features</a></li>
-                {{/if}}
-                {{#if dependencies.bower.length}}
-                    <li><a href="#bower">Bower Dependencies</a></li>
-                {{/if}}
-                {{#if dependencies.npm.length}}
-                    <li><a href="#npm">NPM Dependencies</a></li>
-                {{/if}}
-            </ol>
-        </nav>
-    {{/ifEither}}
-	</div>
-
-    <div class="o-layout__main o-layout-typography" data-o-component="o-syntax-highlight">
-
-        {{#ifEither browserFeatures.required.length browserFeatures.optional.length}}
-            {{#if browserFeatures.required.length}}
-                <h2 id="required-browser-features">Required Browser Features</h2>
-                <p>{{ component.name }}@^{{ component.version }} requires the following browser features:</p>
-                <ul>
-                {{#each browserFeatures.required}}
-                    <li>
-                        <code>{{ . }}</code>
-                    </li>
-                {{/each}}
-                </ul>
-
-            {{/if}}
-            {{#if browserFeatures.optional.length}}
-                <h2 id="optional-browser-features">Optional Browser Features</h2>
-                <p>{{ component.name }}@^{{ component.version }} works best for browsers which support the following features, but will handle cases where they are not avalible:</p>
-                <ul>
-                {{#each browserFeatures.optional}}
-                    <li>
-                        <code>{{ . }}</code>
-                    </li>
-                {{/each}}
-                </ul>
-            {{/if}}
-            <p>We recommend <a href="https://polyfill.io/v3/">polyfill.io</a> to add support for missing features to older browsers.</p>
-        {{/ifEither}}
-
-        {{#ifEither dependencies.bower.length dependencies.npm.length}}
-            {{#if dependencies.npm.length}}
-                <h2 id="npm">NPM Dependencies</h2>
-                <div class="o-table-container">
-                    <div class="o-table-overlay-wrapper">
-                        <div class="o-table-scroll-wrapper">
-                            <table class="o-table o-table--horizontal-lines  o-table--responsive-overflow" data-o-component="o-table" data-o-table-sortable="false" data-o-table-responsive="overflow">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" role="columnheader">Dependency</th>
-                                        <th scope="col" role="columnheader" data-o-table-data-type="numeric">Version</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                {{#each dependencies.npm}}
-                                    <tr>
-                                        <td>{{name}}</td>
-                                        <td>{{version}}</td>
-                                    </tr>
-                                {{/each}}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            {{/if}}
-            {{#if dependencies.bower.length}}
-                <h2 id="bower">Bower Dependencies</h2>
-                <div class="o-table-container">
-                    <div class="o-table-overlay-wrapper">
-                        <div class="o-table-scroll-wrapper">
-                            <table class="o-table o-table--horizontal-lines  o-table--responsive-overflow" data-o-component="o-table" data-o-table-sortable="false" data-o-table-responsive="overflow">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" role="columnheader">Dependency</th>
-                                        <th scope="col" role="columnheader" data-o-table-data-type="numeric">Version</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                {{#each dependencies.bower}}
-                                    <tr>
-                                        <td>{{name}}</td>
-                                        <td>{{version}}</td>
-                                    </tr>
-                                {{/each}}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            {{/if}}
-        {{ else }}
-            {{ component.name }} has no dependencies.
-        {{/ifEither}}
+    <div class="o-layout__header">
+        {{> header }}
     </div>
 
-	<div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">
-		{{> component/quickstart-sidebar}}
-	</div>
+    <div class="o-layout__heading">
+        <div class="o-layout-typography">
+            {{> component/header}}
+        </div>
+        {{> component/messages}}
+    </div>
 
-	<div class="o-layout__footer">
-		{{> footer}}
-	</div>
+    <div class="o-layout__query-sidebar">
+    </div>
+
+    <div class="o-layout__main" data-o-component="o-syntax-highlight">
+
+        <div class="o-message o-message--notice  o-message--inform" data-o-component="o-message" data-close="false">
+            <div class="o-message__container">
+                <div class="o-message__content">
+                    {{#@root.component.showRequiredPolyfills}}
+                        <p class="o-message__content-main">
+                            <span class="o-message__content-highlight">The component details page has been replaced.</span>
+                            <span>
+                                browser features which require a polyfill for {{ component.name }} support are now listed under the "Required polyfills" page. Component dependencies are no longer listed under the registry, these can be found on Github.
+                            </span>
+                        </p>
+                        <div class="o-message__actions">
+                            <a href="./polyfills/?brand={{supportedBrand}}" class="o-message__actions__primary">{{ component.name }} required polyfills</a>
+                            {{#ifEquals @root.component.origamiVersion '1'}}
+                            <a href="https://github.com/Financial-Times/{{ @root.component.name }}/tree/v{{ @root.component.version }}/{{#if file}}{{ file.path }}/{{ file.name }}#L{{ file.lineno }}{{/if}}" class="o-message__actions__secondary">{{ component.name }} on Github</a>
+                            {{else}}
+                            <a href="https://github.com/Financial-Times/origami/tree/{{ @root.component.name }}-v{{ @root.component.version }}/components/{{ @root.component.name }}" class="o-message__actions__secondary">{{ component.name }} on Github</a>
+                            {{/ifEquals}}
+                        </div>
+                    {{else}}
+                        <p class="o-message__content-main">
+                            <span class="o-message__content-highlight">The component details page has been replaced.</span>
+                            <span>
+                                Component dependencies are no longer listed under the registry, these can be found on Github.
+                            </span>
+                        </p>
+                        <div class="o-message__actions">
+                            {{#ifEquals @root.component.origamiVersion '1'}}
+                            <a href="https://github.com/Financial-Times/{{ @root.component.name }}/tree/v{{ @root.component.version }}/{{#if file}}{{ file.path }}/{{ file.name }}#L{{ file.lineno }}{{/if}}" class="o-message__actions__primary">{{ component.name }} on Github</a>
+                            {{else}}
+                            <a href="https://github.com/Financial-Times/origami/tree/{{ @root.component.name }}-v{{ @root.component.version }}/components/{{ @root.component.name }}" class="o-message__actions__primary">{{ component.name }} on Github</a>
+                            {{/ifEquals}}
+                        </div>
+                    {{/@root.component.showRequiredPolyfills}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="o-layout__aside-sidebar o-layout-typography" data-o-component="o-syntax-highlight">
+        {{> component/quickstart-sidebar}}
+    </div>
+
+    <div class="o-layout__footer">
+        {{> footer}}
+    </div>
 </div>

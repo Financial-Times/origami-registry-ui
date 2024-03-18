@@ -8,35 +8,35 @@ const Function = require('../../../../../lib/code-docs/sassdoc/nodes/function');
 const Variable = require('../../../../../lib/code-docs/sassdoc/nodes/variable');
 
 describe('lib/code-docs/sassdoc/index', () => {
-    const masterBrandSassDoc = new SassDoc('o-example', 'master', sassDocExampleData);
+    const coreBrandSassDoc = new SassDoc('o-example', 'core', sassDocExampleData);
     const internalBrandSassDoc = new SassDoc('o-example', 'internal', sassDocExampleData);
 
     describe('getNodesByKind', () => {
-        const masterBrandNodesByKind = masterBrandSassDoc.getNodesByKind();
-        it('Returns an object with the expected number of mixins for the master brand', () => {
-            assert.equal(masterBrandNodesByKind.mixin.length, 7);
+        const coreBrandNodesByKind = coreBrandSassDoc.getNodesByKind();
+        it('Returns an object with the expected number of mixins for the core brand', () => {
+            assert.equal(coreBrandNodesByKind.mixin.length, 7);
         });
-        it('Returns an object with the expected number of functions for the master brand', () => {
-            assert.equal(masterBrandNodesByKind.function.length, 2);
+        it('Returns an object with the expected number of functions for the core brand', () => {
+            assert.equal(coreBrandNodesByKind.function.length, 2);
         });
-        it('Returns an object with the expected number of variables for the master brand', () => {
-            assert.equal(masterBrandNodesByKind.variable.length, 4);
+        it('Returns an object with the expected number of variables for the core brand', () => {
+            assert.equal(coreBrandNodesByKind.variable.length, 4);
         });
     });
 
     describe('getNodes', () => {
-        const masterBrandNodes = masterBrandSassDoc.getNodes();
-        it('Did not return array for the master brand.', () => {
-            assert.isTrue(Array.isArray(masterBrandNodes));
+        const coreBrandNodes = coreBrandSassDoc.getNodes();
+        it('Did not return array for the core brand.', () => {
+            assert.isTrue(Array.isArray(coreBrandNodes));
         });
-        it('Returns the expected number of formatted mixin nodes for the master brand.', () => {
-            assert.equal(masterBrandNodes.filter(node => node instanceof Mixin).length, 7);
+        it('Returns the expected number of formatted mixin nodes for the core brand.', () => {
+            assert.equal(coreBrandNodes.filter(node => node instanceof Mixin).length, 7);
         });
-        it('Returns the expected number of formatted function nodes for the master brand.', () => {
-            assert.equal(masterBrandNodes.filter(node => node instanceof Function).length, 2);
+        it('Returns the expected number of formatted function nodes for the core brand.', () => {
+            assert.equal(coreBrandNodes.filter(node => node instanceof Function).length, 2);
         });
-        it('Returns the expected number of formatted variable nodes for the master brand.', () => {
-            assert.equal(masterBrandNodes.filter(node => node instanceof Variable).length, 4);
+        it('Returns the expected number of formatted variable nodes for the core brand.', () => {
+            assert.equal(coreBrandNodes.filter(node => node instanceof Variable).length, 4);
         });
 
         const internalBrandNodes = internalBrandSassDoc.getNodes();
@@ -47,7 +47,7 @@ describe('lib/code-docs/sassdoc/index', () => {
             assert.equal(
                 internalBrandNodes.filter(node => node instanceof Mixin).length,
                 5,
-                'Expected the internal brand to have fewer mixins than the master brand in this case.'
+                'Expected the internal brand to have fewer mixins than the core brand in this case.'
             );
         });
         it('Returns the expected number of formatted function nodes for the internal brand.', () => {

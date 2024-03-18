@@ -20,8 +20,8 @@
 	background-color: oColorsByName('black')
 ));
 
-@include oLabelsAddState('master', (
-	// Master brand "wheat" colour.
+@include oLabelsAddState('core', (
+	// Core brand "wheat" colour.
 	// Not available to internal brands. We
 	// could add it to the internal brand
 	// palette but then have to communicate
@@ -54,7 +54,7 @@
 
 @include oLabelsAddState('scss', (
 	// This is creating a Sass-like pink
-	// using a mix of master brand colours
+	// using a mix of core brand colours
 	// "velvet" and "candy". They are not
 	// available to internal brands but we
 	// don't really care about them staying
@@ -64,8 +64,4 @@
 	// actual Sass logo pink (personal
 	// preference).
 	background-color: #ac5995
-));
-
-@include oLabelsAddState('imageset', (
-	background-color: oColorsMix('white', 'oxford', 80)
 ));

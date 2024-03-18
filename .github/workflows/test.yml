@@ -14,10 +14,12 @@ jobs:
         tf_actions_comment: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/setup-node@v2.1.1
+    - uses: actions/setup-node@v2.1.5
       with:
-        node-version: 12.x
+        node-version: 18.x
+    - run: npm install --global npm@7.11.2
     - run: npm ci
+    - run: npm run build
     - run: make verify
     - run: make test-unit-coverage
     - run: make test-integration
