@@ -102,7 +102,7 @@ make cmdb-update
 
 ## Testing
 
-The tests are split into unit tests and integration tests. To run tests on your machine you'll need to install [Node.js] and run `make install`. Then you can run the following commands:
+The tests are split into unit tests and integration tests. To run tests on your machine, you'll need to install [Node.js] and run `make install`. Then you can run the following commands:
 
 ```sh
 make test              # run all the tests
