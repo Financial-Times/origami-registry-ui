@@ -22,17 +22,6 @@ jobs:
         tf_actions_comment: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: 'Terraform Import'
-      uses: hashicorp/terraform-github-actions@v0.8.0
-      with:
-        tf_actions_version: ${{ env.terraform_version }}
-        tf_actions_subcommand: 'import'
-        tf_actions_working_dir: ${{ env.terraform_working_dir }}
-        tf_actions_comment: true
-        args: 'fastly_service_v1.app ${{ env.fastly_service_id }}'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        FASTLY_API_KEY: ${{ secrets.FASTLY_API_KEY }}
     - name: 'Terraform Validate'
       uses: hashicorp/terraform-github-actions@v0.8.0
       with:
