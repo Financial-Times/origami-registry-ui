@@ -50,7 +50,7 @@ Then run the application in development mode with:
 make run-dev
 ```
 
-Now you can access the app over HTTP on port `8080`: [http://localhost:8080/](http://localhost:8080/)
+Now you can access the app over HTTP on port `8080`: [http://localhost:8080/](http://localhost:8080/).
 
 
 ## Configuration
