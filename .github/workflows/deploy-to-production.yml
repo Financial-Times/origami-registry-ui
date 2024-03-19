@@ -49,7 +49,7 @@ jobs:
         tf_actions_subcommand: 'apply'
         tf_actions_working_dir: ${{ env.terraform_working_dir }}
         tf_actions_comment: true
-        args: '--auto-approve'
+        args: '--auto-approve -destroy'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         FASTLY_API_KEY: ${{ secrets.FASTLY_API_KEY }}
