@@ -1,5 +1,5 @@
 
-# Origami Registry UI
+# Origami Registry UI (Deprecated)
 
 Get information about Origami components, services, and repositories.
 
