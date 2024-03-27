@@ -16,7 +16,7 @@ Bronze
 
 ## Lifecycle Stage
 
-Discontinued
+Decomissioned
 
 ## Primary URL
 
